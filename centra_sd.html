@@ -1,0 +1,780 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Centra-SD — Meritech</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       1 · MAIN NAVIGATION
+  ============================================================ -->
+  <nav class="mn-bar">
+    <div class="container-xxl">
+
+      <!-- Logo -->
+      <a class="mn-logo" href="index.html">
+        <img src="images/Meritech_logo_banner.svg" alt="Meritech">
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu">
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+      </button>
+
+      <!-- Desktop nav -->
+      <nav class="mn-nav">
+
+        <!-- Wireless -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown">
+            <div class="dd-grid dd-grid-3">
+              <div>
+                <div class="dd-col-head">Capture &amp; Automate</div>
+                <a href="sigma-la.html" class="dd-product"><span class="dd-product-name">Sigma-LA</span><span class="dd-product-desc">Cloud-based Linux analytics platform with AI</span></a>
+                <a href="sigma-aq.html" class="dd-product"><span class="dd-product-name">Sigma-AQ</span><span class="dd-product-desc">Automated drive test — 50% faster reporting</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">Field campaigns at operator sites</span></a>
+                <a href="sigma-aq-boss.html" class="dd-product"><span class="dd-product-name">Sigma-AQ Boss</span><span class="dd-product-desc">Remote controller — keep engineers in the office</span></a>
+                <a href="sigma-one.html" class="dd-product"><span class="dd-product-name">Sigma-One</span><span class="dd-product-desc">Ruggedized capture — COTS, IoT &amp; connected car</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Analyze &amp; Intelligence</div>
+                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Tune until the field matches intent</span></a>
+                <a href="Sigma-PA.html" class="dd-product"><span class="dd-product-name">Sigma-PA</span><span class="dd-product-desc">Post-processing &amp; protocol analysis platform</span></a>
+                <a href="sigma-ml.html" class="dd-product"><span class="dd-product-name">Sigma-ML</span><span class="dd-product-desc">Mobile logger — walk test from a single smartphone</span></a>
+                <a href="centra-experitest.html" class="dd-product"><span class="dd-product-name">Centra-Experitest</span><span class="dd-product-desc">OTT &amp; QoE — what the subscriber actually feels</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-AQ Reporting Server</span><span class="dd-product-desc">Post-processing &amp; deep protocol analysis</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="planning-design.html" class="dd-product"><span class="dd-product-name">Planning &amp; Design</span><span class="dd-product-desc">Site, propagation, capacity, spectrum</span></a>
+                <a href="drive-walk-test.html" class="dd-product"><span class="dd-product-name">Drive &amp; Walk Test</span><span class="dd-product-desc">Multi-device field capture, L1–L4</span></a>
+                <a href="network-optimization.html" class="dd-product"><span class="dd-product-name">Network Optimization</span><span class="dd-product-desc">Initial and continuous performance tuning</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore Wireless portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IoT -->
+        <div class="mn-item">
+          <a class="mn-link" href="IoT-Products.html">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="IoT-Products.html" class="dd-product"><span class="dd-product-name">monoZ</span><span class="dd-product-desc">LPWA device-to-cloud suite</span></a>
+                <a href="CENTRA-IoT.html" class="dd-product"><span class="dd-product-name">Centra IoT</span><span class="dd-product-desc">Centralized cloud device management platform</span></a>
+                <a href="XENO+.html" class="dd-product"><span class="dd-product-name">Xeno+ suite</span><span class="dd-product-desc">Solderable AI/ML edge modules for IoT</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
+                <a href="mesimo.html" class="dd-product"><span class="dd-product-name">Mesimo</span><span class="dd-product-desc">Global cellular IoT connectivity</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="IoT-Products.html" class="dd-explore">Explore IoT portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IT & Cloud -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer for telecom operators</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">netSLAM™</span><span class="dd-product-desc">Independent validation &amp; assurance</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">Data &amp; AI</span><span class="dd-product-desc">Data platforms, analytics &amp; AI solutions</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">DevOps</span><span class="dd-product-desc">CI/CD, automation, cloud-native delivery</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">ServiceNow</span><span class="dd-product-desc">Enterprise workflows &amp; ITSM</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Managed IT</span><span class="dd-product-desc">Ongoing operations &amp; support</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore IT &amp; Cloud</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item"><a class="mn-link" href="#">Why Meritech</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Insights</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Company</a></div>
+      </nav>
+
+      <a href="#" class="btn-talk">Talk to us</a>
+      <div class="mn-accent"></div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE DRAWER
+  ============================================================ -->
+  <div class="mn-mobile" id="mnMobile">
+    <div class="mn-mobile-inner">
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-wireless">
+          <div class="mn-mob-sub-head">Capture &amp; Automate</div>
+          <a href="sigma-la.html" class="mn-mob-sub-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="mn-mob-sub-link">Sigma-AQ</a>
+          <a href="#" class="mn-mob-sub-link">Sigma-Neo</a>
+          <a href="sigma-aq-boss.html" class="mn-mob-sub-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="mn-mob-sub-link">Sigma-One</a>
+          <div class="mn-mob-sub-head">Analyze &amp; Intelligence</div>
+          <a href="centra_sd.html" class="mn-mob-sub-link">Centra-SD</a>
+          <a href="Sigma-PA.html" class="mn-mob-sub-link">Sigma-PA</a>
+          <a href="sigma-ml.html" class="mn-mob-sub-link">Sigma-ML</a>
+          <a href="centra-experitest.html" class="mn-mob-sub-link">Centra-Experitest</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="planning-design.html" class="mn-mob-sub-link">Planning &amp; Design</a>
+          <a href="drive-walk-test.html" class="mn-mob-sub-link">Drive &amp; Walk Test</a>
+          <a href="network-optimization.html" class="mn-mob-sub-link">Network Optimization</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="iot">IoT <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-iot">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">monoZ</a>
+          <a href="#" class="mn-mob-sub-link">Centra IoT</a>
+          <a href="#" class="mn-mob-sub-link">Xeno+ suite</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">IoT Consulting</a>
+          <a href="#" class="mn-mob-sub-link">Device Management</a>
+          <a href="#" class="mn-mob-sub-link">Mesimo</a>
+          <a href="#" class="mn-mob-sub-link">Connectivity</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-it">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">zoECON™</a>
+          <a href="#" class="mn-mob-sub-link">netSLAM™</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">Data &amp; AI</a>
+          <a href="#" class="mn-mob-sub-link">DevOps</a>
+          <a href="#" class="mn-mob-sub-link">ServiceNow</a>
+          <a href="#" class="mn-mob-sub-link">Managed IT</a>
+        </div>
+      </div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Why Meritech</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Insights</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Company</a></div>
+      <a href="#" class="mn-mob-cta">Talk to us</a>
+    </div>
+  </div>
+
+  <!-- Nav spacer -->
+  <div class="nav-spacer"></div>
+
+  <!-- ============================================================
+       2 · HERO BANNER
+  ============================================================ -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Wireless Portfolio / Analyse &amp; Intelligence</p>
+      <p class="hero-product">Centra-SD</p>
+      <h1 class="hero-headline">One screen. The entire<br>test estate.</h1>
+      <p class="hero-body">Centra-SD is the Linux-based analytics platform that gives the whole team a single view of all field activity — live data from every Sigma device in one dashboard, accessible from any browser. No installation. No VPN. Nothing to configure on the test side.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary-pill">
+          See the portfolio
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="#" class="btn-outline-pill">
+          Talk to an engineer
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="hero-img-fill">
+        <img src="images/csd_banner_image.png" alt="Centra-SD hero">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3 · SUBNAV
+  ============================================================ -->
+  <nav class="subnav" id="mainSubnav" aria-label="Page sections">
+    <div class="container-xxl">
+      <div class="subnav-links">
+        <a href="#section-overview"   class="subnav-link active">Overview</a>
+        <a href="#section-highlights" class="subnav-link">Highlights</a>
+        <a href="#section-ai"         class="subnav-link">AI &amp; Big data</a>
+        <a href="#section-features"   class="subnav-link">Main features</a>
+        <a href="#section-usecases"   class="subnav-link">Use cases</a>
+        <a href="#section-related"    class="subnav-link">Related</a>
+      </div>
+      <a href="#" class="btn-get-quote">
+        Get a quote
+        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+          <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+          <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <div class="subnav-placeholder" id="subnavPlaceholder"></div>
+
+  <!-- ============================================================
+       4 · OVERVIEW
+  ============================================================ -->
+  <section id="section-overview">
+    <div class="ov-split">
+      <p class="ov-eyebrow reveal">Overview</p>
+      <div class="ov-grid">
+        <div class="ov-img reveal">
+          <img src="images/csd_ov_imgage.png" alt="Centra-SD dashboard">
+        </div>
+        <div class="ov-content reveal reveal-d1">
+          <h2 class="ov-heading">A tool built for control, not coordination.</h2>
+          <p class="ov-body">Centra-SD runs on Linux and serves the whole team through a browser — no client software, no per-machine configuration, no specialist hardware. Every field device running Sigma-AQ, Sigma-Neo, or Sigma-One reports to the same dashboard in real time.<br><br>The engineer at a desk sees what the driver sees on the road. KPIs update as the drive happens. Reports are ready before the van gets back. One platform. Every device. Live.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ov-statsbar reveal">
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">4K</div>
+        <div class="ov-sbc-name">Devices Supported</div>
+        <p class="ov-sbc-note">Centra-SD scales to manage up to 4,000 concurrent field devices across a single deployment.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">100ms</div>
+        <div class="ov-sbc-name">Refresh Rate</div>
+        <p class="ov-sbc-note">Dashboard KPIs and map data refresh every 100 milliseconds — effectively live, not polled.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">5x/hr</div>
+        <div class="ov-sbc-name">Auto Report Cycles</div>
+        <p class="ov-sbc-note">Scheduled reporting runs automatically up to five times per hour without engineer intervention.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">Any browser</div>
+        <div class="ov-sbc-name">Zero Install</div>
+        <p class="ov-sbc-note">No client software required. Access Centra-SD from any browser on any OS — office or field.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 · HIGHLIGHTS
+  ============================================================ -->
+  <section class="hl-section" id="section-highlights">
+    <div class="hl-inner">
+      <p class="hl-eyebrow reveal">Highlights</p>
+      <h2 class="hl-headline reveal">Why it sits at the centre<br>of the suite.</h2>
+      <div class="hl-grid">
+
+        <div class="hl-card">
+          <div class="hl-card-icon">
+            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true">
+              <path d="M2 11l7 7L24 2" stroke="#00A24F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="hl-card-title">Single pane of glass</div>
+          <p class="hl-card-desc">Every Sigma field device — AQ, Neo, One — reports into one dashboard. One login, one view, no switching between tools to understand what is happening in the field.</p>
+        </div>
+
+        <div class="hl-card">
+          <div class="hl-card-icon">
+            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true">
+              <path d="M2 11l7 7L24 2" stroke="#00A24F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="hl-card-title">Live data, always</div>
+          <p class="hl-card-desc">KPIs and map positions update every 100ms. The office sees what the field sees — simultaneously. No waiting for a session to close before data appears on screen.</p>
+        </div>
+
+        <div class="hl-card">
+          <div class="hl-card-icon">
+            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true">
+              <path d="M2 11l7 7L24 2" stroke="#00A24F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="hl-card-title">AI-driven analysis</div>
+          <p class="hl-card-desc">Built-in AI algorithms detect anomalies, flag degraded cells, and surface root causes without the engineer having to know where to look. The platform learns the network over time.</p>
+        </div>
+
+        <div class="hl-card">
+          <div class="hl-card-icon">
+            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true">
+              <path d="M2 11l7 7L24 2" stroke="#00A24F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="hl-card-title">Built-in post-analysis</div>
+          <p class="hl-card-desc">Automated report generation runs on schedule — no engineer action required. Reports are delivered before the field team returns, not hours after they do.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 · AI & BIG DATA
+  ============================================================ -->
+  <section id="section-ai" class="csd-ai-section">
+    <div class="container-xxl">
+      <div class="csd-ai-grid">
+
+        <!-- Left: eyebrow + headline + body -->
+        <div>
+          <p class="csd-ai-eyebrow">AI &amp; Big Data</p>
+          <h2 class="csd-ai-headline">The platform that learns<br>your network.</h2>
+          <p class="csd-ai-body">Centra-SD carries a big-data and machine learning layer that goes beyond monitoring. It builds models from your network data, predicts where problems will surface, and renders coverage predictions directly in the browser — without QGIS expertise. Then Sigma-Neo, the AI assistant built on top of Centra-SD, lets you ask what it all means in plain language.</p>
+        </div>
+
+        <!-- Right: 4 items with green headings and dividers -->
+        <div>
+
+          <div class="csd-ai-item">
+            <p class="csd-ai-item-title">Big Data architecture</p>
+            <p class="csd-ai-item-body">Object Store with Apache Spark processes drive logs at scale. Bins data by time intervals (1, 10, and 60 seconds), extracts KPIs, and appends to a merged database for continuous historical access.</p>
+          </div>
+
+          <div class="csd-ai-item">
+            <p class="csd-ai-item-title">AI modelling</p>
+            <p class="csd-ai-item-body">AI service creates models for parameters, bins, months, and years. Models predict RSRP and coverage patterns in areas that haven't been driven yet — identifying likely bad spots before sending a field team.</p>
+          </div>
+
+          <div class="csd-ai-item">
+            <p class="csd-ai-item-title">Polygon prediction &amp; tile service</p>
+            <p class="csd-ai-item-body">Select any area, create a polygon, and render instant coverage predictions as tiles in the web overview — no desktop GIS tool required. The 2021 model was validated against a 2025 drive test result.</p>
+          </div>
+
+          <div>
+            <p class="csd-ai-item-title">Sigma-Neo</p>
+            <p class="csd-ai-item-body">The AI chatbox layer on top of Centra-SD. Ask your network questions in plain language — and get answers drawn from the data the platform already holds.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7 · MAIN FEATURES
+  ============================================================ -->
+  <section class="mf-section" id="section-features">
+    <div class="mf-wrap">
+      <div class="mf-top">
+        <div>
+          <div class="mf-eyebrow reveal">Main features</div>
+          <h2 class="mf-headline reveal">Three pillars.<br>One purpose.</h2>
+          <div class="mf-pills reveal">
+            <button class="mf-pill active" data-mfpill="fn">Functions</button>
+            <button class="mf-pill" data-mfpill="ft">Features</button>
+            <button class="mf-pill" data-mfpill="adv">Advantages</button>
+          </div>
+        </div>
+        <div>
+          <p class="mf-desc reveal">Centra-SD brings live collection, AI analysis, and automated reporting into a single Linux-based platform — designed to be always-on, browser-accessible, and manageable without specialist hardware. The tabs below show what it collects, what it runs, and why teams replace three tools with one.</p>
+        </div>
+      </div>
+
+      <div class="mf-lists reveal">
+
+        <!-- Functions panel -->
+        <div class="mf-panel active" id="mf-fn">
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Receives live data from all connected Sigma field devices simultaneously
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Displays live KPIs and device positions on a unified map dashboard
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Runs automated report generation on schedule without engineer input
+            </li>
+          </ul>
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Applies AI anomaly detection and root cause analysis across all incoming data
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Sends alerts and notifications when KPIs breach operator-defined thresholds
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Stores and archives all session data for historical comparison and trending
+            </li>
+          </ul>
+        </div>
+
+        <!-- Features panel -->
+        <div class="mf-panel" id="mf-ft">
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Linux-based server — no Windows dependency, no per-user licensing
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Browser-based UI — accessible from any device, any OS, any location
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Scales to 4,000 concurrent field devices in a single deployment
+            </li>
+          </ul>
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              100ms dashboard refresh — live, not polled
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Compatible with Sigma-AQ, Sigma-Neo, Sigma-One, and Sigma-LA
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Exportable reports in PDF, Excel, and standard telecom formats
+            </li>
+          </ul>
+        </div>
+
+        <!-- Advantages panel -->
+        <div class="mf-panel" id="mf-adv">
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              No client software or VPN — the whole team accesses from a browser
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Office sees what the field sees — in real time, not on a delay
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              AI analysis runs continuously — no manual review needed to spot problems
+            </li>
+          </ul>
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Reports auto-generated — ready before the field team returns to the office
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Replaces separate monitoring, reporting, and analysis tools with one platform
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Linux stability — runs unattended, no OS reboots or maintenance windows
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8 · USE CASES
+  ============================================================ -->
+  <section class="uc-section" id="section-usecases">
+    <div class="uc-wrap">
+      <div class="uc-top">
+        <div>
+          <div class="uc-eyebrow reveal">USE CASES</div>
+          <h2 class="uc-headline reveal">Where Centra-SD<br>earns its centre.</h2>
+        </div>
+        <div>
+          <p class="uc-subtitle reveal">Three workflows where a live, intelligent platform does more than a dashboard. Each one shows what changes when the office can see the field in real time.</p>
+        </div>
+      </div>
+
+      <div class="uc-cards">
+
+        <!-- Card 1 -->
+        <div class="uc-card">
+          <div class="uc-card-tab">Network optimisation</div>
+          <div class="uc-card-img">
+            <!-- <img src="images/background.png" alt="Network optimisation"> -->
+          </div>
+          <div class="uc-card-body">
+            <div class="uc-card-title">Tune in real time, not after the fact</div>
+            <p class="uc-card-desc">The optimisation engineer watches live KPIs from every drive simultaneously. Centra-SD flags the cells that are degraded while the van is still on the road — not in the post-processing report two hours later.</p>
+            <a href="#" class="uc-card-link">
+              Read the story
+              <svg width="17" height="9" viewBox="0 0 17 9" fill="none" aria-hidden="true">
+                <line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(61,58,58)" stroke-width="1"></line>
+                <path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(61,58,58)" stroke-width="1" fill="none"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="uc-card">
+          <div class="uc-card-tab">Benchmarking management</div>
+          <div class="uc-card-img">
+            <!-- <img src="images/img_sigma-as2.png" alt="Benchmarking management"> -->
+          </div>
+          <div class="uc-card-body">
+            <div class="uc-card-title">Manage the campaign, not the devices</div>
+            <p class="uc-card-desc">Track dozens of field devices across a benchmarking campaign from a single screen. Centra-SD shows coverage, route progress, and live KPIs per operator — the campaign manager stays in the office.</p>
+            <a href="#" class="uc-card-link">
+              Read the story
+              <svg width="17" height="9" viewBox="0 0 17 9" fill="none" aria-hidden="true">
+                <line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(61,58,58)" stroke-width="1"></line>
+                <path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(61,58,58)" stroke-width="1" fill="none"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="uc-card">
+          <div class="uc-card-tab">Live field monitoring</div>
+          <div class="uc-card-img">
+            <!-- <img src="images/Sigma-as_image_1.jpg" alt="Live field monitoring"> -->
+          </div>
+          <div class="uc-card-body">
+            <div class="uc-card-title">Always-on visibility, zero manual effort</div>
+            <p class="uc-card-desc">Centra-SD runs continuously — receiving, analysing, and alerting without engineer intervention. The network team knows about a problem before the field team calls it in.</p>
+            <a href="#" class="uc-card-link green">
+              Read the story
+              <svg width="17" height="9" viewBox="0 0 17 9" fill="none" aria-hidden="true">
+                <line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(0,162,79)" stroke-width="1"></line>
+                <path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(0,162,79)" stroke-width="1" fill="none"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8b · ECOSYSTEM
+  ============================================================ -->
+  <section class="csd-eco-section">
+    <div class="container-xxl">
+
+      <!-- Top: headline left, subtitle right -->
+      <div class="csd-eco-intro">
+        <div>
+          <p class="csd-eco-kicker">Ecosystem</p>
+          <h2 class="csd-eco-headline">Where Centra-SD<br>earns its place.</h2>
+        </div>
+        <div class="csd-eco-intro-right">
+          <p class="csd-eco-body">Not case studies in the brochure sense. Short reads on what actually broke, what we changed, and the number that moved because of it.</p>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="csd-divider"></div>
+
+      <!-- 3 Stage cards -->
+      <div class="csd-stage-grid">
+
+        <!-- Card 1: Stage 01 -->
+        <div class="eco-card">
+          <p class="csd-stage-label">Stage 01 · Capture</p>
+          <h3 class="csd-stage-title">Network operations centre</h3>
+          <p class="csd-stage-body">Replace the war-room whiteboards. Schedule tests, watch KPIs come back live on the map, drill to the problem cell — all from a single browser tab.</p>
+        </div>
+
+        <!-- Card 2: Stage 02 (active by default) -->
+        <div class="eco-card eco-active">
+          <p class="csd-stage-label">Stage 02 · Consolidate &amp; Monitor</p>
+          <h3 class="csd-stage-title">Benchmarking &amp; cluster</h3>
+          <p class="csd-stage-body">Automated SSV, benchmarking, and cluster work with geographical control. Reports generated automatically on upload. Log archive for historical retrieval.</p>
+        </div>
+
+        <!-- Card 3: Stage 03 -->
+        <div class="eco-card">
+          <p class="csd-stage-label">Stage 03 · Analyse</p>
+          <h3 class="csd-stage-title">AI-guided network planning</h3>
+          <p class="csd-stage-body">AI models built from historical drive data predict coverage in undriven areas. Polygon-based area selection, instant tile rendering in the browser — find the bad spots before dispatching the field team.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9 · RELATED PRODUCTS
+  ============================================================ -->
+  <section class="rel-section" id="section-related">
+    <div class="rel-wrap">
+      <h2 class="rel-headline reveal">Centra-SD rarely<br>works alone.</h2>
+      <div class="rel-grid">
+        <div class="rel-card">
+          <div class="rel-tag">Field Collection</div>
+          <div class="rel-name">Sigma-Neo</div>
+          <p class="rel-desc">Field campaign tool for operator sites. Sends live data to Centra-SD so the office tracks every site visit in real time.</p>
+        </div>
+        <a href="sigma-aq.html" class="rel-card">
+          <div class="rel-tag">Drive &amp; Walk Test</div>
+          <div class="rel-name">Sigma-AQ</div>
+          <p class="rel-desc">Android-based drive and walk test tool. Streams live KPIs and position data to Centra-SD throughout every session.</p>
+        </a>
+        <div class="rel-card">
+          <div class="rel-tag">Multi-Job Field Tool</div>
+          <div class="rel-name">Sigma-One</div>
+          <p class="rel-desc">Pick the job — the tools follow. Sigma-One feeds all session types into Centra-SD through the same live data pipeline.</p>
+        </div>
+        <a href="Sigma-PA.html" class="rel-card">
+          <div class="rel-tag">Post-Processing</div>
+          <div class="rel-name">Sigma-PA</div>
+          <p class="rel-desc">Where the logs Centra-SD collects become a finished report. Advanced post-processing and deep protocol analysis engine.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10 · FOOTER
+  ============================================================ -->
+  <footer class="ft-footer">
+    <div class="ft-main">
+      <div class="ft-brand">
+        <a href="index.html" class="ft-logo">
+          <img src="images/Meritech_logo_white.png" alt="Meritech">
+        </a>
+        <p class="ft-desc">Welcome to Meritech, where innovation and excellence converge to redefine the landscape of mobile network T&amp;M, Network optimization, LPWA IoT and trendsetting bespoke IT services. As a leading manufacturer of cutting-edge solutions and IT Services provider, we are dedicated to providing Software and Hardware solutions that empower Global Customers to stay ahead of the ever-evolving mobile wireless and IoT industry.</p>
+        <a href="#" class="ft-cta">
+          Talk to us
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+            <line x1="0" y1="5" x2="15" y2="5" stroke="white" stroke-width="1.4"></line>
+            <path d="M11 1.5L15.5 5L11 8.5" stroke="white" stroke-width="1.4" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="ft-nav" aria-label="Footer navigation">
+        <div class="ft-col">
+          <div class="ft-col-head">Wireless</div>
+          <a href="sigma-la.html" class="ft-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="ft-link">Sigma-AQ</a>
+          <a href="sigma-aq-boss.html" class="ft-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="ft-link">Sigma-One</a>
+          <a href="sigma-ml.html" class="ft-link">Sigma-ML</a>
+          <a href="Sigma-PA.html" class="ft-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="ft-link">Centra-SD</a>
+          <a href="#" class="ft-link">Sigma-Neo</a>
+          <a href="centra-experitest.html" class="ft-link">Centra-Experitest</a>
+          <a href="#" class="ft-link">Sigma-AQ Reporting Server</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IoT</div>
+          <a href="#" class="ft-link">monoZ</a>
+          <a href="#" class="ft-link">Xeno+</a>
+          <a href="#" class="ft-link">Mesimo</a>
+          <a href="#" class="ft-link">Centra IoT</a>
+          <a href="#" class="ft-link">IoT Consulting</a>
+          <a href="#" class="ft-link">Device Management</a>
+          <a href="#" class="ft-link">Connectivity</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IT &amp; Cloud</div>
+          <a href="#" class="ft-link">Data &amp; AI</a>
+          <a href="#" class="ft-link">DevOps</a>
+          <a href="#" class="ft-link">Cloud</a>
+          <a href="#" class="ft-link">ServiceNow</a>
+          <a href="#" class="ft-link">zoECON™</a>
+          <a href="#" class="ft-link">IVS</a>
+          <a href="#" class="ft-link">Managed IT</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">Company</div>
+          <a href="#" class="ft-link">Who we are</a>
+          <a href="#" class="ft-link">Success stories</a>
+          <a href="#" class="ft-link">News &amp; events</a>
+          <a href="#" class="ft-link">Global presence</a>
+          <a href="#" class="ft-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; Meritech 2026 &middot; All Rights Reserved</span>
+      <div class="ft-countries">
+        <span>Japan</span><span class="ft-sep">|</span>
+        <span>India</span><span class="ft-sep">|</span>
+        <span>Singapore</span><span class="ft-sep">|</span>
+        <span>Thailand</span><span class="ft-sep">|</span>
+        <span>USA</span><span class="ft-sep">|</span>
+        <span>UK</span><span class="ft-sep">|</span>
+        <span>Germany</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

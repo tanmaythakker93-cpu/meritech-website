@@ -1,0 +1,638 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xeno+ — Meritech</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+
+  <!-- ============================================================
+       1 · MAIN NAVIGATION
+  ============================================================ -->
+  <nav class="mn-bar">
+    <div class="container-xxl">
+
+      <!-- Logo -->
+      <a class="mn-logo" href="index.html">
+        <img src="images/Meritech_logo_banner.svg" alt="Meritech" >
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu">
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+      </button>
+
+      <!-- Desktop nav -->
+      <nav class="mn-nav">
+
+        <!-- Wireless -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown">
+            <div class="dd-grid dd-grid-3">
+              <div>
+                <div class="dd-col-head">Capture &amp; Automate</div>
+                <a href="sigma-la.html" class="dd-product"><span class="dd-product-name">Sigma-LA</span><span class="dd-product-desc">Windows drive test — multi-UE parallel capture</span></a>
+                <a href="sigma-aq.html" class="dd-product"><span class="dd-product-name">Sigma-AQ</span><span class="dd-product-desc">Automated drive test — 50% faster reporting</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">Field campaigns at operator sites</span></a>
+                <a href="sigma-aq-boss.html" class="dd-product"><span class="dd-product-name">Sigma-AQ Boss</span><span class="dd-product-desc">Remote controller — keep engineers in the office</span></a>
+                <a href="sigma-one.html" class="dd-product"><span class="dd-product-name">Sigma-One</span><span class="dd-product-desc">Ruggedized capture — COTS, IoT &amp; connected car</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Analyze &amp; Intelligence</div>
+                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Tune until the field matches intent</span></a>
+                <a href="Sigma-PA.html" class="dd-product"><span class="dd-product-name">Sigma-PA</span><span class="dd-product-desc">Post-processing &amp; protocol analysis platform</span></a>
+                <a href="sigma-ml.html" class="dd-product"><span class="dd-product-name">Sigma-ML</span><span class="dd-product-desc">Mobile logger — walk test from a single smartphone</span></a>
+                <a href="centra-experitest.html" class="dd-product"><span class="dd-product-name">Centra-Experitest</span><span class="dd-product-desc">OTT &amp; QoE — what the subscriber actually feels</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-AQ Reporting Server</span><span class="dd-product-desc">Post-processing &amp; deep protocol analysis</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="planning-design.html" class="dd-product"><span class="dd-product-name">Planning &amp; Design</span><span class="dd-product-desc">Site, propagation, capacity, spectrum</span></a>
+                <a href="drive-walk-test.html" class="dd-product"><span class="dd-product-name">Drive &amp; Walk Test</span><span class="dd-product-desc">Multi-device field capture, L1–L4</span></a>
+                <a href="network-optimization.html" class="dd-product"><span class="dd-product-name">Network Optimization</span><span class="dd-product-desc">Initial and continuous performance tuning</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore Wireless portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IoT -->
+        <div class="mn-item">
+          <a class="mn-link" href="IoT-Products.html">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">monoZ</span><span class="dd-product-desc">LPWA device-to-cloud suite</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Centra IoT</span><span class="dd-product-desc">Ruggedized edge capture device</span></a>
+                <a href="XENO+.html" class="dd-product"><span class="dd-product-name">Xeno+ suite</span><span class="dd-product-desc">Solderable AI/ML edge modules for IoT</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
+                <a href="mesimo.html" class="dd-product"><span class="dd-product-name">Mesimo</span><span class="dd-product-desc">Global cellular IoT connectivity</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="IoT-Products.html" class="dd-explore">Explore IoT portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IT & Cloud -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer for telecom operators</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">netSLAM™</span><span class="dd-product-desc">Independent validation &amp; assurance</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">Data &amp; AI</span><span class="dd-product-desc">Data platforms, analytics &amp; AI solutions</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">DevOps</span><span class="dd-product-desc">CI/CD, automation, cloud-native delivery</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">ServiceNow</span><span class="dd-product-desc">Enterprise workflows &amp; ITSM</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Managed IT</span><span class="dd-product-desc">Ongoing operations &amp; support</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore IT &amp; Cloud</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item"><a class="mn-link" href="#">Why Meritech</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Insights</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Company</a></div>
+
+      </nav>
+
+      <a href="#" class="btn-talk">Talk to us</a>
+      <div class="mn-accent"></div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE DRAWER
+  ============================================================ -->
+  <div class="mn-mobile" id="mnMobile">
+    <div class="mn-mobile-inner">
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-wireless">
+          <div class="mn-mob-sub-head">Capture &amp; Automate</div>
+          <a href="sigma-la.html" class="mn-mob-sub-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="mn-mob-sub-link">Sigma-AQ</a>
+          <a href="#" class="mn-mob-sub-link">Sigma-Neo</a>
+          <a href="sigma-aq-boss.html" class="mn-mob-sub-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="mn-mob-sub-link">Sigma-One</a>
+          <div class="mn-mob-sub-head">Analyze &amp; Intelligence</div>
+          <a href="centra_sd.html" class="mn-mob-sub-link">Centra-SD</a>
+          <a href="Sigma-PA.html" class="mn-mob-sub-link">Sigma-PA</a>
+          <a href="sigma-ml.html" class="mn-mob-sub-link">Sigma-ML</a>
+          <a href="centra-experitest.html" class="mn-mob-sub-link">Centra-Experitest</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="planning-design.html" class="mn-mob-sub-link">Planning &amp; Design</a>
+          <a href="drive-walk-test.html" class="mn-mob-sub-link">Drive &amp; Walk Test</a>
+          <a href="network-optimization.html" class="mn-mob-sub-link">Network Optimization</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="iot">IoT <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-iot">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">monoZ</a>
+          <a href="#" class="mn-mob-sub-link">Centra IoT</a>
+          <a href="XENO+.html" class="mn-mob-sub-link">Xeno+ suite</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">IoT Consulting</a>
+          <a href="#" class="mn-mob-sub-link">Device Management</a>
+          <a href="#" class="mn-mob-sub-link">Mesimo</a>
+          <a href="#" class="mn-mob-sub-link">Connectivity</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-it">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">zoECON™</a>
+          <a href="#" class="mn-mob-sub-link">netSLAM™</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">Data &amp; AI</a>
+          <a href="#" class="mn-mob-sub-link">DevOps</a>
+          <a href="#" class="mn-mob-sub-link">ServiceNow</a>
+          <a href="#" class="mn-mob-sub-link">Managed IT</a>
+        </div>
+      </div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Why Meritech</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Insights</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Company</a></div>
+      <a href="#" class="mn-mob-cta">Talk to us</a>
+    </div>
+  </div>
+
+  <!-- Nav spacer -->
+  <div class="nav-spacer"></div>
+
+  <!-- ============================================================
+       2 · HERO BANNER
+  ============================================================ -->
+  <section class="hero xeno-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">XENO+&#8482; &middot; EDGE AI/ML SOM</p>
+      <h1 class="hero-headline">Audio-processing AI/ML,<br>added to your design.</h1>
+      <p class="hero-body">Xeno+ is a solderable SOM module that adds audio-processing AI/ML capability to your design. Add audio mics, I2C sensors, and a battery circuit around the module — and build new battery-powered ML edge devices in short time.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary-pill">
+          Explore at exosy.com
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="#" class="btn-outline-pill">
+          See Technical Specification
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3 · SUBNAV
+  ============================================================ -->
+  <nav class="subnav" id="mainSubnav" aria-label="Page sections">
+    <div class="container-xxl">
+      <div class="subnav-links">
+        <a href="#section-suite"        class="subnav-link active">The Suite</a>
+        <a href="#section-modules"      class="subnav-link">Modules</a>
+        <a href="#section-how-it-works" class="subnav-link">How It Works</a>
+        <a href="#section-where-it-fits" class="subnav-link">Where It Fits</a>
+        <a href="#section-usecases"     class="subnav-link">Use Cases</a>
+        <a href="#section-faq"          class="subnav-link">FAQ</a>
+      </div>
+      <a href="#" class="btn-get-quote">
+        Get a quote
+        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+          <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+          <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <div class="subnav-placeholder" id="subnavPlaceholder"></div>
+
+  <!-- ============================================================
+       4 · THE XENO+ SUITE
+  ============================================================ -->
+  <section class="xs-section" id="section-suite">
+    <div class="xs-wrap">
+      <span class="xs-eyebrow reveal">The Xeno+ Suite</span>
+      <div class="xs-grid">
+        <div>
+          <h2 class="xs-headline reveal">Two modules.<br>One purpose.</h2>
+        </div>
+        <div>
+          <p class="xs-body reveal reveal-d1">Xeno+ is a family of solderable System-On-Modules for building intelligent and secure IoT devices. One module for general IoT, one purpose-built for always-on machine learning — both designed to drop directly into your hardware without a separate AI processor to integrate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 · MODULE CARDS
+  ============================================================ -->
+  <section class="mc-section" id="section-modules">
+    <div class="mc-wrap">
+      <div class="mc-grid reveal">
+
+        <!-- Card 1 — Nano ML -->
+        <div class="mc-card">
+          <div class="mc-card-badge">WI-FI + BLE Nano ML Module</div>
+          <div class="mc-card-body">
+            <div class="mc-card-title">Xeno+&#8482; Nano ML</div>
+
+            <div class="mc-feature">
+              <div class="mc-feature-name">Syntiant NDP120 neural processor</div>
+              <div class="mc-feature-desc">Runs multiple audio and sensor ML models simultaneously at minimal power — below 1mW at 4kHz, with fully-connected networks up to 16 layers.</div>
+            </div>
+
+            <div class="mc-feature">
+              <div class="mc-feature-name">Wi-Fi + BLE 5.0 connectivity</div>
+              <div class="mc-feature-desc">Eon Trune Nano 7060 ultra-low-power module with dual 2.4GHz BLE and 13.4GHz Wi-Fi radios, and 1Mbps BLE 5.0 for real-time cloud updates.</div>
+            </div>
+
+            <div class="mc-feature">
+              <div class="mc-feature-name">Build only the carrier board</div>
+              <div class="mc-feature-desc">Add audio mics, I2C sensors, and a battery power circuit around the module. The ML core is already inside — focus on your application, not the AI stack.</div>
+            </div>
+
+            <div class="mc-tags">
+              <span class="mc-tag">Audio classify</span>
+              <span class="mc-tag">Motion detect</span>
+              <span class="mc-tag">Anomaly detection</span>
+              <span class="mc-tag">Keyword spotting</span>
+              <span class="mc-tag">Low-power inference</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 — SOM -->
+        <div class="mc-card">
+          <div class="mc-card-badge">System On Module</div>
+          <div class="mc-card-body">
+            <div class="mc-card-title">Xeno+&#8482; SOM</div>
+
+            <div class="mc-feature">
+              <div class="mc-feature-name">Solderable, secure by design</div>
+              <div class="mc-feature-desc">Built for intelligent and secure IoT devices — drops directly into your hardware design with hardware-based secure element and encrypted boot.</div>
+            </div>
+
+            <div class="mc-feature">
+              <div class="mc-feature-name">Smart-product ready</div>
+              <div class="mc-feature-desc">Designed for smart metering, smart lighting, smart tracking, and industrial automation applications with pre-integrated application framework.</div>
+            </div>
+
+            <div class="mc-feature">
+              <div class="mc-feature-name">Long-life, low-power</div>
+              <div class="mc-feature-desc">Low-power chips and circuitry tuned to battery-powered IoT sensors with long deployment lifetimes — engineered for years in the field, not months.</div>
+            </div>
+
+            <div class="mc-tags">
+              <span class="mc-tag">Smart metering</span>
+              <span class="mc-tag">Smart lighting</span>
+              <span class="mc-tag">Asset tracking</span>
+              <span class="mc-tag">Industrial automation</span>
+              <span class="mc-tag">Secure boot</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 · FROM MODULE TO ML EDGE DEVICE
+  ============================================================ -->
+  <section class="fm-section" id="section-how-it-works">
+    <div class="fm-wrap">
+      <div class="fm-intro">
+        <div>
+          <h2 class="fm-headline reveal">From module to ML<br>edge device.</h2>
+        </div>
+        <div>
+          <p class="fm-body reveal reveal-d1">Xeno+ is designed so engineering starts at the application, not the AI stack. The ML core, neural processor, and connectivity ship inside the module — your team builds the carrier board and the product logic on top.</p>
+        </div>
+      </div>
+
+      <div class="fm-steps reveal">
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 01</span>
+          <div class="fm-step-title">Solder the module</div>
+          <p class="fm-step-desc">The compact, solderable SOM drops onto your carrier board — no separate AI processor to design in or certify separately.</p>
+        </div>
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 02</span>
+          <div class="fm-step-title">Add your peripherals</div>
+          <p class="fm-step-desc">Connect audio mics, I2C-based sensors, and battery power circuits around the module to complete your product design.</p>
+        </div>
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 03</span>
+          <div class="fm-step-title">Run ML models on-device</div>
+          <p class="fm-step-desc">The Syntiant NDP120 runs multiple neural networks locally at minimal power — no cloud round-trip for inference, no latency, no data cost.</p>
+        </div>
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 04</span>
+          <div class="fm-step-title">Connect and ship</div>
+          <p class="fm-step-desc">Built-in Wi-Fi + BLE 5.0 uploads data to the cloud in real time. Build new ML edge devices in short time and ship with confidence.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7 · WHERE XENO+ EARNS ITS PLACE (dark)
+  ============================================================ -->
+  <section class="tp-section" id="section-where-it-fits">
+    <div class="tp-wrap">
+      <div class="tp-top">
+        <div>
+          <p class="tp-eyebrow reveal">Where Xeno+ fits</p>
+          <h2 class="tp-headline reveal">Where Xeno+<br>earns its place.</h2>
+        </div>
+        <div>
+          <p class="tp-desc reveal">Three reasons engineering teams choose the Xeno+ module over discrete component integration — from first prototype to volume production.</p>
+        </div>
+      </div>
+
+      <div class="tp-cards reveal">
+
+        <div class="tp-card">
+          <div class="tp-card-label">Ready to integrate</div>
+          <div class="tp-card-title">Build on your existing hardware design.</div>
+          <p class="tp-card-desc">The fastest means to enable AI/ML on your product. Drop the Xeno+ module onto your existing carrier board — the ML core, neural processor, and radio certifications are already inside.</p>
+        </div>
+
+        <div class="tp-card">
+          <div class="tp-card-label">System development support</div>
+          <div class="tp-card-title">Framework development is simplified.</div>
+          <p class="tp-card-desc">Application Development Libs (APIs) for ML learning models, FOTA update, and PKE-based device authentication are pre-integrated. Build the application, not the infrastructure.</p>
+        </div>
+
+        <div class="tp-card">
+          <div class="tp-card-label">40% shorter time to market</div>
+          <div class="tp-card-title">Up to 80% reduction in development cycle.</div>
+          <p class="tp-card-desc">Customers report up to 80% reduction in time to enable AI/ML at the edge, compared to integrating a standalone neural processor from discrete components.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8 · PROVEN B2B BUSINESSES
+  ============================================================ -->
+  <section class="b2b-section" id="section-usecases">
+    <div class="b2b-wrap">
+      <div class="b2b-top">
+        <span class="b2b-eyebrow reveal">Proven in the field</span>
+        <h2 class="b2b-headline reveal">Proven B2B<br>Businesses</h2>
+      </div>
+      <div class="b2b-grid reveal">
+
+        <div class="b2b-card">
+          <div class="b2b-card-title">Wear monitoring device</div>
+          <p class="b2b-card-desc">Wearable sensor watches and wear monitoring devices with always-on device ML — continuous inference at under 1mW, no battery drain.</p>
+        </div>
+
+        <div class="b2b-card">
+          <div class="b2b-card-title">Audio classification</div>
+          <p class="b2b-card-desc">Audio classification devices and voice command / audio event detection — keyword spotting and anomaly recognition running entirely on-module.</p>
+        </div>
+
+        <div class="b2b-card">
+          <div class="b2b-card-title">IoT camera</div>
+          <p class="b2b-card-desc">Connected camera devices and point-of-interest detection applications — Xeno+ handles the ML inference while connectivity pushes results to the cloud.</p>
+        </div>
+
+        <div class="b2b-card">
+          <div class="b2b-card-title">Environmental sensors</div>
+          <p class="b2b-card-desc">Solar-powered weather stations, air quality sensors, and BLE beacon gateways — battery-backed, long-life deployments with on-device anomaly detection.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9 · FAQ
+  ============================================================ -->
+  <section class="faq-section xeno-faq" id="section-faq">
+    <div class="faq-wrap">
+      <div class="faq-top">
+        <span class="faq-eyebrow reveal">Common Questions</span>
+        <h2 class="faq-headline reveal">Before you talk<br>to an engineer.</h2>
+      </div>
+
+      <div class="faq-items reveal">
+
+        <div class="faq-item is-open">
+          <div class="faq-q" role="button" aria-expanded="true">
+            <span class="faq-q-text">What's the difference between Xeno+ SOM and Xeno+ Nano ML?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">The Xeno+ SOM is a general-purpose solderable module designed for intelligent and secure IoT applications — smart metering, asset tracking, industrial automation. The Xeno+ Nano ML adds a dedicated Syntiant NDP120 neural decision processor plus Wi-Fi + BLE 5.0 for always-on audio and sensor ML inference at the edge. If your application needs on-device ML — keyword spotting, anomaly detection, audio classification — the Nano ML is the right choice.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" aria-expanded="false">
+            <span class="faq-q-text">What neural processor does the Nano ML module use?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">The Xeno+ Nano ML integrates the Syntiant NDP120 neural decision processor, which runs multiple audio and sensor ML models simultaneously at minimal power — below 1mW at 4kHz. It supports fully-connected networks up to 16 layers and is optimised for always-on audio classification, keyword spotting, and sensor anomaly detection workloads.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" aria-expanded="false">
+            <span class="faq-q-text">What do I need to build around the module?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">You design the carrier board: connect audio microphones, I2C-based sensors, and a battery power circuit around the module. The ML core, neural processor, Wi-Fi + BLE radio, and connectivity certifications are all already inside. The Application Development Libs handle the framework layer — your team focuses on the product application, not the infrastructure beneath it.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" aria-expanded="false">
+            <span class="faq-q-text">How much faster is development with Xeno+?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Customers typically report up to 80% reduction in development time compared to integrating a standalone neural processor from discrete components. The pre-integrated application framework, FOTA update system, PKE-based device authentication, and pre-certified radio module eliminate months of bring-up work that would otherwise sit before application development could even begin.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" aria-expanded="false">
+            <span class="faq-q-text">Where can I find the full product range?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">The full Xeno+ product range — datasheets, evaluation kits, hardware design files, and Application Development Libs — is available at exosy.com. Contact the Meritech team to discuss your application requirements, request samples, or get support selecting the right module for your design.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10 · CTA
+  ============================================================ -->
+  <section class="cta-section xeno-cta">
+    <div class="cta-wrap">
+      <h2 class="cta-headline reveal">Ready to add ML to your<br>next device?</h2>
+      <p class="cta-eyebrow reveal reveal-d1" class="cta-eyebrow-centered">Whether it's the SOM for an IoT device or the Nano ML for an always-on voice application — the team can help you find the right module for your design.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-primary-pill">
+          Explore Xeno+ products
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="#" class="btn-outline-pill">
+          Talk to us
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       11 · FOOTER
+  ============================================================ -->
+  <footer class="ft-footer">
+    <div class="ft-main">
+      <div class="ft-brand">
+        <a href="index.html" class="ft-logo">
+          <img src="images/Meritech_logo_white.png" alt="Meritech" >
+        </a>
+        <p class="ft-desc">Welcome to Meritech, where innovation and excellence converge to redefine the landscape of mobile network T&amp;M, Network optimization, LPWA IoT and trendsetting bespoke IT services. As a leading manufacturer of cutting-edge solutions and IT Services provider, we are dedicated to providing Software and Hardware solutions that empower Global Customers to stay ahead of the ever-evolving mobile wireless and IoT industry.</p>
+        <a href="#" class="ft-cta">
+          Talk to us
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+            <line x1="0" y1="5" x2="15" y2="5" stroke="white" stroke-width="1.4"></line>
+            <path d="M11 1.5L15.5 5L11 8.5" stroke="white" stroke-width="1.4" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="ft-nav" aria-label="Footer navigation">
+        <div class="ft-col">
+          <div class="ft-col-head">Wireless</div>
+          <a href="sigma-la.html" class="ft-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="ft-link">Sigma-AQ</a>
+          <a href="sigma-aq-boss.html" class="ft-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="ft-link">Sigma-One</a>
+          <a href="sigma-ml.html" class="ft-link">Sigma-ML</a>
+          <a href="Sigma-PA.html" class="ft-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="ft-link">Centra-SD</a>
+          <a href="#" class="ft-link">Sigma-Neo</a>
+          <a href="centra-experitest.html" class="ft-link">Centra-Experitest</a>
+          <a href="#" class="ft-link">Sigma-AQ Reporting Server</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IoT</div>
+          <a href="#" class="ft-link">monoZ</a>
+          <a href="XENO+.html" class="ft-link">Xeno+</a>
+          <a href="#" class="ft-link">Mesimo</a>
+          <a href="#" class="ft-link">Centra IoT</a>
+          <a href="#" class="ft-link">IoT Consulting</a>
+          <a href="#" class="ft-link">Device Management</a>
+          <a href="#" class="ft-link">Connectivity</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IT &amp; Cloud</div>
+          <a href="#" class="ft-link">Data &amp; AI</a>
+          <a href="#" class="ft-link">DevOps</a>
+          <a href="#" class="ft-link">Cloud</a>
+          <a href="#" class="ft-link">ServiceNow</a>
+          <a href="#" class="ft-link">zoECON&#8482;</a>
+          <a href="#" class="ft-link">IVS</a>
+          <a href="#" class="ft-link">Managed IT</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">Company</div>
+          <a href="#" class="ft-link">Who we are</a>
+          <a href="#" class="ft-link">Success stories</a>
+          <a href="#" class="ft-link">News &amp; events</a>
+          <a href="#" class="ft-link">Global presence</a>
+          <a href="#" class="ft-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; Meritech 2026 &middot; All Rights Reserved</span>
+      <div class="ft-countries">
+        <span>Japan</span><span class="ft-sep">|</span>
+        <span>India</span><span class="ft-sep">|</span>
+        <span>Singapore</span><span class="ft-sep">|</span>
+        <span>Thailand</span><span class="ft-sep">|</span>
+        <span>USA</span><span class="ft-sep">|</span>
+        <span>UK</span><span class="ft-sep">|</span>
+        <span>Germany</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

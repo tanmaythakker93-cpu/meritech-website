@@ -1,0 +1,811 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sigma-AQ — Meritech</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       1 · MAIN NAVIGATION
+  ============================================================ -->
+  <nav class="mn-bar">
+    <div class="container-xxl">
+
+      <!-- Logo -->
+      <a class="mn-logo" href="index.html">
+        <img src="images/Meritech_logo_banner.svg" alt="Meritech" >
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu">
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+      </button>
+
+      <!-- Desktop nav -->
+      <nav class="mn-nav">
+
+        <!-- Wireless -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown">
+            <div class="dd-grid dd-grid-3">
+              <div>
+                <div class="dd-col-head">Capture &amp; Automate</div>
+                <a href="sigma-la.html" class="dd-product"><span class="dd-product-name">Sigma-LA</span><span class="dd-product-desc">Cloud-based Linux analytics platform with AI</span></a>
+                <a href="sigma-aq.html" class="dd-product"><span class="dd-product-name">Sigma-AQ</span><span class="dd-product-desc">Automated drive test — 50% faster reporting</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">Field campaigns at operator sites</span></a>
+                <a href="sigma-aq-boss.html" class="dd-product"><span class="dd-product-name">Sigma-AQ Boss</span><span class="dd-product-desc">Remote controller — keep engineers in the office</span></a>
+                <a href="sigma-one.html" class="dd-product"><span class="dd-product-name">Sigma-One</span><span class="dd-product-desc">Ruggedized capture — COTS, IoT &amp; connected car</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Analyze &amp; Intelligence</div>
+                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Tune until the field matches intent</span></a>
+                <a href="Sigma-PA.html" class="dd-product"><span class="dd-product-name">Sigma-PA</span><span class="dd-product-desc">Post-processing &amp; protocol analysis platform</span></a>
+                <a href="sigma-ml.html" class="dd-product"><span class="dd-product-name">Sigma-ML</span><span class="dd-product-desc">Mobile logger — walk test from a single smartphone</span></a>
+                <a href="centra-experitest.html" class="dd-product"><span class="dd-product-name">Centra-Experitest</span><span class="dd-product-desc">OTT &amp; QoE — what the subscriber actually feels</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-AQ Reporting Server</span><span class="dd-product-desc">Post-processing &amp; deep protocol analysis</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="planning-design.html" class="dd-product"><span class="dd-product-name">Planning &amp; Design</span><span class="dd-product-desc">Site, propagation, capacity, spectrum</span></a>
+                <a href="drive-walk-test.html" class="dd-product"><span class="dd-product-name">Drive &amp; Walk Test</span><span class="dd-product-desc">Multi-device field capture, L1–L4</span></a>
+                <a href="network-optimization.html" class="dd-product"><span class="dd-product-name">Network Optimization</span><span class="dd-product-desc">Initial and continuous performance tuning</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore Wireless portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IoT -->
+        <div class="mn-item">
+          <a class="mn-link" href="IoT-Products.html">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="IoT-Products.html" class="dd-product"><span class="dd-product-name">monoZ</span><span class="dd-product-desc">LPWA device-to-cloud suite</span></a>
+                <a href="CENTRA-IoT.html" class="dd-product"><span class="dd-product-name">Centra IoT</span><span class="dd-product-desc">Centralized cloud device management platform</span></a>
+                <a href="XENO+.html" class="dd-product"><span class="dd-product-name">Xeno+ suite</span><span class="dd-product-desc">Solderable AI/ML edge modules for IoT</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
+                <a href="mesimo.html" class="dd-product"><span class="dd-product-name">Mesimo</span><span class="dd-product-desc">Global cellular IoT connectivity</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="IoT-Products.html" class="dd-explore">Explore IoT portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IT & Cloud -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer for telecom operators</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">netSLAM™</span><span class="dd-product-desc">Independent validation &amp; assurance</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">Data &amp; AI</span><span class="dd-product-desc">Data platforms, analytics &amp; AI solutions</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">DevOps</span><span class="dd-product-desc">CI/CD, automation, cloud-native delivery</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">ServiceNow</span><span class="dd-product-desc">Enterprise workflows &amp; ITSM</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Managed IT</span><span class="dd-product-desc">Ongoing operations &amp; support</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore IT &amp; Cloud</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item"><a class="mn-link" href="#">Why Meritech</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Insights</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Company</a></div>
+      </nav>
+
+      <a href="#" class="btn-talk">Talk to us</a>
+      <div class="mn-accent"></div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE DRAWER
+  ============================================================ -->
+  <div class="mn-mobile" id="mnMobile">
+    <div class="mn-mobile-inner">
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-wireless">
+          <div class="mn-mob-sub-head">Capture &amp; Automate</div>
+          <a href="sigma-la.html" class="mn-mob-sub-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="mn-mob-sub-link">Sigma-AQ</a>
+          <a href="#" class="mn-mob-sub-link">Sigma-Neo</a>
+          <a href="sigma-aq-boss.html" class="mn-mob-sub-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="mn-mob-sub-link">Sigma-One</a>
+          <div class="mn-mob-sub-head">Analyze &amp; Intelligence</div>
+          <a href="centra_sd.html" class="mn-mob-sub-link">Centra-SD</a>
+          <a href="Sigma-PA.html" class="mn-mob-sub-link">Sigma-PA</a>
+          <a href="sigma-ml.html" class="mn-mob-sub-link">Sigma-ML</a>
+          <a href="centra-experitest.html" class="mn-mob-sub-link">Centra-Experitest</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="planning-design.html" class="mn-mob-sub-link">Planning &amp; Design</a>
+          <a href="drive-walk-test.html" class="mn-mob-sub-link">Drive &amp; Walk Test</a>
+          <a href="network-optimization.html" class="mn-mob-sub-link">Network Optimization</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="iot">IoT <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-iot">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">monoZ</a>
+          <a href="#" class="mn-mob-sub-link">Centra IoT</a>
+          <a href="#" class="mn-mob-sub-link">Xeno+ suite</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">IoT Consulting</a>
+          <a href="#" class="mn-mob-sub-link">Device Management</a>
+          <a href="#" class="mn-mob-sub-link">Mesimo</a>
+          <a href="#" class="mn-mob-sub-link">Connectivity</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-it">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">zoECON™</a>
+          <a href="#" class="mn-mob-sub-link">netSLAM™</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">Data &amp; AI</a>
+          <a href="#" class="mn-mob-sub-link">DevOps</a>
+          <a href="#" class="mn-mob-sub-link">ServiceNow</a>
+          <a href="#" class="mn-mob-sub-link">Managed IT</a>
+        </div>
+      </div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Why Meritech</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Insights</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Company</a></div>
+      <a href="#" class="mn-mob-cta">Talk to us</a>
+    </div>
+  </div>
+
+  <!-- Nav spacer -->
+  <div class="nav-spacer"></div>
+
+  <!-- ============================================================
+       2 · HERO BANNER
+  ============================================================ -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Wireless Portfolio / Test &amp; Measurement</p>
+      <p class="hero-product">Sigma-AQ</p>
+      <h1 class="hero-headline">The test that<br>runs itself</h1>
+      <p class="hero-body">Sigma-AQ is the Android-based drive and walk test tool that collapses a three-person field operation into one. One-click from test to report. Real-time L1–L3 decode on the device in your hand, indoor and outdoor, SSV to competitive benchmarking with one single training.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary-pill">
+          See the portfolio
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="#" class="btn-outline-pill">
+          Talk to an engineer
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="hero-img-fill">
+        <img src="images/Sigma-as_image_1.jpg" alt="Sigma-AQ hero">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3 · SUBNAV
+  ============================================================ -->
+  <nav class="subnav" id="mainSubnav" aria-label="Page sections">
+    <div class="container-xxl">
+      <div class="subnav-links">
+        <a href="#section-overview"   class="subnav-link active">Overview</a>
+        <a href="#section-highlights" class="subnav-link">Highlights</a>
+        <a href="#section-legacy"     class="subnav-link">Legacy vs Sigma-AQ</a>
+        <a href="#section-features"   class="subnav-link">Main features</a>
+        <a href="#section-usecases"   class="subnav-link">Use cases</a>
+        <a href="#section-related"    class="subnav-link">Related</a>
+      </div>
+      <a href="#" class="btn-get-quote">
+        Get a quote
+        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+          <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+          <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <div class="subnav-placeholder" id="subnavPlaceholder"></div>
+
+  <!-- ============================================================
+       4 · OVERVIEW
+  ============================================================ -->
+  <section id="section-overview">
+    <div class="ov-split">
+      <p class="ov-eyebrow reveal">Overview</p>
+      <div class="ov-grid">
+        <div class="ov-img reveal">
+          <img src="images/img_sigma-as2.png" alt="Sigma-AQ in the field">
+        </div>
+        <div class="ov-content reveal reveal-d1">
+          <h2 class="ov-heading">A tool built for the engineer driving, not the team back at base.</h2>
+          <p class="ov-body">Sigma-AQ runs on the latest Android smartphones and tablets — Samsung, OnePlus, Xiaomi, Sony — so the device in the test is the same device your customers carry. That's not a shortcut. It's the only honest way to measure what subscribers actually experience.<br><br>One-click from test to upload to report. Real-time collection and decoding of Layer 1, 2, and 3 messages. ETSI and ITU-T based QoS/QoE service KPIs. The same tool covers drive test, walk test, SSV, optimization, and competitive benchmarking — with a single training, not three.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ov-statsbar reveal">
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">50%</div>
+        <div class="ov-sbc-name">Operational cost reduction</div>
+        <p class="ov-sbc-note">Cuts cost, manpower, and complexity by over 50% versus the legacy tool approach.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">1</div>
+        <div class="ov-sbc-name">Person per van</div>
+        <p class="ov-sbc-note">Driver only — engineer manages the test remotely. Legacy required driver plus tester plus engineer.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">L1–L3</div>
+        <div class="ov-sbc-name">Real-Time Decode</div>
+        <p class="ov-sbc-note">Layer 1, 2, and 3 messages collected and decoded on the device in the field.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">1 Click</div>
+        <div class="ov-sbc-name">Test · Upload · Report</div>
+        <p class="ov-sbc-note">One-click workflow from field collection to finished report.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 · HIGHLIGHTS
+  ============================================================ -->
+  <section class="hl-section" id="section-highlights">
+    <div class="hl-inner">
+      <p class="hl-eyebrow reveal">Highlights</p>
+      <h2 class="hl-headline reveal">Why one person does<br>the work of three.</h2>
+      <div class="hl-grid">
+
+        <div class="hl-card">
+          <div class="hl-card-icon">
+            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true">
+              <path d="M2 11l7 7L24 2" stroke="#00A24F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="hl-card-title">Runs on end-user devices</div>
+          <p class="hl-card-desc">Supported on Samsung Galaxy S25 series, OnePlus 15, and Xiaomi 15. Testing on the latest devices gives a true representation of what subscribers on your network actually experience.</p>
+        </div>
+
+        <div class="hl-card">
+          <div class="hl-card-icon">
+            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true">
+              <path d="M2 11l7 7L24 2" stroke="#00A24F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="hl-card-title">One-click to report</div>
+          <p class="hl-card-desc">Test, upload, report — the whole workflow in one click. Drive and return to the office. The analysis and reporting runs while the engineer is on the road back.</p>
+        </div>
+
+        <div class="hl-card">
+          <div class="hl-card-icon">
+            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true">
+              <path d="M2 11l7 7L24 2" stroke="#00A24F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="hl-card-title">One tool, every scenario</div>
+          <p class="hl-card-desc">SSV/SCFT, troubleshooting, optimization, competitive benchmarking, indoor, outdoor, drive, walk — one tool addresses them all. One training, not three.</p>
+        </div>
+
+        <div class="hl-card">
+          <div class="hl-card-icon">
+            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true">
+              <path d="M2 11l7 7L24 2" stroke="#00A24F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="hl-card-title">Indoor and outdoor</div>
+          <p class="hl-card-desc">Shopping malls, offices, subways, boats, airports, and event venues — Sigma-AQ measures networks end-to-end from a subscriber perspective, wherever subscribers actually are.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 · LEGACY VS SIGMA-AQ
+  ============================================================ -->
+  <section class="lgc-section" id="section-legacy">
+    <div class="lgc-inner">
+      <p class="lgc-eyebrow reveal">Legacy vs Sigma-AQ</p>
+      <h2 class="lgc-headline reveal">What the same job<br>used to cost.</h2>
+      <div class="lgc-grid reveal">
+
+        <!-- Column headers -->
+        <div class="lgc-col-head">
+          <span class="lgc-col-name">Legacy tool approach</span>
+          <span class="lgc-tag">Before</span>
+        </div>
+        <div class="lgc-col-head">
+          <span class="lgc-col-name">Sigma-AQ</span>
+          <span class="lgc-tag">Now</span>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          Large investment ($$$)
+        </div>
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          Medium investment ($$)
+        </div>
+
+        <!-- Row 2 -->
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          3 separate trainings required
+        </div>
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          1 single training
+        </div>
+
+        <!-- Row 3 -->
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          2 people per van — driver, tester, and engineer on site
+        </div>
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          1 person per van — driver only, engineer manages remotely
+        </div>
+
+        <!-- Row 4 -->
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          Engineer must also physically test
+        </div>
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          Engineer manages the test, not runs it
+        </div>
+
+        <!-- Row 5 -->
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          Silo operation — teams don't share data
+        </div>
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          Inter-operable team — one shared platform
+        </div>
+
+        <!-- Row 6 -->
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          20 separate units for benchmarking van
+        </div>
+        <div class="lgc-cell">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          20 Sigma-AQ mobiles + Boss for benchmarking
+        </div>
+
+        <!-- Row 7 (no bottom border) -->
+        <div class="lgc-cell" class="lgc-cell--no-border">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          100 separate units for walk test
+        </div>
+        <div class="lgc-cell" class="lgc-cell--no-border">
+          <div class="lgc-check">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true"><path d="M13.7.35C13.3-.12 12.7-.12 12.3.35L4.8 9.18 1.7 5.53C1.3 5.06.7 5.06.3 5.53-.1 6-.1 6.71.3 7.18L4.1 11.65C4.3 11.88 4.5 12 4.8 12c.3 0 .5-.12.7-.35L13.7 2c.4-.47.4-1.18 0-1.65Z" fill="rgb(6,166,79)"></path></svg>
+          </div>
+          100 mobiles for drive and walk test
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7 · MAIN FEATURES
+  ============================================================ -->
+  <section class="mf-section" id="section-features">
+    <div class="mf-wrap">
+      <div class="mf-top">
+        <div>
+          <div class="mf-eyebrow reveal">Main features</div>
+          <h2 class="mf-headline reveal">Three pillars.<br>One purpose.</h2>
+          <div class="mf-pills reveal">
+            <button class="mf-pill active" data-mfpill="fn">Functions</button>
+            <button class="mf-pill" data-mfpill="ft">Features</button>
+            <button class="mf-pill" data-mfpill="adv">Advantages</button>
+          </div>
+        </div>
+        <div>
+          <p class="mf-desc reveal">Sigma-AQ folds measurement, application testing, and indoor coverage into a single Android-based tool — designed to be fast, interoperable, and manageable from the office. The tabs below show what it measures, what it runs, and why it reduces cost.</p>
+        </div>
+      </div>
+
+      <div class="mf-lists reveal">
+
+        <!-- Functions panel -->
+        <div class="mf-panel active" id="mf-fn">
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Communicates automatically with attached UEs to collect Layer 1, 2 &amp; 3 data directly from the chipset
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Live data displayed on maps as the drive happens
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Saves logged data to disk for further analysis
+            </li>
+          </ul>
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Displays collected data from Layer 1 to Layer 3 in realtime across all panels
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Real-time L3 decoding with full packet decode
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Imports and replays saved log data after the session
+            </li>
+          </ul>
+        </div>
+
+        <!-- Features panel -->
+        <div class="mf-panel" id="mf-ft">
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Runs on Samsung Galaxy S25, OnePlus 15, Xiaomi 15, Sony Xperia
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Multi-RAT: 5G NR, LTE, WCDMA, GSM simultaneous capture
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              GPS + indoor positioning via BLE and Wi-Fi
+            </li>
+          </ul>
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Up to 20 devices in a single coordinated session
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              ETSI TS 102 250 and ITU-T E.804 QoS/QoE KPIs on-device
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Remote control via Sigma-AQ Boss from the office
+            </li>
+          </ul>
+        </div>
+
+        <!-- Advantages panel -->
+        <div class="mf-panel" id="mf-adv">
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Same device as subscriber — no measurement gap between test and reality
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Driver-only van — engineer manages remotely, stays in office
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              One training covers drive, walk, SSV, benchmarking and QoE
+            </li>
+          </ul>
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              50% lower operational cost versus legacy tool approach
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Report complete before engineer returns from the field
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              No specialist probe hardware — COTS Android devices only
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8 · USE CASES
+  ============================================================ -->
+  <section class="uc-section" id="section-usecases">
+    <div class="uc-wrap">
+      <div class="uc-top">
+        <div>
+          <div class="uc-eyebrow reveal">USE CASES</div>
+          <h2 class="uc-headline reveal">What we learned<br>shipping it.</h2>
+        </div>
+        <div>
+          <p class="uc-subtitle reveal">Not case studies in the brochure sense. Short reads on what actually broke, what we changed, and the number that moved because of it.</p>
+        </div>
+      </div>
+
+      <div class="uc-cards">
+
+        <!-- Card 1 -->
+        <div class="uc-card">
+          <div class="uc-card-tab">Site Verification</div>
+          <div class="uc-card-img">
+            <!-- <img src="images/background.png" alt="Site Verification"> -->
+          </div>
+          <div class="uc-card-body">
+            <div class="uc-card-title">SSV &amp; SCFT</div>
+            <p class="uc-card-desc">Single site verification and cluster field trials — the acceptance evidence a rollout milestone runs on, collected by one engineer in the field.</p>
+            <a href="#" class="uc-card-link">
+              Read the story
+              <svg width="17" height="9" viewBox="0 0 17 9" fill="none" aria-hidden="true">
+                <line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(61,58,58)" stroke-width="1"></line>
+                <path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(61,58,58)" stroke-width="1" fill="none"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="uc-card">
+          <div class="uc-card-tab">Indoor Coverage</div>
+          <div class="uc-card-img">
+            <!-- <img src="images/img_sigma-as2.png" alt="Indoor Coverage"> -->
+          </div>
+          <div class="uc-card-body">
+            <div class="uc-card-title">In-building rollout</div>
+            <p class="uc-card-desc">Malls, airports, subways, offices. Walk-test mode with pinpointed indoor positioning — the same tool, taken off the road and into the building.</p>
+            <a href="#" class="uc-card-link">
+              Read the story
+              <svg width="17" height="9" viewBox="0 0 17 9" fill="none" aria-hidden="true">
+                <line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(61,58,58)" stroke-width="1"></line>
+                <path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(61,58,58)" stroke-width="1" fill="none"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="uc-card">
+          <div class="uc-card-tab">Benchmarking</div>
+          <div class="uc-card-img">
+            <!-- <img src="images/Sigma-as_image_1.jpg" alt="Benchmarking"> -->
+          </div>
+          <div class="uc-card-body">
+            <div class="uc-card-title">Competitive measurement</div>
+            <p class="uc-card-desc">Internal, external, and regulatory benchmarking with geographical control — every network tested on the same device, the same routes, the same methodology.</p>
+            <a href="#" class="uc-card-link green">
+              Read the story
+              <svg width="17" height="9" viewBox="0 0 17 9" fill="none" aria-hidden="true">
+                <line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(0,162,79)" stroke-width="1"></line>
+                <path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(0,162,79)" stroke-width="1" fill="none"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9 · RELATED PRODUCTS
+  ============================================================ -->
+  <section class="rel-section" id="section-related">
+    <div class="rel-wrap">
+      <h2 class="rel-headline reveal">Sigma-AQ rarely<br>works alone.</h2>
+      <div class="rel-grid">
+        <a href="sigma-aq-boss.html" class="rel-card">
+          <div class="rel-tag">Remote Management</div>
+          <div class="rel-name">Sigma-AQ Boss</div>
+          <p class="rel-desc">Centralized web-based remote control and management of Sigma-AQ test probes. Manage unlimited devices from a single server.</p>
+        </a>
+        <a href="Sigma-PA.html" class="rel-card">
+          <div class="rel-tag">Post-Processing</div>
+          <div class="rel-name">Sigma-PA</div>
+          <p class="rel-desc">Where the logs Sigma-AQ collects become a report. Advanced post-processing and analysis engine.</p>
+        </a>
+        <a href="centra_sd.html" class="rel-card">
+          <div class="rel-tag">Cloud AI</div>
+          <div class="rel-name">Centra-SD</div>
+          <p class="rel-desc">Cloud-based Linux analytics platform with built-in AI. Receives Sigma-AQ log files and generates automated cloud reports.</p>
+        </a>
+        <a href="sigma-la.html" class="rel-card">
+          <div class="rel-tag">Drive Test Platform</div>
+          <div class="rel-name">Sigma-LA</div>
+          <p class="rel-desc">Multi-device Windows-based drive test platform. Works alongside Sigma-AQ where deeper L1–L4 parallel capture is needed.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10 · FOOTER
+  ============================================================ -->
+  <footer class="ft-footer">
+    <div class="ft-main">
+      <div class="ft-brand">
+        <a href="index.html" class="ft-logo">
+          <img src="images/Meritech_logo_white.png" alt="Meritech" >
+        </a>
+        <p class="ft-desc">Welcome to Meritech, where innovation and excellence converge to redefine the landscape of mobile network T&amp;M, Network optimization, LPWA IoT and trendsetting bespoke IT services. As a leading manufacturer of cutting-edge solutions and IT Services provider, we are dedicated to providing Software and Hardware solutions that empower Global Customers to stay ahead of the ever-evolving mobile wireless and IoT industry.</p>
+        <a href="#" class="ft-cta">
+          Talk to us
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+            <line x1="0" y1="5" x2="15" y2="5" stroke="white" stroke-width="1.4"></line>
+            <path d="M11 1.5L15.5 5L11 8.5" stroke="white" stroke-width="1.4" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="ft-nav" aria-label="Footer navigation">
+        <div class="ft-col">
+          <div class="ft-col-head">Wireless</div>
+          <a href="sigma-la.html" class="ft-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="ft-link">Sigma-AQ</a>
+          <a href="sigma-aq-boss.html" class="ft-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="ft-link">Sigma-One</a>
+          <a href="sigma-ml.html" class="ft-link">Sigma-ML</a>
+          <a href="Sigma-PA.html" class="ft-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="ft-link">Centra-SD</a>
+          <a href="#" class="ft-link">Sigma-Neo</a>
+          <a href="centra-experitest.html" class="ft-link">Centra-Experitest</a>
+          <a href="#" class="ft-link">Sigma-AQ Reporting Server</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IoT</div>
+          <a href="#" class="ft-link">monoZ</a>
+          <a href="#" class="ft-link">Xeno+</a>
+          <a href="#" class="ft-link">Mesimo</a>
+          <a href="#" class="ft-link">Centra IoT</a>
+          <a href="#" class="ft-link">IoT Consulting</a>
+          <a href="#" class="ft-link">Device Management</a>
+          <a href="#" class="ft-link">Connectivity</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IT &amp; Cloud</div>
+          <a href="#" class="ft-link">Data &amp; AI</a>
+          <a href="#" class="ft-link">DevOps</a>
+          <a href="#" class="ft-link">Cloud</a>
+          <a href="#" class="ft-link">ServiceNow</a>
+          <a href="#" class="ft-link">zoECON™</a>
+          <a href="#" class="ft-link">IVS</a>
+          <a href="#" class="ft-link">Managed IT</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">Company</div>
+          <a href="#" class="ft-link">Who we are</a>
+          <a href="#" class="ft-link">Success stories</a>
+          <a href="#" class="ft-link">News &amp; events</a>
+          <a href="#" class="ft-link">Global presence</a>
+          <a href="#" class="ft-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; Meritech 2026 &middot; All Rights Reserved</span>
+      <div class="ft-countries">
+        <span>Japan</span><span class="ft-sep">|</span>
+        <span>India</span><span class="ft-sep">|</span>
+        <span>Singapore</span><span class="ft-sep">|</span>
+        <span>Thailand</span><span class="ft-sep">|</span>
+        <span>USA</span><span class="ft-sep">|</span>
+        <span>UK</span><span class="ft-sep">|</span>
+        <span>Germany</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,596 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Centra-IoT — Meritech</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       1 · MAIN NAVIGATION
+  ============================================================ -->
+  <nav class="mn-bar">
+    <div class="container-xxl">
+
+      <a class="mn-logo" href="index.html">
+        <img src="images/Meritech_logo_banner.svg" alt="Meritech" >
+      </a>
+
+      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu">
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+      </button>
+
+      <nav class="mn-nav">
+
+        <!-- Wireless -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown">
+            <div class="dd-grid dd-grid-3">
+              <div>
+                <div class="dd-col-head">Capture &amp; Automate</div>
+                <a href="sigma-la.html" class="dd-product"><span class="dd-product-name">Sigma-LA</span><span class="dd-product-desc">Windows drive test — multi-UE parallel capture</span></a>
+                <a href="sigma-aq.html" class="dd-product"><span class="dd-product-name">Sigma-AQ</span><span class="dd-product-desc">Automated drive test — 50% faster reporting</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">Field campaigns at operator sites</span></a>
+                <a href="sigma-aq-boss.html" class="dd-product"><span class="dd-product-name">Sigma-AQ Boss</span><span class="dd-product-desc">Remote controller — keep engineers in the office</span></a>
+                <a href="sigma-one.html" class="dd-product"><span class="dd-product-name">Sigma-One</span><span class="dd-product-desc">Ruggedized capture — COTS, IoT &amp; connected car</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Analyze &amp; Intelligence</div>
+                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Tune until the field matches intent</span></a>
+                <a href="Sigma-PA.html" class="dd-product"><span class="dd-product-name">Sigma-PA</span><span class="dd-product-desc">Post-processing &amp; protocol analysis platform</span></a>
+                <a href="sigma-ml.html" class="dd-product"><span class="dd-product-name">Sigma-ML</span><span class="dd-product-desc">Mobile logger — walk test from a single smartphone</span></a>
+                <a href="centra-experitest.html" class="dd-product"><span class="dd-product-name">Centra-Experitest</span><span class="dd-product-desc">OTT &amp; QoE — what the subscriber actually feels</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-AQ Reporting Server</span><span class="dd-product-desc">Post-processing &amp; deep protocol analysis</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="planning-design.html" class="dd-product"><span class="dd-product-name">Planning &amp; Design</span><span class="dd-product-desc">Site, propagation, capacity, spectrum</span></a>
+                <a href="drive-walk-test.html" class="dd-product"><span class="dd-product-name">Drive &amp; Walk Test</span><span class="dd-product-desc">Multi-device field capture, L1–L4</span></a>
+                <a href="network-optimization.html" class="dd-product"><span class="dd-product-name">Network Optimization</span><span class="dd-product-desc">Initial and continuous performance tuning</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore Wireless portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IoT -->
+        <div class="mn-item">
+          <a class="mn-link" href="IoT-Products.html">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">monoZ</span><span class="dd-product-desc">LPWA device-to-cloud suite</span></a>
+                <a href="CENTRA-IoT.html" class="dd-product"><span class="dd-product-name">Centra IoT</span><span class="dd-product-desc">Centralized cloud device management platform</span></a>
+                <a href="XENO+.html" class="dd-product"><span class="dd-product-name">Xeno+ suite</span><span class="dd-product-desc">Solderable AI/ML edge modules for IoT</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
+                <a href="mesimo.html" class="dd-product"><span class="dd-product-name">Mesimo</span><span class="dd-product-desc">Telemetry into operational signals</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="IoT-Products.html" class="dd-explore">Explore IoT portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IT & Cloud -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer for telecom operators</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">netSLAM™</span><span class="dd-product-desc">Independent validation &amp; assurance</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">Data &amp; AI</span><span class="dd-product-desc">Data platforms, analytics &amp; AI solutions</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">DevOps</span><span class="dd-product-desc">CI/CD, automation, cloud-native delivery</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">ServiceNow</span><span class="dd-product-desc">Enterprise workflows &amp; ITSM</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Managed IT</span><span class="dd-product-desc">Ongoing operations &amp; support</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore IT &amp; Cloud</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item"><a class="mn-link" href="#">Why Meritech</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Insights</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Company</a></div>
+
+      </nav>
+
+      <a href="#" class="btn-talk">Talk to us</a>
+      <div class="mn-accent"></div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE DRAWER
+  ============================================================ -->
+  <div class="mn-mobile" id="mnMobile">
+    <div class="mn-mobile-inner">
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-wireless">
+          <div class="mn-mob-sub-head">Capture &amp; Automate</div>
+          <a href="sigma-la.html" class="mn-mob-sub-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="mn-mob-sub-link">Sigma-AQ</a>
+          <a href="#" class="mn-mob-sub-link">Sigma-Neo</a>
+          <a href="sigma-aq-boss.html" class="mn-mob-sub-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="mn-mob-sub-link">Sigma-One</a>
+          <div class="mn-mob-sub-head">Analyze &amp; Intelligence</div>
+          <a href="centra_sd.html" class="mn-mob-sub-link">Centra-SD</a>
+          <a href="Sigma-PA.html" class="mn-mob-sub-link">Sigma-PA</a>
+          <a href="sigma-ml.html" class="mn-mob-sub-link">Sigma-ML</a>
+          <a href="centra-experitest.html" class="mn-mob-sub-link">Centra-Experitest</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="planning-design.html" class="mn-mob-sub-link">Planning &amp; Design</a>
+          <a href="drive-walk-test.html" class="mn-mob-sub-link">Drive &amp; Walk Test</a>
+          <a href="network-optimization.html" class="mn-mob-sub-link">Network Optimization</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="iot">IoT <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-iot">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">monoZ</a>
+          <a href="CENTRA-IoT.html" class="mn-mob-sub-link">Centra IoT</a>
+          <a href="XENO+.html" class="mn-mob-sub-link">Xeno+ suite</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">IoT Consulting</a>
+          <a href="#" class="mn-mob-sub-link">Device Management</a>
+          <a href="mesimo.html" class="mn-mob-sub-link">Mesimo</a>
+          <a href="#" class="mn-mob-sub-link">Connectivity</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-it">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">zoECON™</a>
+          <a href="#" class="mn-mob-sub-link">netSLAM™</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">Data &amp; AI</a>
+          <a href="#" class="mn-mob-sub-link">DevOps</a>
+          <a href="#" class="mn-mob-sub-link">ServiceNow</a>
+          <a href="#" class="mn-mob-sub-link">Managed IT</a>
+        </div>
+      </div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Why Meritech</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Insights</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Company</a></div>
+      <a href="#" class="mn-mob-cta">Talk to us</a>
+    </div>
+  </div>
+
+  <div class="nav-spacer"></div>
+
+  <!-- ============================================================
+       2 · HERO — no image, full-width text
+  ============================================================ -->
+  <section class="hero centra-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Centra-IoT · IoT Device Suite</p>
+      <h1 class="hero-headline">See every device.<br>Manage every one.</h1>
+      <p class="hero-body">Centra-IoT is a centralized cloud software for device management and data visualization — robust cloud, real-time monitoring, and efficient management of every deployed device, on one customizable platform.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary-pill">
+          Talk to us
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="#section-features" class="btn-outline-pill">
+          See capabilities
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3 · SUBNAV
+  ============================================================ -->
+  <nav class="subnav" id="mainSubnav" aria-label="Page sections">
+    <div class="container-xxl">
+      <div class="subnav-links">
+        <a href="#section-overview"     class="subnav-link active">Overview</a>
+        <a href="#section-features"     class="subnav-link">Features</a>
+        <a href="#section-how-it-works" class="subnav-link">How It Works</a>
+        <a href="#section-devices"      class="subnav-link">Devices</a>
+        <a href="#section-faq"          class="subnav-link">FAQ</a>
+      </div>
+      <a href="#" class="btn-get-quote">
+        Get a quote
+        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+          <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+          <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <div class="subnav-placeholder" id="subnavPlaceholder"></div>
+
+  <!-- ============================================================
+       4 · OVERVIEW — two-column text + 4 feature highlights
+  ============================================================ -->
+  <section class="xs-section" id="section-overview">
+    <div class="xs-wrap">
+
+      <span class="xs-eyebrow reveal">What Centra-IoT is</span>
+
+      <div class="xs-grid">
+        <div>
+          <h2 class="xs-headline reveal">The cloud layer that<br>runs the fleet.</h2>
+        </div>
+        <div>
+          <p class="xs-body reveal reveal-d1">Centra-IoT is a cloud software designed to revolutionize device management and data visualization. The platform offers robust control capabilities, real-time monitoring, and efficient management of devices. Use the customizable data management platform to process and visualize data in real time.</p>
+        </div>
+      </div>
+
+      <!-- 4 feature highlights -->
+      <div class="b2b-grid ci-feature-grid" id="section-features">
+
+        <div class="b2b-card reveal">
+          <div class="b2b-card-title">Centralized cloud</div>
+          <p class="b2b-card-desc">One platform for the entire fleet — every device, every region, every deployment visible and controllable from a single dashboard.</p>
+        </div>
+
+        <div class="b2b-card reveal reveal-d1">
+          <div class="b2b-card-title">Real-time</div>
+          <p class="b2b-card-desc">Always up-to-date device monitoring and telemetry — surface anomalies, trigger alerts, and act on live data without delay.</p>
+        </div>
+
+        <div class="b2b-card reveal reveal-d1">
+          <div class="b2b-card-title">Customizable</div>
+          <p class="b2b-card-desc">Configure the platform for your deployment — dashboards, data pipelines, and alert rules shaped around how your operation runs.</p>
+        </div>
+
+        <div class="b2b-card reveal reveal-d1">
+          <div class="b2b-card-title">MQTT &middot; CoAP</div>
+          <p class="b2b-card-desc">Protocol-agnostic ingestion — Centra-IoT connects to any sensor or gateway using standard IoT messaging protocols, without custom bridging.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 · FROM SENSOR TO SIGNED-OFF DASHBOARD
+  ============================================================ -->
+  <section class="fm-section" id="section-how-it-works">
+    <div class="fm-wrap">
+
+      <div class="fm-intro">
+        <div>
+          <h2 class="fm-headline reveal">From sensor to<br>signed-off dashboard.</h2>
+        </div>
+        <div>
+          <p class="fm-body reveal reveal-d1">Centra-IoT uses seamless IoT protocols to collect information from sensor devices into a cloud-based platform with device management, data analysis, and data visualization. Connect your field devices once — manage everything from one place, indefinitely.</p>
+        </div>
+      </div>
+
+      <div class="fm-steps reveal">
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 01</span>
+          <div class="fm-step-title">Connect via standard protocols</div>
+          <p class="fm-step-desc">Sensor data arrives over MQTT, CoAP, or Modbus — Centra-IoT accepts it without custom adapters or per-device integration work.</p>
+        </div>
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 02</span>
+          <div class="fm-step-title">Provision security</div>
+          <p class="fm-step-desc">Each device is onboarded with an identity and encrypted channel — authenticated before it sends a single byte of data to the cloud.</p>
+        </div>
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 03</span>
+          <div class="fm-step-title">Process &amp; analyze</div>
+          <p class="fm-step-desc">The customizable platform processes telemetry in real time and in batch — building the alerts, aggregations, and metrics your operation needs.</p>
+        </div>
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 04</span>
+          <div class="fm-step-title">Visualize &amp; manage</div>
+          <p class="fm-step-desc">Real-time dashboards give every team the view they need — from a field technician checking device health to a manager reviewing KPIs.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 · DEVICE / PROTOCOL TABLE
+  ============================================================ -->
+  <section class="ci-table-section" id="section-devices">
+    <div class="ci-table-wrap">
+      <div class="ci-box reveal">
+
+        <!-- Header -->
+        <div class="ci-head-row">
+          <div class="ci-col-label">Device / Feature</div>
+          <div class="ci-col-label">Type</div>
+          <div class="ci-col-label">Description</div>
+        </div>
+
+        <!-- Group: Under the hood -->
+        <div class="ci-group-hd">Under the hood</div>
+
+        <div class="ci-row">
+          <div class="ci-device">Protocol layer</div>
+          <div class="ci-tags">
+            <span class="ci-tag ci-tag-green">MQTT</span>
+            <span class="ci-tag ci-tag-green">CoAP</span>
+          </div>
+          <div class="ci-desc">Ingests data from any IoT device using standard messaging protocols — no vendor lock-in, no custom adapters required at the edge.</div>
+        </div>
+
+        <div class="ci-row">
+          <div class="ci-device">Data pipeline</div>
+          <div class="ci-tags">
+            <span class="ci-tag">Real-time</span>
+            <span class="ci-tag">Batch</span>
+          </div>
+          <div class="ci-desc">Processes telemetry as it arrives for live dashboards, or in scheduled batches for historical analysis and reporting.</div>
+        </div>
+
+        <div class="ci-row">
+          <div class="ci-device">Security</div>
+          <div class="ci-tags">
+            <span class="ci-tag">TLS</span>
+            <span class="ci-tag">X.509</span>
+          </div>
+          <div class="ci-desc">Device identity management and encrypted transport — each device is authenticated before any data is accepted into the platform.</div>
+        </div>
+
+        <div class="ci-row">
+          <div class="ci-device">Analytics engine</div>
+          <div class="ci-tags">
+            <span class="ci-tag">Customizable</span>
+          </div>
+          <div class="ci-desc">Turn raw sensor readings into thresholds, alerts, aggregations, and the processed metrics that power your dashboards and reports.</div>
+        </div>
+
+        <!-- Group: Where it fits -->
+        <div class="ci-group-hd">Where it fits</div>
+
+        <div class="ci-row">
+          <div class="ci-device">Healthcare</div>
+          <div class="ci-tags">
+            <span class="ci-tag">IoT</span>
+            <span class="ci-tag">Monitoring</span>
+          </div>
+          <div class="ci-desc">Monitor medical devices and facility equipment in real time — with audit-ready data management and configurable alert thresholds.</div>
+        </div>
+
+        <div class="ci-row">
+          <div class="ci-device">Smart metering</div>
+          <div class="ci-tags">
+            <span class="ci-tag ci-tag-green">NB-IoT</span>
+            <span class="ci-tag ci-tag-green">LTE-M</span>
+          </div>
+          <div class="ci-desc">Aggregate readings from distributed meter networks, surface anomalies early, and generate usage and compliance reports automatically.</div>
+        </div>
+
+        <div class="ci-row">
+          <div class="ci-device">Industrial IoT</div>
+          <div class="ci-tags">
+            <span class="ci-tag">Modbus</span>
+            <span class="ci-tag ci-tag-green">MQTT</span>
+          </div>
+          <div class="ci-desc">Connect factory equipment, PLCs, and sensors into a unified management view — with real-time alerting and remote configuration.</div>
+        </div>
+
+        <div class="ci-row">
+          <div class="ci-device">Fleet tracking</div>
+          <div class="ci-tags">
+            <span class="ci-tag ci-tag-green">4G LTE</span>
+            <span class="ci-tag">GPS</span>
+          </div>
+          <div class="ci-desc">Track and manage mobile assets, vehicles, and connected field equipment from a single cloud dashboard with live location and telemetry.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7 · FAQ
+  ============================================================ -->
+  <section class="faq-section centra-faq" id="section-faq">
+    <div class="faq-wrap">
+      <div class="faq-top">
+        <span class="faq-eyebrow reveal">Common Questions</span>
+        <h2 class="faq-headline reveal">Before you talk<br>to an engineer.</h2>
+      </div>
+
+      <div class="faq-items reveal">
+
+        <div class="faq-item is-open">
+          <div class="faq-q" role="button" aria-expanded="true">
+            <span class="faq-q-text">What is Centra-IoT?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Centra-IoT is a centralized cloud software platform for IoT device management and data visualization. It collects telemetry from sensor devices using standard protocols, processes and stores it in the cloud, and surfaces it through configurable dashboards and management tools — giving teams a single view of every deployed device.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" aria-expanded="false">
+            <span class="faq-q-text">Which protocols does it support?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Centra-IoT supports MQTT and CoAP as primary IoT messaging protocols, as well as Modbus for industrial device connectivity. This means sensors, gateways, PLCs, and connected equipment can connect to the platform without custom adapters or protocol translation layers — if the device speaks a standard IoT protocol, Centra-IoT can receive its data.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" aria-expanded="false">
+            <span class="faq-q-text">Can I integrate my own systems?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes. The platform is designed to be customizable — data pipelines, dashboards, and alert rules can all be configured to fit your workflow. For deeper integration with external systems (ERP, SCADA, analytics platforms), the platform exposes APIs that allow processed data to be consumed downstream without manual export steps.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" aria-expanded="false">
+            <span class="faq-q-text">How does Centra-IoT fit with the rest of the IoT stack?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Centra-IoT is the cloud management layer in the monoZ IoT stack. At the edge, devices connect using Xeno+ AI/ML modules for local processing. Connectivity is provided by Mesimo — Meritech's cellular IoT service across 4G LTE, LTE-M, and NB-IoT. Centra-IoT sits above both: receiving, processing, and visualizing everything the fleet sends, turning raw device data into operational intelligence.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8 · CTA
+  ============================================================ -->
+  <section class="cta-section centra-cta">
+    <div class="cta-wrap">
+      <h2 class="cta-headline reveal">Bring your fleet<br>into view.</h2>
+      <p class="cta-eyebrow reveal reveal-d1" class="cta-eyebrow-centered-narrow">Whether you're managing meters, trackers, or industrial sensors — Centra-IoT gives you one place to control, monitor, and visualize all of them.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-primary-pill">
+          Explore Centra-IoT
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="#" class="btn-outline-pill">
+          Talk to us
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9 · FOOTER
+  ============================================================ -->
+  <footer class="ft-footer">
+    <div class="ft-main">
+      <div class="ft-brand">
+        <a href="index.html" class="ft-logo">
+          <img src="images/Meritech_logo_white.png" alt="Meritech" >
+        </a>
+        <p class="ft-desc">Welcome to Meritech, where innovation and excellence converge to redefine the landscape of mobile network T&amp;M, Network optimization, LPWA IoT and trendsetting bespoke IT services. As a leading manufacturer of cutting-edge solutions and IT Services provider, we are dedicated to providing Software and Hardware solutions that empower Global Customers to stay ahead of the ever-evolving mobile wireless and IoT industry.</p>
+        <a href="#" class="ft-cta">
+          Talk to us
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+            <line x1="0" y1="5" x2="15" y2="5" stroke="white" stroke-width="1.4"></line>
+            <path d="M11 1.5L15.5 5L11 8.5" stroke="white" stroke-width="1.4" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="ft-nav" aria-label="Footer navigation">
+        <div class="ft-col">
+          <div class="ft-col-head">Wireless</div>
+          <a href="sigma-la.html" class="ft-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="ft-link">Sigma-AQ</a>
+          <a href="sigma-aq-boss.html" class="ft-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="ft-link">Sigma-One</a>
+          <a href="sigma-ml.html" class="ft-link">Sigma-ML</a>
+          <a href="Sigma-PA.html" class="ft-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="ft-link">Centra-SD</a>
+          <a href="#" class="ft-link">Sigma-Neo</a>
+          <a href="centra-experitest.html" class="ft-link">Centra-Experitest</a>
+          <a href="#" class="ft-link">Sigma-AQ Reporting Server</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IoT</div>
+          <a href="#" class="ft-link">monoZ</a>
+          <a href="CENTRA-IoT.html" class="ft-link">Centra IoT</a>
+          <a href="XENO+.html" class="ft-link">Xeno+</a>
+          <a href="mesimo.html" class="ft-link">Mesimo</a>
+          <a href="#" class="ft-link">IoT Consulting</a>
+          <a href="#" class="ft-link">Device Management</a>
+          <a href="#" class="ft-link">Connectivity</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IT &amp; Cloud</div>
+          <a href="#" class="ft-link">Data &amp; AI</a>
+          <a href="#" class="ft-link">DevOps</a>
+          <a href="#" class="ft-link">Cloud</a>
+          <a href="#" class="ft-link">ServiceNow</a>
+          <a href="#" class="ft-link">zoECON&#8482;</a>
+          <a href="#" class="ft-link">IVS</a>
+          <a href="#" class="ft-link">Managed IT</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">Company</div>
+          <a href="#" class="ft-link">Who we are</a>
+          <a href="#" class="ft-link">Success stories</a>
+          <a href="#" class="ft-link">News &amp; events</a>
+          <a href="#" class="ft-link">Global presence</a>
+          <a href="#" class="ft-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; Meritech 2026 &middot; All Rights Reserved</span>
+      <div class="ft-countries">
+        <span>Japan</span><span class="ft-sep">|</span>
+        <span>India</span><span class="ft-sep">|</span>
+        <span>Singapore</span><span class="ft-sep">|</span>
+        <span>Thailand</span><span class="ft-sep">|</span>
+        <span>USA</span><span class="ft-sep">|</span>
+        <span>UK</span><span class="ft-sep">|</span>
+        <span>Germany</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

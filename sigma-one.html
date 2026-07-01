@@ -1,0 +1,761 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sigma-One — Meritech</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       1 · MAIN NAVIGATION
+  ============================================================ -->
+  <nav class="mn-bar">
+    <div class="container-xxl">
+
+      <!-- Logo -->
+      <a class="mn-logo" href="index.html">
+        <img src="images/Meritech_logo_banner.svg" alt="Meritech" >
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu">
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+      </button>
+
+      <!-- Desktop nav -->
+      <nav class="mn-nav">
+
+        <!-- Wireless -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown">
+            <div class="dd-grid dd-grid-3">
+              <div>
+                <div class="dd-col-head">Capture &amp; Automate</div>
+                <a href="sigma-la.html" class="dd-product"><span class="dd-product-name">Sigma-LA</span><span class="dd-product-desc">Windows drive test — multi-UE parallel capture</span></a>
+                <a href="sigma-aq.html" class="dd-product"><span class="dd-product-name">Sigma-AQ</span><span class="dd-product-desc">Automated drive test — 50% faster reporting</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">Field campaigns at operator sites</span></a>
+                <a href="sigma-aq-boss.html" class="dd-product"><span class="dd-product-name">Sigma-AQ Boss</span><span class="dd-product-desc">Remote controller — keep engineers in the office</span></a>
+                <a href="sigma-one.html" class="dd-product"><span class="dd-product-name">Sigma-One</span><span class="dd-product-desc">Ruggedized capture — COTS, IoT &amp; connected car</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Analyze &amp; Intelligence</div>
+                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Tune until the field matches intent</span></a>
+                <a href="Sigma-PA.html" class="dd-product"><span class="dd-product-name">Sigma-PA</span><span class="dd-product-desc">Post-processing &amp; protocol analysis platform</span></a>
+                <a href="sigma-ml.html" class="dd-product"><span class="dd-product-name">Sigma-ML</span><span class="dd-product-desc">Mobile logger — walk test from a single smartphone</span></a>
+                <a href="centra-experitest.html" class="dd-product"><span class="dd-product-name">Centra-Experitest</span><span class="dd-product-desc">OTT &amp; QoE — what the subscriber actually feels</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-AQ Reporting Server</span><span class="dd-product-desc">Post-processing &amp; deep protocol analysis</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="planning-design.html" class="dd-product"><span class="dd-product-name">Planning &amp; Design</span><span class="dd-product-desc">Site, propagation, capacity, spectrum</span></a>
+                <a href="drive-walk-test.html" class="dd-product"><span class="dd-product-name">Drive &amp; Walk Test</span><span class="dd-product-desc">Multi-device field capture, L1–L4</span></a>
+                <a href="network-optimization.html" class="dd-product"><span class="dd-product-name">Network Optimization</span><span class="dd-product-desc">Initial and continuous performance tuning</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore Wireless portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IoT -->
+        <div class="mn-item">
+          <a class="mn-link" href="IoT-Products.html">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="IoT-Products.html" class="dd-product"><span class="dd-product-name">monoZ</span><span class="dd-product-desc">LPWA device-to-cloud suite</span></a>
+                <a href="CENTRA-IoT.html" class="dd-product"><span class="dd-product-name">Centra IoT</span><span class="dd-product-desc">Centralized cloud device management platform</span></a>
+                <a href="XENO+.html" class="dd-product"><span class="dd-product-name">Xeno+ suite</span><span class="dd-product-desc">Solderable AI/ML edge modules for IoT</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
+                <a href="mesimo.html" class="dd-product"><span class="dd-product-name">Mesimo</span><span class="dd-product-desc">Global cellular IoT connectivity</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="IoT-Products.html" class="dd-explore">Explore IoT portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IT & Cloud -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer for telecom operators</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">netSLAM™</span><span class="dd-product-desc">Independent validation &amp; assurance</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">Data &amp; AI</span><span class="dd-product-desc">Data platforms, analytics &amp; AI solutions</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">DevOps</span><span class="dd-product-desc">CI/CD, automation, cloud-native delivery</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">ServiceNow</span><span class="dd-product-desc">Enterprise workflows &amp; ITSM</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Managed IT</span><span class="dd-product-desc">Ongoing operations &amp; support</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore IT &amp; Cloud</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item"><a class="mn-link" href="#">Why Meritech</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Insights</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Company</a></div>
+
+      </nav>
+
+      <a href="#" class="btn-talk">Talk to us</a>
+      <div class="mn-accent"></div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE DRAWER
+  ============================================================ -->
+  <div class="mn-mobile" id="mnMobile">
+    <div class="mn-mobile-inner">
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-wireless">
+          <div class="mn-mob-sub-head">Capture &amp; Automate</div>
+          <a href="sigma-la.html" class="mn-mob-sub-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="mn-mob-sub-link">Sigma-AQ</a>
+          <a href="#" class="mn-mob-sub-link">Sigma-Neo</a>
+          <a href="sigma-aq-boss.html" class="mn-mob-sub-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="mn-mob-sub-link">Sigma-One</a>
+          <div class="mn-mob-sub-head">Analyze &amp; Intelligence</div>
+          <a href="centra_sd.html" class="mn-mob-sub-link">Centra-SD</a>
+          <a href="Sigma-PA.html" class="mn-mob-sub-link">Sigma-PA</a>
+          <a href="sigma-ml.html" class="mn-mob-sub-link">Sigma-ML</a>
+          <a href="centra-experitest.html" class="mn-mob-sub-link">Centra-Experitest</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="planning-design.html" class="mn-mob-sub-link">Planning &amp; Design</a>
+          <a href="drive-walk-test.html" class="mn-mob-sub-link">Drive &amp; Walk Test</a>
+          <a href="network-optimization.html" class="mn-mob-sub-link">Network Optimization</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="iot">IoT <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-iot">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">monoZ</a>
+          <a href="#" class="mn-mob-sub-link">Centra IoT</a>
+          <a href="#" class="mn-mob-sub-link">Xeno+ suite</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">IoT Consulting</a>
+          <a href="#" class="mn-mob-sub-link">Device Management</a>
+          <a href="#" class="mn-mob-sub-link">Mesimo</a>
+          <a href="#" class="mn-mob-sub-link">Connectivity</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-it">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">zoECON™</a>
+          <a href="#" class="mn-mob-sub-link">netSLAM™</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">Data &amp; AI</a>
+          <a href="#" class="mn-mob-sub-link">DevOps</a>
+          <a href="#" class="mn-mob-sub-link">ServiceNow</a>
+          <a href="#" class="mn-mob-sub-link">Managed IT</a>
+        </div>
+      </div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Why Meritech</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Insights</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Company</a></div>
+      <a href="#" class="mn-mob-cta">Talk to us</a>
+    </div>
+  </div>
+
+  <!-- Nav spacer -->
+  <div class="nav-spacer"></div>
+
+  <!-- ============================================================
+       2 · HERO BANNER
+  ============================================================ -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Wireless Portfolio / Capture &amp; Automate</p>
+      <p class="hero-product">Sigma-One</p>
+      <h1 class="hero-headline">The test that deploys<br><em>where you can't.</em></h1>
+      <p class="hero-body">Sigma-One is a ruggedized hardware and software solution for capturing modern communication from COTS handsets, IoT devices, and connected car TCUs. Near real-time L1–L4 decode. USB-powered. Drone-deployable. Fully remote. Wherever a device connects to a network, Sigma-One can measure it.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary-pill">
+          See the portfolio
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="#" class="btn-outline-pill">
+          Talk to an engineer
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="hero-img-fill">
+        <img src="images/iot.jpg" alt="Sigma-One — ruggedized capture unit">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3 · SUBNAV
+  ============================================================ -->
+  <nav class="subnav" id="mainSubnav" aria-label="Page sections">
+    <div class="container-xxl">
+      <div class="subnav-links">
+        <a href="#section-overview"     class="subnav-link active">Overview</a>
+        <a href="#section-devicetypes"  class="subnav-link">Device Types</a>
+        <a href="#section-automation"   class="subnav-link">Automation</a>
+        <a href="#section-features"     class="subnav-link">Main Features</a>
+        <a href="#section-usecases"     class="subnav-link">Use Cases</a>
+        <a href="#section-related"      class="subnav-link">Related</a>
+      </div>
+      <a href="#" class="btn-get-quote">
+        Get a quote
+        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+          <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+          <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <div class="subnav-placeholder" id="subnavPlaceholder"></div>
+
+  <!-- ============================================================
+       4 · OVERVIEW
+  ============================================================ -->
+  <section id="section-overview">
+    <div class="ov-split">
+      <p class="ov-eyebrow reveal">Overview</p>
+      <div class="ov-grid">
+        <div class="ov-img reveal">
+          <img src="images/csd_ov_imgage.png" alt="Sigma-One hardware unit">
+        </div>
+        <div class="ov-content reveal reveal-d1">
+          <h2 class="ov-heading">A tool built for the unreachable.</h2>
+          <p class="ov-body">Network quality measurements have assumed an engineer at the wheel. Sigma-One removes that assumption — capturing modem communication in locations where a test rig or an engineer simply cannot go.<br><br>Near real-time L1 to L4 modem communication captured and deciphered. Two data streams: optimized files streamed live to Centra-SD for cloud performance monitoring, and detailed deciphered binary files stored locally for advanced report generation. One ultra-compact, USB-powered unit.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ov-statsbar reveal">
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">L1–L4</div>
+        <div class="ov-sbc-name">Full-modem decode</div>
+        <p class="ov-sbc-note">Complete layer decode from physical signalling to application-layer communication.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">3 device types</div>
+        <div class="ov-sbc-name">COTS + IoT + TCU</div>
+        <p class="ov-sbc-note">Commercial handsets, IoT modules, and vehicle telematics — all captured by one unit.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">2 data paths</div>
+        <div class="ov-sbc-name">Live stream + local binary</div>
+        <p class="ov-sbc-note">Optimized live stream to cloud and detailed local binary — high-fidelity data for dense analysis.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">0 mains power</div>
+        <div class="ov-sbc-name">USB-C or mobile battery</div>
+        <p class="ov-sbc-note">Ultra-compact and self-powered. Works where a test rig and mains supply are not an option.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 · DEVICE TYPES
+  ============================================================ -->
+  <section class="dt-section" id="section-devicetypes">
+    <div class="dt-wrap">
+      <div class="dt-top">
+        <div>
+          <p class="dt-eyebrow reveal">Device Types</p>
+          <h2 class="dt-headline reveal">Three device types.<br>One capture unit.</h2>
+        </div>
+        <div>
+          <p class="dt-desc reveal">Sigma-One is designed specifically for testing commercial off-the-shelf handsets, IoT devices, and connected car telematics units. The same ruggedized unit handles all three — connecting via USB to the device under test and decoding the modem communication directly.</p>
+        </div>
+      </div>
+
+      <div class="dt-items reveal">
+
+        <!-- Item 1 — Commercial Handsets (starts open) -->
+        <div class="dt-item is-open">
+          <div class="dt-head" role="button" aria-expanded="true">
+            <span class="dt-num">01 / COTS devices</span>
+            <span class="dt-title">Commercial Handsets</span>
+            <span class="dt-sub">Snapdragon USB &middot; L1–L4 &middot; Any Chipset</span>
+            <span class="dt-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="dt-body">
+            <div class="dt-body-inner">
+              <p class="dt-body-desc">Capture modem data from commercial off-the-shelf smartphones through the diag port — measuring the network exactly as a subscriber experiences it, on the device they carry. No engineering sample required, no custom firmware.</p>
+              <div class="dt-tags">
+                <span class="dt-tag">USB</span>
+                <span class="dt-tag">L1–L4</span>
+                <span class="dt-tag">Qualcomm / Samsung</span>
+                <span class="dt-tag">Single / Sequential / Parallel</span>
+                <span class="dt-tag">Scripting &amp; Automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 — IoT Modules & Routers -->
+        <div class="dt-item">
+          <div class="dt-head" role="button" aria-expanded="false">
+            <span class="dt-num">02 / IoT devices</span>
+            <span class="dt-title">IoT Modules &amp; Routers</span>
+            <span class="dt-sub">USB &middot; L1–L4 &middot; Samsung Chipset</span>
+            <span class="dt-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#6B6868" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#6B6868" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="dt-body">
+            <div class="dt-body-inner">
+              <p class="dt-body-desc">Evaluate modem communication in IoT modules and cellular routers — capturing L1–L4 communication from the chipset in real deployment conditions with no test equipment overhead.</p>
+              <div class="dt-tags">
+                <span class="dt-tag">USB</span>
+                <span class="dt-tag">L1–L4</span>
+                <span class="dt-tag">Samsung Chipset</span>
+                <span class="dt-tag">Scripting &amp; Automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 — Vehicle Telematics -->
+        <div class="dt-item">
+          <div class="dt-head" role="button" aria-expanded="false">
+            <span class="dt-num">03 / Connected car</span>
+            <span class="dt-title">Vehicle Telematics</span>
+            <span class="dt-sub">XPEsystem &middot; L1–L4 &middot; Remote SIM Switch</span>
+            <span class="dt-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#6B6868" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#6B6868" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="dt-body">
+            <div class="dt-body-inner">
+              <p class="dt-body-desc">Real-time monitoring of TCU communication from connected vehicles. Decode modem data directly from the vehicle's telematics unit — in the car, on the road, without connecting to the vehicle's diagnostic port from a static workstation.</p>
+              <div class="dt-tags">
+                <span class="dt-tag">XPEsystem</span>
+                <span class="dt-tag">L1–L4</span>
+                <span class="dt-tag">Remote SIM Switch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 · AUTOMATION (dark)
+  ============================================================ -->
+  <section class="tp-section" id="section-automation">
+    <div class="tp-wrap">
+      <div class="tp-top">
+        <div>
+          <p class="tp-eyebrow reveal">Automation</p>
+          <h2 class="tp-headline reveal">Write the script once.<br>Run it anywhere.</h2>
+        </div>
+        <div>
+          <p class="tp-desc reveal">Sigma-One test scenarios are compiled into automated scripts that execute without manual intervention. Define the execution model that fits the campaign — single, sequential, or parallel — and the platform runs from start to end, unattended.</p>
+        </div>
+      </div>
+
+      <div class="tp-cards reveal">
+
+        <div class="tp-card">
+          <div class="tp-card-label">01 / Before the complaint arrives</div>
+          <div class="tp-card-title">Surface problems before subscribers do.</div>
+          <p class="tp-card-desc">Scripts surface what subscribers will encounter before a ticket is filed. The same app scenario runs on schedule — detecting degradation before it reaches the helpdesk. Real-device, real-condition measurement, automatically.</p>
+        </div>
+
+        <div class="tp-card">
+          <div class="tp-card-label">02 / What the subscriber actually experiences</div>
+          <div class="tp-card-title">Real smartphone, real user environment.</div>
+          <p class="tp-card-desc">The quality of experience is measured on a real device under real conditions. Speed test, video streaming, social media — tested the same way a subscriber sees them, not through a KPI proxy from the network side.</p>
+        </div>
+
+        <div class="tp-card">
+          <div class="tp-card-label">03 / Scripts across 1,000+ devices</div>
+          <div class="tp-card-title">Coverage at scale without proportional headcount.</div>
+          <p class="tp-card-desc">Create customized scenarios and run them simultaneously across a fleet of devices. Coverage at scale — Sigma-One distributes the test load without distributing engineers.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7 · MAIN FEATURES
+  ============================================================ -->
+  <section class="mf-section" id="section-features">
+    <div class="mf-wrap">
+      <div class="mf-top">
+        <div>
+          <div class="mf-eyebrow reveal">Main features</div>
+          <h2 class="mf-headline reveal">What it does.<br>What it captures.<br>Where it runs.</h2>
+          <div class="mf-pills reveal">
+            <button class="mf-pill active" data-mfpill="fn">Functions</button>
+            <button class="mf-pill" data-mfpill="ft">Features</button>
+            <button class="mf-pill" data-mfpill="adv">Advantages</button>
+          </div>
+        </div>
+        <div>
+          <p class="mf-desc reveal">Sigma-One captures L1–L4 modem communication from COTS handsets, IoT devices, and connected car TCUs — USB-powered, drone-deployable, and fully remote.</p>
+        </div>
+      </div>
+
+      <div class="mf-lists reveal">
+
+        <!-- Functions panel -->
+        <div class="mf-panel active" id="mf-fn">
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Near real-time capturing and deciphering of L1 to L4 modem communication
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Connect COTS handsets, IoT devices, and TCUs via USB to the unit
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Stream optimized data files to Centra-SD for real-time cloud monitoring
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Wireless data collection RSVP / RSVP2 / SIM and detailed parameters
+            </li>
+          </ul>
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Remote controlled testing: FTP / Ping / Perf — standard equipped
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Upload measurement data via Wi-Fi or LTE
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Direct data extraction locally — no cloud upload required
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Execute test scripts: single, sequential, or parallel
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Remote SIM management: swap SIMs between IoT board and remote handset
+            </li>
+          </ul>
+        </div>
+
+        <!-- Features panel -->
+        <div class="mf-panel" id="mf-ft">
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              USB-powered — no mains supply or dedicated test rig required
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Drone-deployable and ruggedized for outdoor and elevated field conditions
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Dual data path: live stream and high-fidelity local binary simultaneously
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Compatible with Qualcomm, Samsung, and MediaTek chipsets
+            </li>
+          </ul>
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              L1–L4 full-modem decode: physical layer through application layer
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Three device types from one capture unit — handsets, IoT modules, vehicle TCUs
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Wi-Fi and LTE upload paths — works at site without wired infrastructure
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Remote SIM switching for IoT and vehicle telematics applications
+            </li>
+          </ul>
+        </div>
+
+        <!-- Advantages panel -->
+        <div class="mf-panel" id="mf-adv">
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Deploy where an engineer cannot go — drone, vehicle, or remote infrastructure
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              No engineering sample required — captures from consumer-grade COTS devices
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Single unit covers three device categories without reconfiguration
+            </li>
+          </ul>
+          <ul class="mf-list">
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Real-device data from the chipset directly — same decode depth as Sigma-LA
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Feeds Centra-SD live — cloud performance monitoring begins during the test
+            </li>
+            <li>
+              <span class="csd-mf-arrow" aria-hidden="true">
+                <svg width="17" height="9" viewBox="0 0 17 9" fill="none"><line x1="0" y1="4.09" x2="15.9" y2="4.09" stroke="rgb(34,31,31)" stroke-width="1"></line><path d="M11.9 0.73 L15.9 4.09 L11.9 7.45" stroke="rgb(34,31,31)" stroke-width="1" fill="none"></path></svg>
+              </span>
+              Scales from a single unit to a distributed fleet managed remotely
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8 · USE CASES (dark)
+  ============================================================ -->
+  <section class="uc-section uc-dark" id="section-usecases">
+    <div class="uc-wrap">
+      <div class="uc-top">
+        <div>
+          <div class="uc-eyebrow reveal">USE CASES</div>
+          <h2 class="uc-headline reveal">Where Sigma-One<br>earns its place.</h2>
+        </div>
+        <div>
+          <p class="uc-subtitle reveal">Three deployment scenarios where only Sigma-One can reach — no engineering sample, no test rig, no engineer on-site.</p>
+        </div>
+      </div>
+
+      <div class="uc-dark-cards reveal">
+
+        <div class="uc-dark-card">
+          <div class="uc-dark-card-label">Connected Car</div>
+          <div class="uc-dark-card-title">TCU communication evaluation.</div>
+          <p class="uc-dark-card-desc">Evaluate vehicle telematics communication in real driving conditions. Decode modem data from the TCU, monitor link switching between towers, SIM selection, and LTE data flows — without modifying the vehicle or removing it from service.</p>
+          <a href="#" class="uc-dark-card-link">Explore</a>
+        </div>
+
+        <div class="uc-dark-card">
+          <div class="uc-dark-card-label">IoT Development</div>
+          <div class="uc-dark-card-title">Android-based module evaluation.</div>
+          <p class="uc-dark-card-desc">Evaluate Android-based development modules with scripting and automation. Run tests single, sequential, or parallel against a fleet of IoT boards — capturing L1–L4 communication at the chipset level in real deployment conditions.</p>
+          <a href="#" class="uc-dark-card-link">Explore</a>
+        </div>
+
+        <div class="uc-dark-card">
+          <div class="uc-dark-card-label">Untethered Deployment</div>
+          <div class="uc-dark-card-title">Drone required — engineers don't go.</div>
+          <p class="uc-dark-card-desc">Deploy measurement capability on drones or in infrastructure locations too hazardous or remote for test engineers. USB-powered, fully remote, standard test scenarios execute unattended and upload on command.</p>
+          <a href="#" class="uc-dark-card-link">Explore</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9 · RELATED PRODUCTS
+  ============================================================ -->
+  <section class="rel-section" id="section-related">
+    <div class="rel-wrap">
+      <h2 class="rel-headline reveal">Sigma-One rarely<br>works alone.</h2>
+      <div class="rel-grid">
+        <a href="centra_sd.html" class="rel-card">
+          <div class="rel-tag">Cloud Platform</div>
+          <div class="rel-name">Centra-SD</div>
+          <p class="rel-desc">Sigma-One streams directly to Centra-SD for cloud-based analytics and AI performance monitoring — combining real-device modem data with the broader network intelligence platform.</p>
+        </a>
+        <a href="sigma-aq.html" class="rel-card">
+          <div class="rel-tag">Drive &amp; Remote</div>
+          <div class="rel-name">Sigma-AQ</div>
+          <p class="rel-desc">Field companion that extends Sigma-One's coverage. Sigma-AQ captures drive and walk test metrics in parallel while Sigma-One captures L1–L4 data from COTS, IoT, and TCU targets.</p>
+        </a>
+        <div class="rel-card">
+          <div class="rel-tag">AI Assistant</div>
+          <div class="rel-name">Sigma-Neo</div>
+          <p class="rel-desc">AI chatbox on Centra-SD. Ask questions of the combined network and Sigma-One measurement data in plain language — without writing a custom report.</p>
+        </div>
+        <a href="Sigma-PA.html" class="rel-card">
+          <div class="rel-tag">Post Analysis</div>
+          <div class="rel-name">Sigma-PA</div>
+          <p class="rel-desc">The binary Sigma-One files feed Sigma-PA for deep protocol analysis, post-processing and report generation. Same pipeline, same quality standards as the wider field capture ecosystem.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10 · FOOTER
+  ============================================================ -->
+  <footer class="ft-footer">
+    <div class="ft-main">
+      <div class="ft-brand">
+        <a href="index.html" class="ft-logo">
+          <img src="images/Meritech_logo_white.png" alt="Meritech" >
+        </a>
+        <p class="ft-desc">Welcome to Meritech, where innovation and excellence converge to redefine the landscape of mobile network T&amp;M, Network optimization, LPWA IoT and trendsetting bespoke IT services. As a leading manufacturer of cutting-edge solutions and IT Services provider, we are dedicated to providing Software and Hardware solutions that empower Global Customers to stay ahead of the ever-evolving mobile wireless and IoT industry.</p>
+        <a href="#" class="ft-cta">
+          Talk to us
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+            <line x1="0" y1="5" x2="15" y2="5" stroke="white" stroke-width="1.4"></line>
+            <path d="M11 1.5L15.5 5L11 8.5" stroke="white" stroke-width="1.4" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="ft-nav" aria-label="Footer navigation">
+        <div class="ft-col">
+          <div class="ft-col-head">Wireless</div>
+          <a href="sigma-la.html" class="ft-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="ft-link">Sigma-AQ</a>
+          <a href="sigma-aq-boss.html" class="ft-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="ft-link">Sigma-One</a>
+          <a href="sigma-ml.html" class="ft-link">Sigma-ML</a>
+          <a href="Sigma-PA.html" class="ft-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="ft-link">Centra-SD</a>
+          <a href="#" class="ft-link">Sigma-Neo</a>
+          <a href="centra-experitest.html" class="ft-link">Centra-Experitest</a>
+          <a href="#" class="ft-link">Sigma-AQ Reporting Server</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IoT</div>
+          <a href="#" class="ft-link">monoZ</a>
+          <a href="#" class="ft-link">Xeno+</a>
+          <a href="#" class="ft-link">Mesimo</a>
+          <a href="#" class="ft-link">Centra IoT</a>
+          <a href="#" class="ft-link">IoT Consulting</a>
+          <a href="#" class="ft-link">Device Management</a>
+          <a href="#" class="ft-link">Connectivity</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IT &amp; Cloud</div>
+          <a href="#" class="ft-link">Data &amp; AI</a>
+          <a href="#" class="ft-link">DevOps</a>
+          <a href="#" class="ft-link">Cloud</a>
+          <a href="#" class="ft-link">ServiceNow</a>
+          <a href="#" class="ft-link">zoECON™</a>
+          <a href="#" class="ft-link">IVS</a>
+          <a href="#" class="ft-link">Managed IT</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">Company</div>
+          <a href="#" class="ft-link">Who we are</a>
+          <a href="#" class="ft-link">Success stories</a>
+          <a href="#" class="ft-link">News &amp; events</a>
+          <a href="#" class="ft-link">Global presence</a>
+          <a href="#" class="ft-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; Meritech 2026 &middot; All Rights Reserved</span>
+      <div class="ft-countries">
+        <span>Japan</span><span class="ft-sep">|</span>
+        <span>India</span><span class="ft-sep">|</span>
+        <span>Singapore</span><span class="ft-sep">|</span>
+        <span>Thailand</span><span class="ft-sep">|</span>
+        <span>USA</span><span class="ft-sep">|</span>
+        <span>UK</span><span class="ft-sep">|</span>
+        <span>Germany</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

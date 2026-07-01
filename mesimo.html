@@ -1,0 +1,625 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mesimo — Meritech</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       1 · MAIN NAVIGATION
+  ============================================================ -->
+  <nav class="mn-bar">
+    <div class="container-xxl">
+
+      <a class="mn-logo" href="index.html">
+        <img src="images/Meritech_logo_banner.svg" alt="Meritech" >
+      </a>
+
+      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu">
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+      </button>
+
+      <nav class="mn-nav">
+
+        <!-- Wireless -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown">
+            <div class="dd-grid dd-grid-3">
+              <div>
+                <div class="dd-col-head">Capture &amp; Automate</div>
+                <a href="sigma-la.html" class="dd-product"><span class="dd-product-name">Sigma-LA</span><span class="dd-product-desc">Windows drive test — multi-UE parallel capture</span></a>
+                <a href="sigma-aq.html" class="dd-product"><span class="dd-product-name">Sigma-AQ</span><span class="dd-product-desc">Automated drive test — 50% faster reporting</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">Field campaigns at operator sites</span></a>
+                <a href="sigma-aq-boss.html" class="dd-product"><span class="dd-product-name">Sigma-AQ Boss</span><span class="dd-product-desc">Remote controller — keep engineers in the office</span></a>
+                <a href="sigma-one.html" class="dd-product"><span class="dd-product-name">Sigma-One</span><span class="dd-product-desc">Ruggedized capture — COTS, IoT &amp; connected car</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Analyze &amp; Intelligence</div>
+                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Tune until the field matches intent</span></a>
+                <a href="Sigma-PA.html" class="dd-product"><span class="dd-product-name">Sigma-PA</span><span class="dd-product-desc">Post-processing &amp; protocol analysis platform</span></a>
+                <a href="sigma-ml.html" class="dd-product"><span class="dd-product-name">Sigma-ML</span><span class="dd-product-desc">Mobile logger — walk test from a single smartphone</span></a>
+                <a href="centra-experitest.html" class="dd-product"><span class="dd-product-name">Centra-Experitest</span><span class="dd-product-desc">OTT &amp; QoE — what the subscriber actually feels</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-AQ Reporting Server</span><span class="dd-product-desc">Post-processing &amp; deep protocol analysis</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="planning-design.html" class="dd-product"><span class="dd-product-name">Planning &amp; Design</span><span class="dd-product-desc">Site, propagation, capacity, spectrum</span></a>
+                <a href="drive-walk-test.html" class="dd-product"><span class="dd-product-name">Drive &amp; Walk Test</span><span class="dd-product-desc">Multi-device field capture, L1–L4</span></a>
+                <a href="network-optimization.html" class="dd-product"><span class="dd-product-name">Network Optimization</span><span class="dd-product-desc">Initial and continuous performance tuning</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore Wireless portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IoT -->
+        <div class="mn-item">
+          <a class="mn-link" href="IoT-Products.html">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">monoZ</span><span class="dd-product-desc">LPWA device-to-cloud suite</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Centra IoT</span><span class="dd-product-desc">Ruggedized edge capture device</span></a>
+                <a href="XENO+.html" class="dd-product"><span class="dd-product-name">Xeno+ suite</span><span class="dd-product-desc">Solderable AI/ML edge modules for IoT</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
+                <a href="mesimo.html" class="dd-product"><span class="dd-product-name">Mesimo</span><span class="dd-product-desc">Telemetry into operational signals</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="IoT-Products.html" class="dd-explore">Explore IoT portfolio</a></div>
+          </div>
+        </div>
+
+        <!-- IT & Cloud -->
+        <div class="mn-item">
+          <a class="mn-link" href="#">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer for telecom operators</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">netSLAM™</span><span class="dd-product-desc">Independent validation &amp; assurance</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="#" class="dd-product"><span class="dd-product-name">Data &amp; AI</span><span class="dd-product-desc">Data platforms, analytics &amp; AI solutions</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">DevOps</span><span class="dd-product-desc">CI/CD, automation, cloud-native delivery</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">ServiceNow</span><span class="dd-product-desc">Enterprise workflows &amp; ITSM</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Managed IT</span><span class="dd-product-desc">Ongoing operations &amp; support</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="#" class="dd-explore">Explore IT &amp; Cloud</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item"><a class="mn-link" href="#">Why Meritech</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Insights</a></div>
+        <div class="mn-item"><a class="mn-link" href="#">Company</a></div>
+
+      </nav>
+
+      <a href="#" class="btn-talk">Talk to us</a>
+      <div class="mn-accent"></div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE DRAWER
+  ============================================================ -->
+  <div class="mn-mobile" id="mnMobile">
+    <div class="mn-mobile-inner">
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-wireless">
+          <div class="mn-mob-sub-head">Capture &amp; Automate</div>
+          <a href="sigma-la.html" class="mn-mob-sub-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="mn-mob-sub-link">Sigma-AQ</a>
+          <a href="#" class="mn-mob-sub-link">Sigma-Neo</a>
+          <a href="sigma-aq-boss.html" class="mn-mob-sub-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="mn-mob-sub-link">Sigma-One</a>
+          <div class="mn-mob-sub-head">Analyze &amp; Intelligence</div>
+          <a href="centra_sd.html" class="mn-mob-sub-link">Centra-SD</a>
+          <a href="Sigma-PA.html" class="mn-mob-sub-link">Sigma-PA</a>
+          <a href="sigma-ml.html" class="mn-mob-sub-link">Sigma-ML</a>
+          <a href="centra-experitest.html" class="mn-mob-sub-link">Centra-Experitest</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="planning-design.html" class="mn-mob-sub-link">Planning &amp; Design</a>
+          <a href="drive-walk-test.html" class="mn-mob-sub-link">Drive &amp; Walk Test</a>
+          <a href="network-optimization.html" class="mn-mob-sub-link">Network Optimization</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="iot">IoT <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-iot">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">monoZ</a>
+          <a href="#" class="mn-mob-sub-link">Centra IoT</a>
+          <a href="XENO+.html" class="mn-mob-sub-link">Xeno+ suite</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">IoT Consulting</a>
+          <a href="#" class="mn-mob-sub-link">Device Management</a>
+          <a href="mesimo.html" class="mn-mob-sub-link">Mesimo</a>
+          <a href="#" class="mn-mob-sub-link">Connectivity</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-it">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="#" class="mn-mob-sub-link">zoECON™</a>
+          <a href="#" class="mn-mob-sub-link">netSLAM™</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="#" class="mn-mob-sub-link">Data &amp; AI</a>
+          <a href="#" class="mn-mob-sub-link">DevOps</a>
+          <a href="#" class="mn-mob-sub-link">ServiceNow</a>
+          <a href="#" class="mn-mob-sub-link">Managed IT</a>
+        </div>
+      </div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Why Meritech</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Insights</a></div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Company</a></div>
+      <a href="#" class="mn-mob-cta">Talk to us</a>
+    </div>
+  </div>
+
+  <div class="nav-spacer"></div>
+
+  <!-- ============================================================
+       2 · HERO — no image, full-width text
+  ============================================================ -->
+  <section class="hero mesimo-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">What Mesimo is</p>
+      <h1 class="hero-headline">Connectivity for every<br>thing you deploy.</h1>
+      <p class="hero-body">Safe, secure, flexible and affordable cellular IoT connectivity — offered under the banner of Mesimo, in partnership with leading networks. Choose among a range of connectivity options across 4G LTE, LTE-M, and NB-IoT.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary-pill">
+          Talk to us
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="#section-technologies" class="btn-outline-pill">
+          Compare technologies
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3 · SUBNAV
+  ============================================================ -->
+  <nav class="subnav" id="mainSubnav" aria-label="Page sections">
+    <div class="container-xxl">
+      <div class="subnav-links">
+        <a href="#section-overview"      class="subnav-link active">Overview</a>
+        <a href="#section-technologies"  class="subnav-link">Technologies</a>
+        <a href="#section-how-it-works"  class="subnav-link">How It Works</a>
+        <a href="#section-partnership"   class="subnav-link">Partnership</a>
+        <a href="#section-usecases"      class="subnav-link">Use Cases</a>
+        <a href="#section-faq"           class="subnav-link">FAQ</a>
+      </div>
+      <a href="#" class="btn-get-quote">
+        Get a quote
+        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+          <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+          <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <div class="subnav-placeholder" id="subnavPlaceholder"></div>
+
+  <!-- ============================================================
+       4 · OVERVIEW — two-column text
+  ============================================================ -->
+  <section class="xs-section" id="section-overview">
+    <div class="xs-wrap">
+      <span class="xs-eyebrow reveal">What Mesimo is</span>
+      <div class="xs-grid">
+        <div>
+          <h2 class="xs-headline reveal">One connectivity layer,<br>any deployment.</h2>
+        </div>
+        <div>
+          <p class="xs-body reveal reveal-d1">monoZ, in partnership with several connectivity players, provides safe, secure, flexible and affordable cellular IoT connectivity service under the banner of Mesimo. Rather than negotiating coverage operator-by-operator, you choose the right technology for the device — and Mesimo handles the network.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 · STATS BAR
+  ============================================================ -->
+  <div class="ms-statsbar reveal">
+
+    <div class="ms-stat">
+      <div class="ms-stat-title">Global MVNO</div>
+      <div class="ms-stat-sub">with leading networks</div>
+      <div class="ms-stat-note">Multi-operator coverage</div>
+    </div>
+
+    <div class="ms-stat">
+      <div class="ms-stat-title">3 technologies</div>
+      <div class="ms-stat-sub">Global offices</div>
+      <div class="ms-stat-note">Choose per deployment</div>
+    </div>
+
+    <div class="ms-stat">
+      <div class="ms-stat-title">Safe &amp; secure</div>
+      <div class="ms-stat-sub">Built for IoT data</div>
+      <div class="ms-stat-note">Flexible and affordable</div>
+    </div>
+
+    <div class="ms-stat">
+      <div class="ms-stat-title">1NCE integrated</div>
+      <div class="ms-stat-sub">30M connected products</div>
+      <div class="ms-stat-note">Coverage in 173 countries</div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================
+       6 · TECHNOLOGY TABLE
+  ============================================================ -->
+  <section class="tt-section" id="section-technologies">
+    <div class="tt-wrap">
+      <div class="tt-box reveal">
+
+        <!-- Header row -->
+        <div class="tt-head-row">
+          <div class="tt-col-label">Category</div>
+          <div class="tt-col-label">Technology</div>
+          <div class="tt-col-label">Description</div>
+          <div class="tt-col-label">Best For</div>
+        </div>
+
+        <!-- Row 1 — 4G LTE -->
+        <div class="tt-row">
+          <div class="tt-category">High Throughput</div>
+          <div class="tt-tech">4G LTE</div>
+          <div class="tt-desc">Full cellular bandwidth for devices that move real data — gateways, cameras, and connected equipment that need more than a trickle.</div>
+          <div class="tt-best">Higher-data devices and richer telemetry</div>
+        </div>
+
+        <!-- Row 2 — LTE-M -->
+        <div class="tt-row">
+          <div class="tt-category">LPWA &middot; Balanced</div>
+          <div class="tt-tech">LTE-M</div>
+          <div class="tt-desc">Low-power wide-area connectivity with mobility and moderate bandwidth — for trackers and devices that move and need responsiveness.</div>
+          <div class="tt-best">Mobile assets, wearables, moderate data</div>
+        </div>
+
+        <!-- Row 3 — NB-IoT -->
+        <div class="tt-row">
+          <div class="tt-category">LPWA &middot; Deep Coverage</div>
+          <div class="tt-tech">NB-IoT</div>
+          <div class="tt-desc">Narrowband connectivity for the longest battery life and deepest coverage — for sensors that send small payloads and live for years.</div>
+          <div class="tt-best">Fixed sensors, meters, deep-indoor devices</div>
+        </div>
+
+      </div><!-- /.tt-box -->
+    </div><!-- /.tt-wrap -->
+  </section>
+
+  <!-- ============================================================
+       7 · FROM DEVICE TO CONNECTED FLEET
+  ============================================================ -->
+  <section class="fm-section" id="section-how-it-works">
+    <div class="fm-wrap">
+      <div class="fm-intro">
+        <div>
+          <h2 class="fm-headline reveal">From device to<br>connected fleet.</h2>
+        </div>
+        <div>
+          <p class="fm-body reveal reveal-d1">Mesimo sits inside the monoZ ecosystem, so connectivity is part of the stack — not a separate procurement project. Choose the technology, connect through leading networks, and scale globally from day one.</p>
+        </div>
+      </div>
+
+      <div class="fm-steps reveal">
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 01</span>
+          <div class="fm-step-title">Choose the technology</div>
+          <p class="fm-step-desc">Match 4G LTE, LTE-M, or NB-IoT to each device's data, power, and coverage profile — before a SIM is ordered.</p>
+        </div>
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 02</span>
+          <div class="fm-step-title">Connect via leading networks</div>
+          <p class="fm-step-desc">Mesimo's MVNO partnerships provide multi-operator coverage — no per-market network deals, no local SIM logistics.</p>
+        </div>
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 03</span>
+          <div class="fm-step-title">Deploy globally</div>
+          <p class="fm-step-desc">With 1NCE integrated into monoZ, deployment spans 173 countries with simplified global connectivity and unified data management.</p>
+        </div>
+
+        <div class="fm-step">
+          <span class="fm-step-num">Step 04</span>
+          <div class="fm-step-title">Scale affordably</div>
+          <p class="fm-step-desc">From a handful of devices to a fleet — connectivity scales with substantial cost savings and no renegotiation at volume.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8 · PARTNERSHIP — dark section
+  ============================================================ -->
+  <section class="pn-section" id="section-partnership">
+    <div class="pn-wrap">
+      <div class="pn-grid">
+
+        <!-- Left — text -->
+        <div>
+          <div class="pn-badges reveal">
+            <span class="pn-badge pn-badge-tag">Partnership</span>
+            <span class="pn-badge pn-badge-partner">1NCE Partner</span>
+          </div>
+          <h2 class="pn-headline reveal">Powered by the monoZ<br>+ 1NCE collaboration.</h2>
+          <p class="pn-body reveal reveal-d1">As a certified integration partner for 1NCE, monoZ delivers a streamlined, rapidly-scalable IoT deployment process. The collaboration addresses three challenges in IoT: device-to-cloud data management, global connectivity, and scaling solutions across markets.</p>
+        </div>
+
+        <!-- Right — stats + challenges -->
+        <div>
+          <div class="pn-stats reveal">
+            <div>
+              <div class="pn-stat-num">30M</div>
+              <div class="pn-stat-label">Connected products on the integrated global platform</div>
+            </div>
+            <div>
+              <div class="pn-stat-num">173</div>
+              <div class="pn-stat-label">Countries of hassle-free IoT coverage</div>
+            </div>
+          </div>
+          <div class="reveal reveal-d1">
+            <div class="pn-challenges-label">IoT challenges addressed</div>
+            <div class="pn-challenges">
+              <span class="pn-challenge">Data management</span>
+              <span class="pn-challenge">Connectivity</span>
+              <span class="pn-challenge">Scale</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9 · WHERE MESIMO FITS — use cases
+  ============================================================ -->
+  <section class="b2b-section" id="section-usecases">
+    <div class="b2b-wrap">
+      <div class="b2b-top">
+        <span class="b2b-eyebrow reveal">Where Mesimo fits</span>
+        <h2 class="b2b-headline reveal">Connectivity for<br>connected products.</h2>
+      </div>
+      <div class="b2b-grid reveal">
+
+        <div class="b2b-card">
+          <div class="b2b-card-title">Healthcare</div>
+          <p class="b2b-card-desc">Reliable, secure connectivity for medical and healthcare IoT devices — where data integrity and uptime are non-negotiable.</p>
+        </div>
+
+        <div class="b2b-card">
+          <div class="b2b-card-title">Smart metering</div>
+          <p class="b2b-card-desc">NB-IoT for fixed meters that send small payloads and run for years on a battery — deployed at scale with no manual intervention.</p>
+        </div>
+
+        <div class="b2b-card">
+          <div class="b2b-card-title">Asset tracking</div>
+          <p class="b2b-card-desc">LTE-M for mobile assets that move across coverage areas and need responsiveness — from logistics containers to field equipment.</p>
+        </div>
+
+        <div class="b2b-card">
+          <div class="b2b-card-title">Industrial IoT</div>
+          <p class="b2b-card-desc">4G LTE for gateway equipment that moves richer telemetry to the cloud — where bandwidth and low latency drive operational decisions.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10 · FAQ
+  ============================================================ -->
+  <section class="faq-section xeno-faq" id="section-faq">
+    <div class="faq-wrap">
+      <div class="faq-top">
+        <span class="faq-eyebrow reveal">Common Questions</span>
+        <h2 class="faq-headline reveal">Before you talk<br>to an engineer.</h2>
+      </div>
+
+      <div class="faq-items reveal">
+
+        <div class="faq-item is-open">
+          <div class="faq-q" role="button" aria-expanded="true">
+            <span class="faq-q-text">What is Mesimo?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Mesimo is the cellular IoT connectivity service offered by monoZ, in partnership with leading network operators. Rather than negotiating coverage operator-by-operator, Mesimo gives your deployment a single connectivity layer — with the right technology (4G LTE, LTE-M, or NB-IoT) chosen per device, and network management handled by the platform.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" aria-expanded="false">
+            <span class="faq-q-text">Which connectivity technologies are available?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Mesimo supports three technologies: 4G LTE for high-throughput devices like gateways and cameras; LTE-M for mobile assets and wearables that need moderate bandwidth and low power; and NB-IoT for fixed sensors and meters that send small payloads and need years of battery life. Each technology is chosen to match the specific data, power, and coverage profile of the device.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" aria-expanded="false">
+            <span class="faq-q-text">How does the 1NCE partnership help?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">As a certified 1NCE integration partner, monoZ brings 1NCE's global IoT SIM platform — covering 173 countries and 30M connected products — directly into the monoZ stack. This means your deployment has global coverage from day one, without separate SIM procurement, local operator negotiations, or fragmented data management across regions.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" aria-expanded="false">
+            <span class="faq-q-text">Can Mesimo scale across markets?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="0" x2="6" y2="12" stroke="#221F1F" stroke-width="1.4"/><line x1="0" y1="6" x2="12" y2="6" stroke="#221F1F" stroke-width="1.4"/></svg>
+            </span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes. The combination of Mesimo's MVNO partnerships and the 1NCE global platform means the same connectivity stack works from a pilot of ten devices to a fleet of hundreds of thousands — across markets, without renegotiating operator contracts or restructuring the data pipeline as volume grows.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       11 · CTA
+  ============================================================ -->
+  <section class="cta-section mesimo-cta">
+    <div class="cta-wrap">
+      <h2 class="cta-headline reveal">Connectivity that follows<br>your devices.</h2>
+      <p class="cta-eyebrow reveal reveal-d1" class="cta-eyebrow-centered-narrow">Tell us about the deployment — the device, the data, the markets — and we'll recommend the right Mesimo connectivity for it.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-primary-pill">
+          Explore monoZ
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="#" class="btn-outline-pill">
+          Talk to us
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       12 · FOOTER
+  ============================================================ -->
+  <footer class="ft-footer">
+    <div class="ft-main">
+      <div class="ft-brand">
+        <a href="index.html" class="ft-logo">
+          <img src="images/Meritech_logo_white.png" alt="Meritech" >
+        </a>
+        <p class="ft-desc">Welcome to Meritech, where innovation and excellence converge to redefine the landscape of mobile network T&amp;M, Network optimization, LPWA IoT and trendsetting bespoke IT services. As a leading manufacturer of cutting-edge solutions and IT Services provider, we are dedicated to providing Software and Hardware solutions that empower Global Customers to stay ahead of the ever-evolving mobile wireless and IoT industry.</p>
+        <a href="#" class="ft-cta">
+          Talk to us
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+            <line x1="0" y1="5" x2="15" y2="5" stroke="white" stroke-width="1.4"></line>
+            <path d="M11 1.5L15.5 5L11 8.5" stroke="white" stroke-width="1.4" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="ft-nav" aria-label="Footer navigation">
+        <div class="ft-col">
+          <div class="ft-col-head">Wireless</div>
+          <a href="sigma-la.html" class="ft-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="ft-link">Sigma-AQ</a>
+          <a href="sigma-aq-boss.html" class="ft-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="ft-link">Sigma-One</a>
+          <a href="sigma-ml.html" class="ft-link">Sigma-ML</a>
+          <a href="Sigma-PA.html" class="ft-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="ft-link">Centra-SD</a>
+          <a href="#" class="ft-link">Sigma-Neo</a>
+          <a href="centra-experitest.html" class="ft-link">Centra-Experitest</a>
+          <a href="#" class="ft-link">Sigma-AQ Reporting Server</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IoT</div>
+          <a href="#" class="ft-link">monoZ</a>
+          <a href="XENO+.html" class="ft-link">Xeno+</a>
+          <a href="mesimo.html" class="ft-link">Mesimo</a>
+          <a href="#" class="ft-link">Centra IoT</a>
+          <a href="#" class="ft-link">IoT Consulting</a>
+          <a href="#" class="ft-link">Device Management</a>
+          <a href="#" class="ft-link">Connectivity</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IT &amp; Cloud</div>
+          <a href="#" class="ft-link">Data &amp; AI</a>
+          <a href="#" class="ft-link">DevOps</a>
+          <a href="#" class="ft-link">Cloud</a>
+          <a href="#" class="ft-link">ServiceNow</a>
+          <a href="#" class="ft-link">zoECON&#8482;</a>
+          <a href="#" class="ft-link">IVS</a>
+          <a href="#" class="ft-link">Managed IT</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">Company</div>
+          <a href="#" class="ft-link">Who we are</a>
+          <a href="#" class="ft-link">Success stories</a>
+          <a href="#" class="ft-link">News &amp; events</a>
+          <a href="#" class="ft-link">Global presence</a>
+          <a href="#" class="ft-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; Meritech 2026 &middot; All Rights Reserved</span>
+      <div class="ft-countries">
+        <span>Japan</span><span class="ft-sep">|</span>
+        <span>India</span><span class="ft-sep">|</span>
+        <span>Singapore</span><span class="ft-sep">|</span>
+        <span>Thailand</span><span class="ft-sep">|</span>
+        <span>USA</span><span class="ft-sep">|</span>
+        <span>UK</span><span class="ft-sep">|</span>
+        <span>Germany</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
