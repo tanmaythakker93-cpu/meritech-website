@@ -153,7 +153,7 @@ section[id] { scroll-margin-top: 100px; }
    HIGHLIGHTS
    ============================================================ */
 .hl-section { background: transparent; }
-.hl-inner { max-width: 1680px; margin: 0 auto; padding: 0 120px 150px; }
+.hl-inner { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
 .hl-eyebrow { font-size: 18px; font-weight: 400; color: #6B6868; line-height: 1.4; margin-bottom: 20px; }
 .hl-headline { font-size: 60px; font-weight: 500; color: #221F1F; line-height: 70px; letter-spacing: -.03em; margin-bottom: 64px; max-width: 760px; }
 .hl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -180,7 +180,7 @@ section[id] { scroll-margin-top: 100px; }
    MAIN FEATURES
    ============================================================ */
 .mf-section { background: transparent; }
-.mf-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px 0; }
+.mf-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px 120px; }
 .mf-top { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; margin-bottom: 56px; }
 .mf-eyebrow { font-size: 18px; font-weight: 400; color: rgb(34,31,31); line-height: 1.4; margin-bottom: 28px; }
 .mf-headline { font-size: 60px; font-weight: 500; color: rgb(34,31,31); line-height: 70px; letter-spacing: -0.030em; }
@@ -199,7 +199,7 @@ section[id] { scroll-margin-top: 100px; }
    USE CASES
    ============================================================ */
 .uc-section { background: transparent; }
-.uc-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px 0; }
+.uc-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
 .uc-top { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; margin-bottom: 72px; align-items: end; }
 .uc-eyebrow { font-size: 18px; font-weight: 400; color: rgb(107,104,104); line-height: 1.4; margin-bottom: 24px; }
 .uc-headline { font-size: 60px; font-weight: 500; color: rgb(34,31,31); line-height: 70px; letter-spacing: -0.030em; }
@@ -207,7 +207,7 @@ section[id] { scroll-margin-top: 100px; }
 .uc-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 50px; padding-top: 8px; padding-bottom: 8px; }
 .uc-card { background: #fff; border: 1px solid #e5e3e3; border-radius: 2px; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04); }
 .uc-card-tab { padding: 24px 40px; border-bottom: 1px solid #e5e3e3; font-size: 18px; font-weight: 600; color: rgb(61,58,58); line-height: 1.4; }
-.uc-card-img { background: rgb(217,217,217); height: 360px; width: 100%; border-bottom: 1px solid #e5e3e3; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+.uc-card-img { background: rgb(217,217,217); height: 260px; width: 100%; border-bottom: 1px solid #e5e3e3; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
 .uc-card-img img { width: 100%; height: 100%; object-fit: cover; }
 .uc-card-body { padding: 40px 40px 48px; flex: 1; display: flex; flex-direction: column; }
 .uc-card-title { font-size: 25px; font-weight: 600; color: rgb(61,58,58); margin-bottom: 16px; line-height: 1.2; }
@@ -235,6 +235,15 @@ section[id] { scroll-margin-top: 100px; }
 .uc-dark-card-link { display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600; color: #00A24F; text-decoration: none; margin-top: 32px; transition: color .15s; }
 .uc-dark-card-link:hover { color: #06c860; }
 .uc-dark-card-link::after { content: '→'; }
+
+/* Flat use-case cards (light section variant) */
+.uc-flat-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+.uc-flat-card { padding: 40px 36px 56px; border-top: 2px solid #E8E6E6; background: #fff; transition: background .2s, border-top-color .2s; }
+.uc-flat-card:hover { background: #F5FCF8; border-top-color: #00A24F; }
+.uc-flat-card--active { background: #F5FCF8; border-top-color: #00A24F; }
+.uc-flat-label { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #6B6868; margin-bottom: 20px; }
+.uc-flat-title { font-size: 25px; font-weight: 600; color: #221F1F; line-height: 1.25; margin-bottom: 16px; }
+.uc-flat-desc { font-size: 17px; color: #6B6868; line-height: 1.65; }
 
 /* ============================================================
    RELATED PRODUCTS
@@ -345,17 +354,17 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
    RESPONSIVE — HIGHLIGHTS
    ============================================================ */
 @media (max-width: 1199px) {
-  .hl-inner { padding: 0 60px 90px; }
+  .hl-inner { padding: 90px 60px; }
   .hl-headline { font-size: 48px; line-height: 56px; }
 }
 @media (max-width: 991px) {
-  .hl-inner { padding: 0 24px 72px; }
+  .hl-inner { padding: 72px 24px; }
   .hl-grid { grid-template-columns: 1fr; }
   .hl-headline { font-size: 36px; line-height: 44px; margin-bottom: 40px; }
   .hl-card { padding: 36px 28px; }
 }
 @media (max-width: 575px) {
-  .hl-inner { padding: 0 16px 48px; }
+  .hl-inner { padding: 48px 16px; }
   .hl-headline { font-size: 28px; line-height: 36px; }
   .hl-card { padding: 28px 20px; }
 }
@@ -512,8 +521,8 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 .lgc-cth:nth-child(2) { color: rgba(255,255,255,.4); padding-left: 36px; }
 .lgc-cth:nth-child(3) { color: #00A24F; padding-left: 36px; display: flex; align-items: center; gap: 12px; }
 .lgc-c-stage { padding: 26px 20px 26px 0; font-size: 15px; font-weight: 600; color: rgba(255,255,255,.4); letter-spacing: .03em; border-top: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; line-height: 1.4; }
-.lgc-c-old { padding: 26px 20px 26px 36px; font-size: 17px; color: rgba(255,255,255,.6); border-top: 1px solid rgba(255,255,255,.1); border-left: 1px solid rgba(255,255,255,.1); line-height: 1.55; }
-.lgc-c-new { padding: 26px 0 26px 36px; font-size: 17px; color: #06A64F; font-weight: 500; border-top: 1px solid rgba(255,255,255,.1); border-left: 1px solid rgba(255,255,255,.1); line-height: 1.55; }
+.lgc-c-old { padding: 26px 20px 26px 36px; font-size: 17px; color: rgba(255,255,255,.6); border-top: 1px solid rgba(255,255,255,.1); line-height: 1.55; }
+.lgc-c-new { padding: 26px 0 26px 36px; font-size: 17px; color: rgba(255,255,255,.85); font-weight: 500; border-top: 1px solid rgba(255,255,255,.1); line-height: 1.55; }
 
 @media (max-width: 1399px) {
   .lgc-compare { grid-template-columns: 170px 1fr 1fr; }
@@ -559,8 +568,8 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 /* ============================================================
    FIVE STEPS (Sigma-AQ Boss)
    ============================================================ */
-.fs-section { background: transparent; }
-.fs-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px 0; }
+.fs-section { background: #F5F4F4; }
+.fs-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
 .fs-top { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; margin-bottom: 80px; align-items: end; }
 .fs-eyebrow { font-size: 18px; font-weight: 400; color: #6B6868; line-height: 1.4; margin-bottom: 20px; }
 .fs-headline { font-size: 60px; font-weight: 500; color: #221F1F; line-height: 70px; letter-spacing: -0.03em; }
@@ -602,7 +611,7 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
    PROOF / CASE STUDY (Sigma-AQ Boss)
    ============================================================ */
 .pf-section { background: transparent; }
-.pf-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
+.pf-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px 80px; }
 .pf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; align-items: center; }
 .pf-eyebrow { font-size: 18px; font-weight: 400; color: #6B6868; line-height: 1.4; margin-bottom: 20px; }
 .pf-headline { font-size: 48px; font-weight: 500; color: #221F1F; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 28px; }
@@ -648,11 +657,12 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 .tp-eyebrow { font-size: 18px; font-weight: 400; color: rgba(255,255,255,.45); line-height: 1.4; margin-bottom: 20px; }
 .tp-headline { font-size: 60px; font-weight: 500; color: #fff; line-height: 1.15; letter-spacing: -0.03em; }
 .tp-desc { font-size: 18px; color: rgba(255,255,255,.6); line-height: 1.65; }
-.tp-cards { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.12); }
-.tp-card { padding: 52px 48px 52px 0; border-right: 1px solid rgba(255,255,255,.12); }
+.tp-cards { display: grid; grid-template-columns: repeat(3, 1fr); }
+.tp-card { padding: 52px 48px 52px 0; }
 .tp-card:not(:first-child) { padding-left: 48px; }
 .tp-card:last-child { border-right: none; padding-right: 0; }
-.tp-card-label { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 28px; }
+.tp-card-num { font-size: 96px; font-weight: 500; color: rgba(255,255,255,.1); line-height: 1; margin-bottom: 24px; letter-spacing: -0.02em; }
+.tp-card-label { font-size: 13px; font-weight: 700; color: #22B07D; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 16px; }
 .tp-card-title { font-size: 28px; font-weight: 600; color: #fff; line-height: 1.2; margin-bottom: 18px; }
 .tp-card-desc { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.65; }
 
@@ -662,8 +672,7 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
   .tp-top { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
   .tp-headline { font-size: 36px; }
   .tp-cards { grid-template-columns: 1fr; }
-  .tp-card { padding: 36px 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
-  .tp-card:last-child { border-bottom: none; }
+  .tp-card { padding: 36px 0; }
   .tp-card:not(:first-child) { padding-left: 0; }
 }
 @media (max-width: 767px) { .tp-wrap { padding: 72px 24px; } }
@@ -671,34 +680,40 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 /* ============================================================
    DEVICE TYPES ACCORDION (Sigma-One)
    ============================================================ */
-.dt-section { background: transparent; }
+.dt-section { background: #F5F4F4; }
 .dt-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px 0; }
 .dt-top { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; align-items: end; margin-bottom: 64px; }
 .dt-eyebrow { font-size: 18px; font-weight: 400; color: #6B6868; line-height: 1.4; margin-bottom: 20px; }
 .dt-headline { font-size: 60px; font-weight: 500; color: #221F1F; line-height: 1.15; letter-spacing: -0.03em; }
 .dt-desc { font-size: 18px; color: #6B6868; line-height: 1.65; }
 .dt-items { padding-bottom: 150px; }
-.dt-item { border-top: 1px solid #e5e3e3; }
+.dt-item { border-top: 1px solid #e5e3e3; background: #fff; padding-left: 32px; padding-right: 32px; }
 .dt-item:last-child { border-bottom: 1px solid #e5e3e3; }
 .dt-head { display: flex; align-items: center; gap: 0; padding: 28px 0; cursor: pointer; user-select: none; list-style: none; }
-.dt-num { font-size: 13px; font-weight: 600; color: #C8C5C5; text-transform: uppercase; letter-spacing: .1em; min-width: 160px; flex-shrink: 0; line-height: 1.4; }
+.dt-icon { width: 40px; height: 40px; background: #E8F5EE; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-right: 20px; }
+.dt-num { font-size: 13px; font-weight: 600; color: #22B07D; text-transform: uppercase; letter-spacing: .1em; min-width: 130px; flex-shrink: 0; line-height: 1.4; }
 .dt-title { font-size: 22px; font-weight: 600; color: #221F1F; flex: 1; line-height: 1.25; }
-.dt-sub { font-size: 14px; color: #6B6868; margin-right: 24px; white-space: nowrap; }
+.dt-head-tags { display: flex; gap: 8px; flex-wrap: nowrap; margin-left: auto; margin-right: 24px; }
+.dt-head-tag { font-size: 13px; color: #6B6868; border: 1px solid #D8D5D5; border-radius: 4px; padding: 4px 10px; white-space: nowrap; }
 .dt-toggle { width: 32px; height: 32px; border: 1.5px solid #D8D5D5; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: border-color .2s; }
 .dt-toggle svg { transition: transform .25s; }
 .dt-item.is-open .dt-toggle { border-color: #221F1F; }
-.dt-item.is-open .dt-toggle svg { transform: rotate(45deg); }
+.dt-item.is-open .dt-toggle svg { transform: rotate(180deg); }
 .dt-body { overflow: hidden; max-height: 0; transition: max-height .35s ease; }
-.dt-item.is-open .dt-body { max-height: 600px; }
-.dt-body-inner { padding: 0 0 40px 160px; }
+.dt-item.is-open .dt-body { max-height: 700px; }
+.dt-body-inner { padding: 0 0 40px 60px; }
 .dt-body-desc { font-size: 17px; color: #6B6868; line-height: 1.65; max-width: 700px; margin-bottom: 28px; }
+.dt-spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; background: transparent; margin-bottom: 28px; max-width: 100%; }
+.dt-spec-box { background: #fff; padding: 16px 20px; border: 1px solid #E5E3E3; border-radius: 6px; }
+.dt-spec-label { font-size: 11px; font-weight: 600; color: #9B9898; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+.dt-spec-val { font-size: 16px; font-weight: 500; color: #221F1F; line-height: 1.3; }
 .dt-tags { display: flex; gap: 10px; flex-wrap: wrap; }
 .dt-tag { font-size: 14px; font-weight: 500; color: #3D3A3A; background: #f0efee; border-radius: 4px; padding: 6px 16px; }
 
 @media (max-width: 1399px) { .dt-wrap { padding: 120px 80px 0; } .dt-headline { font-size: 52px; } .dt-items { padding-bottom: 120px; } }
-@media (max-width: 1199px) { .dt-wrap { padding: 100px 60px 0; } .dt-top { gap: 0 60px; } .dt-headline { font-size: 44px; } .dt-items { padding-bottom: 100px; } .dt-num { min-width: 120px; } .dt-body-inner { padding-left: 120px; } }
-@media (max-width: 991px) { .dt-top { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; } .dt-headline { font-size: 36px; } .dt-num { min-width: 90px; } .dt-sub { display: none; } .dt-body-inner { padding-left: 0; } }
-@media (max-width: 767px) { .dt-wrap { padding: 72px 24px 0; } .dt-items { padding-bottom: 72px; } .dt-title { font-size: 18px; } }
+@media (max-width: 1199px) { .dt-wrap { padding: 100px 60px 0; } .dt-top { gap: 0 60px; } .dt-headline { font-size: 44px; } .dt-items { padding-bottom: 100px; } .dt-num { min-width: 110px; } .dt-body-inner { padding-left: 60px; } }
+@media (max-width: 991px) { .dt-top { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; } .dt-headline { font-size: 36px; } .dt-num { min-width: 90px; } .dt-head-tags { display: none; } .dt-body-inner { padding-left: 0; } }
+@media (max-width: 767px) { .dt-wrap { padding: 72px 24px 0; } .dt-items { padding-bottom: 72px; } .dt-title { font-size: 18px; } .dt-icon { display: none; } }
 
 /* ============================================================
    SERVICE PAGE — NUMBERED DISCIPLINES / STAGES
@@ -769,14 +784,14 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
    SERVICE PAGE — CTA SECTION
    ============================================================ */
 .cta-section { background: #f0efee; }
-.cta-wrap { max-width: 1680px; margin: 0 auto; padding: 120px; text-align: center; }
+.cta-wrap { max-width: 1680px; margin: 0 auto; padding: 150px; text-align: center; }
 .cta-eyebrow { font-size: 18px; color: #6B6868; margin-bottom: 24px; line-height: 1.4; }
 .cta-headline { font-size: 52px; font-weight: 500; color: #221F1F; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 48px; }
 .cta-btns { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
-@media (max-width: 1399px) { .cta-wrap { padding: 100px 80px; } .cta-headline { font-size: 44px; } }
-@media (max-width: 1199px) { .cta-wrap { padding: 80px 60px; } .cta-headline { font-size: 36px; } }
-@media (max-width: 767px) { .cta-wrap { padding: 64px 24px; } .cta-headline { font-size: 28px; } }
+@media (max-width: 1399px) { .cta-wrap { padding: 120px 80px; } .cta-headline { font-size: 44px; } }
+@media (max-width: 1199px) { .cta-wrap { padding: 100px 60px; } .cta-headline { font-size: 36px; } }
+@media (max-width: 767px) { .cta-wrap { padding: 80px 24px; } .cta-headline { font-size: 28px; } }
 
 /* ============================================================
    XENO+ PAGE — HERO OVERRIDES
@@ -1098,7 +1113,7 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
    IoT PRODUCTS — HIGHLIGHTS (2×2 cards)
    ============================================================ */
 .ip-hl-section { background: #F5F4F4; }
-.ip-hl-wrap { max-width: 1680px; margin: 0 auto; padding: 100px 120px; }
+.ip-hl-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
 .ip-hl-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6B6868; margin-bottom: 28px; display: block; }
 .ip-hl-headline { font-size: 48px; font-weight: 500; color: #221F1F; line-height: 1.15; letter-spacing: -0.03em; max-width: 620px; margin-bottom: 64px; }
 .ip-hl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; background: transparent; }
@@ -1183,7 +1198,7 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 /* ============================================================
    IoT PRODUCTS — NINE PRODUCTS ECOSYSTEM
    ============================================================ */
-.eco-wrap { max-width: 1680px; margin: 0 auto; padding: 100px 120px; }
+.eco-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
 .eco-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6B6868; margin-bottom: 28px; display: block; }
 .eco-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; margin-bottom: 48px; align-items: start; }
 .eco-headline { font-size: 52px; font-weight: 500; color: #221F1F; line-height: 1.1; letter-spacing: -0.03em; }
@@ -1197,7 +1212,7 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 .eco-tab-count { font-size: 11px; opacity: .72; }
 
 /* Grid — flex so cards reflow cleanly when filtered */
-.eco-section { background: transparent; border-top: 1px solid #e5e3e3; }
+.eco-section { background: transparent; }
 .eco-grid { display: flex; flex-wrap: wrap; gap: 20px; background: transparent; border: none; }
 .eco-card { background: #fff; padding: 36px 40px; flex: 0 0 calc((100% - 40px) / 3); box-sizing: border-box; display: flex; flex-direction: column; border: 1px solid #e5e3e3; box-shadow: 0 2px 16px rgba(0,0,0,.06); }
 .eco-card-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #6B6868; margin-bottom: 16px; display: block; line-height: 1.4; }
@@ -1210,8 +1225,8 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 /* ============================================================
    IoT PRODUCTS — XENO+ EDGE ML SPOTLIGHT
    ============================================================ */
-.xf-section { background: transparent; border-top: 1px solid #e5e3e3; }
-.xf-wrap { max-width: 1680px; margin: 0 auto; padding: 100px 120px; }
+.xf-section { background: transparent; }
+.xf-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
 .xf-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6B6868; margin-bottom: 20px; display: block; }
 .xf-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; align-items: start; }
 .xf-headline { font-size: 52px; font-weight: 700; color: #221F1F; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 40px; }
@@ -1227,7 +1242,7 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
    IoT PRODUCTS — RIGHT LAYER COMPARISON TABLE
    ============================================================ */
 .rl-section { background: transparent; }
-.rl-wrap { max-width: 1680px; margin: 0 auto; padding: 100px 120px; }
+.rl-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
 .rl-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6B6868; margin-bottom: 24px; display: block; }
 .rl-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; margin-bottom: 64px; align-items: start; }
 .rl-headline { font-size: 52px; font-weight: 700; color: #221F1F; line-height: 1.1; letter-spacing: -0.03em; }
@@ -1236,7 +1251,7 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 .rl-table { border: 1px solid #e5e3e3; }
 .rl-head { display: grid; grid-template-columns: 220px 180px 1fr 1.5fr; background: #F5F4F4; padding: 16px 32px; border-bottom: 1px solid #e5e3e3; }
 .rl-col-label { font-size: 13px; font-weight: 400; color: #6B6868; }
-.rl-row { display: grid; grid-template-columns: 220px 180px 1fr 1.5fr; padding: 22px 32px; border-bottom: 1px solid #e5e3e3; align-items: center; }
+.rl-row { display: grid; grid-template-columns: 220px 180px 1fr 1.5fr; padding: 22px 32px; border-bottom: 1px solid #e5e3e3; align-items: center; background: #fff; }
 .rl-row:last-child { border-bottom: none; }
 .rl-product { font-size: 15px; font-weight: 700; color: #221F1F; }
 .rl-layer { font-size: 15px; color: #3D3A3A; }
@@ -1246,8 +1261,8 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 /* ============================================================
    IoT PRODUCTS — WHY MERITECH
    ============================================================ */
-.wm-section { background: transparent; border-top: 1px solid #e5e3e3; }
-.wm-wrap { max-width: 1680px; margin: 0 auto; padding: 100px 120px; }
+.wm-section { background: transparent; }
+.wm-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
 .wm-kicker { font-size: 13px; font-weight: 400; color: #6B6868; margin-bottom: 20px; display: block; }
 .wm-headline { font-size: 68px; font-weight: 700; color: #221F1F; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 72px; }
 .wm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 24px; align-items: start; }
@@ -1265,8 +1280,8 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 /* ============================================================
    IoT PRODUCTS — COMMON QUESTIONS FAQ
    ============================================================ */
-.cm-section { background: #F5F4F4; border-top: 1px solid #e5e3e3; }
-.cm-wrap { max-width: 1680px; margin: 0 auto; padding: 100px 120px; }
+.cm-section { background: #F5F4F4; }
+.cm-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
 .cm-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6B6868; margin-bottom: 24px; display: block; }
 .cm-headline { font-size: 52px; font-weight: 700; color: #221F1F; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 64px; }
 .cm-item { border-top: 1px solid #D8D5D5; }
@@ -1283,8 +1298,8 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 /* ============================================================
    IoT PRODUCTS — LAST CTA SECTION
    ============================================================ */
-.lc-section { background: transparent; border-top: 1px solid #e5e3e3; }
-.lc-wrap { max-width: 1680px; margin: 0 auto; padding: 100px 120px; display: grid; grid-template-columns: 1fr auto; gap: 0 80px; align-items: center; }
+.lc-section { background: transparent; }
+.lc-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; display: grid; grid-template-columns: 1fr auto; gap: 0 80px; align-items: center; }
 .lc-headline { font-size: 64px; font-weight: 700; color: #221F1F; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 24px; }
 .lc-body { font-size: 17px; color: #3D3A3A; line-height: 1.75; max-width: 540px; }
 .lc-actions { display: flex; gap: 12px; flex-direction: column; align-items: flex-start; }
@@ -1294,49 +1309,67 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 .lc-btn-secondary:hover { background: #221F1F; color: #fff; }
 
 /* ============================================================
+   SHARED DARK CTA — used across all service pages
+   ============================================================ */
+.pg-cta-section { background: #221F1F; }
+.pg-cta-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 80px; align-items: center; }
+.pg-cta-kicker { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #22B07D; margin-bottom: 18px; display: block; }
+.pg-cta-h { font-size: 48px; font-weight: 500; color: #fff; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 18px; }
+.pg-cta-h em { font-style: normal; color: #00A24F; }
+.pg-cta-body { font-size: 17px; color: rgba(255,255,255,.65); line-height: 1.7; }
+.pg-cta-body strong { color: #fff; font-weight: 600; }
+.pg-cta-r { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.pg-cta-note { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.7; }
+
+@media (max-width: 1399px) { .pg-cta-wrap { padding: 120px 80px; } }
+@media (max-width: 1199px) { .pg-cta-wrap { padding: 100px 60px; } .pg-cta-h { font-size: 38px; } }
+@media (max-width: 991px)  { .pg-cta-wrap { grid-template-columns: 1fr; gap: 36px; padding: 80px 24px; } }
+@media (max-width: 575px)  { .pg-cta-wrap { padding: 48px 16px; } .pg-cta-h { font-size: 30px; } }
+
+/* ============================================================
    IoT PRODUCTS — RESPONSIVE
    ============================================================ */
 @media (max-width: 1399px) {
-  .ip-hl-wrap { padding: 80px 80px; }
-  .suite-wrap { padding: 80px 80px; }
+  .ip-hl-wrap { padding: 120px 80px; }
+  .suite-wrap { padding: 120px 80px; }
   .suite-name { font-size: 64px; }
-  .ip-plt-wrap { padding: 80px 80px; }
+  .ip-plt-wrap { padding: 120px 80px; }
   .ip-plt-name { font-size: 64px; }
-  .eco-wrap { padding: 100px 80px; }
+  .eco-wrap { padding: 120px 80px; }
   .eco-headline { font-size: 48px; }
-  .xf-wrap { padding: 80px 80px; }
+  .xf-wrap { padding: 120px 80px; }
   .xf-headline { font-size: 44px; }
-  .rl-wrap { padding: 80px 80px; }
+  .rl-wrap { padding: 120px 80px; }
   .rl-headline { font-size: 44px; }
 }
 @media (max-width: 1199px) {
-  .ip-hl-wrap { padding: 72px 60px; }
+  .ip-hl-wrap { padding: 100px 60px; }
   .ip-hl-headline { font-size: 38px; }
-  .eco-wrap { padding: 80px 60px; }
+  .eco-wrap { padding: 100px 60px; }
   .eco-headline { font-size: 38px; }
   .eco-card { flex: 0 0 calc((100% - 40px) / 3); }
-  .xf-wrap { padding: 80px 60px; }
+  .xf-wrap { padding: 100px 60px; }
   .xf-headline { font-size: 38px; }
   .xf-layout { gap: 0 60px; }
-  .rl-wrap { padding: 80px 60px; }
+  .rl-wrap { padding: 100px 60px; }
   .rl-headline { font-size: 38px; }
   .rl-head { grid-template-columns: 180px 160px 1fr 1.3fr; padding: 14px 24px; }
   .rl-row { grid-template-columns: 180px 160px 1fr 1.3fr; padding: 20px 24px; }
 }
 @media (max-width: 991px) {
-  .ip-hl-wrap { padding: 60px 24px; }
+  .ip-hl-wrap { padding: 80px 24px; }
   .ip-hl-headline { font-size: 30px; max-width: 100%; margin-bottom: 40px; }
   .ip-hl-grid { grid-template-columns: 1fr; }
   .ip-hcard { padding: 36px 28px; }
-  .eco-wrap { padding: 60px 24px; }
+  .eco-wrap { padding: 80px 24px; }
   .eco-intro { grid-template-columns: 1fr; gap: 20px; }
   .eco-headline { font-size: 30px; }
   .eco-card { flex: 0 0 calc((100% - 20px) / 2); }
-  .xf-wrap { padding: 60px 24px; }
+  .xf-wrap { padding: 80px 24px; }
   .xf-layout { grid-template-columns: 1fr; gap: 48px; }
   .xf-headline { font-size: 30px; margin-bottom: 32px; }
   .xf-feat-grid { gap: 28px 28px; }
-  .rl-wrap { padding: 60px 24px; }
+  .rl-wrap { padding: 80px 24px; }
   .rl-intro { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
   .rl-headline { font-size: 30px; }
   .rl-head { grid-template-columns: 1fr 1fr; padding: 12px 20px; }
@@ -1344,15 +1377,15 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
   .rl-head .rl-col-label:nth-child(4) { display: none; }
   .rl-row { grid-template-columns: 1fr 1fr; padding: 16px 20px; gap: 8px 0; }
   .rl-what, .rl-best { display: none; }
-  .wm-wrap { padding: 60px 24px; }
+  .wm-wrap { padding: 80px 24px; }
   .wm-headline { font-size: 40px; margin-bottom: 48px; }
   .wm-grid { grid-template-columns: 1fr; gap: 12px; }
   .wm-card { padding: 36px 28px; }
   .wm-card-dark { padding: 36px 28px; }
-  .cm-wrap { padding: 60px 24px; }
+  .cm-wrap { padding: 80px 24px; }
   .cm-headline { font-size: 32px; margin-bottom: 40px; }
   .cm-q-text { font-size: 16px; }
-  .lc-wrap { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
+  .lc-wrap { grid-template-columns: 1fr; gap: 48px; padding: 80px 24px; }
   .lc-headline { font-size: 36px; }
 }
 @media (max-width: 575px) {
@@ -1496,9 +1529,9 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
 .hp-cap-inner { max-width: 1680px; margin: 0 auto; padding: 0 120px; }
 .hp-cap-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6B6868; margin-bottom: 24px; }
 .hp-cap-headline { font-size: clamp(36px, 5vw, 76px); font-weight: 700; color: #221F1F; line-height: 1.04; letter-spacing: -.035em; max-width: 680px; margin-bottom: 80px; }
-.hp-cap-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #E8E6E6; }
+.hp-cap-stats { display: grid; grid-template-columns: repeat(4, 1fr); }
 .hp-cap-stat { padding: 48px 32px 40px 0; }
-.hp-cap-stat:not(:first-child) { padding-left: 32px; border-left: 1px solid #E8E6E6; }
+.hp-cap-stat:not(:first-child) { padding-left: 32px; }
 .hp-cap-num { font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; color: #221F1F; line-height: 1; letter-spacing: -.035em; margin-bottom: 14px; }
 .hp-cap-num sup { font-size: .52em; vertical-align: super; }
 .hp-cap-label { font-size: 16px; font-weight: 600; color: #221F1F; margin-bottom: 10px; line-height: 1.4; }
@@ -1545,8 +1578,6 @@ a.rel-card:hover .rel-tag { color: #221F1F; }
   .hp-quote-inner, .hp-prob-inner, .hp-cap-inner, .hp-ins-inner, .hp-global-inner { padding-left: 60px; padding-right: 60px; }
   .hp-build-inner { padding-left: 60px; padding-right: 60px; grid-template-columns: 300px 1fr; gap: 56px; }
   .hp-cap-stats { grid-template-columns: 1fr 1fr; }
-  .hp-cap-stat:nth-child(3) { border-left: none; }
-  .hp-cap-stat:nth-child(n+3) { border-top: 1px solid #E8E6E6; }
 }
 @media (max-width: 991px) {
   .hp-hero { padding: 72px 24px 56px; min-height: auto; flex-direction: column; gap: 0; }

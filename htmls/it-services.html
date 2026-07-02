@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>IT Services | Meritech</title>
+<meta name="description" content="Meritech IT Services — Digital Synergy, Data & AI, DevOps, Cloud, ServiceNow, zoECON cloud cost optimizer, validation, managed IT, consulting, and outsourcing. 20+ years building software for global clients."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet"/>
+<style>
+:root{--ink:#231F20;--green:#06A64F;--navy:#233F89;--ink-2:#3A3537;--muted:#7F7B7D;--bg:#FFFFFF;--bg-2:#F7F7F8;--bg-3:#EEEDEE;--rule:#E5E4E6;--rule-2:#F0EFF0;--green-2:#048C42;--f:"Open Sans",system-ui,sans-serif;--micro:11px;--body:16px;--lead:19px;--h2:clamp(26px,3.2vw,44px);--h1:clamp(34px,5vw,80px);--g:clamp(24px,4vw,72px);--max:1280px;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{font-family:var(--f);font-size:var(--body);line-height:1.6;color:var(--ink);background:var(--bg);overflow-x:hidden;}
+img,svg{display:block;max-width:100%;}a{color:inherit;text-decoration:none;}button{font:inherit;cursor:pointer;border:0;background:none;}
+::selection{background:var(--green);color:#fff;}
+.ey{font-size:var(--micro);letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:600;display:flex;align-items:center;gap:12px;}
+.ey::before{content:'';width:24px;height:1px;background:var(--green);}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:999px;font-size:14px;font-weight:600;border:1px solid transparent;transition:all .25s cubic-bezier(.2,.7,.2,1);font-family:var(--f);}
+.btn-d{background:var(--ink);color:#fff;}.btn-d:hover{background:var(--green);transform:translateY(-1px);}
+.btn-g{border-color:var(--rule);color:var(--ink);}.btn-g:hover{border-color:var(--ink);}
+.arr{transition:transform .25s;}.btn:hover .arr{transform:translateX(4px);}
+.h2{font-size:var(--h2);font-weight:800;line-height:1.1;letter-spacing:-.02em;}.h2 em{font-style:normal;color:var(--green);}
+.nav{position:sticky;top:0;height:62px;padding:0 var(--g);background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule-2);z-index:100;display:flex;align-items:center;}
+.logo{display:inline-flex;align-items:center;gap:10px;font-size:17px;font-weight:800;letter-spacing:-.015em;}
+.lm{width:22px;height:22px;display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.lm span{display:block;border-radius:1px;transform:rotate(45deg);}
+.lm span:nth-child(1){background:var(--navy);}.lm span:nth-child(2),.lm span:nth-child(3){background:var(--green);}.lm span:nth-child(4){background:var(--navy);}
+.lt{margin-left:6px;font-size:10px;color:var(--muted);border:1px solid var(--rule);border-radius:4px;padding:2px 7px;}
+.lt em{font-style:italic;color:var(--ink-2);}
+.nav-l{margin-left:32px;display:flex;height:100%;}
+.nav-a{padding:0 13px;height:100%;display:flex;align-items:center;font-size:14px;font-weight:600;color:var(--ink-2);transition:color .2s;}
+.nav-a:hover,.nav-a.on{color:var(--green);}.nav-a.on{position:relative;}
+.nav-a.on::after{content:'';position:absolute;left:13px;right:13px;bottom:-1px;height:2px;background:var(--green);}
+.nav-cta{margin-left:auto;font-size:13px;font-weight:600;padding:9px 18px;border:1px solid var(--ink);border-radius:999px;transition:all .2s;}
+.nav-cta:hover{background:var(--ink);color:#fff;}
+@media(max-width:900px){.nav-l{display:none;}}
+/* HERO */
+.hero{padding:clamp(56px,7vw,104px) var(--g) clamp(40px,5vw,60px);border-bottom:1px solid var(--rule-2);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(35,31,32,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(35,31,32,.025) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,#000 50%,transparent 100%);pointer-events:none;}
+.hero-inner{position:relative;max-width:var(--max);margin:0 auto;}
+.hero-div{font-size:var(--micro);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;font-weight:600;}
+.hero-div span{color:var(--green);}
+.hero-h1{font-size:var(--h1);font-weight:800;line-height:1.02;letter-spacing:-.03em;max-width:17ch;margin-bottom:28px;}
+.hero-h1 em{font-style:normal;color:var(--green);}
+.hero-sub{font-size:var(--lead);line-height:1.6;color:var(--ink-2);max-width:64ch;margin-bottom:32px;}
+.hero-sub strong{font-weight:700;color:var(--ink);}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:clamp(40px,5vw,56px);}
+.hbadge{font-size:12px;font-weight:600;padding:6px 13px;border:1px solid var(--rule);border-radius:6px;color:var(--ink-2);}
+.hbadge.hi{border-color:rgba(6,166,79,.3);background:rgba(6,166,79,.06);color:var(--green-2);}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);}
+.hstat{padding:24px 18px 0 0;border-right:1px solid var(--rule);}
+.hstat:not(:first-child){padding-left:18px;}.hstat:last-child{border-right:0;}
+.hstat-n{font-size:clamp(28px,3.6vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--ink);}
+.hstat-n em{font-style:normal;color:var(--green);}
+.hstat-l{font-size:12px;color:var(--muted);margin-top:8px;font-weight:600;}
+@media(max-width:680px){.hero-stats{grid-template-columns:1fr 1fr;}.hstat:nth-child(2){border-right:0;}.hstat:nth-child(-n+2){border-bottom:1px solid var(--rule);padding-bottom:18px;}.hstat:nth-child(n+3){padding-top:18px;}}
+/* SECTION */
+.sec{padding:clamp(72px,9vw,116px) var(--g);}
+.sec-inner{max-width:var(--max);margin:0 auto;}
+.sec-alt{background:var(--bg-2);border-top:1px solid var(--rule-2);}
+.sec-dark{background:var(--ink);color:#fff;position:relative;overflow:hidden;}
+.sec-dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 50% at 0% 100%,rgba(6,166,79,.13),transparent 55%),radial-gradient(ellipse 50% 50% at 100% 0%,rgba(35,63,137,.22),transparent 55%);pointer-events:none;}
+.sec-dark .sec-inner{position:relative;}.sec-dark .h2{color:#fff;}
+.sec-head{max-width:62ch;margin-bottom:clamp(40px,5vw,60px);}
+.sec-head .ey{margin-bottom:18px;}
+.sec-head p.sub{margin-top:18px;color:var(--ink-2);font-size:var(--body);line-height:1.65;}
+.sec-head p.sub strong{color:var(--ink);font-weight:700;}
+.sec-dark .sec-head p.sub{color:rgba(255,255,255,.72);}.sec-dark .sec-head p.sub strong{color:#fff;}
+/* SYNERGY — the umbrella idea, 3 pillars */
+.pills{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);}
+.pill{padding:clamp(28px,3.5vw,44px) clamp(20px,2.5vw,32px) 0 0;border-right:1px solid var(--rule);}
+.pill:not(:first-child){padding-left:clamp(20px,2.5vw,32px);}.pill:last-child{border-right:0;}
+.pill-ic{width:42px;height:42px;border-radius:10px;background:rgba(6,166,79,.08);display:grid;place-items:center;margin-bottom:16px;}
+.pill-ic svg{width:21px;height:21px;stroke:var(--green);stroke-width:1.6;fill:none;}
+.pill-n{font-size:17px;font-weight:800;letter-spacing:-.015em;margin-bottom:10px;}
+.pill-d{font-size:14px;line-height:1.65;color:var(--ink-2);}
+@media(max-width:820px){.pills{grid-template-columns:1fr;}.pill{border-right:0;border-bottom:1px solid var(--rule);padding:24px 0!important;}.pill:last-child{border-bottom:0;}}
+/* SERVICE FAMILY — radio filter + cards */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+.filt{font-size:13px;font-weight:600;padding:9px 18px;border:1px solid var(--rule);border-radius:999px;color:var(--ink-2);background:#fff;transition:all .2s;}
+.filt:hover{border-color:var(--ink);}
+.filt.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.scard{padding:26px;border:1px solid var(--rule-2);border-radius:14px;background:#fff;display:flex;flex-direction:column;transition:all .25s;text-decoration:none;color:inherit;}
+.scard:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:0 18px 40px -22px rgba(35,31,32,.14);}
+.scard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
+.scard-ic{width:44px;height:44px;border-radius:10px;background:rgba(6,166,79,.08);display:grid;place-items:center;}
+.scard-ic svg{width:22px;height:22px;stroke:var(--green);stroke-width:1.6;fill:none;}
+.scard-flag{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green-2);background:rgba(6,166,79,.07);border:1px solid rgba(6,166,79,.25);border-radius:4px;padding:3px 8px;align-self:flex-start;}
+.scard-cat{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.scard-name{font-size:19px;font-weight:800;letter-spacing:-.018em;margin-bottom:10px;line-height:1.15;}
+.scard-desc{font-size:13.5px;line-height:1.6;color:var(--ink-2);margin-bottom:16px;}
+.scard-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;margin-bottom:16px;}
+.scard-chip{font-size:10px;font-weight:600;padding:4px 9px;border:1px solid var(--rule);border-radius:4px;color:var(--muted);}
+.scard-link{font-size:12px;font-weight:700;color:var(--green-2);display:inline-flex;align-items:center;gap:7px;transition:gap .2s;}
+.scard:hover .scard-link{gap:11px;}
+@media(max-width:880px){.sgrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.sgrid{grid-template-columns:1fr;}}
+/* SPOTLIGHT zoECON */
+.spot{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center;}
+.spot-l .ey{margin-bottom:18px;}
+.spot-h{font-size:var(--h2);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:18px;}.spot-h em{font-style:normal;color:var(--green);}
+.spot-body{font-size:var(--body);line-height:1.7;color:var(--ink-2);margin-bottom:24px;}.spot-body strong{color:var(--ink);font-weight:700;}
+.spot-feats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px;}
+.spot-feat-t{font-size:14px;font-weight:800;margin-bottom:4px;}
+.spot-feat-d{font-size:13px;line-height:1.5;color:var(--muted);}
+.spot-r{background:var(--ink);border-radius:16px;padding:clamp(28px,3.5vw,48px);position:relative;overflow:hidden;min-height:300px;display:flex;align-items:center;justify-content:center;}
+#zoeconCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
+.spot-r-grad{position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 50% 50%,rgba(6,166,79,.16),transparent 60%);z-index:1;pointer-events:none;}
+.spot-stat{position:relative;z-index:2;text-align:center;}
+.spot-stat-n{font-size:clamp(64px,10vw,120px);font-weight:800;color:#fff;line-height:.85;letter-spacing:-.04em;}
+.spot-stat-n em{font-style:normal;color:var(--green);}
+.spot-stat-l{font-size:14px;color:rgba(255,255,255,.7);margin-top:16px;max-width:24ch;line-height:1.5;margin-left:auto;margin-right:auto;}
+@media(max-width:820px){.spot{grid-template-columns:1fr;}.spot-feats{grid-template-columns:1fr 1fr;}}
+/* WHY — accordion */
+.acc{border-top:1px solid var(--rule);}
+.aitem{border-bottom:1px solid var(--rule-2);}
+.aq{width:100%;text-align:left;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:16px;font-weight:700;color:var(--ink);}
+.aq-icon{flex-shrink:0;width:20px;height:20px;position:relative;}
+.aq-icon::before,.aq-icon::after{content:'';position:absolute;background:var(--green);transition:opacity .25s;}
+.aq-icon::before{top:9px;left:0;width:20px;height:2px;}.aq-icon::after{top:0;left:9px;width:2px;height:20px;}
+.aitem.open .aq-icon::after{opacity:0;}
+.aa{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.aa-inner{padding:0 0 22px;font-size:14.5px;line-height:1.7;color:var(--ink-2);max-width:75ch;}
+.aa-inner strong{color:var(--ink);font-weight:700;}
+/* CTA */
+.cta{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center;}
+.cta-h{font-size:var(--h2);font-weight:800;line-height:1.1;letter-spacing:-.02em;}.cta-h em{font-style:normal;color:var(--green);}
+.cta-body{font-size:var(--body);line-height:1.65;color:var(--ink-2);margin-top:18px;max-width:48ch;}.cta-body strong{color:var(--ink);font-weight:700;}
+.cta-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;}
+.cta-note{font-size:var(--micro);color:var(--muted);line-height:1.7;}
+@media(max-width:760px){.cta{grid-template-columns:1fr;gap:28px;}}
+/* FOOTER */
+.ft{padding:clamp(48px,6vw,72px) var(--g) 28px;background:var(--ink);color:rgba(255,255,255,.6);font-size:13px;}
+.ft-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.3fr 2fr;gap:48px;}
+.ft-brand{display:flex;flex-direction:column;gap:16px;}.ft-brand .logo{color:#fff;}
+.ft-tagline{max-width:38ch;line-height:1.5;}
+.ft-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.ft-col h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px;font-weight:700;}
+.ft-col a{display:block;padding:5px 0;font-size:13px;color:rgba(255,255,255,.8);transition:color .2s;}.ft-col a:hover{color:var(--green);}
+.ft-bar{max-width:var(--max);margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:11px;color:rgba(255,255,255,.4);}
+@media(max-width:820px){.ft-inner{grid-template-columns:1fr;}.ft-cols{grid-template-columns:1fr 1fr;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a href="https://meritechsolutions.com" class="logo"><span class="lm" aria-hidden="true"><span></span><span></span><span></span><span></span></span>Meritech<span class="lt"><em>Your efficiency, our passion</em></span></a>
+  <nav class="nav-l"><a class="nav-a" href="#">Wireless</a><a class="nav-a" href="#">IoT</a><a class="nav-a on" href="#">IT &amp; Cloud</a><a class="nav-a" href="#">Why Meritech</a><a class="nav-a" href="#">Insights</a><a class="nav-a" href="#">Company</a></nav>
+  <a href="#contact" class="nav-cta">Talk to us</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-div">Division 03 &nbsp;/&nbsp; <span>IT &amp; Cloud</span></div>
+    <h1 class="hero-h1">Bespoke IT services, <em>built in synergy.</em></h1>
+    <p class="hero-sub">From digital products and data platforms to DevOps, cloud, and ServiceNow — <strong>Meritech brings the synergy of seamless collaboration and harmonious integration</strong> to every engagement, backed by 20+ years of building high-quality software for global clients.</p>
+    <div class="hero-badges">
+      <span class="hbadge hi">Digital</span><span class="hbadge hi">Data &amp; AI</span><span class="hbadge hi">DevOps</span><span class="hbadge hi">Cloud</span><span class="hbadge hi">ServiceNow</span>
+      <span class="hbadge">AWS · Azure · GCP</span><span class="hbadge">Kubernetes</span><span class="hbadge">Power BI</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n">10</div><div class="hstat-l">IT service lines</div></div>
+      <div class="hstat"><div class="hstat-n">20<em>+</em></div><div class="hstat-l">Years building software</div></div>
+      <div class="hstat"><div class="hstat-n">60<em>%</em></div><div class="hstat-l">Cloud cost cut with zoECON</div></div>
+      <div class="hstat"><div class="hstat-n">E2E</div><div class="hstat-l">Ideation to deployment</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SYNERGY PILLARS -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-head"><div class="ey">The Meritech approach</div><h2 class="h2">Synergy, not <em>silos.</em></h2>
+    <p class="sub">Over time, most businesses' IT evolves into a motley of disparate systems, applications, and technologies. <strong>Our work brings them back into one coherent whole</strong> — skilful integration, aligned with business objectives, without compromising performance.</p></div>
+    <div class="pills">
+      <div class="pill"><div class="pill-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div><div class="pill-n">Seamless collaboration</div><div class="pill-d">Engagement models that work alongside your team — from staff augmentation to fully outsourced IT functions.</div></div>
+      <div class="pill"><div class="pill-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div><div class="pill-n">Harmonious integration</div><div class="pill-d">Integration architects design the blueprints to unify divergent systems through APIs and protocols.</div></div>
+      <div class="pill"><div class="pill-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></div><div class="pill-n">Aligned with objectives</div><div class="pill-d">Every digital solution is shaped to the business goals it serves — technology in service of outcomes.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE FAMILY -->
+<section class="sec sec-alt" id="services">
+  <div class="sec-inner">
+    <div class="sec-head"><div class="ey">The service family</div><h2 class="h2">Ten services. <em>One partner.</em></h2>
+    <p class="sub">From building digital products to running your entire IT estate — filter by what you need.</p></div>
+    <div class="filters" id="filters">
+      <button class="filt on" data-f="all">All 10</button>
+      <button class="filt" data-f="build">Build 3</button>
+      <button class="filt" data-f="data">Data &amp; AI 1</button>
+      <button class="filt" data-f="platform">Platform 2</button>
+      <button class="filt" data-f="quality">Quality 1</button>
+      <button class="filt" data-f="manage">Manage &amp; advise 3</button>
+    </div>
+    <div class="sgrid" id="sgrid">
+
+      <a class="scard" data-cat="build" href="digital-synergy-solutions.html">
+        <div class="scard-top"><div class="scard-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div></div>
+        <div class="scard-cat">Build · Digital</div><div class="scard-name">Digital Synergy Solutions</div>
+        <p class="scard-desc">Web &amp; mobile app development, enterprise mobility, hybrid &amp; PWA development, UI/UX design, and complex workflow implementation.</p>
+        <div class="scard-chips"><span class="scard-chip">Web &amp; Mobile</span><span class="scard-chip">PWA</span><span class="scard-chip">UI/UX</span></div>
+        <span class="scard-link">Explore service &rarr;</span>
+      </a>
+
+      <a class="scard" data-cat="data" href="data-ai.html">
+        <div class="scard-top"><div class="scard-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div></div>
+        <div class="scard-cat">Data &amp; AI</div><div class="scard-name">Data &amp; AI</div>
+        <p class="scard-desc">Data analysis, visualization, big data management, Power BI reporting, predictive analysis, and AI-driven enterprise solutions.</p>
+        <div class="scard-chips"><span class="scard-chip">Power BI</span><span class="scard-chip">Big Data</span><span class="scard-chip">Predictive</span></div>
+        <span class="scard-link">Explore service &rarr;</span>
+      </a>
+
+      <a class="scard" data-cat="build" href="devops.html">
+        <div class="scard-top"><div class="scard-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="4"/></svg></div></div>
+        <div class="scard-cat">Build · DevOps</div><div class="scard-name">DevOps</div>
+        <p class="scard-desc">Automation, CI/CD pipelines, configuration management, containerization, and test automation for faster, more reliable delivery.</p>
+        <div class="scard-chips"><span class="scard-chip">CI/CD</span><span class="scard-chip">Docker</span><span class="scard-chip">IaC</span></div>
+        <span class="scard-link">Explore service &rarr;</span>
+      </a>
+
+      <a class="scard" data-cat="platform" href="cloud.html">
+        <div class="scard-top"><div class="scard-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div></div>
+        <div class="scard-cat">Platform · Cloud</div><div class="scard-name">Cloud</div>
+        <p class="scard-desc">Cloud transformation, migration &amp; integration, cloud-native development, and data &amp; apps migration across AWS, Azure, and GCP.</p>
+        <div class="scard-chips"><span class="scard-chip">AWS · Azure · GCP</span><span class="scard-chip">Kubernetes</span></div>
+        <span class="scard-link">Explore service &rarr;</span>
+      </a>
+
+      <a class="scard" data-cat="platform" href="servicenow.html">
+        <div class="scard-top"><div class="scard-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg></div><span class="scard-flag">Certified partner</span></div>
+        <div class="scard-cat">Platform · ServiceNow</div><div class="scard-name">ServiceNow</div>
+        <p class="scard-desc">AI-driven ServiceNow across ITSM, ITOM, ITAM, SPM, HRSD, CSM, CMDB, and GRC/IRM — as a certified consulting &amp; implementation partner.</p>
+        <div class="scard-chips"><span class="scard-chip">ITSM</span><span class="scard-chip">ITOM</span><span class="scard-chip">HRSD</span></div>
+        <span class="scard-link">Explore service &rarr;</span>
+      </a>
+
+      <a class="scard" data-cat="platform" href="zoecon-cloud-cost-optimizer.html">
+        <div class="scard-top"><div class="scard-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><span class="scard-flag">C2O AI Engine</span></div>
+        <div class="scard-cat">Platform · FinOps</div><div class="scard-name">zoECON™ Cloud Cost Optimizer</div>
+        <p class="scard-desc">Powered by the C2O AI Engine — cut your cloud bill by up to 60% with strong cost-optimization recommendations and security validation.</p>
+        <div class="scard-chips"><span class="scard-chip">Up to 60% saving</span><span class="scard-chip">FinOps</span></div>
+        <span class="scard-link">Explore service &rarr;</span>
+      </a>
+
+      <a class="scard" data-cat="quality" href="independent-validation-services.html">
+        <div class="scard-top"><div class="scard-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div></div>
+        <div class="scard-cat">Quality · Testing</div><div class="scard-name">Independent Validation Services</div>
+        <p class="scard-desc">Comprehensive, objective evaluation of your systems, processes, and software — rigorous testing methodologies for accuracy, reliability, and performance.</p>
+        <div class="scard-chips"><span class="scard-chip">QA</span><span class="scard-chip">Testing</span><span class="scard-chip">Validation</span></div>
+        <span class="scard-link">Explore service &rarr;</span>
+      </a>
+
+      <a class="scard" data-cat="manage" href="managed-it-services.html">
+        <div class="scard-top"><div class="scard-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div></div>
+        <div class="scard-cat">Manage · Operations</div><div class="scard-name">Managed IT Services</div>
+        <p class="scard-desc">Proactive application &amp; infrastructure monitoring, optimization, streamlined DevOps, efficient cloud management, and stringent security.</p>
+        <div class="scard-chips"><span class="scard-chip">Monitoring</span><span class="scard-chip">Security</span><span class="scard-chip">Managed</span></div>
+        <span class="scard-link">Explore service &rarr;</span>
+      </a>
+
+      <a class="scard" data-cat="manage" href="it-consulting.html">
+        <div class="scard-top"><div class="scard-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9.66 18H14.34M11 22h2M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg></div></div>
+        <div class="scard-cat">Advise · Strategy</div><div class="scard-name">IT Consulting</div>
+        <p class="scard-desc">Application modernization, process consulting, DevOps assessment &amp; strategy, and cloud adoption &amp; migration guidance.</p>
+        <div class="scard-chips"><span class="scard-chip">Modernization</span><span class="scard-chip">Strategy</span></div>
+        <span class="scard-link">Explore service &rarr;</span>
+      </a>
+
+      <a class="scard" data-cat="manage" href="it-outsourcing-services.html">
+        <div class="scard-top"><div class="scard-ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div></div>
+        <div class="scard-cat">Manage · Teams</div><div class="scard-name">IT Outsourcing Services</div>
+        <p class="scard-desc">Staff augmentation, self-managed teams, complete IT function outsourcing, and Hiring as a Service — scale your operations with focus.</p>
+        <div class="scard-chips"><span class="scard-chip">Staff aug</span><span class="scard-chip">HaaS</span><span class="scard-chip">Managed teams</span></div>
+        <span class="scard-link">Explore service &rarr;</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- SPOTLIGHT — zoECON -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="spot">
+      <div class="spot-l">
+        <div class="ey">Product spotlight · zoECON™</div>
+        <h2 class="spot-h">Cut the cloud bill. <em>Keep the security.</em></h2>
+        <p class="spot-body">zoECON™ is <strong>powered by the C2O AI Engine</strong> — which helps cut your cloud bill by up to 60% with strong cost-optimization recommendations and security validation. FinOps and security in one engine.</p>
+        <div class="spot-feats">
+          <div><div class="spot-feat-t">C2O AI Engine</div><div class="spot-feat-d">AI-driven recommendations that find the savings humans miss.</div></div>
+          <div><div class="spot-feat-t">Up to 60% lower</div><div class="spot-feat-d">Measurable reduction in cloud spend across providers.</div></div>
+          <div><div class="spot-feat-t">Security validation</div><div class="spot-feat-d">Cost optimization that doesn't trade away your security posture.</div></div>
+          <div><div class="spot-feat-t">Provider-agnostic</div><div class="spot-feat-d">Works across the major cloud platforms you already run on.</div></div>
+        </div>
+        <a href="zoecon-cloud-cost-optimizer.html" class="btn btn-d">Explore zoECON™ <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="spot-r">
+        <canvas id="zoeconCanvas"></canvas>
+        <div class="spot-r-grad"></div>
+        <div class="spot-stat"><div class="spot-stat-n">60<em>%</em></div><div class="spot-stat-l">Potential reduction in your cloud bill</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MERITECH — accordion -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-head"><div class="ey">Why Meritech for IT</div><h2 class="h2">The ultimate destination for your <em>software needs.</em></h2></div>
+    <div class="acc" id="acc">
+      <div class="aitem"><button class="aq">20+ years of client delight<span class="aq-icon"></span></button><div class="aa"><div class="aa-inner">Empathy with our clients has fetched us <strong>20+ years of their delight</strong>, with rich expertise in building a variety of high-quality software products across industries and geographies.</div></div></div>
+      <div class="aitem"><button class="aq">A certified ServiceNow partner<span class="aq-icon"></span></button><div class="aa"><div class="aa-inner">We are a certified <strong>Consulting and Implementation partner with ServiceNow</strong>, with a team of certified professionals, proven methodologies, and a flexible global delivery model.</div></div></div>
+      <div class="aitem"><button class="aq">End-to-end, ideation to deployment<span class="aq-icon"></span></button><div class="aa"><div class="aa-inner">From the first workflow design to a deployed, monitored, optimized production system — Meritech covers the <strong>full software and IT lifecycle</strong>, so you have one accountable partner rather than many.</div></div></div>
+      <div class="aitem"><button class="aq">Flexible engagement models<span class="aq-icon"></span></button><div class="aa"><div class="aa-inner">Staff augmentation, self-managed teams, complete IT function outsourcing, or Hiring as a Service — <strong>engagement models that flex to your operations</strong> and let you focus on strategic initiatives.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" id="contact">
+  <div class="sec-inner"><div class="cta">
+    <div><div class="ey">Let's build something</div><h2 class="cta-h">Put 20 years of software <em>experience to work.</em></h2>
+    <p class="cta-body">Whether you need a product built, a platform migrated, or your whole IT estate managed — <strong>Meritech aims to be the ultimate destination for all your software development needs.</strong></p></div>
+    <div class="cta-actions"><a href="https://meritechsolutions.com/contact-us/" class="btn btn-d">Talk to us <span class="arr">&rarr;</span></a><a href="#services" class="btn btn-g">Browse all services</a>
+    <p class="cta-note">Japan: info@meritech.co.jp &nbsp;·&nbsp; International: info@meritechsolutions.com</p></div>
+  </div></div>
+</section>
+
+<footer class="ft">
+  <div class="ft-inner">
+    <div class="ft-brand"><a href="https://meritechsolutions.com" class="logo"><span class="lm" aria-hidden="true"><span></span><span></span><span></span><span></span></span>Meritech</a><p class="ft-tagline">Clear thinking in a complex digital world — across wireless, IoT, and enterprise systems.</p></div>
+    <div class="ft-cols">
+      <div class="ft-col"><h4>IT Services</h4><a href="digital-synergy-solutions.html">Digital Synergy</a><a href="data-ai.html">Data &amp; AI</a><a href="devops.html">DevOps</a><a href="cloud.html">Cloud</a><a href="servicenow.html">ServiceNow</a></div>
+      <div class="ft-col"><h4>More IT</h4><a href="zoecon-cloud-cost-optimizer.html">zoECON™</a><a href="independent-validation-services.html">Validation Services</a><a href="managed-it-services.html">Managed IT</a><a href="it-consulting.html">IT Consulting</a><a href="it-outsourcing-services.html">IT Outsourcing</a></div>
+      <div class="ft-col"><h4>Company</h4><a href="https://meritechsolutions.com/who-we-are/">Who we are</a><a href="https://meritechsolutions.com/success-stories/">Success stories</a><a href="https://meritechsolutions.com/contact-us/">Contact</a></div>
+    </div>
+  </div>
+  <div class="ft-bar"><span>© Meritech 2026 · All rights reserved</span><span>Japan · India · North America · Europe</span></div>
+</footer>
+
+<script>
+// radio filter
+var filts=document.querySelectorAll('.filt'),cards=document.querySelectorAll('#sgrid .scard');
+filts.forEach(function(b){b.addEventListener('click',function(){filts.forEach(function(x){x.classList.remove('on');});b.classList.add('on');var f=b.dataset.f;cards.forEach(function(c){c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';});});});
+// accordion
+document.querySelectorAll('.aq').forEach(function(q){q.addEventListener('click',function(){var it=q.parentElement,aa=q.nextElementSibling,op=it.classList.contains('open');document.querySelectorAll('.aitem').forEach(function(i){i.classList.remove('open');i.querySelector('.aa').style.maxHeight=null;});if(!op){it.classList.add('open');aa.style.maxHeight=aa.scrollHeight+'px';}});});
+// zoECON WebGL — descending cost bars / savings
+(function(){var c=document.getElementById('zoeconCanvas');if(!c)return;var gl=c.getContext('webgl',{alpha:true,antialias:true,premultipliedAlpha:false});if(!gl)return;var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var lv='attribute vec2 a_pos;attribute float a_a;uniform vec2 u_res;varying float v_a;void main(){vec2 p=(a_pos/u_res)*2.0-1.0;p.y=-p.y;gl_Position=vec4(p,0.0,1.0);v_a=a_a;}';
+var lf='precision mediump float;varying float v_a;uniform vec3 u_col;void main(){gl_FragColor=vec4(u_col,v_a);}';
+function sh(t,s){var o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o;}function pr(a,b){var p=gl.createProgram();gl.attachShader(p,sh(gl.VERTEX_SHADER,a));gl.attachShader(p,sh(gl.FRAGMENT_SHADER,b));gl.linkProgram(p);return p;}
+var pL=pr(lv,lf);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);
+var W,H,DPR;function rs(){DPR=Math.min(window.devicePixelRatio||1,2);var bb=c.getBoundingClientRect();W=bb.width;H=bb.height;c.width=W*DPR;c.height=H*DPR;gl.viewport(0,0,c.width,c.height);}window.addEventListener('resize',rs);rs();
+var G=[0.024,0.651,0.310];var bL=gl.createBuffer(),bLA=gl.createBuffer();var lP=gl.getAttribLocation(pL,'a_pos'),lA=gl.getAttribLocation(pL,'a_a'),luR=gl.getUniformLocation(pL,'u_res'),luC=gl.getUniformLocation(pL,'u_col');
+var t=0,raf,BARS=18;function fr(){t+=0.012;var lp=[],la=[];var bw=W/BARS;
+for(var i=0;i<BARS;i++){var fall=Math.max(0,Math.sin(t*0.8 - i*0.18));var base=H*0.3+i*(H*0.45/BARS);var h=(H*0.55)*(1-i/BARS)*(0.4+0.6*fall);var x=bw*i+bw*0.5;var y0=H*0.9;var y1=H*0.9-h;lp.push(x,y0,x,y1);la.push(0.05,0.10+0.22*(1-i/BARS));}
+gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);
+gl.useProgram(pL);gl.uniform2f(luR,W,H);gl.uniform3fv(luC,G);gl.bindBuffer(gl.ARRAY_BUFFER,bL);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(lp),gl.DYNAMIC_DRAW);gl.enableVertexAttribArray(lP);gl.vertexAttribPointer(lP,2,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,bLA);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(la),gl.DYNAMIC_DRAW);gl.enableVertexAttribArray(lA);gl.vertexAttribPointer(lA,1,gl.FLOAT,false,0,0);
+// thick bars via line width emulation: draw multiple offset lines
+gl.lineWidth(1);gl.drawArrays(gl.LINES,0,lp.length/2);
+if(!rm)raf=requestAnimationFrame(fr);}fr();
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(!rm&&!raf)raf=requestAnimationFrame(fr);}else{cancelAnimationFrame(raf);raf=null;}});}).observe(c);}
+})();
+</script>
+</body>
+</html>
