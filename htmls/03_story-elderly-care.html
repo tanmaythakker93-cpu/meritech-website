@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activity Monitoring System for Elderly Care — Meritech Success Stories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#0B1220;--navy:#12263F;--navy-soft:#1B3A5C;--ink:#17283B;--slate:#5B6B7F;
+  --mist:#EEF3F7;--paper:#FFFFFF;--line:#DCE4EC;--green:#00A24F;--green-dim:rgba(0,162,79,.14);
+  --mono:'IBM Plex Mono',monospace;--sans:'Open Sans',system-ui,sans-serif;
+  --maxw:1080px;--radius:10px;
+  --shadow-sm:0 1px 2px rgba(11,18,32,.06),0 2px 8px rgba(11,18,32,.05);
+  --shadow-lg:0 12px 32px rgba(11,18,32,.14);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* header */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s var(--ease),box-shadow .3s var(--ease)}
+.site-header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:#fff;transition:color .3s}
+.site-header.scrolled .logo{color:var(--navy)}
+.logo-mark{width:26px;height:26px;border-radius:6px;background:var(--navy);display:grid;place-items:center;flex:none}
+.logo-mark svg{width:16px;height:16px}
+.top-nav{display:flex;gap:28px;font-size:14.5px;font-weight:600;color:rgba(255,255,255,.85);transition:color .3s}
+.site-header.scrolled .top-nav{color:var(--slate)}
+.top-nav a:hover{opacity:.65}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:10px 20px;border-radius:99px;transition:transform .25s var(--ease),box-shadow .25s var(--ease);cursor:pointer;border:none}
+.btn .arr{transition:transform .25s var(--ease)}
+.btn:hover .arr{transform:translateX(3px)}
+.btn-solid{background:var(--green);color:#fff}
+.btn-solid:hover{box-shadow:0 6px 20px rgba(0,162,79,.35);transform:translateY(-1px)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{box-shadow:0 6px 20px rgba(18,38,63,.3);transform:translateY(-1px)}
+.btn-sm{font-size:13.5px;padding:8px 16px}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(160deg,var(--abyss) 0%,var(--navy) 62%,var(--navy-soft) 100%);color:#fff;overflow:hidden;clip-path:polygon(0 0,100% 0,100% calc(100% - 4.5vw),0 100%)}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(80% 90% at 75% 40%,#000 30%,transparent 100%)}
+.hero-inner{position:relative;z-index:2;padding:140px 0 110px}
+.crumb{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-bottom:28px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;text-transform:uppercase}
+.crumb a:hover{color:#fff}
+.crumb .sep{opacity:.4}
+.hero .chiprow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.hchip{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:99px;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8)}
+.hchip.acc{border-color:rgba(0,162,79,.5);color:var(--green);background:rgba(0,162,79,.1)}
+.hero h1{font-size:clamp(32px,4.6vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.12;max-width:22ch}
+.hero p.lede{margin-top:22px;font-size:18px;font-weight:300;color:rgba(255,255,255,.78);max-width:56ch;line-height:1.75}
+.hero p.lede b{color:#fff;font-weight:700}
+
+/* hero signature motif — IoT sensor nodes with ambient pulse rings */
+.sensor-field{position:absolute;inset:0;z-index:1;pointer-events:none}
+.sensor-field svg{position:absolute;right:-4%;top:50%;transform:translateY(-52%);width:54%;min-width:520px;opacity:.85}
+/* connection lines draw in */
+.con-line{fill:none;stroke:rgba(255,255,255,.12);stroke-width:1.2;stroke-dasharray:600;stroke-dashoffset:600;animation:drawline 2.8s var(--ease) .5s forwards}
+.con-line.l2{animation-delay:.8s}.con-line.l3{animation-delay:1.1s}.con-line.l4{animation-delay:1.4s}.con-line.l5{animation-delay:1.7s}
+@keyframes drawline{to{stroke-dashoffset:0}}
+/* sensor nodes appear and pulse */
+.s-node{opacity:0;animation:nodein .5s ease forwards}
+.s-node.n1{animation-delay:1.0s}.s-node.n2{animation-delay:1.5s}
+.s-node.n3{animation-delay:2.0s}.s-node.n4{animation-delay:2.5s}
+.s-node.n5{animation-delay:3.0s}
+@keyframes nodein{to{opacity:1}}
+.s-ring{fill:none;stroke-linecap:round;opacity:0;animation:sring 3s ease-out infinite}
+.s-ring.r1{stroke:var(--green);animation-delay:1.2s}
+.s-ring.r2{stroke:rgba(255,255,255,.45);animation-delay:2.0s}
+.s-ring.r3{stroke:var(--green);animation-delay:2.8s}
+.s-ring.r4{stroke:rgba(255,255,255,.45);animation-delay:3.5s}
+.s-ring.r5{stroke:var(--green);animation-delay:1.8s}
+@keyframes sring{0%{opacity:.7;r:9}65%{opacity:0;r:26}100%{opacity:0;r:26}}
+/* cloud hub pulses in from centre */
+.cloud-hub{opacity:0;animation:nodein .7s ease 2.2s forwards}
+.upload-beam{fill:none;stroke:var(--green);stroke-width:1.5;stroke-dasharray:300;stroke-dashoffset:300;opacity:0;animation:beam 2s var(--ease) 3s infinite}
+@keyframes beam{0%{stroke-dashoffset:300;opacity:.8}70%{stroke-dashoffset:0;opacity:.8}100%{stroke-dashoffset:0;opacity:0}}
+
+/* meta band */
+.meta-band{background:var(--paper);border-bottom:1px solid var(--line)}
+.meta-band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.meta-cell{background:var(--paper);padding:26px 28px}
+.meta-cell .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.meta-cell .v{margin-top:8px;font-size:16px;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+
+/* article layout */
+.article{display:grid;grid-template-columns:3fr 8fr;gap:64px;padding:90px 0 100px;align-items:start}
+.toc{position:sticky;top:100px}
+.toc .t-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:16px}
+.toc a{display:block;font-size:14px;font-weight:600;color:var(--slate);padding:9px 0 9px 18px;border-left:2px solid var(--line);transition:all .25s var(--ease)}
+.toc a:hover{color:var(--navy)}
+.toc a.active{color:var(--navy);border-left-color:var(--green);font-weight:700}
+.toc .toc-cta{margin-top:28px}
+
+.content section{margin-bottom:72px;scroll-margin-top:100px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.content h2{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.02em;color:var(--navy);line-height:1.2}
+.content p{margin-top:16px;font-size:16px;color:var(--slate);line-height:1.8;max-width:64ch}
+.content p b{color:var(--ink)}
+
+/* numbered steps */
+.steps{margin-top:32px;display:flex;flex-direction:column;gap:18px;counter-reset:step}
+.step{display:flex;gap:20px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px 28px;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
+.step:hover{transform:translateX(4px);box-shadow:var(--shadow-sm);border-color:rgba(0,162,79,.35)}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--mono);font-size:13px;color:var(--green);font-weight:500;flex:none;padding-top:2px}
+.step div h4{font-size:16px;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+.step div p{margin-top:6px;font-size:14.5px;line-height:1.7}
+
+/* value list */
+.value-grid{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.value-item{display:flex;gap:14px;background:var(--mist);border-radius:var(--radius);padding:20px 22px;font-size:14.5px;color:var(--ink);line-height:1.65}
+.value-item .tick{flex:none;width:22px;height:22px;border-radius:50%;background:var(--green-dim);display:grid;place-items:center;margin-top:1px}
+.value-item .tick svg{width:11px;height:11px;stroke:var(--green)}
+.value-item b{font-weight:700}
+
+/* pull stat */
+.pull{margin-top:34px;background:var(--abyss);color:#fff;border-radius:14px;padding:40px 44px;display:flex;gap:44px;align-items:center;flex-wrap:wrap;overflow:hidden;position:relative}
+.pull .big{font-size:clamp(44px,6vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1}
+.pull .big em{font-style:normal;color:var(--green)}
+.pull p{color:rgba(255,255,255,.7);font-size:15px;max-width:40ch;margin:0}
+.pull .mono-note{position:absolute;top:14px;right:18px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:rgba(255,255,255,.35)}
+
+/* tech stack */
+.tech-row{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.tech{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:10px 20px;transition:all .25s var(--ease)}
+.tech:hover{border-color:rgba(0,162,79,.4);background:var(--green-dim)}
+
+/* prev / next */
+.pn{border-top:1px solid var(--line);background:var(--mist)}
+.pn .wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.pn a{background:var(--mist);padding:36px 32px;transition:background .3s}
+.pn a:hover{background:var(--paper)}
+.pn .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.pn h4{margin-top:8px;font-size:17px;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+.pn .next{text-align:right}
+
+/* CTA + footer */
+.cta-final{text-align:center;padding:110px 0}
+.cta-final .kicker{justify-content:center;display:flex}
+.cta-final h2{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.03em;max-width:24ch;margin:0 auto;color:var(--navy)}
+.cta-final p{margin:18px auto 0;max-width:52ch;color:var(--slate);font-size:16px}
+.cta-btns{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:44px 0;font-size:13px;color:var(--slate)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .top-nav{display:none}
+  .article{grid-template-columns:1fr;gap:44px}
+  .toc{position:static;display:flex;gap:6px;overflow-x:auto;padding-bottom:8px}
+  .toc .t-label,.toc .toc-cta{display:none}
+  .toc a{border-left:none;border-bottom:2px solid var(--line);white-space:nowrap;padding:8px 14px}
+  .toc a.active{border-bottom-color:var(--green)}
+  .meta-band .wrap{grid-template-columns:1fr 1fr}
+  .value-grid{grid-template-columns:1fr}
+  .pn .wrap{grid-template-columns:1fr}
+  .pn .next{text-align:left}
+  .sensor-field svg{opacity:.2}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a class="logo" href="#">
+      <span class="logo-mark"><svg viewBox="0 0 16 16" fill="none"><path d="M1 9.5 4.5 6l3 4L11 3.5l4 6" stroke="#00A24F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      Meritech
+    </a>
+    <nav class="top-nav">
+      <a href="#">Products</a><a href="#">Solutions</a><a href="use-cases.html">Use Cases</a><a href="success-stories.html">Success Stories</a><a href="#">Company</a>
+    </nav>
+    <a class="btn btn-solid btn-sm" href="#cta">Talk to us <span class="arr">→</span></a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+
+  <!-- IoT sensor network motif — nodes in a home floor plan arrangement uploading to cloud -->
+  <div class="sensor-field" aria-hidden="true">
+    <svg viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg">
+      <!-- connection lines from sensors to cloud hub -->
+      <line class="con-line"    x1="120" y1="160" x2="300" y2="230"/>
+      <line class="con-line l2" x1="80"  y1="310" x2="300" y2="230"/>
+      <line class="con-line l3" x1="200" y1="390" x2="300" y2="230"/>
+      <line class="con-line l4" x1="400" y1="360" x2="300" y2="230"/>
+      <line class="con-line l5" x1="460" y1="150" x2="300" y2="230"/>
+      <!-- upload beam to cloud (top centre) -->
+      <line class="upload-beam" x1="300" y1="230" x2="300" y2="60"/>
+      <!-- cloud hub -->
+      <g class="cloud-hub">
+        <circle cx="300" cy="46" r="30" fill="rgba(0,162,79,.15)" stroke="rgba(0,162,79,.5)" stroke-width="1.4"/>
+        <text x="300" y="51" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="rgba(255,255,255,.8)" letter-spacing=".08em">CLOUD</text>
+      </g>
+      <!-- sensor nodes: bedroom, living room, kitchen, bathroom, entrance -->
+      <g class="s-node n1"><!-- bedroom -->
+        <circle cx="120" cy="160" r="11" fill="rgba(0,162,79,.2)" stroke="rgba(0,162,79,.8)" stroke-width="1.4"/>
+        <circle class="s-ring r1" cx="120" cy="160" r="9" stroke-width="1.2"/>
+        <text x="120" y="188" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.55)" letter-spacing=".07em">BEDROOM</text>
+      </g>
+      <g class="s-node n2"><!-- living room -->
+        <circle cx="80" cy="310" r="11" fill="rgba(0,162,79,.2)" stroke="rgba(0,162,79,.8)" stroke-width="1.4"/>
+        <circle class="s-ring r2" cx="80" cy="310" r="9" stroke-width="1.2"/>
+        <text x="80" y="338" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.55)" letter-spacing=".07em">LIVING RM</text>
+      </g>
+      <g class="s-node n3"><!-- kitchen -->
+        <circle cx="200" cy="390" r="11" fill="rgba(0,162,79,.2)" stroke="rgba(0,162,79,.8)" stroke-width="1.4"/>
+        <circle class="s-ring r3" cx="200" cy="390" r="9" stroke-width="1.2"/>
+        <text x="200" y="418" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.55)" letter-spacing=".07em">KITCHEN</text>
+      </g>
+      <g class="s-node n4"><!-- bathroom -->
+        <circle cx="400" cy="360" r="11" fill="rgba(255,255,255,.15)" stroke="rgba(255,255,255,.5)" stroke-width="1.4"/>
+        <circle class="s-ring r4" cx="400" cy="360" r="9" stroke-width="1.2"/>
+        <text x="400" y="388" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.55)" letter-spacing=".07em">BATHROOM</text>
+      </g>
+      <g class="s-node n5"><!-- entrance -->
+        <circle cx="460" cy="150" r="11" fill="rgba(255,255,255,.15)" stroke="rgba(255,255,255,.5)" stroke-width="1.4"/>
+        <circle class="s-ring r5" cx="460" cy="150" r="9" stroke-width="1.2"/>
+        <text x="460" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.55)" letter-spacing=".07em">ENTRANCE</text>
+      </g>
+      <!-- central processing node -->
+      <circle cx="300" cy="230" r="18" fill="rgba(18,38,63,.8)" stroke="rgba(255,255,255,.2)" stroke-width="1.4"/>
+      <text x="300" y="235" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="rgba(255,255,255,.7)" letter-spacing=".06em">HUB</text>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
+    <div class="crumb">
+      <a href="#">Home</a><span class="sep">/</span>
+      <a href="success-stories.html">Success Stories</a><span class="sep">/</span>
+      <span>Activity Monitoring — Elderly Care</span>
+    </div>
+    <div class="chiprow">
+      <span class="hchip acc">IoT & Edge AI</span>
+      <span class="hchip">Healthcare</span>
+      <span class="hchip">Japan</span>
+    </div>
+    <h1>Activity Monitoring System for Elderly Care</h1>
+    <p class="lede">There are an increasing number of elderly people in Japan — and many other countries — <b>living entirely alone</b>. The client wanted IoT sensors placed throughout their homes to track movements, identify behavioural anomalies, and raise an alarm in any emergency — silently, reliably, 24 hours a day.</p>
+  </div>
+</section>
+
+<!-- ================= META BAND ================= -->
+<div class="meta-band">
+  <div class="wrap">
+    <div class="meta-cell reveal"><div class="k">Geography</div><div class="v">Japan</div></div>
+    <div class="meta-cell reveal"><div class="k">Domain</div><div class="v">Healthcare</div></div>
+    <div class="meta-cell reveal"><div class="k">Project Type</div><div class="v">IoT · Web-based Solution</div></div>
+    <div class="meta-cell reveal"><div class="k">Products Used</div><div class="v">Hardware sensors · Cloud platform</div></div>
+  </div>
+</div>
+
+<!-- ================= ARTICLE ================= -->
+<div class="wrap article">
+  <aside class="toc">
+    <div class="t-label">On this page</div>
+    <a href="#objective" class="active">Objective</a>
+    <a href="#approach">Approach & Solution</a>
+    <a href="#value">Business Value</a>
+    <a href="#tech">Technologies Used</a>
+    <a class="btn btn-navy btn-sm toc-cta" href="#cta">Discuss a similar project <span class="arr">→</span></a>
+  </aside>
+
+  <div class="content">
+
+    <section id="objective" class="reveal">
+      <div class="kicker">Objective</div>
+      <h2>Sense the pattern. Know before it becomes a crisis.</h2>
+      <p>The client needed a system that could <b>sense the movement of elderly patients, identify their activity patterns, and report anomalies</b> — automatically. The solution required an IoT platform web application that collected patient data from sensors placed in multiple rooms, surfaced it through an intuitive dashboard, and compared different types of movement over time to detect when something was wrong before a person called for help — or couldn't.</p>
+    </section>
+
+    <section id="approach" class="reveal">
+      <div class="kicker">Approach & Solution</div>
+      <h2>Sensors in every room. Intelligence in the cloud.</h2>
+      <div class="steps">
+        <div class="step"><div>
+          <h4>Real-time health monitoring tool</h4>
+          <p>A live data collection platform ingesting patient movement data continuously — not in batches — so the system reflects what's happening now, not what happened an hour ago.</p>
+        </div></div>
+        <div class="step"><div>
+          <h4>Hardware sensors with embedded software</h4>
+          <p>Custom-designed sensor hardware placed throughout the home, each tracking multiple parameters and transmitting data to the cloud for analysis — self-contained, low-maintenance, no intervention from the resident required.</p>
+        </div></div>
+        <div class="step"><div>
+          <h4>Movement tracking to a central system</h4>
+          <p>Each sensor reports room-level presence and movement data to a central system, building a continuous record of daily patterns — what time the kitchen is visited, how long the bedroom is occupied, whether the bathroom was used during the night.</p>
+        </div></div>
+        <div class="step"><div>
+          <h4>Anomaly detection and preventive action triggers</h4>
+          <p>When the system detects a deviation from established patterns — no movement in the kitchen at a usual mealtime, prolonged absence from the bedroom — it flags the anomaly and triggers a preventive action alert to family or a care authority.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <section id="value" class="reveal">
+      <div class="kicker">Business Value</div>
+      <h2>A quiet system doing the watching so no one has to.</h2>
+      <div class="value-grid">
+        <div class="value-item">
+          <span class="tick"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5 5 9l5-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span><b>Timely family and authority alerts</b> — movement anomalies and emergencies surface before they become tragedies, giving caregivers enough time to act.</span>
+        </div>
+        <div class="value-item">
+          <span class="tick"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5 5 9l5-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span><b>Medication and activity tracking</b> — the system can monitor adherence to routines and flag behavioural changes that indicate health deterioration.</span>
+        </div>
+        <div class="value-item">
+          <span class="tick"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5 5 9l5-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span><b>Huge social impact</b> — a scalable answer to one of Japan's most pressing demographic challenges: elderly people living alone without a constant physical caregiver presence.</span>
+        </div>
+        <div class="value-item">
+          <span class="tick"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5 5 9l5-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span><b>Behavioural pattern analysis</b> — the dashboard gives families and medical teams a longitudinal view of how a person's daily patterns change month over month.</span>
+        </div>
+      </div>
+      <div class="pull">
+        <div class="big"><em>28M+</em></div>
+        <p>Elderly people in Japan live alone — one of the highest rates in the world. IoT-based monitoring gives caregivers reach that physical visits never can.</p>
+        <span class="mono-note">SOURCE: JAPAN STATISTICS BUREAU — FIGURE FOR CONTEXT</span>
+      </div>
+    </section>
+
+    <section id="tech" class="reveal">
+      <div class="kicker">Technologies Used</div>
+      <h2>The stack behind it.</h2>
+      <div class="tech-row">
+        <span class="tech">C++</span>
+        <span class="tech">Hardware Design</span>
+        <span class="tech">ASP.NET Web-based Solution</span>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ================= PREV / NEXT ================= -->
+<nav class="pn" aria-label="More stories">
+  <div class="wrap">
+    <a href="05_story-healthcare-cloud.html">
+      <div class="lab">← Previous story</div>
+      <h4>Next Generation Healthcare — Cloud System</h4>
+    </a>
+    <a class="next" href="04_story-diagnostic-air-conditioners.html">
+      <div class="lab">Next story →</div>
+      <h4>Diagnostic System for Air Conditioners</h4>
+    </a>
+  </div>
+</nav>
+
+<!-- ================= CTA ================= -->
+<section class="cta-final" id="cta">
+  <div class="wrap">
+    <div class="kicker">Start a conversation</div>
+    <h2>Building a monitoring system for people who need it most?</h2>
+    <p>Whether it's elderly care, patient monitoring, or any application where a missed event has real human consequences — tell us your setup and we'll respond honestly about how we'd approach it.</p>
+    <div class="cta-btns">
+      <a class="btn btn-solid" href="#">Talk to an engineer <span class="arr">→</span></a>
+      <a class="btn btn-navy" href="success-stories.html">More success stories <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Meritech Solutions · Kawasaki, Japan · 9 global offices</span>
+    <span style="font-family:var(--mono);font-size:11px">LPWA IOT & EDGE AI DIVISION</span>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('siteHeader');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+/* toc scrollspy */
+const links=[...document.querySelectorAll('.toc a[href^="#"]')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const spy=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting)links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
+}),{rootMargin:'-25% 0px -65% 0px'});
+secs.forEach(s=>s&&spy.observe(s));
+</script>
+</body>
+</html>
