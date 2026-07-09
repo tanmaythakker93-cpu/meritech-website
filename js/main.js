@@ -33,6 +33,53 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* --------------------------------------------------------
+     DESKTOP MEGA DROPDOWN — hover intent
+     Opens with a short delay so skimming across the bar doesn't
+     flash menus; switches instantly between adjacent items; a
+     close grace period stops the flicker when the cursor crosses
+     the gap between items or briefly leaves the panel.
+  -------------------------------------------------------- */
+  if (window.matchMedia('(hover: hover)').matches) {
+    const ddItems = Array.prototype.filter.call(
+      document.querySelectorAll('.mn-nav .mn-item'),
+      function (item) { return item.querySelector('.mn-dropdown'); }
+    );
+    let openItem = null;
+    let openTimer = null;
+    let closeTimer = null;
+
+    function openDropdown(item) {
+      if (openItem && openItem !== item) openItem.classList.remove('dd-open');
+      openItem = item;
+      item.classList.add('dd-open');
+    }
+
+    function closeDropdown() {
+      if (openItem) {
+        openItem.classList.remove('dd-open');
+        openItem = null;
+      }
+    }
+
+    ddItems.forEach(function (item) {
+      item.addEventListener('mouseenter', function () {
+        clearTimeout(openTimer);
+        clearTimeout(closeTimer);
+        if (openItem) {
+          openDropdown(item); // a menu is already open — switch instantly
+        } else {
+          openTimer = setTimeout(function () { openDropdown(item); }, 70);
+        }
+      });
+      item.addEventListener('mouseleave', function () {
+        clearTimeout(openTimer);
+        clearTimeout(closeTimer);
+        closeTimer = setTimeout(closeDropdown, 180);
+      });
+    });
+  }
+
+  /* --------------------------------------------------------
      MOBILE ACCORDION
   -------------------------------------------------------- */
   document.querySelectorAll('[data-mob-acc]').forEach(function (btn) {
@@ -137,14 +184,27 @@ document.addEventListener('DOMContentLoaded', function () {
      NAV ACTIVE STATE — highlight current page link
   -------------------------------------------------------- */
   (function () {
-    var page = (window.location.pathname.split('/').pop() || 'index.html').split('?')[0];
+    /* Normalize a path to a comparable page name: strips query/hash,
+       directories, the .html extension (Netlify serves extensionless
+       pretty URLs), and case — so "/sigma-la" matches "sigma-la.html". */
+    function pageName(path) {
+      path = path.split('#')[0].split('?')[0].replace(/\/+$/, '');
+      var name = path.split('/').pop();
+      name = name.replace(/\.html?$/i, '');
+      return (name === '' ? 'index' : name).toLowerCase();
+    }
+    var page = pageName(decodeURIComponent(window.location.pathname));
     document.querySelectorAll('.mn-dropdown a.dd-product[href]').forEach(function (link) {
-      var href = link.getAttribute('href').split('#')[0].split('?')[0];
-      if (href && href !== '#' && href === page) {
+      var href = link.getAttribute('href');
+      if (href && href !== '#' && pageName(href) === page) {
         link.classList.add('is-active');
         var mnLink = link.closest('.mn-item') && link.closest('.mn-item').querySelector('.mn-link');
         if (mnLink) mnLink.classList.add('is-active');
       }
+    });
+    document.querySelectorAll('.mn-nav .mn-item > .mn-link[href]').forEach(function (mnLink) {
+      var href = mnLink.getAttribute('href');
+      if (href && href !== '#' && pageName(href) === page) mnLink.classList.add('is-active');
     });
   })();
 

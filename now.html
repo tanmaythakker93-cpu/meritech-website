@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -10,110 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsivestyle.css">
 
-  <style>
-    /* ── Independent Validation page-specific styles ── */
-
-    .iv-hero-fill { background: linear-gradient(145deg, #071424 0%, #070e1e 50%, #061218 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .iv-hero-fill::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 55% at 20% 75%, rgba(35,63,137,.22) 0%, transparent 60%), radial-gradient(ellipse 50% 45% at 80% 20%, rgba(0,162,79,.18) 0%, transparent 55%); }
-    .iv-hero-fill svg { position: relative; z-index: 1; }
-
-    /* Who it's for */
-    .cl-who-section { }
-    .cl-who-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
-    .cl-who-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6B6868; margin-bottom: 20px; display: block; }
-    .cl-who-headline { font-size: 52px; font-weight: 500; color: #221F1F; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 64px; }
-    .cl-who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .cl-who-card { background: #fff; border: 1px solid #eeecec; padding: 40px 36px; box-shadow: 0 2px 12px rgba(34,31,31,.06); }
-    .cl-who-icon { width: 48px; height: 48px; background: rgba(0,162,79,.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
-    .cl-who-icon svg { width: 22px; height: 22px; stroke: #00A24F; stroke-width: 1.6; fill: none; }
-    .cl-who-title { font-size: 18px; font-weight: 700; color: #221F1F; margin-bottom: 12px; line-height: 1.3; }
-    .cl-who-desc { font-size: 15px; color: #6B6868; line-height: 1.65; }
-    .cl-who-fit { margin-top: 20px; padding-top: 16px; border-top: 1px solid #e5e3e3; font-size: 11px; font-weight: 700; color: #007a3a; letter-spacing: .08em; text-transform: uppercase; }
-
-    /* Compare */
-    .cl-compare-section { }
-    .cl-compare-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
-    .cl-compare-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6B6868; margin-bottom: 20px; display: block; }
-    .cl-compare-headline { font-size: 52px; font-weight: 500; color: #221F1F; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 64px; }
-    .cl-table-wrap { overflow-x: auto; border: 1px solid #e5e3e3; background: #fff; }
-    .cl-table { width: 100%; border-collapse: collapse; min-width: 560px; }
-    .cl-table thead th { background: #F5F4F4; padding: 14px 24px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #6B6868; border-bottom: 1px solid #e5e3e3; }
-    .cl-table tbody td { padding: 18px 24px; border-bottom: 1px solid #eeecec; font-size: 15px; color: #3D3A3A; vertical-align: middle; background: #fff; }
-    .cl-table tbody tr:last-child td { border-bottom: none; }
-    .cl-table tbody td:first-child { font-weight: 700; color: #221F1F; }
-    .cl-table tbody tr:hover td { background: rgba(0,162,79,.03); }
-    .cl-tick { color: #00A24F; font-weight: 700; }
-    .cl-partial { color: #6B6868; }
-    .cl-meritech-row td { background: rgba(0,162,79,.04) !important; }
-
-    /* Process */
-    .cl-process-section { background: #221F1F; }
-    .cl-process-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
-    .cl-process-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #22B07D; margin-bottom: 20px; display: block; }
-    .cl-process-headline { font-size: 52px; font-weight: 500; color: #fff; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 80px; }
-    .cl-process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-    .cl-step { padding: 44px 36px 0 0; }
-    .cl-step:not(:first-child) { padding-left: 36px; }
-    .cl-step:last-child { border-right: none; padding-right: 0; }
-    .cl-step-num { font-size: 11px; font-weight: 700; color: #00A24F; margin-bottom: 18px; letter-spacing: .1em; }
-    .cl-step-title { font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 12px; line-height: 1.25; }
-    .cl-step-desc { font-size: 15px; color: rgba(255,255,255,.55); line-height: 1.65; }
-
-    /* Related services */
-    .cl-rel-section { }
-    .cl-rel-wrap { max-width: 1680px; margin: 0 auto; padding: 150px 120px; }
-    .cl-rel-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6B6868; margin-bottom: 20px; display: block; }
-    .cl-rel-headline { font-size: 52px; font-weight: 500; color: #221F1F; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 64px; }
-    .cl-rel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-    .cl-rel-card { padding: 36px 28px 28px 0; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: inherit; }
-    .cl-rel-card:not(:first-child) { padding-left: 28px; }
-    .cl-rel-card:last-child { padding-right: 0; }
-    .cl-rel-cat { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6B6868; }
-    .cl-rel-name { font-size: 20px; font-weight: 700; color: #221F1F; line-height: 1.2; }
-    .cl-rel-desc { font-size: 14px; color: #6B6868; line-height: 1.55; padding-top: 8px; }
-
-    /* CTA */
-    #section-contact.cta-section { background: transparent; }
-
-    /* What's Included accordion */
-    #section-included .faq-items { display: flex; flex-direction: column; gap: 12px; }
-    #section-included .faq-item { background: #fff; border: 1px solid #eeecec; padding: 0 32px; box-shadow: 0 2px 8px rgba(34,31,31,.04); }
-    #section-included .faq-item:last-child { border-bottom: 1px solid #eeecec; }
-
-    /* Responsive */
-    @media (max-width: 1399px) {
-      .cl-who-wrap, .cl-compare-wrap, .cl-process-wrap, .cl-rel-wrap { padding: 120px 80px; }
-    }
-    @media (max-width: 1199px) {
-      .cl-who-headline, .cl-compare-headline, .cl-process-headline, .cl-rel-headline { font-size: 40px; }
-      .cl-who-wrap, .cl-compare-wrap, .cl-process-wrap, .cl-rel-wrap { padding: 100px 60px; }
-      .cl-process-grid { grid-template-columns: 1fr 1fr; }
-      .cl-step:nth-child(n+3) { padding-top: 44px; margin-top: 44px; }
-      .cl-step:nth-child(3) { padding-left: 0; }
-      .cl-rel-grid { grid-template-columns: 1fr 1fr; }
-      .cl-rel-card:nth-child(3) { padding-left: 0; }
-    }
-    @media (max-width: 991px) {
-      .cl-who-grid { grid-template-columns: 1fr; }
-      .cl-who-wrap, .cl-compare-wrap, .cl-process-wrap, .cl-rel-wrap { padding: 80px 24px; }
-    }
-    @media (max-width: 767px) {
-      .cl-process-grid { grid-template-columns: 1fr; }
-      .cl-step { padding: 28px 0 0; }
-      .cl-step:first-child { border-top: none; margin-top: 0; }
-      .cl-step:not(:first-child) { padding-left: 0; margin-top: 0; }
-      .cl-rel-grid { grid-template-columns: 1fr; }
-      .cl-rel-card { padding: 24px 0 0; }
-      .cl-rel-card:not(:first-child) { padding-left: 0; }
-    }
-    @media (max-width: 575px) {
-      .cl-who-headline, .cl-compare-headline, .cl-process-headline, .cl-rel-headline { font-size: 30px; }
-      .cl-who-wrap, .cl-compare-wrap, .cl-process-wrap, .cl-rel-wrap { padding: 60px 16px; }
-    }
-  </style>
 </head>
-<body>
+<body class="page-now">
 
   <!-- ============================================================
        MAIN NAVIGATION
@@ -137,7 +37,7 @@
                 <div class="dd-col-head">Capture &amp; Automate</div>
                 <a href="sigma-la.html" class="dd-product"><span class="dd-product-name">Sigma-LA</span><span class="dd-product-desc">Cloud-based Linux analytics platform with AI</span></a>
                 <a href="sigma-aq.html" class="dd-product"><span class="dd-product-name">Sigma-AQ</span><span class="dd-product-desc">Automated drive test — 50% faster reporting</span></a>
-                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">Field campaigns at operator sites</span></a>
+                <a href="sigma-neo.html" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">AI analysis layer built on Centra-SD</span></a>
                 <a href="sigma-aq-boss.html" class="dd-product"><span class="dd-product-name">Sigma-AQ Boss</span><span class="dd-product-desc">Remote controller — keep engineers in the office</span></a>
                 <a href="sigma-one.html" class="dd-product"><span class="dd-product-name">Sigma-One</span><span class="dd-product-desc">Ruggedized capture — COTS, IoT &amp; connected car</span></a>
               </div>
@@ -151,16 +51,17 @@
               </div>
               <div>
                 <div class="dd-col-head">Services</div>
+                <a href="wireless-services.html" class="dd-product"><span class="dd-product-name">Wireless Services</span><span class="dd-product-desc">Plan, test &amp; tune at live operator sites</span></a>
                 <a href="planning-design.html" class="dd-product"><span class="dd-product-name">Planning &amp; Design</span><span class="dd-product-desc">Site, propagation, capacity, spectrum</span></a>
                 <a href="drive-walk-test.html" class="dd-product"><span class="dd-product-name">Drive &amp; Walk Test</span><span class="dd-product-desc">Multi-device field capture, L1–L4</span></a>
                 <a href="network-optimization.html" class="dd-product"><span class="dd-product-name">Network Optimization</span><span class="dd-product-desc">Initial and continuous performance tuning</span></a>
               </div>
             </div>
-            <div class="dd-footer"><a href="#" class="dd-explore">Explore Wireless portfolio</a></div>
+            <div class="dd-footer"><a href="Wireless.html" class="dd-explore">Explore Wireless portfolio</a><a href="wireless-services.html" class="dd-explore">Wireless Services</a></div>
           </div>
         </div>
         <div class="mn-item">
-          <a class="mn-link" href="IoT-Products.html">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <a class="mn-link" href="#">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
           <div class="mn-dropdown iot">
             <div class="dd-grid dd-grid-2">
               <div>
@@ -171,10 +72,11 @@
               </div>
               <div>
                 <div class="dd-col-head">Services</div>
-                <a href="#" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
-                <a href="#" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
+                <a href="iot-consulting.html" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
+                <a href="device-management.html" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
                 <a href="mesimo.html" class="dd-product"><span class="dd-product-name">Mesimo</span><span class="dd-product-desc">Global cellular IoT connectivity</span></a>
-                <a href="#" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+                <a href="connectivity-solutions.html" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+                <a href="iot-services.html" class="dd-product"><span class="dd-product-name">IoT Services</span><span class="dd-product-desc">End-to-end IoT solutions from device to cloud</span></a>
               </div>
             </div>
             <div class="dd-footer"><a href="IoT-Products.html" class="dd-explore">Explore IoT portfolio</a></div>
@@ -185,27 +87,40 @@
           <div class="mn-dropdown iot">
             <div class="dd-grid dd-grid-2">
               <div>
-                <div class="dd-col-head">Products</div>
-                <a href="zoecon-cloud-cost-optimizer.html" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer — cut bills by up to 60%</span></a>
-                <a href="now.html" class="dd-product"><span class="dd-product-name">netSLAM™</span><span class="dd-product-desc">Independent validation &amp; assurance</span></a>
-              </div>
-              <div>
                 <div class="dd-col-head">Services</div>
+                <a href="digital-synergy-solutions-1.html" class="dd-product"><span class="dd-product-name">Digital Synergy</span><span class="dd-product-desc">Web &amp; mobile apps, integration &amp; workflow</span></a>
                 <a href="data-ai.html" class="dd-product"><span class="dd-product-name">Data &amp; AI</span><span class="dd-product-desc">Data platforms, analytics &amp; AI solutions</span></a>
                 <a href="devops.html" class="dd-product"><span class="dd-product-name">DevOps</span><span class="dd-product-desc">CI/CD, automation, cloud-native delivery</span></a>
                 <a href="cloud.html" class="dd-product"><span class="dd-product-name">Cloud</span><span class="dd-product-desc">Transform, migrate &amp; build cloud-native</span></a>
                 <a href="it-consulting.html" class="dd-product"><span class="dd-product-name">IT Consulting</span><span class="dd-product-desc">Modernization, DevOps &amp; cloud strategy</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">&nbsp;</div>
                 <a href="it-outsourcing-services.html" class="dd-product"><span class="dd-product-name">IT Outsourcing</span><span class="dd-product-desc">Staff augmentation, teams &amp; HaaS</span></a>
                 <a href="servicenow.html" class="dd-product"><span class="dd-product-name">ServiceNow</span><span class="dd-product-desc">Enterprise workflows &amp; ITSM — certified partner</span></a>
                 <a href="managed-it-services.html" class="dd-product"><span class="dd-product-name">Managed IT</span><span class="dd-product-desc">Ongoing operations, security &amp; support</span></a>
+                <a href="zoecon-cloud-cost-optimizer.html" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer — cut bills by up to 60%</span></a>
+                <a href="now.html" class="dd-product"><span class="dd-product-name">netSLAM™</span><span class="dd-product-desc">Independent validation &amp; assurance</span></a>
               </div>
             </div>
             <div class="dd-footer"><a href="it-services.html" class="dd-explore">Explore IT &amp; Cloud</a></div>
           </div>
         </div>
-        <div class="mn-item"><a class="mn-link" href="#">Why Meritech</a></div>
-        <div class="mn-item"><a class="mn-link" href="#">Insights</a></div>
-        <div class="mn-item"><a class="mn-link" href="#">Company</a></div>
+        <div class="mn-item">
+          <a class="mn-link" href="#">About Us <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown about">
+            <div class="dd-grid dd-grid-1">
+              <div>
+                <a href="about.html" class="dd-product"><span class="dd-product-name">About the company</span><span class="dd-product-desc">One partner, from radio to cloud</span></a>
+                <a href="clients-partners.html" class="dd-product"><span class="dd-product-name">Client &amp; Partners</span><span class="dd-product-desc">A client-first approach</span></a>
+                <a href="about.html#section-news" class="dd-product"><span class="dd-product-name">News &amp; Events</span><span class="dd-product-desc">Partnerships, events &amp; milestones</span></a>
+                <a href="success-stories.html" class="dd-product"><span class="dd-product-name">Success Stories</span><span class="dd-product-desc">Outcomes we have delivered</span></a>
+                <a href="case-studies.html" class="dd-product"><span class="dd-product-name">Case Studies</span><span class="dd-product-desc">Illustrative engagement scenarios</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mn-item"><a class="mn-link" href="#">Contact Us</a></div>
       </nav>
       <a href="#section-contact" class="btn-talk">Talk to us</a>
       <div class="mn-accent"></div>
@@ -218,10 +133,11 @@
       <div class="mn-mob-item">
         <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
         <div class="mn-mob-sub" id="mob-wireless">
+          <a href="Wireless.html" class="mn-mob-sub-link">Wireless Overview</a>
           <div class="mn-mob-sub-head">Capture &amp; Automate</div>
           <a href="sigma-la.html" class="mn-mob-sub-link">Sigma-LA</a>
           <a href="sigma-aq.html" class="mn-mob-sub-link">Sigma-AQ</a>
-          <a href="#" class="mn-mob-sub-link">Sigma-Neo</a>
+          <a href="sigma-neo.html" class="mn-mob-sub-link">Sigma-Neo</a>
           <a href="sigma-aq-boss.html" class="mn-mob-sub-link">Sigma-AQ Boss</a>
           <a href="sigma-one.html" class="mn-mob-sub-link">Sigma-One</a>
           <div class="mn-mob-sub-head">Analyze &amp; Intelligence</div>
@@ -230,6 +146,7 @@
           <a href="sigma-ml.html" class="mn-mob-sub-link">Sigma-ML</a>
           <a href="centra-experitest.html" class="mn-mob-sub-link">Centra-Experitest</a>
           <div class="mn-mob-sub-head">Services</div>
+          <a href="wireless-services.html" class="mn-mob-sub-link">Wireless Services</a>
           <a href="planning-design.html" class="mn-mob-sub-link">Planning &amp; Design</a>
           <a href="drive-walk-test.html" class="mn-mob-sub-link">Drive &amp; Walk Test</a>
           <a href="network-optimization.html" class="mn-mob-sub-link">Network Optimization</a>
@@ -243,19 +160,18 @@
           <a href="CENTRA-IoT.html" class="mn-mob-sub-link">Centra IoT</a>
           <a href="XENO+.html" class="mn-mob-sub-link">Xeno+</a>
           <div class="mn-mob-sub-head">Services</div>
-          <a href="#" class="mn-mob-sub-link">IoT Consulting</a>
-          <a href="#" class="mn-mob-sub-link">Device Management</a>
+          <a href="iot-consulting.html" class="mn-mob-sub-link">IoT Consulting</a>
+          <a href="device-management.html" class="mn-mob-sub-link">Device Management</a>
           <a href="mesimo.html" class="mn-mob-sub-link">Mesimo</a>
-          <a href="#" class="mn-mob-sub-link">Connectivity</a>
+          <a href="connectivity-solutions.html" class="mn-mob-sub-link">Connectivity</a>
+          <a href="iot-services.html" class="mn-mob-sub-link">IoT Services</a>
         </div>
       </div>
       <div class="mn-mob-item">
         <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
         <div class="mn-mob-sub" id="mob-it">
-          <div class="mn-mob-sub-head">Products</div>
-          <a href="zoecon-cloud-cost-optimizer.html" class="mn-mob-sub-link">zoECON™</a>
-          <a href="now.html" class="mn-mob-sub-link">netSLAM™</a>
           <div class="mn-mob-sub-head">Services</div>
+          <a href="digital-synergy-solutions-1.html" class="mn-mob-sub-link">Digital Synergy</a>
           <a href="data-ai.html" class="mn-mob-sub-link">Data &amp; AI</a>
           <a href="devops.html" class="mn-mob-sub-link">DevOps</a>
           <a href="cloud.html" class="mn-mob-sub-link">Cloud</a>
@@ -263,11 +179,21 @@
           <a href="it-outsourcing-services.html" class="mn-mob-sub-link">IT Outsourcing</a>
           <a href="servicenow.html" class="mn-mob-sub-link">ServiceNow</a>
           <a href="managed-it-services.html" class="mn-mob-sub-link">Managed IT</a>
+          <a href="zoecon-cloud-cost-optimizer.html" class="mn-mob-sub-link">zoECON™</a>
+          <a href="now.html" class="mn-mob-sub-link">netSLAM™</a>
         </div>
       </div>
-      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Why Meritech</a></div>
-      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Insights</a></div>
-      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Company</a></div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="about">About Us <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-about">
+          <a href="about.html" class="mn-mob-sub-link">About the company</a>
+          <a href="clients-partners.html" class="mn-mob-sub-link">Client &amp; Partners</a>
+          <a href="about.html#section-news" class="mn-mob-sub-link">News &amp; Events</a>
+          <a href="success-stories.html" class="mn-mob-sub-link">Success Stories</a>
+          <a href="case-studies.html" class="mn-mob-sub-link">Case Studies</a>
+        </div>
+      </div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Contact Us</a></div>
       <a href="#section-contact" class="mn-mob-cta">Talk to us</a>
     </div>
   </div>
@@ -409,7 +335,7 @@
         <a href="#section-contact"   class="subnav-link">Contact</a>
       </div>
       <a href="#section-contact" class="btn-get-quote">
-        Talk to us
+        Get a quote
         <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
           <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
           <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
@@ -841,7 +767,7 @@
       </div>
       <nav class="ft-nav" aria-label="Footer navigation">
         <div class="ft-col">
-          <div class="ft-col-head">Wireless</div>
+          <a href="Wireless.html" class="ft-col-head">Wireless</a>
           <a href="sigma-la.html" class="ft-link">Sigma-LA</a>
           <a href="sigma-aq.html" class="ft-link">Sigma-AQ</a>
           <a href="sigma-aq-boss.html" class="ft-link">Sigma-AQ Boss</a>
@@ -857,9 +783,10 @@
           <a href="XENO+.html" class="ft-link">Xeno+</a>
           <a href="mesimo.html" class="ft-link">Mesimo</a>
           <a href="CENTRA-IoT.html" class="ft-link">Centra IoT</a>
-          <a href="#" class="ft-link">IoT Consulting</a>
-          <a href="#" class="ft-link">Device Management</a>
-          <a href="#" class="ft-link">Connectivity</a>
+          <a href="iot-consulting.html" class="ft-link">IoT Consulting</a>
+          <a href="device-management.html" class="ft-link">Device Management</a>
+          <a href="connectivity-solutions.html" class="ft-link">Connectivity</a>
+          <a href="iot-services.html" class="ft-link">IoT Services</a>
         </div>
         <div class="ft-col">
           <div class="ft-col-head">IT &amp; Cloud</div>

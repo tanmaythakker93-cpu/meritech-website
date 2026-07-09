@@ -17,6 +17,37 @@ document.addEventListener('DOMContentLoaded', function () {
   var buildTabs = document.querySelectorAll('.hp-build-tab');
   var divSections = document.querySelectorAll('.hp-division');
 
+  var buildImg = document.querySelector('.hp-build-img-box img');
+  var divImages = {
+    'div-01': 'images/home_page_images/magnific_macro-closeup-photograph-_MXNtWe1DCm.png',
+    'div-02': 'images/home_page_images/wireless services.png',
+    'div-03': 'images/home_page_images/IoT Products.png',
+    'div-04': 'images/home_page_images/IOT Services.png',
+    'div-05': 'images/home_page_images/IT_services.png'
+  };
+  // preload so hard swaps never flash while the file decodes
+  Object.keys(divImages).forEach(function (k) {
+    var img = new Image();
+    img.src = divImages[k];
+  });
+
+  function setBuildImage(divId) {
+    if (!buildImg || !divImages[divId]) return;
+    var next = divImages[divId];
+    if (buildImg.getAttribute('src') === next) return;
+    buildImg.src = next;
+  }
+
+  // while a click-driven smooth scroll is in flight, the scroll spy must not
+  // swap tabs/images for every division it passes on the way
+  var spyLocked = false;
+  var spyLockTimer = null;
+  function lockSpy() {
+    spyLocked = true;
+    clearTimeout(spyLockTimer);
+    spyLockTimer = setTimeout(function () { spyLocked = false; }, 400);
+  }
+
   buildTabs.forEach(function (tab) {
     tab.addEventListener('click', function () {
       var targetId = tab.dataset.div;
@@ -27,10 +58,13 @@ document.addEventListener('DOMContentLoaded', function () {
       window.scrollTo({ top: top, behavior: 'smooth' });
       buildTabs.forEach(function (t) { t.classList.remove('is-active'); });
       tab.classList.add('is-active');
+      lockSpy();
+      setBuildImage(targetId);
     });
   });
 
   function updateBuildTabs() {
+    if (spyLocked) { lockSpy(); return; } // keep lock alive until scrolling settles
     var offset = 120;
     var current = null;
     divSections.forEach(function (sec) {
@@ -41,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
       buildTabs.forEach(function (tab) {
         tab.classList.toggle('is-active', tab.dataset.div === current);
       });
+      setBuildImage(current);
     }
   }
   window.addEventListener('scroll', updateBuildTabs, { passive: true });

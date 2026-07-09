@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Studies — Meritech</title>
+  <meta name="description" content="Illustrative engagement case studies across Meritech's Wireless T&amp;M, IoT &amp; Edge AI, and IT &amp; Cloud divisions — each anchored to real, documented product capabilities. Filter by division.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsivestyle.css">
+
+  <style>
+  /* case-study card extras, on top of the shared ss-card styles */
+  .page-success-stories .cs-rows{ display: flex; flex-direction: column; gap: 8px; }
+  .page-success-stories .cs-row{ display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; }
+  .page-success-stories .cs-row-k{ font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8A8686; width: 64px; flex-shrink: 0; padding-top: 2px; }
+  .page-success-stories .cs-row-v{ color: #6B6868; }
+  .page-success-stories .cs-result{ margin-top: auto; padding-top: 14px; border-top: 1px solid #f0efee; display: flex; align-items: baseline; gap: 10px; }
+  .page-success-stories .cs-result-n{ font-size: 26px; font-weight: 800; color: #00A24F; letter-spacing: -.02em; line-height: 1; }
+  .page-success-stories .cs-result-l{ font-size: 12px; color: #8A8686; line-height: 1.4; }
+  .page-success-stories .cs-note{ margin-top: 28px; font-size: 13px; color: #8A8686; line-height: 1.7; background: #F7F6F5; border: 1px solid #eeecec; padding: 18px 22px; }
+  .page-success-stories .cs-note strong{ color: #3D3A3A; font-weight: 700; }
+  </style>
+</head>
+<body class="page-success-stories">
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <nav class="mn-bar">
+    <div class="container-xxl">
+
+      <a class="mn-logo" href="index.html">
+        <img src="images/Meritech_logo_banner.svg" alt="Meritech">
+      </a>
+
+      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu">
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+      </button>
+
+      <nav class="mn-nav">
+        <div class="mn-item">
+          <a class="mn-link" href="#">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown">
+            <div class="dd-grid dd-grid-3">
+              <div>
+                <div class="dd-col-head">Capture &amp; Automate</div>
+                <a href="sigma-la.html" class="dd-product"><span class="dd-product-name">Sigma-LA</span><span class="dd-product-desc">Windows drive test — multi-UE parallel capture</span></a>
+                <a href="sigma-aq.html" class="dd-product"><span class="dd-product-name">Sigma-AQ</span><span class="dd-product-desc">Automated drive test — 50% faster reporting</span></a>
+                <a href="sigma-neo.html" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">AI analysis layer built on Centra-SD</span></a>
+                <a href="sigma-aq-boss.html" class="dd-product"><span class="dd-product-name">Sigma-AQ Boss</span><span class="dd-product-desc">Remote controller — keep engineers in the office</span></a>
+                <a href="sigma-one.html" class="dd-product"><span class="dd-product-name">Sigma-One</span><span class="dd-product-desc">Ruggedized capture — COTS, IoT &amp; connected car</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Analyze &amp; Intelligence</div>
+                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Tune until the field matches intent</span></a>
+                <a href="Sigma-PA.html" class="dd-product"><span class="dd-product-name">Sigma-PA</span><span class="dd-product-desc">Post-processing &amp; protocol analysis platform</span></a>
+                <a href="sigma-ml.html" class="dd-product"><span class="dd-product-name">Sigma-ML</span><span class="dd-product-desc">Mobile logger — walk test from a single smartphone</span></a>
+                <a href="centra-experitest.html" class="dd-product"><span class="dd-product-name">Centra-Experitest</span><span class="dd-product-desc">OTT &amp; QoE — what the subscriber actually feels</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-AQ Reporting Server</span><span class="dd-product-desc">Post-processing &amp; deep protocol analysis</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="wireless-services.html" class="dd-product"><span class="dd-product-name">Wireless Services</span><span class="dd-product-desc">Plan, test &amp; tune at live operator sites</span></a>
+                <a href="planning-design.html" class="dd-product"><span class="dd-product-name">Planning &amp; Design</span><span class="dd-product-desc">Site, propagation, capacity, spectrum</span></a>
+                <a href="drive-walk-test.html" class="dd-product"><span class="dd-product-name">Drive &amp; Walk Test</span><span class="dd-product-desc">Multi-device field capture, L1–L4</span></a>
+                <a href="network-optimization.html" class="dd-product"><span class="dd-product-name">Network Optimization</span><span class="dd-product-desc">Initial and continuous performance tuning</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="Wireless.html" class="dd-explore">Explore Wireless portfolio</a><a href="wireless-services.html" class="dd-explore">Wireless Services</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item">
+          <a class="mn-link" href="#">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="IoT-Products.html" class="dd-product"><span class="dd-product-name">monoZ</span><span class="dd-product-desc">LPWA device-to-cloud suite</span></a>
+                <a href="CENTRA-IoT.html" class="dd-product"><span class="dd-product-name">Centra IoT</span><span class="dd-product-desc">Centralized cloud device management platform</span></a>
+                <a href="XENO+.html" class="dd-product"><span class="dd-product-name">Xeno+ suite</span><span class="dd-product-desc">Solderable AI/ML edge modules for IoT</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="iot-consulting.html" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
+                <a href="device-management.html" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
+                <a href="mesimo.html" class="dd-product"><span class="dd-product-name">Mesimo</span><span class="dd-product-desc">Telemetry into operational signals</span></a>
+                <a href="connectivity-solutions.html" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+                <a href="iot-services.html" class="dd-product"><span class="dd-product-name">IoT Services</span><span class="dd-product-desc">End-to-end IoT solutions from device to cloud</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="IoT-Products.html" class="dd-explore">Explore IoT portfolio</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item">
+          <a class="mn-link" href="#">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="digital-synergy-solutions-1.html" class="dd-product"><span class="dd-product-name">Digital Synergy</span><span class="dd-product-desc">Web &amp; mobile apps, integration &amp; workflow</span></a>
+                <a href="data-ai.html" class="dd-product"><span class="dd-product-name">Data &amp; AI</span><span class="dd-product-desc">Data platforms, analytics &amp; AI solutions</span></a>
+                <a href="devops.html" class="dd-product"><span class="dd-product-name">DevOps</span><span class="dd-product-desc">CI/CD, automation, cloud-native delivery</span></a>
+                <a href="cloud.html" class="dd-product"><span class="dd-product-name">Cloud</span><span class="dd-product-desc">Transform, migrate &amp; build cloud-native</span></a>
+                <a href="it-consulting.html" class="dd-product"><span class="dd-product-name">IT Consulting</span><span class="dd-product-desc">Modernization, DevOps &amp; cloud strategy</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">&nbsp;</div>
+                <a href="it-outsourcing-services.html" class="dd-product"><span class="dd-product-name">IT Outsourcing</span><span class="dd-product-desc">Staff augmentation, teams &amp; HaaS</span></a>
+                <a href="servicenow.html" class="dd-product"><span class="dd-product-name">ServiceNow</span><span class="dd-product-desc">Enterprise workflows &amp; ITSM</span></a>
+                <a href="managed-it-services.html" class="dd-product"><span class="dd-product-name">Managed IT</span><span class="dd-product-desc">Ongoing operations &amp; support</span></a>
+                <a href="zoecon-cloud-cost-optimizer.html" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer for telecom operators</span></a>
+                <a href="now.html" class="dd-product"><span class="dd-product-name">netSLAM™</span><span class="dd-product-desc">Independent validation &amp; assurance</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="it-services.html" class="dd-explore">Explore IT &amp; Cloud</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item">
+          <a class="mn-link" href="#">About Us <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown about">
+            <div class="dd-grid dd-grid-1">
+              <div>
+                <a href="about.html" class="dd-product"><span class="dd-product-name">About the company</span><span class="dd-product-desc">One partner, from radio to cloud</span></a>
+                <a href="clients-partners.html" class="dd-product"><span class="dd-product-name">Client &amp; Partners</span><span class="dd-product-desc">A client-first approach</span></a>
+                <a href="about.html#section-news" class="dd-product"><span class="dd-product-name">News &amp; Events</span><span class="dd-product-desc">Partnerships, events &amp; milestones</span></a>
+                <a href="success-stories.html" class="dd-product"><span class="dd-product-name">Success Stories</span><span class="dd-product-desc">Outcomes we have delivered</span></a>
+                <a href="case-studies.html" class="dd-product"><span class="dd-product-name">Case Studies</span><span class="dd-product-desc">Illustrative engagement scenarios</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mn-item"><a class="mn-link" href="#">Contact Us</a></div>
+      </nav>
+
+      <a href="#" class="btn-talk">Talk to us</a>
+      <div class="mn-accent"></div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE DRAWER
+  ============================================================ -->
+  <div class="mn-mobile" id="mnMobile">
+    <div class="mn-mobile-inner">
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-wireless">
+          <a href="Wireless.html" class="mn-mob-sub-link">Wireless Overview</a>
+          <div class="mn-mob-sub-head">Capture &amp; Automate</div>
+          <a href="sigma-la.html" class="mn-mob-sub-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="mn-mob-sub-link">Sigma-AQ</a>
+          <a href="sigma-neo.html" class="mn-mob-sub-link">Sigma-Neo</a>
+          <a href="sigma-aq-boss.html" class="mn-mob-sub-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="mn-mob-sub-link">Sigma-One</a>
+          <div class="mn-mob-sub-head">Analyze &amp; Intelligence</div>
+          <a href="centra_sd.html" class="mn-mob-sub-link">Centra-SD</a>
+          <a href="Sigma-PA.html" class="mn-mob-sub-link">Sigma-PA</a>
+          <a href="sigma-ml.html" class="mn-mob-sub-link">Sigma-ML</a>
+          <a href="centra-experitest.html" class="mn-mob-sub-link">Centra-Experitest</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="wireless-services.html" class="mn-mob-sub-link">Wireless Services</a>
+          <a href="planning-design.html" class="mn-mob-sub-link">Planning &amp; Design</a>
+          <a href="drive-walk-test.html" class="mn-mob-sub-link">Drive &amp; Walk Test</a>
+          <a href="network-optimization.html" class="mn-mob-sub-link">Network Optimization</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="iot">IoT <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-iot">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="IoT-Products.html" class="mn-mob-sub-link">monoZ</a>
+          <a href="CENTRA-IoT.html" class="mn-mob-sub-link">Centra IoT</a>
+          <a href="XENO+.html" class="mn-mob-sub-link">Xeno+ suite</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="iot-consulting.html" class="mn-mob-sub-link">IoT Consulting</a>
+          <a href="device-management.html" class="mn-mob-sub-link">Device Management</a>
+          <a href="mesimo.html" class="mn-mob-sub-link">Mesimo</a>
+          <a href="connectivity-solutions.html" class="mn-mob-sub-link">Connectivity</a>
+          <a href="iot-services.html" class="mn-mob-sub-link">IoT Services</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-it">
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="digital-synergy-solutions-1.html" class="mn-mob-sub-link">Digital Synergy</a>
+          <a href="data-ai.html" class="mn-mob-sub-link">Data &amp; AI</a>
+          <a href="devops.html" class="mn-mob-sub-link">DevOps</a>
+          <a href="cloud.html" class="mn-mob-sub-link">Cloud</a>
+          <a href="it-consulting.html" class="mn-mob-sub-link">IT Consulting</a>
+          <a href="it-outsourcing-services.html" class="mn-mob-sub-link">IT Outsourcing</a>
+          <a href="servicenow.html" class="mn-mob-sub-link">ServiceNow</a>
+          <a href="managed-it-services.html" class="mn-mob-sub-link">Managed IT</a>
+          <a href="zoecon-cloud-cost-optimizer.html" class="mn-mob-sub-link">zoECON™</a>
+          <a href="now.html" class="mn-mob-sub-link">netSLAM™</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="about">About Us <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-about">
+          <a href="about.html" class="mn-mob-sub-link">About the company</a>
+          <a href="clients-partners.html" class="mn-mob-sub-link">Client &amp; Partners</a>
+          <a href="about.html#section-news" class="mn-mob-sub-link">News &amp; Events</a>
+          <a href="success-stories.html" class="mn-mob-sub-link">Success Stories</a>
+          <a href="case-studies.html" class="mn-mob-sub-link">Case Studies</a>
+        </div>
+      </div>
+      <div class="mn-mob-item"><a href="#" class="mn-mob-link">Contact Us</a></div>
+      <a href="#" class="mn-mob-cta">Talk to us</a>
+    </div>
+  </div>
+
+  <div class="nav-spacer"></div>
+
+  <!-- ============================================================
+       1 · HERO
+  ============================================================ -->
+  <section class="wl-hero">
+    <div class="wl-hero-wrap">
+      <span class="wl-hero-eyebrow hero-eyebrow">Company <span class="wl-crumb-sep">/</span> Case Studies</span>
+      <h1 class="wl-hero-headline hero-headline">Problems solved, across the stack.</h1>
+      <p class="wl-hero-body hero-body">Engagement scenarios across Wireless, IoT, and IT — <strong>each anchored to what our products and services genuinely deliver.</strong> Filter by division to explore, and see the success stories for named client outcomes.</p>
+
+      <div class="wl-hero-stats reveal">
+        <div>
+          <div class="wl-stat-num">6</div>
+          <div class="wl-stat-label">Engagement scenarios</div>
+        </div>
+        <div>
+          <div class="wl-stat-num">3</div>
+          <div class="wl-stat-label">Technology divisions</div>
+        </div>
+        <div>
+          <div class="wl-stat-num">30M</div>
+          <div class="wl-stat-label">Connected products (monoZ &middot; 1NCE)</div>
+        </div>
+        <div>
+          <div class="wl-stat-num">60%</div>
+          <div class="wl-stat-label">Potential cloud savings (zoECON&trade;)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2 · FILTER BAR
+  ============================================================ -->
+  <nav class="ss-filter" aria-label="Filter case studies">
+    <div class="ss-filter-wrap">
+      <span class="ss-f-label">Division</span>
+      <button class="ss-pill is-active" data-div="all">All</button>
+      <button class="ss-pill" data-div="wtm">Wireless T&amp;M</button>
+      <button class="ss-pill" data-div="iot">IoT &amp; Edge AI</button>
+      <button class="ss-pill" data-div="it">IT &amp; Cloud</button>
+      <span class="ss-count" id="csCount"></span>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       3 · CASE STUDY GRID
+  ============================================================ -->
+  <section class="ss-section" id="section-case-studies">
+    <div class="ss-wrap">
+      <div class="ss-grid" id="csGrid">
+
+        <a class="ss-card reveal" data-div="wtm" href="Wireless.html">
+          <div class="ss-card-visual">
+            <span class="ss-card-ind">Wireless T&amp;M &middot; Sigma Suite</span>
+            <span class="ss-card-geo">Case study</span>
+            <svg viewBox="0 0 360 60" aria-hidden="true"><path d="M10 48 h44 l28 -30 l44 40 l28 -34 h170" fill="none" stroke="rgba(0,162,79,.75)" stroke-width="2"/><circle cx="126" cy="58" r="3.5" fill="rgba(255,255,255,.8)"/></svg>
+          </div>
+          <div class="ss-card-body">
+            <span class="ss-chip ss-chip--wtm">Wireless T&amp;M</span>
+            <div class="ss-card-title">Sharpening 5G rollout for an operator</div>
+            <p class="ss-card-desc">An operator scaling 5G needs to verify and optimize RF performance across new cells. Sigma Suite T&amp;M tools measure and tune NR5G, LTE, and WCDMA in the field.</p>
+            <div class="cs-rows">
+              <div class="cs-row"><div class="cs-row-k">Challenge</div><div class="cs-row-v">Coverage &amp; interference at scale</div></div>
+              <div class="cs-row"><div class="cs-row-k">Approach</div><div class="cs-row-v">Sigma Suite drive testing &amp; optimization</div></div>
+            </div>
+            <div class="cs-result"><div class="cs-result-n">5G</div><div class="cs-result-l">NR5G / LTE / WCDMA verified</div></div>
+          </div>
+        </a>
+
+        <a class="ss-card reveal" data-div="iot" href="XENO+.html">
+          <div class="ss-card-visual">
+            <span class="ss-card-ind">IoT &middot; Xeno+ Edge AI</span>
+            <span class="ss-card-geo">Case study</span>
+            <svg viewBox="0 0 360 60" aria-hidden="true"><circle cx="180" cy="30" r="22" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"/><path d="M120 30 h22 l8 -16 l10 32 l8 -22 h72" fill="none" stroke="rgba(0,162,79,.75)" stroke-width="2"/></svg>
+          </div>
+          <div class="ss-card-body">
+            <span class="ss-chip ss-chip--iot">IoT &amp; Edge AI</span>
+            <div class="ss-card-title">Bringing ML to a battery device</div>
+            <p class="ss-card-desc">A product team needs always-on audio intelligence without draining the battery or shipping data to the cloud. The Xeno+ Nano ML SOM runs inference on-device.</p>
+            <div class="cs-rows">
+              <div class="cs-row"><div class="cs-row-k">Challenge</div><div class="cs-row-v">On-device ML, long battery life</div></div>
+              <div class="cs-row"><div class="cs-row-k">Approach</div><div class="cs-row-v">Xeno+ Nano ML &middot; Syntiant NDP120</div></div>
+            </div>
+            <div class="cs-result"><div class="cs-result-n">40%</div><div class="cs-result-l">Faster development (Xeno+ claim)</div></div>
+          </div>
+        </a>
+
+        <a class="ss-card reveal" data-div="iot" href="IoT-Products.html">
+          <div class="ss-card-visual">
+            <span class="ss-card-ind">IoT &middot; monoZ + 1NCE</span>
+            <span class="ss-card-geo">Case study</span>
+            <svg viewBox="0 0 360 60" aria-hidden="true"><g fill="none" stroke="rgba(0,162,79,.75)" stroke-width="1.6"><circle cx="180" cy="30" r="14"/><circle cx="180" cy="30" r="27"/></g><circle cx="180" cy="30" r="4" fill="rgba(0,162,79,.9)"/><g fill="rgba(255,255,255,.6)"><circle cx="110" cy="18" r="3"/><circle cx="255" cy="44" r="3"/><circle cx="300" cy="16" r="3"/><circle cx="66" cy="46" r="3"/></g></svg>
+          </div>
+          <div class="ss-card-body">
+            <span class="ss-chip ss-chip--iot">IoT &amp; Edge AI</span>
+            <div class="ss-card-title">Scaling IoT deployment globally</div>
+            <p class="ss-card-desc">A business deploying connected products across markets struggles with device-to-cloud data, global connectivity, and scaling. monoZ, as a certified 1NCE integration partner, simplifies all three.</p>
+            <div class="cs-rows">
+              <div class="cs-row"><div class="cs-row-k">Challenge</div><div class="cs-row-v">Global connectivity &amp; scale</div></div>
+              <div class="cs-row"><div class="cs-row-k">Approach</div><div class="cs-row-v">monoZ &middot; 1NCE integration</div></div>
+            </div>
+            <div class="cs-result"><div class="cs-result-n">30M</div><div class="cs-result-l">Connected products on the platform</div></div>
+          </div>
+        </a>
+
+        <a class="ss-card reveal" data-div="it" href="zoecon-cloud-cost-optimizer.html">
+          <div class="ss-card-visual">
+            <span class="ss-card-ind">IT &middot; zoECON&trade;</span>
+            <span class="ss-card-geo">Case study</span>
+            <svg viewBox="0 0 360 60" aria-hidden="true"><g fill="rgba(255,255,255,.3)"><rect x="60" y="10" width="20" height="44" rx="2"/></g><g fill="rgba(0,162,79,.6)"><rect x="100" y="20" width="20" height="34" rx="2"/><rect x="140" y="30" width="20" height="24" rx="2"/><rect x="180" y="40" width="20" height="14" rx="2"/></g><path d="M70 14 L190 44" stroke="rgba(0,162,79,.9)" stroke-width="2" stroke-dasharray="5 4"/></svg>
+          </div>
+          <div class="ss-card-body">
+            <span class="ss-chip ss-chip--it">IT &amp; Cloud</span>
+            <div class="ss-card-title">Cutting a runaway cloud bill</div>
+            <p class="ss-card-desc">A cloud-reliant business sees spend climbing without clear cause. The C2O AI Engine analyses the estate, surfaces waste, and validates security alongside the savings.</p>
+            <div class="cs-rows">
+              <div class="cs-row"><div class="cs-row-k">Challenge</div><div class="cs-row-v">Cloud cost with no visibility</div></div>
+              <div class="cs-row"><div class="cs-row-k">Approach</div><div class="cs-row-v">zoECON &middot; C2O AI Engine</div></div>
+            </div>
+            <div class="cs-result"><div class="cs-result-n">60%</div><div class="cs-result-l">Potential bill reduction (zoECON claim)</div></div>
+          </div>
+        </a>
+
+        <a class="ss-card reveal" data-div="it" href="digital-synergy-solutions-1.html">
+          <div class="ss-card-visual">
+            <span class="ss-card-ind">IT &middot; Digital Synergy</span>
+            <span class="ss-card-geo">Case study</span>
+            <svg viewBox="0 0 360 60" aria-hidden="true"><circle cx="80" cy="30" r="12" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"/><circle cx="280" cy="30" r="12" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"/><circle cx="180" cy="30" r="15" fill="rgba(0,162,79,.8)"/><path d="M92 30 H165 M195 30 H268" stroke="rgba(0,162,79,.75)" stroke-width="2" stroke-dasharray="4 4"/></svg>
+          </div>
+          <div class="ss-card-body">
+            <span class="ss-chip ss-chip--it">IT &amp; Cloud</span>
+            <div class="ss-card-title">Unifying a motley of systems</div>
+            <p class="ss-card-desc">An organisation's IT has grown into disconnected applications. Integration architects design the blueprints to unify the divergent systems through APIs and protocols.</p>
+            <div class="cs-rows">
+              <div class="cs-row"><div class="cs-row-k">Challenge</div><div class="cs-row-v">Fragmented, siloed systems</div></div>
+              <div class="cs-row"><div class="cs-row-k">Approach</div><div class="cs-row-v">Systems integration &middot; APIs</div></div>
+            </div>
+            <div class="cs-result"><div class="cs-result-n">E2E</div><div class="cs-result-l">Ideation to deployment</div></div>
+          </div>
+        </a>
+
+        <a class="ss-card reveal" data-div="it" href="servicenow.html">
+          <div class="ss-card-visual">
+            <span class="ss-card-ind">IT &middot; ServiceNow</span>
+            <span class="ss-card-geo">Case study</span>
+            <svg viewBox="0 0 360 60" aria-hidden="true"><rect x="60" y="8" width="200" height="12" rx="3" fill="rgba(0,162,79,.55)"/><rect x="60" y="27" width="150" height="8" rx="2" fill="rgba(255,255,255,.35)"/><rect x="60" y="41" width="175" height="8" rx="2" fill="rgba(255,255,255,.25)"/><circle cx="290" cy="42" r="8" fill="rgba(0,162,79,.8)"/></svg>
+          </div>
+          <div class="ss-card-body">
+            <span class="ss-chip ss-chip--it">IT &amp; Cloud</span>
+            <div class="ss-card-title">One platform for enterprise workflows</div>
+            <p class="ss-card-desc">Requests and approvals scattered across tools slow an enterprise down. As a certified ServiceNow partner, Meritech consolidates them into AI-driven workflows on one platform.</p>
+            <div class="cs-rows">
+              <div class="cs-row"><div class="cs-row-k">Challenge</div><div class="cs-row-v">Siloed, manual workflows</div></div>
+              <div class="cs-row"><div class="cs-row-k">Approach</div><div class="cs-row-v">ServiceNow ITSM &middot; CMDB</div></div>
+            </div>
+            <div class="cs-result"><div class="cs-result-n">1</div><div class="cs-result-l">Unified platform &amp; source of truth</div></div>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="ss-empty" id="csEmpty" style="display:none;">No case studies in this division yet.</div>
+
+      <div class="cs-note"><strong>A note on these case studies:</strong> these are illustrative engagement scenarios that show how Meritech's products and services apply to common challenges. The headline figures (e.g. up to 60% cloud savings, 40% faster development, 30M connected products) are real, documented product claims — not outcomes attributed to a specific named client. As real client stories with permission become available, they can replace these scenarios directly. For named client outcomes, see the <a href="success-stories.html" style="color:#00A24F;font-weight:700;">Success Stories</a>.</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4 · CTA
+  ============================================================ -->
+  <section class="cta-section" id="section-cta">
+    <div class="cta-wrap">
+      <h2 class="cta-headline reveal">Have a problem like these?</h2>
+      <p class="cta-eyebrow reveal reveal-d1 cta-eyebrow-centered">These scenarios show the shape of what we do. Bring us yours — and we'll show you how the products and services map to it.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-primary-pill">
+          Talk to us
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="success-stories.html" class="btn-outline-pill">
+          Success stories
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function () {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('#csGrid .ss-card'));
+    var empty = document.getElementById('csEmpty');
+    var countTag = document.getElementById('csCount');
+    function apply(div) {
+      var n = 0;
+      cards.forEach(function (c) {
+        var ok = (div === 'all' || c.dataset.div === div);
+        c.classList.toggle('is-hidden', !ok);
+        if (ok) n++;
+      });
+      if (empty) empty.style.display = n === 0 ? 'block' : 'none';
+      if (countTag) countTag.textContent = n + ' of ' + cards.length;
+    }
+    document.querySelectorAll('.ss-pill[data-div]').forEach(function (p) {
+      p.addEventListener('click', function () {
+        document.querySelectorAll('.ss-pill[data-div]').forEach(function (x) { x.classList.remove('is-active'); });
+        p.classList.add('is-active');
+        apply(p.dataset.div);
+      });
+    });
+    apply('all');
+  })();
+  </script>
+
+  <!-- ============================================================
+       14 · FOOTER
+  ============================================================ -->
+  <footer class="ft-footer">
+    <div class="ft-main">
+      <div class="ft-brand">
+        <a href="index.html" class="ft-logo">
+          <img src="images/Meritech_logo_white.png" alt="Meritech">
+        </a>
+        <p class="ft-desc">Welcome to Meritech, where innovation and excellence converge to redefine the landscape of mobile network T&amp;M, Network optimization, LPWA IoT and trendsetting bespoke IT services. As a leading manufacturer of cutting-edge solutions and IT Services provider, we are dedicated to providing Software and Hardware solutions that empower Global Customers to stay ahead of the ever-evolving mobile wireless and IoT industry.</p>
+        <a href="#" class="ft-cta">
+          Talk to us
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+            <line x1="0" y1="5" x2="15" y2="5" stroke="white" stroke-width="1.4"></line>
+            <path d="M11 1.5L15.5 5L11 8.5" stroke="white" stroke-width="1.4" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+      <nav class="ft-nav" aria-label="Footer navigation">
+        <div class="ft-col">
+          <a href="Wireless.html" class="ft-col-head">Wireless</a>
+          <a href="sigma-la.html" class="ft-link">Sigma-LA</a>
+          <a href="sigma-aq.html" class="ft-link">Sigma-AQ</a>
+          <a href="sigma-aq-boss.html" class="ft-link">Sigma-AQ Boss</a>
+          <a href="sigma-one.html" class="ft-link">Sigma-One</a>
+          <a href="sigma-ml.html" class="ft-link">Sigma-ML</a>
+          <a href="Sigma-PA.html" class="ft-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="ft-link">Centra-SD</a>
+          <a href="sigma-neo.html" class="ft-link">Sigma-Neo</a>
+          <a href="centra-experitest.html" class="ft-link">Centra-Experitest</a>
+          <a href="#" class="ft-link">Sigma-AQ Reporting Server</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IoT</div>
+          <a href="IoT-Products.html" class="ft-link">monoZ</a>
+          <a href="CENTRA-IoT.html" class="ft-link">Centra IoT</a>
+          <a href="XENO+.html" class="ft-link">Xeno+</a>
+          <a href="mesimo.html" class="ft-link">Mesimo</a>
+          <a href="iot-consulting.html" class="ft-link">IoT Consulting</a>
+          <a href="device-management.html" class="ft-link">Device Management</a>
+          <a href="connectivity-solutions.html" class="ft-link">Connectivity</a>
+          <a href="iot-services.html" class="ft-link">IoT Services</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IT &amp; Cloud</div>
+          <a href="data-ai.html" class="ft-link">Data &amp; AI</a>
+          <a href="devops.html" class="ft-link">DevOps</a>
+          <a href="cloud.html" class="ft-link">Cloud</a>
+          <a href="it-consulting.html" class="ft-link">IT Consulting</a>
+          <a href="it-outsourcing-services.html" class="ft-link">IT Outsourcing</a>
+          <a href="servicenow.html" class="ft-link">ServiceNow</a>
+          <a href="zoecon-cloud-cost-optimizer.html" class="ft-link">zoECON&#8482;</a>
+          <a href="now.html" class="ft-link">IVS</a>
+          <a href="managed-it-services.html" class="ft-link">Managed IT</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">Company</div>
+          <a href="about.html" class="ft-link">Who we are</a>
+          <a href="success-stories.html" class="ft-link">Success stories</a>
+          <a href="#" class="ft-link">News &amp; events</a>
+          <a href="about.html#section-presence" class="ft-link">Global presence</a>
+          <a href="#" class="ft-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; Meritech 2026 &middot; All Rights Reserved</span>
+      <div class="ft-countries">
+        <span>Japan</span><span class="ft-sep">|</span>
+        <span>India</span><span class="ft-sep">|</span>
+        <span>Singapore</span><span class="ft-sep">|</span>
+        <span>Thailand</span><span class="ft-sep">|</span>
+        <span>USA</span><span class="ft-sep">|</span>
+        <span>UK</span><span class="ft-sep">|</span>
+        <span>Germany</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.st-toc a[href^="#story-"]'));
+    var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    var spy = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) links.forEach(function (l) {
+          l.classList.toggle('is-active', l.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    secs.forEach(function (s) { if (s) spy.observe(s); });
+  })();
+  </script>
+
+
+</body>
+</html>
