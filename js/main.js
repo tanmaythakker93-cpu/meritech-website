@@ -306,3 +306,78 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+/* --------------------------------------------------------
+   LANGUAGE SWITCHER (EN / JA — in-place translation)
+   Uses the Google Translate engine driven by our own UI.
+   Selecting 日本語 translates this same site; English restores it.
+-------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', function () {
+
+  function getLang() {
+    var m = document.cookie.match(/(?:^|;\s*)googtrans=([^;]*)/);
+    var parts = m ? decodeURIComponent(m[1]).split('/') : [];
+    return parts[2] === 'ja' ? 'ja' : 'en';
+  }
+
+  function setCookie(val) {
+    var host = location.hostname;
+    document.cookie = 'googtrans=' + val + ';path=/';
+    if (host && host.indexOf('.') > -1) {
+      document.cookie = 'googtrans=' + val + ';path=/;domain=' + host;
+      document.cookie = 'googtrans=' + val + ';path=/;domain=.' + host;
+    }
+  }
+
+  function clearCookie() {
+    var host = location.hostname;
+    var gone = ';expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+    document.cookie = 'googtrans=' + gone;
+    if (host && host.indexOf('.') > -1) {
+      document.cookie = 'googtrans=' + gone + ';domain=' + host;
+      document.cookie = 'googtrans=' + gone + ';domain=.' + host;
+    }
+  }
+
+  function loadTranslateEngine() {
+    if (document.getElementById('google_translate_element')) return;
+    var holder = document.createElement('div');
+    holder.id = 'google_translate_element';
+    document.body.appendChild(holder);
+    window.googleTranslateElementInit = function () {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', includedLanguages: 'en,ja', autoDisplay: false },
+        'google_translate_element'
+      );
+    };
+    var s = document.createElement('script');
+    s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(s);
+  }
+
+  var current = getLang();
+
+  /* Keep the switcher itself untranslated and reflect current language */
+  document.querySelectorAll('.mn-lang, .mn-mob-lang').forEach(function (el) {
+    el.classList.add('notranslate');
+  });
+  document.querySelectorAll('.mn-lang-cur').forEach(function (el) {
+    el.textContent = current === 'ja' ? 'JA' : 'EN';
+  });
+  document.querySelectorAll('.mn-lang-opt[data-lang], .mn-mob-lang-opt[data-lang]').forEach(function (a) {
+    a.classList.toggle('is-active', a.getAttribute('data-lang') === current);
+  });
+
+  if (current === 'ja') loadTranslateEngine();
+
+  document.querySelectorAll('.mn-lang-opt[data-lang], .mn-mob-lang-opt[data-lang]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var lang = a.getAttribute('data-lang');
+      if (lang === getLang()) return;
+      if (lang === 'ja') { setCookie('/en/ja'); } else { clearCookie(); }
+      location.reload();
+    });
+  });
+
+});

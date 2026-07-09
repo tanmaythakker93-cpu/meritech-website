@@ -629,7 +629,7 @@
   .hp-hero{ padding: 90px 60px 64px; gap: 36px; }
   .hp-hero-headline{ font-size: min(84px, calc((100vw - 496px) / 8.4)); }
   .hp-quote-inner, .hp-prob-inner, .hp-cap-inner, .hp-ins-inner, .hp-global-inner{ padding-left: 60px; padding-right: 60px; }
-  .hp-build-inner{ padding-left: 60px; padding-right: 60px; grid-template-columns: 300px 1fr; gap: 56px; }
+  .hp-build-inner{ padding-left: 60px; padding-right: 60px; grid-template-columns: 4fr 6fr; gap: 56px; }
   .hp-cap-stats{ grid-template-columns: 1fr 1fr; }
 }
 
@@ -643,7 +643,7 @@
   .hp-wave-band{ height: 120px; }
   .hp-quote-section{ padding: 90px 0; }
   .hp-quote-inner, .hp-prob-inner, .hp-cap-inner, .hp-ins-inner, .hp-global-inner{ padding-left: 24px; padding-right: 24px; }
-  .hp-slider{ height: 380px; }
+  .hp-slider{ height: 380px; width: 100%; }
   .hp-build-inner{ padding: 0 24px; grid-template-columns: 1fr; }
   .hp-build-left{ position: static; }
   .hp-build-img-box{ aspect-ratio: 16/9; }
@@ -1472,3 +1472,19 @@
 
 }
 
+
+
+/* ---- language switcher ---- */
+@media (max-width: 991px) {
+  .mn-lang{ display: none !important; }
+}
+
+/* ---- what we build: sticky right header off on mobile ---- */
+@media (max-width: 767px) {
+  .hp-build-rhead{ position: static; }
+}
+
+/* ---- what we build: no reserved height for last division on mobile ---- */
+@media (max-width: 767px) {
+  .hp-build-right .hp-division:last-child{ position: static; }
+}

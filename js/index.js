@@ -48,16 +48,30 @@ document.addEventListener('DOMContentLoaded', function () {
     spyLockTimer = setTimeout(function () { spyLocked = false; }, 400);
   }
 
+  // scroll offset must clear the fixed navbar plus the sticky headline/intro
+  // block, which stays pinned above the divisions while they scroll
+  var rhead = document.querySelector('.hp-build-rhead');
+  function buildOffset() {
+    var pinned = rhead && getComputedStyle(rhead).position === 'sticky' ? rhead.offsetHeight : 0;
+    return 80 + pinned + 16;
+  }
+  // expose the offset so CSS can pin the last division right below the header
+  function setBuildOffsetVar() {
+    document.documentElement.style.setProperty('--build-offset', buildOffset() + 'px');
+  }
+  setBuildOffsetVar();
+  window.addEventListener('resize', setBuildOffsetVar);
+
   buildTabs.forEach(function (tab) {
     tab.addEventListener('click', function () {
       var targetId = tab.dataset.div;
       var target = document.getElementById(targetId);
       if (!target) return;
-      var offset = 96 + 16;
-      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - buildOffset();
       window.scrollTo({ top: top, behavior: 'smooth' });
       buildTabs.forEach(function (t) { t.classList.remove('is-active'); });
       tab.classList.add('is-active');
+      divSections.forEach(function (sec) { sec.classList.toggle('is-current', sec.id === targetId); });
       lockSpy();
       setBuildImage(targetId);
     });
@@ -65,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateBuildTabs() {
     if (spyLocked) { lockSpy(); return; } // keep lock alive until scrolling settles
-    var offset = 120;
+    var offset = buildOffset() + 8;
     var current = null;
     divSections.forEach(function (sec) {
       var rect = sec.getBoundingClientRect();
@@ -75,10 +89,13 @@ document.addEventListener('DOMContentLoaded', function () {
       buildTabs.forEach(function (tab) {
         tab.classList.toggle('is-active', tab.dataset.div === current);
       });
+      divSections.forEach(function (sec) { sec.classList.toggle('is-current', sec.id === current); });
       setBuildImage(current);
     }
   }
   window.addEventListener('scroll', updateBuildTabs, { passive: true });
+  if (divSections.length) divSections[0].classList.add('is-current');
+  updateBuildTabs();
 
   /* ── QUOTE LINE ANIMATION ── */
   var quoteIO = new IntersectionObserver(function (entries) {
