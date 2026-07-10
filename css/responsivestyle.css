@@ -1219,6 +1219,7 @@
   .page-sigma-neo .sn-hero-grid{ grid-template-columns: 1fr; gap: 48px; }
   .page-sigma-neo .sn-head-grid{ grid-template-columns: 1fr; gap: 20px; align-items: start; }
   .page-sigma-neo .sn-head-grid .sn-headline{ margin-bottom: 0; }
+  .page-sigma-neo .sn-headline{ font-size: 52px; line-height: 56px; }
   .page-sigma-neo .sn-problem-grid{ grid-template-columns: 1fr; gap: 40px; }
 }
 @media (max-width: 991px) {
@@ -1230,6 +1231,7 @@
 }
 @media (max-width: 767px) {
   .page-sigma-neo .sn-wrap, .page-sigma-neo .sn-hero-wrap{ padding: 60px 24px; }
+  .page-sigma-neo .sn-headline{ font-size: 32px; line-height: 44px; }
   .page-sigma-neo .sn-pcards{ grid-template-columns: 1fr; }
   .page-sigma-neo .sn-caps-grid{ grid-template-columns: 1fr; }
   .page-sigma-neo .sn-rel-grid{ grid-template-columns: 1fr; }
@@ -1487,4 +1489,21 @@
 /* ---- what we build: no reserved height for last division on mobile ---- */
 @media (max-width: 767px) {
   .hp-build-right .hp-division:last-child{ position: static; }
+}
+
+/* ---- page: 404 ---- */
+@media (max-width: 1399px) {
+  .page-notfound .nf-wrap{ padding: 90px 80px; }
+
+}
+@media (max-width: 991px) {
+  .page-notfound .nf-wrap{ padding: 70px 24px; }
+  .page-notfound .nf-section::before{ width: 420px; height: 420px; left: -160px; top: -160px; }
+  .page-notfound .nf-section::after{ width: 360px; height: 360px; right: -140px; bottom: -140px; }
+
+}
+@media (max-width: 575px) {
+  .page-notfound .nf-wrap{ padding: 60px 20px; }
+  .page-notfound .nf-body{ font-size: 16px; }
+
 }

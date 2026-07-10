@@ -46,7 +46,7 @@
               </div>
               <div>
                 <div class="dd-col-head">Analyze &amp; Intelligence</div>
-                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Tune until the field matches intent</span></a>
+                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Schedule tests, monitor live KPIs, manage field devices</span></a>
                 <a href="Sigma-PA.html" class="dd-product"><span class="dd-product-name">Sigma-PA</span><span class="dd-product-desc">Post-processing &amp; protocol analysis platform</span></a>
                 <a href="sigma-ml.html" class="dd-product"><span class="dd-product-name">Sigma-ML</span><span class="dd-product-desc">Mobile logger — walk test from a single smartphone</span></a>
                 <a href="centra-experitest.html" class="dd-product"><span class="dd-product-name">Centra-Experitest</span><span class="dd-product-desc">OTT &amp; QoE — what the subscriber actually feels</span></a>
@@ -299,7 +299,32 @@
   </section>
 
   <!-- ============================================================
-       2 · THE PROBLEM
+       2 · SUBNAV
+  ============================================================ -->
+  <nav class="subnav" id="mainSubnav" aria-label="Page sections">
+    <div class="container-xxl">
+      <div class="subnav-links">
+        <a href="#section-overview"     class="subnav-link active">Overview</a>
+        <a href="#section-problem"      class="subnav-link">The problem</a>
+        <a href="#section-outcomes"     class="subnav-link">Outcomes</a>
+        <a href="#section-architecture" class="subnav-link">Architecture</a>
+        <a href="#section-capabilities" class="subnav-link">Capabilities</a>
+        <a href="#section-usecases"     class="subnav-link">Use cases</a>
+        <a href="#section-related"      class="subnav-link">Related</a>
+      </div>
+      <a href="#" class="btn-get-quote">
+        Get a quote
+        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+          <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+          <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <div class="subnav-placeholder" id="subnavPlaceholder"></div>
+
+  <!-- ============================================================
+       3 · THE PROBLEM
   ============================================================ -->
   <section class="sn-problem" id="section-problem">
     <div class="sn-wrap">
@@ -374,32 +399,38 @@
   <!-- ============================================================
        4 · MEASURED OUTCOMES
   ============================================================ -->
-  <section class="sn-stats" id="section-outcomes">
-    <div class="sn-wrap">
-      <span class="sn-kicker sn-kicker--dark reveal">Measured outcomes</span>
-      <h2 class="sn-headline sn-headline--dark reveal">What changes, <span class="sn-green-bright">measured.</span></h2>
-      <p class="sn-stats-note reveal">Figures from Sigma-Neo platform deployments. Your network, traffic profile, and baseline workflows will shape your own results — which is why evaluations run on your data, not ours.</p>
-      <div class="sn-stats-grid reveal">
-        <div class="sn-stat">
-          <div class="sn-stat-num">95%+</div>
-          <div class="sn-stat-label">Fewer false positive alerts</div>
-          <div class="sn-stat-sub">Smart anomaly detection replaces static threshold monitoring</div>
+  <section class="uc-section" id="section-outcomes">
+    <div class="uc-wrap">
+      <div class="uc-top">
+        <div>
+          <div class="uc-eyebrow reveal">Measured outcomes</div>
+          <h2 class="uc-headline reveal">What changes,<br>measured.</h2>
         </div>
-        <div class="sn-stat">
-          <div class="sn-stat-num">60%</div>
-          <div class="sn-stat-label">Faster incident resolution</div>
-          <div class="sn-stat-sub">Automated root cause analysis accelerates troubleshooting</div>
+        <div>
+          <p class="uc-subtitle reveal">Figures from Sigma-Neo platform deployments. Your network, traffic profile, and baseline workflows will shape your own results — which is why evaluations run on your data, not ours.</p>
         </div>
-        <div class="sn-stat">
-          <div class="sn-stat-num">40%</div>
-          <div class="sn-stat-label">Optimization improvement</div>
-          <div class="sn-stat-sub">Self-learning algorithms continuously adapt parameters</div>
-        </div>
-        <div class="sn-stat">
-          <div class="sn-stat-num">3&ndash;5</div>
-          <div class="sn-stat-label">Steps ahead of degradation</div>
-          <div class="sn-stat-sub">Predictive analytics flag issues before subscriber impact</div>
-        </div>
+      </div>
+    </div>
+    <div class="ov-statsbar reveal">
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">95%+</div>
+        <div class="ov-sbc-name">Fewer false positive alerts</div>
+        <p class="ov-sbc-note">Smart anomaly detection replaces static threshold monitoring.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">60%</div>
+        <div class="ov-sbc-name">Faster incident resolution</div>
+        <p class="ov-sbc-note">Automated root cause analysis accelerates troubleshooting.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">40%</div>
+        <div class="ov-sbc-name">Optimization improvement</div>
+        <p class="ov-sbc-note">Self-learning algorithms continuously adapt parameters.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">3&ndash;5</div>
+        <div class="ov-sbc-name">Steps ahead of degradation</div>
+        <p class="ov-sbc-note">Predictive analytics flag issues before subscriber impact.</p>
       </div>
     </div>
   </section>
@@ -553,30 +584,29 @@
   <!-- ============================================================
        8 · RELATED PRODUCTS
   ============================================================ -->
-  <section class="sn-rel" id="section-related">
-    <div class="sn-wrap">
-      <span class="sn-kicker reveal">Related products</span>
-      <h2 class="sn-headline reveal">Sigma-Neo sits on top of <span class="sn-green">Centra-SD.</span></h2>
-      <div class="sn-rel-grid reveal">
-        <a class="sn-rcard" href="centra_sd.html">
-          <div class="sn-rcard-kicker">Cloud platform &middot; foundation</div>
-          <div class="sn-rcard-name">Centra-SD</div>
-          <p class="sn-rcard-desc">The cloud-based Linux analytics platform Sigma-Neo is built on. Sigma-Neo reads the data Centra-SD already holds.</p>
+  <section class="rel-section" id="section-related">
+    <div class="rel-wrap">
+      <h2 class="rel-headline reveal">Sigma-Neo rarely<br>works alone.</h2>
+      <div class="rel-grid">
+        <a href="centra_sd.html" class="rel-card">
+          <div class="rel-tag">Network Monitoring</div>
+          <div class="rel-name">Centra-SD</div>
+          <p class="rel-desc">The browser-based network quality monitoring platform Sigma-Neo is built on. Sigma-Neo reads the data Centra-SD already holds.</p>
         </a>
-        <a class="sn-rcard" href="sigma-aq.html">
-          <div class="sn-rcard-kicker">Capture &middot; Android probe</div>
-          <div class="sn-rcard-name">Sigma-AQ</div>
-          <p class="sn-rcard-desc">Drive and walk test probe. Feeds drive test logs and KPI data into the Centra-SD / Sigma-Neo pipeline.</p>
+        <a href="sigma-aq.html" class="rel-card">
+          <div class="rel-tag">Field Collection</div>
+          <div class="rel-name">Sigma-AQ</div>
+          <p class="rel-desc">Drive and walk test probe. Feeds drive test logs and KPI data into the Centra-SD / Sigma-Neo pipeline.</p>
         </a>
-        <a class="sn-rcard" href="Sigma-PA.html">
-          <div class="sn-rcard-kicker">Post-processing</div>
-          <div class="sn-rcard-name">Sigma-PA</div>
-          <p class="sn-rcard-desc">Where raw logs become reports. Sigma-Neo adds the AI and conversational layer above Sigma-PA's analysis output.</p>
+        <a href="Sigma-PA.html" class="rel-card">
+          <div class="rel-tag">Post-Processing</div>
+          <div class="rel-name">Sigma-PA</div>
+          <p class="rel-desc">Where raw logs become reports. Sigma-Neo adds the AI and conversational layer above Sigma-PA's analysis output.</p>
         </a>
-        <a class="sn-rcard" href="sigma-la.html">
-          <div class="sn-rcard-kicker">Drive test &middot; Windows</div>
-          <div class="sn-rcard-name">Sigma-LA</div>
-          <p class="sn-rcard-desc">Multi-device Windows-based capture platform. One source of the drive test logs that flow into Sigma-Neo's data layer.</p>
+        <a href="sigma-la.html" class="rel-card">
+          <div class="rel-tag">Drive Test Platform</div>
+          <div class="rel-name">Sigma-LA</div>
+          <p class="rel-desc">Multi-device Windows-based capture platform. One source of the drive test logs that flow into Sigma-Neo's data layer.</p>
         </a>
       </div>
     </div>
@@ -617,7 +647,7 @@
         <a href="index.html" class="ft-logo">
           <img src="images/Meritech_logo_white.png" alt="Meritech">
         </a>
-        <p class="ft-desc">Welcome to Meritech, where innovation and excellence converge to redefine the landscape of mobile network T&amp;M, Network optimization, LPWA IoT and trendsetting bespoke IT services. As a leading manufacturer of cutting-edge solutions and IT Services provider, we are dedicated to providing Software and Hardware solutions that empower Global Customers to stay ahead of the ever-evolving mobile wireless and IoT industry.</p>
+        <p class="ft-desc">Mobile network Test &amp; Measurement, Network Optimization, LPWA IoT, Edge AI, and IT Services — built and supported since 2003. Nine offices across seven countries. Serving mobile operators, RAN vendors, and enterprises worldwide.</p>
         <a href="#" class="ft-cta">
           Talk to us
           <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
