@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meritech Website — Typography Chart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  /* Internal design reference — not part of the deployed site */
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+  body{ font-family: 'Noto Sans', sans-serif; color: #3D3A3A; background: #fff; padding: 56px 64px 96px; }
+  .doc-head{ border-bottom: 2px solid #221F1F; padding-bottom: 24px; margin-bottom: 48px; }
+  .doc-eyebrow{ font-size: 14px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #00A24F; display: block; margin-bottom: 10px; }
+  .doc-title{ font-size: 42px; font-weight: 500; letter-spacing: -.02em; color: #221F1F; }
+  .doc-meta{ font-size: 14px; color: #8A8686; margin-top: 8px; }
+  h2{ font-size: 26px; font-weight: 600; color: #221F1F; margin: 56px 0 20px; }
+  p.note{ font-size: 14px; color: #6B6868; line-height: 1.65; max-width: 82ch; margin-bottom: 16px; }
+
+  /* Specimen rows */
+  .spec{ display: flex; align-items: baseline; gap: 28px; padding: 18px 0; border-bottom: 1px solid #EEECEC; }
+  .spec-size{ width: 120px; flex-shrink: 0; font-size: 14px; font-weight: 700; color: #00A24F; }
+  .spec-role{ width: 260px; flex-shrink: 0; font-size: 14px; color: #8A8686; }
+  .spec-sample{ color: #221F1F; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* Table */
+  table{ border-collapse: collapse; width: 100%; font-size: 14px; }
+  th{ text-align: left; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: #8A8686; border-bottom: 2px solid #221F1F; padding: 10px 14px 10px 0; }
+  td{ padding: 12px 14px 12px 0; border-bottom: 1px solid #EEECEC; vertical-align: top; line-height: 1.55; }
+  td code, p code{ font-family: Consolas, Menlo, monospace; font-size: 13px; background: #F5F4F2; padding: 1px 5px; border-radius: 3px; color: #233F89; }
+  .num{ white-space: nowrap; font-weight: 700; color: #221F1F; }
+</style>
+</head>
+<body>
+
+<header class="doc-head">
+  <span class="doc-eyebrow">Meritech Website — Design Reference</span>
+  <div class="doc-title">Typography Chart</div>
+  <div class="doc-meta">Source: css/style.css · css/responsivestyle.css &nbsp;·&nbsp; Updated 13 Jul 2026 (after 15→16, 17→18, 12/13→14, 19/21→20 standardization)</div>
+</header>
+
+<h2>Typeface</h2>
+<p class="note">
+  The whole site uses a single typeface: <strong>Noto Sans</strong> (Google Fonts; weights 300, 400, 500, 600, 700, and 700 italic),
+  set once on <code>body</code> and re-declared on form controls and buttons, which don't inherit it.
+  The only exception is the terminal widget on the Wireless page (<code>.wl-term-head</code>, <code>.wl-term-num</code>, <code>.wl-term-label</code>),
+  which uses <strong>Consolas / SFMono / Menlo monospace</strong> at 14px and 26px.
+</p>
+
+<h2>Type scale — live specimens</h2>
+
+<div class="spec"><div class="spec-size">80px</div><div class="spec-role">Display numerals / big stats</div><div class="spec-sample" style="font-size:80px;font-weight:800;letter-spacing:-.02em;">30M</div></div>
+<div class="spec"><div class="spec-size">60px</div><div class="spec-role">Section heading (large H2)</div><div class="spec-sample" style="font-size:60px;font-weight:500;letter-spacing:-.025em;">Connected, managed, secure.</div></div>
+<div class="spec"><div class="spec-size">52px</div><div class="spec-role">Section heading (H2)</div><div class="spec-sample" style="font-size:52px;font-weight:500;letter-spacing:-.025em;">Our technology ecosystem.</div></div>
+<div class="spec"><div class="spec-size">42px</div><div class="spec-role">H2 at tablet (&le;1199px)</div><div class="spec-sample" style="font-size:42px;font-weight:500;letter-spacing:-.02em;">Our technology ecosystem.</div></div>
+<div class="spec"><div class="spec-size">32px</div><div class="spec-role">H2 at mobile (&le;575px)</div><div class="spec-sample" style="font-size:32px;font-weight:500;letter-spacing:-.02em;">Our technology ecosystem.</div></div>
+<div class="spec"><div class="spec-size">26px</div><div class="spec-role">Card title (H3) / result numbers</div><div class="spec-sample" style="font-size:26px;font-weight:600;">End-to-end IoT engineering</div></div>
+<div class="spec"><div class="spec-size">22px</div><div class="spec-role">Card title (small H3)</div><div class="spec-sample" style="font-size:22px;font-weight:600;">Service &amp; event titles</div></div>
+<div class="spec"><div class="spec-size">20px</div><div class="spec-role">Step titles / FAQ questions</div><div class="spec-sample" style="font-size:20px;font-weight:600;">How does the evaluation work?</div></div>
+<div class="spec"><div class="spec-size">18px</div><div class="spec-role">Lead / intro paragraph</div><div class="spec-sample" style="font-size:18px;font-weight:400;">Meritech designs, builds, and operates connected products.</div></div>
+<div class="spec"><div class="spec-size">16px</div><div class="spec-role">Body text (site default)</div><div class="spec-sample" style="font-size:16px;font-weight:400;">Body copy for descriptions, cards, and paragraphs across every page.</div></div>
+<div class="spec"><div class="spec-size">14px</div><div class="spec-role">Small text / eyebrow / UI</div><div class="spec-sample" style="font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Technologies we work with</div></div>
+
+<h2>Roles — size, weight, and where each is used</h2>
+<table>
+  <tr><th style="width:200px">Role</th><th style="width:130px">Desktop</th><th style="width:170px">Tablet / mobile</th><th style="width:110px">Weight</th><th>Sections &amp; example classes</th></tr>
+  <tr>
+    <td>Hero headline (H1)</td><td class="num">clamp() ~52–96px</td><td>scales fluidly with viewport</td><td>500</td>
+    <td>Page heroes — homepage <code>.hp-hero-headline</code>, product/page heroes <code>.hero-headline</code>, About <code>.ab-hero-headline</code></td>
+  </tr>
+  <tr>
+    <td>Section heading (H2)</td><td class="num">52px / 60px</td><td class="num">42px → 32px</td><td>500</td>
+    <td>All section headlines site-wide — <code>.cl-*-headline</code>, <code>.cta-headline</code>, <code>.faq-headline</code>, <code>.eco-headline</code>, <code>.ds-ind-headline</code></td>
+  </tr>
+  <tr>
+    <td>Sub-section heading</td><td class="num">42px / 32px</td><td class="num">32px → 26px</td><td>500–600</td>
+    <td>Secondary blocks; contact page headline steps down 44 → 36 → 28px at its own breakpoints (<code>.ct-headline</code>)</td>
+  </tr>
+  <tr>
+    <td>Card title (H3)</td><td class="num">26px</td><td>unchanged</td><td>600–800</td>
+    <td>Feature &amp; stat cards — <code>.hl-card-title</code>, <code>.tp-card-title</code>, <code>.sv-title</code>, <code>.cs-result-n</code>, <code>.ct-ty-headline</code></td>
+  </tr>
+  <tr>
+    <td>Card title (small H3)</td><td class="num">20–22px</td><td>unchanged</td><td>600–700</td>
+    <td>Step titles, FAQ questions, event/service titles, slide numbers, story-card titles, question titles — <code>.cl-step-title</code>, <code>.faq-q-text</code>, <code>.ne-event-title</code>, <code>.ss-card-title</code>, <code>.ws-q-title</code>, <code>.hp-slide-num</code>, <code>.ct-step-headline</code> (22px)</td>
+  </tr>
+  <tr>
+    <td>Lead / intro paragraph</td><td class="num">18px</td><td class="num">16px</td><td>400</td>
+    <td>Page intros — <code>.ab-intro</code>, <code>.ws-intro-body</code>, <code>.sn-lead</code>, <code>.cl-who-intro</code>, <code>.ne-featured-desc</code></td>
+  </tr>
+  <tr>
+    <td>Body text</td><td class="num">16px</td><td>unchanged</td><td>400</td>
+    <td>Default body copy everywhere — all <code>*-desc</code> / <code>*-body</code> classes; also buttons, UI links, form inputs, news cards, language switcher (moved up from 15px)</td>
+  </tr>
+  <tr>
+    <td>Secondary / small text</td><td class="num">14px</td><td>unchanged</td><td>400</td>
+    <td>Nav links, footnotes, form labels, story step bodies, case-study rows, badges &amp; fine print (moved up from 12–13px)</td>
+  </tr>
+  <tr>
+    <td>Eyebrow / kicker</td><td class="num">14px</td><td>unchanged</td><td>700 (a few 400)</td>
+    <td>Uppercase labels above every section headline — all <code>*-kicker</code> / <code>*-eyebrow</code> classes</td>
+  </tr>
+  <tr>
+    <td>Display numerals</td><td class="num">80px, clamp() to 190px</td><td>scales fluidly</td><td>700–800</td>
+    <td>Big stat numbers — <code>.hp-cap-num</code>, stats bars</td>
+  </tr>
+  <tr>
+    <td>Monospace accents</td><td class="num">14px / 26px</td><td>unchanged</td><td>400–700</td>
+    <td>Wireless page terminal widget only — <code>.wl-term-head</code>, <code>.wl-term-num</code>, <code>.wl-term-label</code></td>
+  </tr>
+</table>
+
+<h2>Responsive behaviour</h2>
+<p class="note">
+  <code>responsivestyle.css</code> steps the large sizes down at breakpoints: 52/60px headings become <strong>42px</strong> below ~1199px and
+  <strong>32px</strong> below ~575px. Hero headlines use <code>clamp()</code> so they scale continuously instead of jumping.
+  Body (16px) and small text (14px) stay fixed at every width. The contact page carries its own breakpoint ladder for its headline (44/36/28px).
+</p>
+
+<h2>Scale ladder</h2>
+<p class="note">
+  Every text size on the site now sits on the ladder <strong>14 · 16 · 18 · 20 · 22 · 26 · 32 · 42 · 52 · 60 · 80</strong>,
+  plus <code>clamp()</code> hero sizes and the contact page's 44/36/28px responsive headline steps. There are no off-ladder sizes.
+</p>
+
+</body>
+</html>
