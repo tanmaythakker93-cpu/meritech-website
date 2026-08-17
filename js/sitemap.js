@@ -113,7 +113,7 @@
   ];
 
   var extraPlanned = [
-    { name: "certificates", note: "pending decision — footer vs About Us" }
+    { name: "certificates", planned: true, note: "pending decision — footer vs About Us" }
   ];
 
   function countAll() {
@@ -137,15 +137,19 @@
       '<div><div class="wl-stat-num">' + divisions.length + '</div><div class="wl-stat-label">Divisions</div></div>';
   }
 
-  function pageRow(it) {
+  var COLLAPSE_AFTER = 6;
+
+  function pageRow(it, collapsedIndex) {
     var name = it.name.toLowerCase();
-    if (it.planned) {
-      return '<li class="sm-planned-row" data-name="' + name + '">' +
+    var planned = it.planned || !it.file; // defensive: no file means not live yet
+    var extraClass = collapsedIndex != null ? " sm-collapsed" : "";
+    if (planned) {
+      return '<li class="sm-planned-row' + extraClass + '" data-name="' + name + '">' +
         '<span class="sm-dot sm-dot--planned"></span>' +
         '<span><span class="sm-pagename">' + it.name + '</span>' +
         (it.note ? '<span class="sm-path">' + it.note + '</span>' : '') + '</span></li>';
     }
-    return '<li data-name="' + name + '">' +
+    return '<li class="' + extraClass.trim() + '" data-name="' + name + '">' +
       '<span class="sm-dot sm-dot--live"></span>' +
       '<a href="' + it.file + '">' +
       '<span class="sm-pagename">' + it.name + '</span>' +
@@ -153,15 +157,29 @@
       '</a></li>';
   }
 
+  function renderGroup(g, groupIdx, divKey) {
+    var items = g.items;
+    var rows = items.map(function (it, i) {
+      return pageRow(it, i >= COLLAPSE_AFTER ? i : null);
+    }).join("");
+    var toggle = "";
+    if (items.length > COLLAPSE_AFTER) {
+      var hiddenCount = items.length - COLLAPSE_AFTER;
+      var groupId = "smg-" + divKey + "-" + groupIdx;
+      toggle = '<button class="sm-more-toggle" data-target="' + groupId + '">+ ' + hiddenCount + ' more</button>';
+      return '<div class="sm-group" id="' + groupId + '"><div class="sm-group-label">' + g.label + '</div>' +
+        '<ul class="sm-pages">' + rows + '</ul>' + toggle + '</div>';
+    }
+    return '<div class="sm-group"><div class="sm-group-label">' + g.label + '</div>' +
+      '<ul class="sm-pages">' + rows + '</ul></div>';
+  }
+
   function renderGrid() {
     var grid = document.getElementById("smGrid");
     grid.innerHTML = divisions.map(function (d) {
       var count = d.groups.reduce(function (s, g) { return s + g.items.length; }, 0);
       var hub = d.hub ? '<div class="sm-hub">Hub: <a href="' + d.hub.file + '">' + d.hub.name + '</a></div>' : "";
-      var groups = d.groups.map(function (g) {
-        return '<div class="sm-group"><div class="sm-group-label">' + g.label + '</div>' +
-          '<ul class="sm-pages">' + g.items.map(pageRow).join("") + '</ul></div>';
-      }).join("");
+      var groups = d.groups.map(function (g, gi) { return renderGroup(g, gi, d.key); }).join("");
       return '<div class="sm-card" data-div="' + d.key + '">' +
         '<div class="sm-card-head"><div class="sm-card-head-left"><span class="sm-tag">' + d.tag + '</span>' +
         '<h2 class="sm-card-title">' + d.name + '</h2></div><span class="sm-card-count">' + count + '</span></div>' +
@@ -169,10 +187,10 @@
     }).join("");
 
     if (extraPlanned.length) {
-      grid.innerHTML += '<div class="sm-card" data-div="cor">' +
+      grid.innerHTML += '<div class="sm-card sm-card--wide" data-div="cor">' +
         '<div class="sm-card-head"><div class="sm-card-head-left"><span class="sm-tag" style="color:#B08A3E;background:rgba(176,138,62,.12);">TBD</span>' +
         '<h2 class="sm-card-title">Unplaced — pending decision</h2></div><span class="sm-card-count">' + extraPlanned.length + '</span></div>' +
-        '<div class="sm-group"><ul class="sm-pages">' + extraPlanned.map(pageRow).join("") + '</ul></div></div>';
+        '<div class="sm-group"><ul class="sm-pages">' + extraPlanned.map(function (it) { return pageRow(it); }).join("") + '</ul></div></div>';
     }
   }
 
@@ -194,6 +212,7 @@
         group.querySelectorAll("li").forEach(function (li) {
           var match = divMatch && (!q || li.dataset.name.indexOf(q) !== -1);
           li.classList.toggle("sm-hidden", !match);
+          if (match && q) li.classList.remove("sm-collapsed");
           if (match) { groupHas = true; visibleCount++; }
         });
         group.classList.toggle("sm-hidden", !groupHas);
@@ -219,5 +238,13 @@
     });
 
     document.getElementById("smSearch").addEventListener("input", applyFilters);
+
+    document.getElementById("smGrid").addEventListener("click", function (e) {
+      var btn = e.target.closest(".sm-more-toggle");
+      if (!btn) return;
+      var group = document.getElementById(btn.dataset.target);
+      group.querySelectorAll("li.sm-collapsed").forEach(function (li) { li.classList.remove("sm-collapsed"); });
+      btn.remove();
+    });
   });
 })();
