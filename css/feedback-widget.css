@@ -1,0 +1,116 @@
+#fw-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999999;
+  background: #ff5a1f;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font: 600 14px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+#fw-toggle.fw-active {
+  background: #1f2937;
+}
+
+body.fw-pin-mode {
+  cursor: crosshair !important;
+}
+body.fw-pin-mode * {
+  cursor: crosshair !important;
+}
+
+.fw-marker {
+  position: absolute;
+  z-index: 999998;
+  width: 26px;
+  height: 26px;
+  margin-left: -13px;
+  margin-top: -26px;
+  background: #ff5a1f;
+  border: 2px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+.fw-marker.fw-resolved {
+  background: #10b981;
+}
+.fw-marker-num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  color: #fff;
+  font: 700 11px/1 -apple-system, sans-serif;
+}
+
+.fw-popup {
+  position: absolute;
+  z-index: 999999;
+  width: 280px;
+  background: #fff;
+  color: #111827;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  font: 400 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.fw-popup textarea,
+.fw-popup input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font: inherit;
+  margin-top: 6px;
+  resize: vertical;
+}
+.fw-popup .fw-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+.fw-popup button {
+  font: 600 12px/1 -apple-system, sans-serif;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+.fw-btn-primary {
+  background: #ff5a1f;
+  color: #fff;
+}
+.fw-btn-secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+.fw-popup .fw-meta {
+  color: #6b7280;
+  font-size: 11px;
+  margin-top: 4px;
+}
+.fw-popup .fw-thread-item {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 6px;
+  margin-top: 6px;
+}
+.fw-popup a {
+  color: #ff5a1f;
+}
+.fw-popup .fw-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: none;
+  color: #9ca3af;
+  font-size: 16px;
+  padding: 0;
+}
