@@ -85,29 +85,73 @@
       class: "fw-popup",
       style: "left:" + (pos.x + 16) + "px; top:" + Math.max(pos.y - 20, 10) + "px;",
     });
-    popup.appendChild(
-      el("button", { class: "fw-close", text: "×" })
-    );
+    popup.appendChild(el("button", { class: "fw-close", text: "×" }));
     popup.lastChild.addEventListener("click", closeAnyPopup);
-    popup.appendChild(el("div", { text: pin.comment }));
+
+    var commentView = el("div", { text: pin.comment });
+    popup.appendChild(commentView);
     popup.appendChild(
       el("div", { class: "fw-meta", text: "#" + pin.number + " by " + pin.author + " — " + pin.state })
     );
 
     var actions = el("div", { class: "fw-row" });
-    var resolveBtn = el("button", {
+
+    var editBtn = el("button", { class: "fw-btn-secondary", text: "Edit" });
+    editBtn.onclick = function () {
+      var textarea = el("textarea", { rows: "3" });
+      textarea.value = pin.comment;
+      commentView.replaceWith(textarea);
+      commentView = textarea;
+      editBtn.textContent = "Save";
+      editBtn.onclick = async function () {
+        var newComment = textarea.value.trim();
+        if (!newComment) return;
+        editBtn.disabled = true;
+        try {
+          await fetch(API + "?id=" + pin.number + "&action=edit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ comment: newComment }),
+          });
+          closeAnyPopup();
+          loadPins();
+        } catch (e) {
+          editBtn.disabled = false;
+          alert("Could not save edit, please try again.");
+        }
+      };
+    };
+
+    var doneBtn = el("button", {
       class: "fw-btn-secondary",
-      text: pin.state === "closed" ? "Reopen" : "Mark resolved",
+      text: pin.state === "closed" ? "Reopen" : "Mark as done",
     });
-    resolveBtn.addEventListener("click", async function () {
+    doneBtn.addEventListener("click", async function () {
       var action = pin.state === "closed" ? "reopen" : "resolve";
       await fetch(API + "?id=" + pin.number + "&action=" + action, { method: "POST" });
       closeAnyPopup();
       loadPins();
     });
+
+    var deleteBtn = el("button", { class: "fw-btn-secondary", text: "Delete" });
+    deleteBtn.addEventListener("click", async function () {
+      if (!confirm("Permanently delete this pin? This cannot be undone.")) return;
+      deleteBtn.disabled = true;
+      try {
+        await fetch(API + "?id=" + pin.number + "&action=delete", { method: "POST" });
+        closeAnyPopup();
+        loadPins();
+      } catch (e) {
+        deleteBtn.disabled = false;
+        alert("Could not delete pin, please try again.");
+      }
+    });
+
     var githubLink = el("a", { href: pin.html_url, target: "_blank", text: "View on GitHub" });
     actions.appendChild(githubLink);
-    actions.appendChild(resolveBtn);
+    actions.appendChild(editBtn);
+    actions.appendChild(doneBtn);
+    actions.appendChild(deleteBtn);
     popup.appendChild(actions);
 
     document.body.appendChild(popup);

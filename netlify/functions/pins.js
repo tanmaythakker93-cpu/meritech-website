@@ -119,6 +119,53 @@ async function setState(id, state) {
   return decodeIssue(issue);
 }
 
+async function getIssue(id) {
+  const res = await fetch(`${GITHUB_API}/repos/${REPO}/issues/${id}`, {
+    headers: ghHeaders(),
+  });
+  if (!res.ok) {
+    throw new Error(`GitHub get issue failed: ${res.status} ${await res.text()}`);
+  }
+  return res.json();
+}
+
+async function editPin(id, data) {
+  const issue = await getIssue(id);
+  const current = decodeIssue(issue);
+  const meta = {
+    page: current.page,
+    xPercent: current.xPercent,
+    yPercent: current.yPercent,
+    selector: current.selector,
+    author: current.author,
+  };
+  const res = await fetch(`${GITHUB_API}/repos/${REPO}/issues/${id}`, {
+    method: "PATCH",
+    headers: ghHeaders(),
+    body: JSON.stringify({ body: encodeBody(meta, data.comment || "") }),
+  });
+  if (!res.ok) {
+    throw new Error(`GitHub edit failed: ${res.status} ${await res.text()}`);
+  }
+  const updated = await res.json();
+  return decodeIssue(updated);
+}
+
+async function deletePin(id) {
+  const issue = await getIssue(id);
+  const query = `mutation($issueId: ID!) { deleteIssue(input: { issueId: $issueId }) { clientMutationId } }`;
+  const res = await fetch(`${GITHUB_API}/graphql`, {
+    method: "POST",
+    headers: ghHeaders(),
+    body: JSON.stringify({ query, variables: { issueId: issue.node_id } }),
+  });
+  const result = await res.json();
+  if (!res.ok || result.errors) {
+    throw new Error(`GitHub delete failed: ${res.status} ${JSON.stringify(result.errors || result)}`);
+  }
+  return { deleted: true, id };
+}
+
 exports.handler = async (event) => {
   if (!TOKEN) {
     return json(500, { error: "GITHUB_TOKEN is not configured on this site." });
@@ -146,6 +193,17 @@ exports.handler = async (event) => {
       if (params.id && params.action === "reopen") {
         const pin = await setState(params.id, "open");
         return json(200, pin);
+      }
+      if (params.id && params.action === "edit") {
+        if (!data.comment) {
+          return json(400, { error: "comment is required to edit a pin." });
+        }
+        const pin = await editPin(params.id, data);
+        return json(200, pin);
+      }
+      if (params.id && params.action === "delete") {
+        const result = await deletePin(params.id);
+        return json(200, result);
       }
 
       if (!data.page || data.xPercent == null || data.yPercent == null) {
