@@ -1,6 +1,6 @@
 /* ============================================================
    SITE MAP PAGE — scoped to .page-sitemap, built from the site's
-   own tokens (colors, --fs-*/--sp-* scale, Noto Sans).
+   own tokens (colors, the fs and sp scale variables, Noto Sans).
    ============================================================ */
 
 .page-sitemap .wl-hero-wrap{ max-width: 1680px; margin: 0 auto; padding: var(--sp-section-y) var(--sp-gutter) 0; }
