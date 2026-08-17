@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meritech Website — Colors Chart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  /* Internal design reference — not part of the deployed site */
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+  body{ font-family: 'Noto Sans', sans-serif; color: #3D3A3A; background: #fff; padding: 56px 64px 96px; }
+  .doc-head{ border-bottom: 2px solid #221F1F; padding-bottom: 24px; margin-bottom: 48px; }
+  .doc-eyebrow{ font-size: 14px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: #00A24F; display: block; margin-bottom: 10px; }
+  .doc-title{ font-size: 42px; font-weight: 500; letter-spacing: -.02em; color: #221F1F; }
+  .doc-meta{ font-size: 14px; color: #8A8686; margin-top: 8px; }
+  h2{ font-size: 26px; font-weight: 600; color: #221F1F; margin: 56px 0 20px; }
+  p.note{ font-size: 14px; color: #6B6868; line-height: 1.65; max-width: 82ch; margin-bottom: 16px; }
+  code{ font-family: Consolas, Menlo, monospace; font-size: 13px; background: #F5F4F2; padding: 1px 5px; border-radius: 3px; color: #233F89; }
+
+  .swatches{ display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .sw{ border: 1px solid #EEECEC; border-radius: 8px; overflow: hidden; }
+  .sw-box{ height: 72px; display: flex; align-items: flex-end; padding: 10px 14px; }
+  .sw-hex{ font-family: Consolas, Menlo, monospace; font-size: 13px; font-weight: 700; }
+  .sw-info{ padding: 12px 14px 14px; }
+  .sw-name{ font-size: 14px; font-weight: 600; color: #221F1F; }
+  .sw-role{ font-size: 14px; color: #8A8686; line-height: 1.5; margin-top: 3px; }
+  .sw-count{ font-size: 12.5px; color: #B0AEAE; margin-top: 5px; font-family: Consolas, Menlo, monospace; }
+  .on-light{ color: #221F1F; } .on-dark{ color: rgba(255,255,255,.85); }
+
+  .tintbar{ display: flex; border: 1px solid #EEECEC; border-radius: 8px; overflow: hidden; margin-bottom: 10px; }
+  .tint{ flex: 1; height: 64px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px; font-family: Consolas, Menlo, monospace; font-size: 12px; color: #3D3A3A; }
+</style>
+</head>
+<body>
+
+<header class="doc-head">
+  <span class="doc-eyebrow">Meritech Website — Design Reference</span>
+  <div class="doc-title">Colors Chart</div>
+  <div class="doc-meta">Source: css/style.css · css/responsivestyle.css &nbsp;·&nbsp; Updated 13 Jul 2026 &nbsp;·&nbsp; counts = occurrences across both stylesheets</div>
+</header>
+
+<h2>Brand colors</h2>
+<div class="swatches">
+  <div class="sw"><div class="sw-box" style="background:#00A24F"><span class="sw-hex on-dark">#00A24F</span></div>
+    <div class="sw-info"><div class="sw-name">Meritech Green — primary</div><div class="sw-role">CTAs, links, hover states, active nav/filter states, eyebrow accents, result stats</div><div class="sw-count">×150 (+ ~90 rgba tints)</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#007A3A"><span class="sw-hex on-dark">#007A3A</span></div>
+    <div class="sw-info"><div class="sw-name">Green — deep</div><div class="sw-role">Hover on green elements, "fit" labels, small green text on light tints</div><div class="sw-count">×22</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#048C42"><span class="sw-hex on-dark">#048C42</span></div>
+    <div class="sw-info"><div class="sw-name">Green — chip text</div><div class="sw-role">Text color inside green-tinted chips and tags (IoT division chip)</div><div class="sw-count">×10</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#22B07D"><span class="sw-hex on-dark">#22B07D</span></div>
+    <div class="sw-info"><div class="sw-name">Green — on dark</div><div class="sw-role">Kickers and accents on dark section backgrounds</div><div class="sw-count">×18</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#233F89"><span class="sw-hex on-dark">#233F89</span></div>
+    <div class="sw-info"><div class="sw-name">Meritech Blue</div><div class="sw-role">IT &amp; Cloud division identity — blue chips, tech badges, hero gradient washes (rgba 35,63,137)</div><div class="sw-count">×3 (+ ~20 rgba tints)</div></div></div>
+</div>
+
+<h2>Text neutrals</h2>
+<div class="swatches">
+  <div class="sw"><div class="sw-box" style="background:#221F1F"><span class="sw-hex on-dark">#221F1F</span></div>
+    <div class="sw-info"><div class="sw-name">Ink — headings</div><div class="sw-role">Strong headings, dark buttons, footer/dark panels</div><div class="sw-count">×78</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#3D3A3A"><span class="sw-hex on-dark">#3D3A3A</span></div>
+    <div class="sw-info"><div class="sw-name">Body — default text</div><div class="sw-role">The site's default text color (set on <code>body</code>); most headings and copy</div><div class="sw-count">×581 — the most-used color</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#6B6868"><span class="sw-hex on-dark">#6B6868</span></div>
+    <div class="sw-info"><div class="sw-name">Gray — secondary text</div><div class="sw-role">Card descriptions, story step bodies, muted copy</div><div class="sw-count">×15</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#8A8686"><span class="sw-hex on-dark">#8A8686</span></div>
+    <div class="sw-info"><div class="sw-name">Gray — labels / fine print</div><div class="sw-role">Eyebrow labels, dropdown descriptions, keys in fact rows, footnotes</div><div class="sw-count">×32</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#9A9898"><span class="sw-hex on-dark">#9A9898</span></div>
+    <div class="sw-info"><div class="sw-name">Gray — muted UI</div><div class="sw-role">Back buttons, social icons, thank-you labels (contact page)</div><div class="sw-count">×5</div></div></div>
+</div>
+
+<h2>Surfaces &amp; borders</h2>
+<div class="swatches">
+  <div class="sw"><div class="sw-box" style="background:#fff;border-bottom:1px solid #EEECEC"><span class="sw-hex on-light">#FFFFFF</span></div>
+    <div class="sw-info"><div class="sw-name">White</div><div class="sw-role">Cards, dropdowns, chips, text on dark surfaces</div><div class="sw-count">×235</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#F5F4F4"><span class="sw-hex on-light">#F5F4F4</span></div>
+    <div class="sw-info"><div class="sw-name">Section gray</div><div class="sw-role">Alternate section backgrounds ("What we build", filters)</div><div class="sw-count">×38</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#F7F6F5"><span class="sw-hex on-light">#F7F6F5</span></div>
+    <div class="sw-info"><div class="sw-name">Warm off-white</div><div class="sw-role">Value tiles, notes, quiet card fills (also #F8F7F5, #FAFAF9)</div><div class="sw-count">×12</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#F0EFEE"><span class="sw-hex on-light">#F0EFEE</span></div>
+    <div class="sw-info"><div class="sw-name">Hairline — faint</div><div class="sw-role">Card-internal dividers (also #F0EEEC, #F4F4F4)</div><div class="sw-count">×40</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#EEECEC"><span class="sw-hex on-light">#EEECEC</span></div>
+    <div class="sw-info"><div class="sw-name">Border — standard</div><div class="sw-role">The single border color: cards, section rules, form fields, chip outlines, progress lines, breadcrumb separators (absorbed #E5E3E3, #E8E6E6, #C8C5C5)</div><div class="sw-count">×211</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#D8D5D5"><span class="sw-hex on-light">#D8D5D5</span></div>
+    <div class="sw-info"><div class="sw-name">Border — strong (rare)</div><div class="sw-role">Outline buttons and tab arrows only (#D8D5D5, #D3D3D3) — candidates for a future merge</div><div class="sw-count">×12</div></div></div>
+</div>
+
+<h2>Dark surfaces</h2>
+<div class="swatches">
+  <div class="sw"><div class="sw-box" style="background:#221F1F"><span class="sw-hex on-dark">#221F1F</span></div>
+    <div class="sw-info"><div class="sw-name">Ink panel</div><div class="sw-role">Footer, dark CTA buttons, dark cards</div><div class="sw-count">shared with Ink text</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#3D3A3A"><span class="sw-hex on-dark">#3D3A3A</span></div>
+    <div class="sw-info"><div class="sw-name">Card visual header</div><div class="sw-role">Case-study / story card dark headers</div><div class="sw-count">shared with Body text</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:#071424"><span class="sw-hex on-dark">#071424</span></div>
+    <div class="sw-info"><div class="sw-name">Deep navy</div><div class="sw-role">Hero and process sections on product pages (also #070E1E, #061218 — near-black blue-greens)</div><div class="sw-count">×38 combined</div></div></div>
+</div>
+
+<h2>Green tint system</h2>
+<p class="note">Transparent washes of the primary green — <code>rgba(0,162,79,α)</code> — carry the brand through backgrounds without solid fills:</p>
+<div class="tintbar">
+  <div class="tint" style="background:rgba(0,162,79,.03)">.03</div>
+  <div class="tint" style="background:rgba(0,162,79,.05)">.05</div>
+  <div class="tint" style="background:rgba(0,162,79,.08)">.08</div>
+  <div class="tint" style="background:rgba(0,162,79,.12)">.12</div>
+  <div class="tint" style="background:rgba(0,162,79,.18)">.18</div>
+  <div class="tint" style="background:rgba(0,162,79,.25)">.25</div>
+  <div class="tint" style="background:rgba(0,162,79,.30)">.30</div>
+</div>
+<p class="note">.03–.08 → card washes, icon plates, chip fills &nbsp;·&nbsp; .12–.18 → badges, hero gradient glows &nbsp;·&nbsp; .25–.30 → chip and badge borders. The blue equivalent <code>rgba(35,63,137,α)</code> follows the same steps for the IT division.</p>
+
+<h2>Text on dark — white opacity scale</h2>
+<div class="tintbar" style="background:#221F1F">
+  <div class="tint" style="color:rgba(255,255,255,.35)">.35 fine print</div>
+  <div class="tint" style="color:rgba(255,255,255,.45)">.45 muted</div>
+  <div class="tint" style="color:rgba(255,255,255,.55)">.55 body</div>
+  <div class="tint" style="color:rgba(255,255,255,.7)">.70 emphasis</div>
+  <div class="tint" style="color:rgba(255,255,255,.85)">.85 strong</div>
+  <div class="tint" style="color:#fff">#fff headings</div>
+</div>
+<p class="note">On dark sections, text never uses gray hexes — always white at an opacity step. Body text on dark is <code>rgba(255,255,255,.55)</code> (23 uses, the most common step).</p>
+
+<h2>Division identity</h2>
+<div class="swatches">
+  <div class="sw"><div class="sw-box" style="background:rgba(61,58,58,.06);border-bottom:1px solid rgba(61,58,58,.25)"><span class="sw-hex on-light">Wireless T&amp;M</span></div>
+    <div class="sw-info"><div class="sw-name">Gray chip</div><div class="sw-role">text #3D3A3A · bg rgba(61,58,58,.06) · border rgba(61,58,58,.25)</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:rgba(0,162,79,.08);border-bottom:1px solid rgba(0,162,79,.25)"><span class="sw-hex" style="color:#048C42">IoT &amp; Edge AI</span></div>
+    <div class="sw-info"><div class="sw-name">Green chip</div><div class="sw-role">text #048C42 · bg rgba(0,162,79,.08) · border rgba(0,162,79,.25)</div></div></div>
+  <div class="sw"><div class="sw-box" style="background:rgba(35,63,137,.07);border-bottom:1px solid rgba(35,63,137,.25)"><span class="sw-hex" style="color:#233F89">IT &amp; Cloud</span></div>
+    <div class="sw-info"><div class="sw-name">Blue chip</div><div class="sw-role">text #233F89 · bg rgba(35,63,137,.07) · border rgba(35,63,137,.25)</div></div></div>
+</div>
+
+<h2>Semantic</h2>
+<div class="swatches">
+  <div class="sw"><div class="sw-box" style="background:#C0392B"><span class="sw-hex on-dark">#C0392B</span></div>
+    <div class="sw-info"><div class="sw-name">Error red</div><div class="sw-role">Form validation errors on the contact page (message + field border)</div><div class="sw-count">×2</div></div></div>
+</div>
+
+<h2>Notes</h2>
+<p class="note">
+  The page background site-wide is a subtle repeating texture image (<code>images/common_imgs/background.png</code>) set on <code>body</code>, not a flat color.
+  Minor one-off greens on dark dashboards (<code>#00C25F</code>, <code>#00C853</code>, <code>#06C860</code>) appear in SVG illustration accents — treat them as illustration colors, not palette members.
+  Near-duplicate neutrals remaining for a future pass: #F0EFEE / #F0EEEC / #F4F4F4 (hairlines) and #D8D5D5 / #D3D3D3 (strong borders). #E5E3E3, #E8E6E6 and #C8C5C5 were merged into #EEECEC on 13 Jul 2026.
+</p>
+
+</body>
+</html>

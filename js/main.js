@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
   (function () {
     /* Normalize a path to a comparable page name: strips query/hash,
        directories, the .html extension (Netlify serves extensionless
-       pretty URLs), and case — so "/sigma-la" matches "sigma-la.html". */
+       pretty URLs), and case — so "/sigma-la" matches "sigma_la.html". */
     function pageName(path) {
       path = path.split('#')[0].split('?')[0].replace(/\/+$/, '');
       var name = path.split('/').pop();
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* --------------------------------------------------------
-     DEVICE TYPES ACCORDION (sigma-one.html .dt-head)
+     DEVICE TYPES ACCORDION (sigma_one.html .dt-head)
   -------------------------------------------------------- */
   document.querySelectorAll('.dt-head').forEach(function (head) {
     head.addEventListener('click', function () {
@@ -381,3 +381,14 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+/* ============================================================
+   MEGA MENU FOOTER — highlight the link for the open page
+   ============================================================ */
+(function () {
+  var here = decodeURIComponent((location.pathname.split('/').pop() || 'index.html'));
+  document.querySelectorAll('.dd-explore[href]').forEach(function (a) {
+    var target = a.getAttribute('href').split('#')[0];
+    if (target && target === here) a.classList.add('is-active');
+  });
+})();

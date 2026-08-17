@@ -4,12 +4,24 @@ document.addEventListener('DOMContentLoaded', function () {
   var slides = document.querySelectorAll('.hp-slide');
   slides.forEach(function (slide) {
     slide.addEventListener('click', function () {
-      slides.forEach(function (s) { s.classList.remove('is-active'); });
-      slide.classList.add('is-active');
+      // collapsed slide (touch devices): first tap expands, second tap opens
+      if (!slide.classList.contains('is-active')) {
+        slides.forEach(function (s) { s.classList.remove('is-active'); });
+        slide.classList.add('is-active');
+        return;
+      }
+      var href = slide.dataset.href;
+      if (href) window.location.href = href;
     });
     slide.addEventListener('mouseenter', function () {
       slides.forEach(function (s) { s.classList.remove('is-active'); });
       slide.classList.add('is-active');
+    });
+    slide.addEventListener('keydown', function (e) {
+      if ((e.key === 'Enter' || e.key === ' ') && slide.dataset.href) {
+        e.preventDefault();
+        window.location.href = slide.dataset.href;
+      }
     });
   });
 
@@ -19,11 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var buildImg = document.querySelector('.hp-build-img-box img');
   var divImages = {
-    'div-01': 'images/home_page_images/magnific_macro-closeup-photograph-_MXNtWe1DCm.png',
-    'div-02': 'images/home_page_images/wireless services.png',
-    'div-03': 'images/home_page_images/IoT Products.png',
-    'div-04': 'images/home_page_images/IOT Services.png',
-    'div-05': 'images/home_page_images/IT_services.png'
+    'div-01': 'images/home_page_imgs/magnific_macro-closeup-photograph-_MXNtWe1DCm.png',
+    'div-02': 'images/home_page_imgs/wireless services.png',
+    'div-03': 'images/home_page_imgs/IoT Products.png',
+    'div-04': 'images/home_page_imgs/IOT Services.png',
+    'div-05': 'images/home_page_imgs/IT_services.png'
   };
   // preload so hard swaps never flash while the file decodes
   Object.keys(divImages).forEach(function (k) {

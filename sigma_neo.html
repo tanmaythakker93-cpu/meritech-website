@@ -1,0 +1,732 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sigma-Neo — Ask your network. Verify the answer. | Meritech</title>
+  <meta name="description" content="Sigma-Neo is the AI analysis layer built on Centra-SD. Ask your network questions in plain language — every answer cites its data sources, carries a confidence score, and lands in the audit log.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsivestyle.css">
+
+</head>
+<body class="page-sigma-neo">
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <nav class="mn-bar">
+    <div class="container-xxl">
+
+      <a class="mn-logo" href="index.html">
+        <img src="images/Meritech_logo_banner.svg" alt="Meritech">
+      </a>
+
+      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu">
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+      </button>
+
+      <nav class="mn-nav">
+        <div class="mn-item">
+          <a class="mn-link" href="#">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown">
+            <div class="dd-grid dd-grid-3">
+              <div>
+                <div class="dd-col-head">Capture &amp; Automate</div>
+                <a href="sigma_la.html" class="dd-product"><span class="dd-product-name">Sigma-LA</span><span class="dd-product-desc">Windows drive test — multi-UE, L1–L4 capture</span></a>
+                <a href="sigma_ml.html" class="dd-product"><span class="dd-product-name">Sigma-ML</span><span class="dd-product-desc">Smartphone drive test — no laptop, L1–L3 in your pocket</span></a>
+                <a href="sigma_aq.html" class="dd-product"><span class="dd-product-name">Sigma-AQ</span><span class="dd-product-desc">Android drive test probe — drive to report in under 10 minutes</span></a>
+                <a href="sigma_aq_boss.html" class="dd-product"><span class="dd-product-name">Sigma-AQ Boss</span><span class="dd-product-desc">Remote controller — keep engineers in the office</span></a>
+                <a href="sigma_one.html" class="dd-product"><span class="dd-product-name">Sigma-One</span><span class="dd-product-desc">Ruggedized capture — COTS, IoT &amp; connected car</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Analyze &amp; Intelligence</div>
+                <a href="Sigma_PA.html" class="dd-product"><span class="dd-product-name">Sigma-PA</span><span class="dd-product-desc">Post-processing &amp; protocol analysis platform</span></a>
+                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Schedule tests, monitor live KPIs, manage field devices</span></a>
+                <a href="sigma_neo.html" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">AI network intelligence — anomaly detection &amp; RCA</span></a>
+                <a href="centra_experitest.html" class="dd-product"><span class="dd-product-name">Centra-Experitest</span><span class="dd-product-desc">OTT &amp; QoE — what the subscriber actually feels</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-AQ Reporting Server</span><span class="dd-product-desc">Post-processing &amp; deep protocol analysis</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="planning_design.html" class="dd-product"><span class="dd-product-name">Planning &amp; Design</span><span class="dd-product-desc">Site, propagation, capacity, spectrum</span></a>
+                <a href="drive_walk_test.html" class="dd-product"><span class="dd-product-name">Drive &amp; Walk Test</span><span class="dd-product-desc">Multi-device field capture, L1–L4</span></a>
+                <a href="network_optimization.html" class="dd-product"><span class="dd-product-name">Network Optimization</span><span class="dd-product-desc">Initial and continuous performance tuning</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="Wireless.html" class="dd-explore">Explore Wireless portfolio</a><a href="wireless_services.html" class="dd-explore">Wireless Services</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item">
+          <a class="mn-link" href="#">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="ExploreIoTportfolio.html" class="dd-product"><span class="dd-product-name">monoZ</span><span class="dd-product-desc">LPWA device-to-cloud suite</span></a>
+                <a href="CENTRA_IoT.html" class="dd-product"><span class="dd-product-name">Centra IoT</span><span class="dd-product-desc">Centralized cloud device management platform</span></a>
+                <a href="XENO+.html" class="dd-product"><span class="dd-product-name">Xeno+ suite</span><span class="dd-product-desc">Solderable AI/ML edge modules for IoT</span></a>
+                <a href="mesimo.html" class="dd-product"><span class="dd-product-name">Mesimo</span><span class="dd-product-desc">Global cellular IoT connectivity</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="iot_consulting.html" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
+                <a href="device_management.html" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
+                <a href="connectivity_solutions.html" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+                <a href="cloud_software_development.html" class="dd-product"><span class="dd-product-name">Cloud Software Development</span><span class="dd-product-desc">IoT cloud platforms, pipelines &amp; analytics</span></a>
+                <a href="operations_support_maintenance.html" class="dd-product"><span class="dd-product-name">Operations Support &amp; Maintenance</span><span class="dd-product-desc">24/7 monitoring &amp; proactive incident response</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="ExploreIoTportfolio.html" class="dd-explore">Explore IoT portfolio</a><a href="iot_services.html" class="dd-explore">IoT Services</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item">
+          <a class="mn-link" href="#">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="digital_synergy_solutions_1.html" class="dd-product"><span class="dd-product-name">Digital Synergy</span><span class="dd-product-desc">Web &amp; mobile apps, integration &amp; workflow</span></a>
+                <a href="data_ai.html" class="dd-product"><span class="dd-product-name">Data &amp; AI</span><span class="dd-product-desc">Data platforms, analytics &amp; AI solutions</span></a>
+                <a href="devops.html" class="dd-product"><span class="dd-product-name">DevOps</span><span class="dd-product-desc">CI/CD, automation, cloud-native delivery</span></a>
+                <a href="cloud.html" class="dd-product"><span class="dd-product-name">Cloud</span><span class="dd-product-desc">Transform, migrate &amp; build cloud-native</span></a>
+                <a href="it_consulting.html" class="dd-product"><span class="dd-product-name">IT Consulting</span><span class="dd-product-desc">Modernization, DevOps &amp; cloud strategy</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">&nbsp;</div>
+                <a href="it_outsourcing_services.html" class="dd-product"><span class="dd-product-name">IT Outsourcing</span><span class="dd-product-desc">Staff augmentation, teams &amp; HaaS</span></a>
+                <a href="servicenow.html" class="dd-product"><span class="dd-product-name">ServiceNow</span><span class="dd-product-desc">Enterprise workflows &amp; ITSM</span></a>
+                <a href="managed_it_services.html" class="dd-product"><span class="dd-product-name">Managed IT</span><span class="dd-product-desc">Ongoing operations &amp; support</span></a>
+                <a href="zoecon_cloud_cost_optimizer.html" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer for telecom operators</span></a>
+                <a href="independent_validation_services.html" class="dd-product"><span class="dd-product-name">Independent Validation Services</span><span class="dd-product-desc">Evaluate your systems</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="it_services.html" class="dd-explore">Explore IT &amp; Cloud portfolio</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item">
+          <a class="mn-link" href="#">About Us <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown about">
+            <div class="dd-grid dd-grid-1">
+              <div>
+                <a href="about.html" class="dd-product"><span class="dd-product-name">About the company</span><span class="dd-product-desc">One partner, from radio to cloud</span></a>
+                <a href="leadership.html" class="dd-product"><span class="dd-product-name">Leadership</span><span class="dd-product-desc">The team behind Meritech</span></a>
+                <a href="clients_partners.html" class="dd-product"><span class="dd-product-name">Client &amp; Partners</span><span class="dd-product-desc">A client-first approach</span></a>
+                <a href="news_events.html" class="dd-product"><span class="dd-product-name">News &amp; Events</span><span class="dd-product-desc">Partnerships, events &amp; milestones</span></a>
+                <a href="success_stories.html" class="dd-product"><span class="dd-product-name">Success Stories</span><span class="dd-product-desc">Outcomes we have delivered</span></a>
+                <a href="case_studies.html" class="dd-product"><span class="dd-product-name">Case Studies</span><span class="dd-product-desc">Illustrative engagement scenarios</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mn-item"><a class="mn-link" href="contact_us.html">Contact Us</a></div>
+      </nav>
+
+      <div class="mn-lang">
+        <button class="mn-lang-btn" type="button" aria-label="Change language" aria-haspopup="true">
+          <svg class="mn-lang-globe" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="mn-lang-cur">EN</span>
+          <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg>
+        </button>
+        <div class="mn-lang-menu">
+          <a href="#" class="mn-lang-opt is-active" data-lang="en">English<span class="mn-lang-tag">EN</span></a>
+          <a href="#" class="mn-lang-opt" data-lang="ja">日本語<span class="mn-lang-tag">JA</span></a>
+        </div>
+      </div>
+      <a href="#" class="btn-talk">Talk to us</a>
+      <div class="mn-accent"></div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE DRAWER
+  ============================================================ -->
+  <div class="mn-mobile" id="mnMobile">
+    <div class="mn-mobile-inner">
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-wireless">
+          <a href="Wireless.html" class="mn-mob-sub-link">Wireless Overview</a>
+          <div class="mn-mob-sub-head">Capture &amp; Automate</div>
+          <a href="sigma_la.html" class="mn-mob-sub-link">Sigma-LA</a>
+          <a href="sigma_ml.html" class="mn-mob-sub-link">Sigma-ML</a>
+          <a href="sigma_aq.html" class="mn-mob-sub-link">Sigma-AQ</a>
+          <a href="sigma_aq_boss.html" class="mn-mob-sub-link">Sigma-AQ Boss</a>
+          <a href="sigma_one.html" class="mn-mob-sub-link">Sigma-One</a>
+          <div class="mn-mob-sub-head">Analyze &amp; Intelligence</div>
+          <a href="Sigma_PA.html" class="mn-mob-sub-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="mn-mob-sub-link">Centra-SD</a>
+          <a href="sigma_neo.html" class="mn-mob-sub-link">Sigma-Neo</a>
+          <a href="centra_experitest.html" class="mn-mob-sub-link">Centra-Experitest</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="wireless_services.html" class="mn-mob-sub-link">Wireless Services</a>
+          <a href="planning_design.html" class="mn-mob-sub-link">Planning &amp; Design</a>
+          <a href="drive_walk_test.html" class="mn-mob-sub-link">Drive &amp; Walk Test</a>
+          <a href="network_optimization.html" class="mn-mob-sub-link">Network Optimization</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="iot">IoT <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-iot">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="ExploreIoTportfolio.html" class="mn-mob-sub-link">monoZ</a>
+          <a href="CENTRA_IoT.html" class="mn-mob-sub-link">Centra IoT</a>
+          <a href="XENO+.html" class="mn-mob-sub-link">Xeno+ suite</a>
+          <a href="mesimo.html" class="mn-mob-sub-link">Mesimo</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="iot_consulting.html" class="mn-mob-sub-link">IoT Consulting</a>
+          <a href="device_management.html" class="mn-mob-sub-link">Device Management</a>
+          <a href="connectivity_solutions.html" class="mn-mob-sub-link">Connectivity</a>
+          <a href="cloud_software_development.html" class="mn-mob-sub-link">Cloud Software Development</a>
+          <a href="operations_support_maintenance.html" class="mn-mob-sub-link">Operations Support &amp; Maintenance</a>
+          <a href="iot_services.html" class="mn-mob-sub-link">IoT Services</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-it">
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="digital_synergy_solutions_1.html" class="mn-mob-sub-link">Digital Synergy</a>
+          <a href="data_ai.html" class="mn-mob-sub-link">Data &amp; AI</a>
+          <a href="devops.html" class="mn-mob-sub-link">DevOps</a>
+          <a href="cloud.html" class="mn-mob-sub-link">Cloud</a>
+          <a href="it_consulting.html" class="mn-mob-sub-link">IT Consulting</a>
+          <a href="it_outsourcing_services.html" class="mn-mob-sub-link">IT Outsourcing</a>
+          <a href="servicenow.html" class="mn-mob-sub-link">ServiceNow</a>
+          <a href="managed_it_services.html" class="mn-mob-sub-link">Managed IT</a>
+          <a href="zoecon_cloud_cost_optimizer.html" class="mn-mob-sub-link">zoECON™</a>
+          <a href="independent_validation_services.html" class="mn-mob-sub-link">Independent Validation Services</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="about">About Us <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-about">
+          <a href="about.html" class="mn-mob-sub-link">About the company</a>
+          <a href="leadership.html" class="mn-mob-sub-link">Leadership</a>
+          <a href="clients_partners.html" class="mn-mob-sub-link">Client &amp; Partners</a>
+          <a href="news_events.html" class="mn-mob-sub-link">News &amp; Events</a>
+          <a href="success_stories.html" class="mn-mob-sub-link">Success Stories</a>
+          <a href="case_studies.html" class="mn-mob-sub-link">Case Studies</a>
+        </div>
+      </div>
+      <div class="mn-mob-item"><a href="contact_us.html" class="mn-mob-link">Contact Us</a></div>
+      <div class="mn-mob-lang">
+        <span class="mn-mob-lang-label">Language</span>
+        <div class="mn-mob-lang-opts">
+          <a href="#" class="mn-mob-lang-opt is-active" data-lang="en">English</a>
+          <a href="#" class="mn-mob-lang-opt" data-lang="ja">日本語</a>
+        </div>
+      </div>
+      <a href="#" class="mn-mob-cta">Talk to us</a>
+    </div>
+  </div>
+
+  <div class="nav-spacer"></div>
+
+  <!-- ============================================================
+       1 · HERO
+  ============================================================ -->
+  <section class="sn-hero" id="section-overview">
+    <div class="sn-hero-wrap">
+      <div class="sn-hero-grid">
+        <div class="sn-hero-content">
+          <p class="hero-eyebrow">Wireless Portfolio / AI Analysis Layer</p>
+          <p class="hero-product">Sigma-Neo</p>
+          <h1 class="hero-headline">Ask your network.<br><em>Verify the answer.</em></h1>
+          <p class="hero-body">Sigma-Neo transforms raw network data into intelligent, automated decisions. Ask in plain language — <strong>every answer cites its data sources, carries a confidence score, and lands in the audit log.</strong> Not another AI promise. An analysis tool your engineers can check.</p>
+          <div class="hero-btns">
+            <a href="#section-cta" class="btn-primary-pill">
+              Talk to us
+              <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+                <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+                <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+              </svg>
+            </a>
+            <a href="#section-trust" class="btn-outline-pill">
+              How an answer earns belief
+              <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+                <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+                <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+              </svg>
+            </a>
+          </div>
+          <p class="sn-hero-note"><strong>Runs on the Centra-SD you already operate.</strong><br>No migration &middot; no new pipeline &middot; no re-instrumentation</p>
+        </div>
+
+        <div class="sn-conv reveal">
+          <div class="sn-conv-bar">
+            <span class="sn-conv-dot"></span><span class="sn-conv-dot"></span><span class="sn-conv-dot"></span>
+            <span class="sn-conv-title">Sigma-Neo &middot; analysis session</span>
+            <span class="sn-conv-src">Centra-SD connected</span>
+          </div>
+          <div class="sn-conv-msgs">
+            <div class="sn-msg sn-msg--user">
+              <div class="sn-msg-bubble">Show me anomalies in the Tokyo East cluster from the last 6 hours</div>
+            </div>
+            <div class="sn-msg sn-msg--ai">
+              <div class="sn-msg-bubble">
+                <span class="sn-hi">3 anomalies detected</span> in Tokyo East &middot; Cell IDs 1042, 1047, 1089. RSRP degradation pattern consistent with an interference source. Recommend: drive test verification on route 7.
+                <div class="sn-msg-meta">
+                  <span class="sn-msg-chip sn-msg-chip--conf">RCA confidence 94%</span>
+                  <span class="sn-msg-chip">Sources: Drive Test Logs &middot; RF Metrics</span>
+                  <span class="sn-msg-chip">Logged &middot; audit trail</span>
+                </div>
+              </div>
+            </div>
+            <div class="sn-msg sn-msg--user">
+              <div class="sn-msg-bubble">Generate an optimization recommendation report for those cells</div>
+            </div>
+            <div class="sn-msg sn-msg--ai">
+              <div class="sn-msg-bubble">
+                Report generated &middot; <span class="sn-hi">14 optimization recommendations</span> across 6 sites, each linked to its underlying measurement data. Export ready as PDF or Excel.
+                <div class="sn-msg-meta">
+                  <span class="sn-msg-chip sn-msg-chip--conf">Every recommendation traceable</span>
+                  <span class="sn-msg-chip">Sources: Device KPIs &middot; Throughput Data</span>
+                  <span class="sn-msg-chip">Logged &middot; audit trail</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sn-conv-input">
+            <span class="sn-conv-placeholder">Ask anything about your network&hellip;</span>
+            <span class="sn-conv-ask">Ask &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2 · SUBNAV
+  ============================================================ -->
+  <nav class="subnav" id="mainSubnav" aria-label="Page sections">
+    <div class="container-xxl">
+      <div class="subnav-links">
+        <a href="#section-overview"     class="subnav-link active">Overview</a>
+        <a href="#section-problem"      class="subnav-link">The problem</a>
+        <a href="#section-outcomes"     class="subnav-link">Outcomes</a>
+        <a href="#section-architecture" class="subnav-link">Architecture</a>
+        <a href="#section-capabilities" class="subnav-link">Capabilities</a>
+        <a href="#section-usecases"     class="subnav-link">Use cases</a>
+        <a href="#section-related"      class="subnav-link">Related</a>
+      </div>
+      <a href="#" class="btn-get-quote">
+        Get a quote
+        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+          <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+          <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <div class="subnav-placeholder" id="subnavPlaceholder"></div>
+
+  <!-- ============================================================
+       3 · THE PROBLEM
+  ============================================================ -->
+  <section class="sn-problem" id="section-problem">
+    <div class="sn-wrap">
+      <div class="sn-problem-grid">
+        <div>
+          <span class="sn-kicker reveal">The problem</span>
+          <h2 class="sn-headline reveal">The answer is in the data. <span class="sn-green">Getting it out is the job.</span></h2>
+          <p class="sn-lead reveal">An RF engineer at 11pm, correlating a 200,000-row log file by hand against a handover event from 14:32 on a Tuesday. The data was captured weeks ago. <strong>The insight is still locked inside it.</strong></p>
+          <p class="sn-lead reveal">Current network optimization workflows are manual, reactive, and slow — four failure modes, all of them preventable.</p>
+        </div>
+        <div class="sn-pcards reveal">
+          <div class="sn-pcard">
+            <div class="sn-pcard-num">01</div>
+            <div class="sn-pcard-title">Manual log review</div>
+            <p class="sn-pcard-body">Engineers spend hours analysing raw logs instead of acting on insights. The data exists — the decision stays locked inside it.</p>
+          </div>
+          <div class="sn-pcard">
+            <div class="sn-pcard-num">02</div>
+            <div class="sn-pcard-title">Reactive troubleshooting</div>
+            <p class="sn-pcard-body">Issues addressed only after subscriber complaints are filed. The problem is known too late to prevent the impact.</p>
+          </div>
+          <div class="sn-pcard">
+            <div class="sn-pcard-num">03</div>
+            <div class="sn-pcard-title">Static KPI thresholds</div>
+            <p class="sn-pcard-body">Alert noise drowns the signal — subtle anomalies go undetected because fixed thresholds can't adapt to changing conditions.</p>
+          </div>
+          <div class="sn-pcard">
+            <div class="sn-pcard-num">04</div>
+            <div class="sn-pcard-title">Human-driven RCA</div>
+            <p class="sn-pcard-body">Root cause analysis takes days and depends on individual expertise. When that engineer is unavailable, the investigation waits.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3 · WHY TRUST IT
+  ============================================================ -->
+  <section class="sn-trust" id="section-trust">
+    <div class="sn-wrap">
+      <div class="sn-head-grid">
+        <div>
+          <span class="sn-kicker reveal">Why trust it</span>
+          <h2 class="sn-headline reveal">How an answer <span class="sn-green">earns belief.</span></h2>
+        </div>
+        <p class="sn-sub reveal">Every vendor claims AI now. The question an operations lead actually asks is different: <strong>can I verify what it tells me?</strong> Sigma-Neo is built so the answer is yes — three ways.</p>
+      </div>
+      <div class="sn-trust-grid reveal">
+        <div class="sn-tcard">
+          <div class="sn-tcard-num">01 / Provenance</div>
+          <div class="sn-tcard-name">Every answer cites its sources.</div>
+          <p class="sn-tcard-body">Sigma-Neo doesn't generate answers from nowhere. It reads the drive test logs, lab measurements, device KPIs, RF metrics, and throughput data already in Centra-SD — and <strong>each response shows which sources it drew from.</strong> The engineer can open the underlying data and check.</p>
+          <span class="sn-chip">Sources shown on every response</span>
+        </div>
+        <div class="sn-tcard">
+          <div class="sn-tcard-num">02 / Confidence</div>
+          <div class="sn-tcard-name">It tells you how sure it is.</div>
+          <p class="sn-tcard-body">Root cause findings carry a confidence score. A 94% interference match and a 60% tentative pattern are different decisions — <strong>and the engineer sees the difference before acting.</strong> No false certainty. The model's uncertainty is part of the answer, not hidden behind it.</p>
+          <span class="sn-chip">Confidence-scored RCA</span>
+        </div>
+        <div class="sn-tcard">
+          <div class="sn-tcard-num">03 / Accountability</div>
+          <div class="sn-tcard-name">Every action lands in the audit log.</div>
+          <p class="sn-tcard-body">Role-based access control, governance, and complete audit logging for every question asked and every workflow triggered — by every user. <strong>When the quarterly review asks "why was that parameter changed," the answer is on record.</strong> Enterprise security isn't a feature tier. It's the default.</p>
+          <span class="sn-chip">Full audit trail &middot; RBAC &middot; governance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4 · MEASURED OUTCOMES
+  ============================================================ -->
+  <section class="uc-section" id="section-outcomes">
+    <div class="uc-wrap">
+      <div class="uc-top">
+        <div>
+          <div class="uc-eyebrow reveal">Measured outcomes</div>
+          <h2 class="uc-headline reveal">What changes,<br>measured.</h2>
+        </div>
+        <div>
+          <p class="uc-subtitle reveal">Figures from Sigma-Neo platform deployments. Your network, traffic profile, and baseline workflows will shape your own results — which is why evaluations run on your data, not ours.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ov-statsbar reveal">
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">60%</div>
+        <div class="ov-sbc-name">Year 2 cost reduction</div>
+        <p class="ov-sbc-note">Platform investment recovers within year two — reduced manual labour, faster operations, smaller specialist headcount requirement.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">72%</div>
+        <div class="ov-sbc-name">Engineer satisfaction</div>
+        <p class="ov-sbc-note">72% of RF engineers rated the platform positively in the Japan tier-1 operator trial — 18 engineers across 9 regional offices.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">30–50%</div>
+        <div class="ov-sbc-name">Reduction in log analysis time</div>
+        <p class="ov-sbc-note">Self-reported by RF engineers in the Japan trial — log analysis hours cut by up to half, freeing engineers for higher-value decisions.</p>
+      </div>
+      <div class="ov-sbc">
+        <div class="ov-sbc-num">Minutes</div>
+        <div class="ov-sbc-name">Root cause analysis</div>
+        <p class="ov-sbc-note">Issues that previously took a senior engineer hours to diagnose are resolved in minutes — with a full, reproducible audit trail per session.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 · ARCHITECTURE
+  ============================================================ -->
+  <section class="sn-arch" id="section-architecture">
+    <div class="sn-wrap">
+      <div class="sn-head-grid">
+        <div>
+          <span class="sn-kicker reveal">Platform architecture</span>
+          <h2 class="sn-headline reveal">Data in. <span class="sn-green">Intelligence out.</span></h2>
+        </div>
+        <p class="sn-sub reveal">Sigma-Neo is built on top of Centra-SD. <strong>The data it needs is already there</strong> — no migration, no new pipeline, no re-instrumentation. Five data sources in, five AI processes, four kinds of intelligent output.</p>
+      </div>
+      <div class="sn-arch-flow reveal">
+        <div>
+          <div class="sn-arch-col-h">Data layer &middot; inputs</div>
+          <div class="sn-arch-items">
+            <div class="sn-arch-item">Drive Test Logs</div>
+            <div class="sn-arch-item">Lab Measurements</div>
+            <div class="sn-arch-item">Device KPIs</div>
+            <div class="sn-arch-item">RF Metrics</div>
+            <div class="sn-arch-item">Throughput Data</div>
+          </div>
+        </div>
+        <div class="sn-arch-arr">&rarr;</div>
+        <div>
+          <div class="sn-arch-col-h sn-arch-col-h--mid">Sigma AI Engine &middot; core</div>
+          <div class="sn-arch-engine">
+            <div class="sn-arch-engine-name">Sigma-Neo</div>
+            <div class="sn-arch-engine-sub">AI engine core</div>
+            <div class="sn-arch-engine-cap">Automated Anomaly Detection</div>
+            <div class="sn-arch-engine-cap">Multi-KPI Correlation</div>
+            <div class="sn-arch-engine-cap">Pattern Recognition</div>
+            <div class="sn-arch-engine-cap">Predictive Performance Modeling</div>
+            <div class="sn-arch-engine-cap">Intelligent Root Cause Analysis</div>
+          </div>
+        </div>
+        <div class="sn-arch-arr">&rarr;</div>
+        <div>
+          <div class="sn-arch-col-h">Intelligence output</div>
+          <div class="sn-arch-items">
+            <div class="sn-arch-item">Real-Time Alerts</div>
+            <div class="sn-arch-item">Automated RCA Insights</div>
+            <div class="sn-arch-item">Smart Report Generation</div>
+            <div class="sn-arch-item">Optimization Recommendations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 · CAPABILITIES
+  ============================================================ -->
+  <section class="sn-caps" id="section-capabilities">
+    <div class="sn-wrap">
+      <div class="sn-head-grid">
+        <div>
+          <span class="sn-kicker reveal">Core capabilities</span>
+          <h2 class="sn-headline reveal">What it actually <span class="sn-green">does.</span></h2>
+        </div>
+        <p class="sn-sub reveal">Six capabilities, each removing a manual step from network operations. <strong>The conversational interface is the front door to all of them</strong> — no query language, no dashboard navigation.</p>
+      </div>
+      <div class="sn-caps-grid reveal">
+
+        <div class="sn-ccard sn-ccard--lead">
+          <span class="sn-ccard-tag">The front door</span>
+          <div class="sn-ccard-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="sn-ccard-sub">Conversational AI</div>
+          <div class="sn-ccard-title">Ask in plain language. Get a cited answer.</div>
+          <p class="sn-ccard-body">Natural language interface for complex network operations. The data is already in the system — Sigma-Neo lets you ask for it without writing a query, and shows where the answer came from.</p>
+        </div>
+
+        <div class="sn-ccard">
+          <div class="sn-ccard-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="sn-ccard-sub">Automated Anomaly Detection</div>
+          <div class="sn-ccard-title">Deviations flagged the moment they appear.</div>
+          <p class="sn-ccard-body">Pattern-based insights surface network behaviour deviations instantly — replacing the static thresholds that drown engineers in alert noise.</p>
+        </div>
+
+        <div class="sn-ccard">
+          <div class="sn-ccard-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 12h1M20 12h1M12 3v1M12 20v1"/><path d="M5.6 5.6l.7.7M17.7 17.7l.7.7M5.6 18.4l.7-.7M17.7 6.3l.7-.7"/></svg></div>
+          <div class="sn-ccard-sub">Live KPI Analysis</div>
+          <div class="sn-ccard-title">The network as it stands now.</div>
+          <p class="sn-ccard-body">Real-time performance visibility across all monitored network nodes. Not a dashboard of yesterday's data.</p>
+        </div>
+
+        <div class="sn-ccard">
+          <div class="sn-ccard-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/></svg></div>
+          <div class="sn-ccard-sub">Rapid Workflow Automation</div>
+          <div class="sn-ccard-title">Validation workflows in seconds.</div>
+          <p class="sn-ccard-body">The workflow that used to occupy a team of analysts now runs unattended and returns an answer — with the working shown.</p>
+        </div>
+
+        <div class="sn-ccard">
+          <div class="sn-ccard-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <div class="sn-ccard-sub">Centra-SD Integration</div>
+          <div class="sn-ccard-title">Deep native integration. No migration.</div>
+          <p class="sn-ccard-body">Built on top of Centra-SD — the data it needs is already there. No new pipeline, no re-instrumentation of the network, no data leaving your platform.</p>
+        </div>
+
+        <div class="sn-ccard">
+          <div class="sn-ccard-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="sn-ccard-sub">Enterprise Security</div>
+          <div class="sn-ccard-title">RBAC, governance, full audit logging.</div>
+          <p class="sn-ccard-body">Role-based access control and a complete audit trail for every action by every user. The accountability layer is the default, not an add-on.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7 · USE CASES
+  ============================================================ -->
+  <section class="uc-section" id="section-usecases">
+    <div class="uc-wrap">
+      <div class="uc-top">
+        <div>
+          <div class="uc-eyebrow reveal">Use cases</div>
+          <h2 class="uc-headline reveal">Where Sigma-Neo<br>earns its place.</h2>
+        </div>
+        <div>
+          <p class="uc-subtitle reveal">From static thresholds to pattern-based detection — three places the manual workflow disappears.</p>
+        </div>
+      </div>
+
+      <div class="uc-flat-cards reveal">
+        <div class="uc-flat-card">
+          <div class="uc-flat-label">Network operations</div>
+          <div class="uc-flat-title">Proactive anomaly management</div>
+          <p class="uc-flat-desc">From static thresholds to pattern-based detection. Anomalies surface 3&ndash;5 steps before subscriber impact — not after complaints are already filed.</p>
+        </div>
+        <div class="uc-flat-card uc-flat-card--active">
+          <div class="uc-flat-label">Root cause analysis</div>
+          <div class="uc-flat-title">Confidence-scored RCA in seconds</div>
+          <p class="uc-flat-desc">Multi-dimensional correlation pinpoints failure sources instantly. The investigation that took days returns a confidence-scored, source-cited result the engineer can verify.</p>
+        </div>
+        <div class="uc-flat-card">
+          <div class="uc-flat-label">Optimization</div>
+          <div class="uc-flat-title">Self-learning parameter tuning</div>
+          <p class="uc-flat-desc">Self-learning algorithms continuously adapt parameters across the network. Optimization cycles compress from weeks to hours — with every change on the audit record.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8 · RELATED PRODUCTS
+  ============================================================ -->
+  <section class="rel-section" id="section-related">
+    <div class="rel-wrap">
+      <h2 class="rel-headline reveal">Sigma-Neo rarely<br>works alone.</h2>
+      <div class="rel-grid">
+        <a href="centra_sd.html" class="rel-card">
+          <div class="rel-tag">Network Monitoring</div>
+          <div class="rel-name">Centra-SD</div>
+          <p class="rel-desc">The browser-based network quality monitoring platform Sigma-Neo is built on. Sigma-Neo reads the data Centra-SD already holds.</p>
+        </a>
+        <a href="sigma_aq.html" class="rel-card">
+          <div class="rel-tag">Field Collection</div>
+          <div class="rel-name">Sigma-AQ</div>
+          <p class="rel-desc">Drive and walk test probe. Feeds drive test logs and KPI data into the Centra-SD / Sigma-Neo pipeline.</p>
+        </a>
+        <a href="Sigma_PA.html" class="rel-card">
+          <div class="rel-tag">Post-Processing</div>
+          <div class="rel-name">Sigma-PA</div>
+          <p class="rel-desc">Where raw logs become reports. Sigma-Neo adds the AI and conversational layer above Sigma-PA's analysis output.</p>
+        </a>
+        <a href="sigma_la.html" class="rel-card">
+          <div class="rel-tag">Drive Test Platform</div>
+          <div class="rel-name">Sigma-LA</div>
+          <p class="rel-desc">Multi-device Windows-based capture platform. One source of the drive test logs that flow into Sigma-Neo's data layer.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9 · CTA
+  ============================================================ -->
+  <section class="cta-section" id="section-cta">
+    <div class="cta-wrap">
+      <h2 class="cta-headline reveal">Evaluate it on<br>your data.</h2>
+      <p class="cta-eyebrow reveal reveal-d1 cta-eyebrow-centered">Claims are cheap. The honest test is your own network data — your logs, your KPIs, your incidents. An evaluation runs on the Centra-SD you already operate, so the answers it gives are answers you can check.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-primary-pill">
+          Talk to us
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="centra_sd.html" class="btn-outline-pill">
+          Explore Centra-SD
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       14 · FOOTER
+  ============================================================ -->
+  <footer class="ft-footer">
+    <div class="ft-main">
+      <div class="ft-brand">
+        <a href="index.html" class="ft-logo">
+          <img src="images/Meritech_logo_white.png" alt="Meritech">
+        </a>
+        <p class="ft-desc">Mobile network Test &amp; Measurement, Network Optimization, LPWA IoT, Edge AI, and IT Services — built and supported since 2003. Nine offices across seven countries. Serving mobile operators, RAN vendors, and enterprises worldwide.</p>
+        <a href="contact_us.html" class="ft-cta">
+          Talk to us
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+            <line x1="0" y1="5" x2="15" y2="5" stroke="white" stroke-width="1.4"></line>
+            <path d="M11 1.5L15.5 5L11 8.5" stroke="white" stroke-width="1.4" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+      <nav class="ft-nav" aria-label="Footer navigation">
+        <div class="ft-col">
+          <a href="Wireless.html" class="ft-col-head">Wireless</a>
+          <a href="sigma_la.html" class="ft-link">Sigma-LA</a>
+          <a href="sigma_aq.html" class="ft-link">Sigma-AQ</a>
+          <a href="sigma_aq_boss.html" class="ft-link">Sigma-AQ Boss</a>
+          <a href="sigma_one.html" class="ft-link">Sigma-One</a>
+          <a href="sigma_ml.html" class="ft-link">Sigma-ML</a>
+          <a href="Sigma_PA.html" class="ft-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="ft-link">Centra-SD</a>
+          <a href="sigma_neo.html" class="ft-link">Sigma-Neo</a>
+          <a href="centra_experitest.html" class="ft-link">Centra-Experitest</a>
+          <a href="#" class="ft-link">Sigma-AQ Reporting Server</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IoT</div>
+          <a href="ExploreIoTportfolio.html" class="ft-link">monoZ</a>
+          <a href="CENTRA_IoT.html" class="ft-link">Centra IoT</a>
+          <a href="XENO+.html" class="ft-link">Xeno+</a>
+          <a href="mesimo.html" class="ft-link">Mesimo</a>
+          <a href="iot_consulting.html" class="ft-link">IoT Consulting</a>
+          <a href="device_management.html" class="ft-link">Device Management</a>
+          <a href="connectivity_solutions.html" class="ft-link">Connectivity</a>
+          <a href="iot_services.html" class="ft-link">IoT Services</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IT &amp; Cloud</div>
+          <a href="data_ai.html" class="ft-link">Data &amp; AI</a>
+          <a href="devops.html" class="ft-link">DevOps</a>
+          <a href="cloud.html" class="ft-link">Cloud</a>
+          <a href="it_consulting.html" class="ft-link">IT Consulting</a>
+          <a href="it_outsourcing_services.html" class="ft-link">IT Outsourcing</a>
+          <a href="servicenow.html" class="ft-link">ServiceNow</a>
+          <a href="zoecon_cloud_cost_optimizer.html" class="ft-link">zoECON™</a>
+          <a href="independent_validation_services.html" class="ft-link">Independent Validation Services</a>
+          <a href="managed_it_services.html" class="ft-link">Managed IT</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">Company</div>
+          <a href="about.html" class="ft-link">Who we are</a>
+          <a href="leadership.html" class="ft-link">Leadership</a>
+          <a href="success_stories.html" class="ft-link">Success stories</a>
+          <a href="news_events.html" class="ft-link">News &amp; events</a>
+          <a href="about.html#section-presence" class="ft-link">Global presence</a>
+          <a href="contact_us.html" class="ft-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; Meritech 2026 &middot; All Rights Reserved</span>
+      <a href="privacy_policy.html" class="ft-policy">Privacy Policy</a>
+      <div class="ft-countries">
+        <span>Japan</span><span class="ft-sep">|</span>
+        <span>India</span><span class="ft-sep">|</span>
+        <span>Singapore</span><span class="ft-sep">|</span>
+        <span>Thailand</span><span class="ft-sep">|</span>
+        <span>USA</span><span class="ft-sep">|</span>
+        <span>UK</span><span class="ft-sep">|</span>
+        <span>Germany</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

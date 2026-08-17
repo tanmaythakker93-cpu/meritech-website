@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sensor Watch for Patient Care — Meritech Success Stories</title>
+  <meta name="description" content="A BLE sensor watch capturing patient hand-movement data for care analytics — 33mm × 32mm PCB, 300mAh battery, and an ML-powered cloud dashboard summarizing recovery. How Meritech engineered it.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsivestyle.css">
+
+</head>
+<body class="page-story">
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <nav class="mn-bar">
+    <div class="container-xxl">
+
+      <a class="mn-logo" href="index.html">
+        <img src="images/Meritech_logo_banner.svg" alt="Meritech">
+      </a>
+
+      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu">
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+        <span class="mn-toggle-bar"></span>
+      </button>
+
+      <nav class="mn-nav">
+        <div class="mn-item">
+          <a class="mn-link" href="#">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown">
+            <div class="dd-grid dd-grid-3">
+              <div>
+                <div class="dd-col-head">Capture &amp; Automate</div>
+                <a href="sigma_la.html" class="dd-product"><span class="dd-product-name">Sigma-LA</span><span class="dd-product-desc">Windows drive test — multi-UE, L1–L4 capture</span></a>
+                <a href="sigma_ml.html" class="dd-product"><span class="dd-product-name">Sigma-ML</span><span class="dd-product-desc">Smartphone drive test — no laptop, L1–L3 in your pocket</span></a>
+                <a href="sigma_aq.html" class="dd-product"><span class="dd-product-name">Sigma-AQ</span><span class="dd-product-desc">Android drive test probe — drive to report in under 10 minutes</span></a>
+                <a href="sigma_aq_boss.html" class="dd-product"><span class="dd-product-name">Sigma-AQ Boss</span><span class="dd-product-desc">Remote controller — keep engineers in the office</span></a>
+                <a href="sigma_one.html" class="dd-product"><span class="dd-product-name">Sigma-One</span><span class="dd-product-desc">Ruggedized capture — COTS, IoT &amp; connected car</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Analyze &amp; Intelligence</div>
+                <a href="Sigma_PA.html" class="dd-product"><span class="dd-product-name">Sigma-PA</span><span class="dd-product-desc">Post-processing &amp; protocol analysis platform</span></a>
+                <a href="centra_sd.html" class="dd-product"><span class="dd-product-name">Centra-SD</span><span class="dd-product-desc">Schedule tests, monitor live KPIs, manage field devices</span></a>
+                <a href="sigma_neo.html" class="dd-product"><span class="dd-product-name">Sigma-Neo</span><span class="dd-product-desc">AI network intelligence — anomaly detection &amp; RCA</span></a>
+                <a href="centra_experitest.html" class="dd-product"><span class="dd-product-name">Centra-Experitest</span><span class="dd-product-desc">OTT &amp; QoE — what the subscriber actually feels</span></a>
+                <a href="#" class="dd-product"><span class="dd-product-name">Sigma-AQ Reporting Server</span><span class="dd-product-desc">Post-processing &amp; deep protocol analysis</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="planning_design.html" class="dd-product"><span class="dd-product-name">Planning &amp; Design</span><span class="dd-product-desc">Site, propagation, capacity, spectrum</span></a>
+                <a href="drive_walk_test.html" class="dd-product"><span class="dd-product-name">Drive &amp; Walk Test</span><span class="dd-product-desc">Multi-device field capture, L1–L4</span></a>
+                <a href="network_optimization.html" class="dd-product"><span class="dd-product-name">Network Optimization</span><span class="dd-product-desc">Initial and continuous performance tuning</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="Wireless.html" class="dd-explore">Explore Wireless portfolio</a><a href="wireless_services.html" class="dd-explore">Wireless Services</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item">
+          <a class="mn-link" href="#">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Products</div>
+                <a href="ExploreIoTportfolio.html" class="dd-product"><span class="dd-product-name">monoZ</span><span class="dd-product-desc">LPWA device-to-cloud suite</span></a>
+                <a href="CENTRA_IoT.html" class="dd-product"><span class="dd-product-name">Centra IoT</span><span class="dd-product-desc">Centralized cloud device management platform</span></a>
+                <a href="XENO+.html" class="dd-product"><span class="dd-product-name">Xeno+ suite</span><span class="dd-product-desc">Solderable AI/ML edge modules for IoT</span></a>
+                <a href="mesimo.html" class="dd-product"><span class="dd-product-name">Mesimo</span><span class="dd-product-desc">Global cellular IoT connectivity</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="iot_consulting.html" class="dd-product"><span class="dd-product-name">IoT Consulting</span><span class="dd-product-desc">Design backwards from the decision</span></a>
+                <a href="device_management.html" class="dd-product"><span class="dd-product-name">Device Management</span><span class="dd-product-desc">Fleet device management at scale</span></a>
+                <a href="connectivity_solutions.html" class="dd-product"><span class="dd-product-name">Connectivity</span><span class="dd-product-desc">LPWA &amp; cellular connectivity</span></a>
+                <a href="cloud_software_development.html" class="dd-product"><span class="dd-product-name">Cloud Software Development</span><span class="dd-product-desc">IoT cloud platforms, pipelines &amp; analytics</span></a>
+                <a href="operations_support_maintenance.html" class="dd-product"><span class="dd-product-name">Operations Support &amp; Maintenance</span><span class="dd-product-desc">24/7 monitoring &amp; proactive incident response</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="ExploreIoTportfolio.html" class="dd-explore">Explore IoT portfolio</a><a href="iot_services.html" class="dd-explore">IoT Services</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item">
+          <a class="mn-link" href="#">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown iot">
+            <div class="dd-grid dd-grid-2">
+              <div>
+                <div class="dd-col-head">Services</div>
+                <a href="digital_synergy_solutions_1.html" class="dd-product"><span class="dd-product-name">Digital Synergy</span><span class="dd-product-desc">Web &amp; mobile apps, integration &amp; workflow</span></a>
+                <a href="data_ai.html" class="dd-product"><span class="dd-product-name">Data &amp; AI</span><span class="dd-product-desc">Data platforms, analytics &amp; AI solutions</span></a>
+                <a href="devops.html" class="dd-product"><span class="dd-product-name">DevOps</span><span class="dd-product-desc">CI/CD, automation, cloud-native delivery</span></a>
+                <a href="cloud.html" class="dd-product"><span class="dd-product-name">Cloud</span><span class="dd-product-desc">Transform, migrate &amp; build cloud-native</span></a>
+                <a href="it_consulting.html" class="dd-product"><span class="dd-product-name">IT Consulting</span><span class="dd-product-desc">Modernization, DevOps &amp; cloud strategy</span></a>
+              </div>
+              <div>
+                <div class="dd-col-head">&nbsp;</div>
+                <a href="it_outsourcing_services.html" class="dd-product"><span class="dd-product-name">IT Outsourcing</span><span class="dd-product-desc">Staff augmentation, teams &amp; HaaS</span></a>
+                <a href="servicenow.html" class="dd-product"><span class="dd-product-name">ServiceNow</span><span class="dd-product-desc">Enterprise workflows &amp; ITSM</span></a>
+                <a href="managed_it_services.html" class="dd-product"><span class="dd-product-name">Managed IT</span><span class="dd-product-desc">Ongoing operations &amp; support</span></a>
+                <a href="zoecon_cloud_cost_optimizer.html" class="dd-product"><span class="dd-product-name">zoECON™</span><span class="dd-product-desc">Cloud cost optimizer for telecom operators</span></a>
+                <a href="independent_validation_services.html" class="dd-product"><span class="dd-product-name">Independent Validation Services</span><span class="dd-product-desc">Evaluate your systems</span></a>
+              </div>
+            </div>
+            <div class="dd-footer"><a href="it_services.html" class="dd-explore">Explore IT &amp; Cloud portfolio</a></div>
+          </div>
+        </div>
+
+        <div class="mn-item">
+          <a class="mn-link" href="#">About Us <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <div class="mn-dropdown about">
+            <div class="dd-grid dd-grid-1">
+              <div>
+                <a href="about.html" class="dd-product"><span class="dd-product-name">About the company</span><span class="dd-product-desc">One partner, from radio to cloud</span></a>
+                <a href="leadership.html" class="dd-product"><span class="dd-product-name">Leadership</span><span class="dd-product-desc">The team behind Meritech</span></a>
+                <a href="clients_partners.html" class="dd-product"><span class="dd-product-name">Client &amp; Partners</span><span class="dd-product-desc">A client-first approach</span></a>
+                <a href="news_events.html" class="dd-product"><span class="dd-product-name">News &amp; Events</span><span class="dd-product-desc">Partnerships, events &amp; milestones</span></a>
+                <a href="success_stories.html" class="dd-product"><span class="dd-product-name">Success Stories</span><span class="dd-product-desc">Outcomes we have delivered</span></a>
+                <a href="case_studies.html" class="dd-product"><span class="dd-product-name">Case Studies</span><span class="dd-product-desc">Illustrative engagement scenarios</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mn-item"><a class="mn-link" href="contact_us.html">Contact Us</a></div>
+      </nav>
+
+      <div class="mn-lang">
+        <button class="mn-lang-btn" type="button" aria-label="Change language" aria-haspopup="true">
+          <svg class="mn-lang-globe" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="mn-lang-cur">EN</span>
+          <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg>
+        </button>
+        <div class="mn-lang-menu">
+          <a href="#" class="mn-lang-opt is-active" data-lang="en">English<span class="mn-lang-tag">EN</span></a>
+          <a href="#" class="mn-lang-opt" data-lang="ja">日本語<span class="mn-lang-tag">JA</span></a>
+        </div>
+      </div>
+      <a href="#" class="btn-talk">Talk to us</a>
+      <div class="mn-accent"></div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE DRAWER
+  ============================================================ -->
+  <div class="mn-mobile" id="mnMobile">
+    <div class="mn-mobile-inner">
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-wireless">
+          <a href="Wireless.html" class="mn-mob-sub-link">Wireless Overview</a>
+          <div class="mn-mob-sub-head">Capture &amp; Automate</div>
+          <a href="sigma_la.html" class="mn-mob-sub-link">Sigma-LA</a>
+          <a href="sigma_ml.html" class="mn-mob-sub-link">Sigma-ML</a>
+          <a href="sigma_aq.html" class="mn-mob-sub-link">Sigma-AQ</a>
+          <a href="sigma_aq_boss.html" class="mn-mob-sub-link">Sigma-AQ Boss</a>
+          <a href="sigma_one.html" class="mn-mob-sub-link">Sigma-One</a>
+          <div class="mn-mob-sub-head">Analyze &amp; Intelligence</div>
+          <a href="Sigma_PA.html" class="mn-mob-sub-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="mn-mob-sub-link">Centra-SD</a>
+          <a href="sigma_neo.html" class="mn-mob-sub-link">Sigma-Neo</a>
+          <a href="centra_experitest.html" class="mn-mob-sub-link">Centra-Experitest</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="wireless_services.html" class="mn-mob-sub-link">Wireless Services</a>
+          <a href="planning_design.html" class="mn-mob-sub-link">Planning &amp; Design</a>
+          <a href="drive_walk_test.html" class="mn-mob-sub-link">Drive &amp; Walk Test</a>
+          <a href="network_optimization.html" class="mn-mob-sub-link">Network Optimization</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="iot">IoT <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-iot">
+          <div class="mn-mob-sub-head">Products</div>
+          <a href="ExploreIoTportfolio.html" class="mn-mob-sub-link">monoZ</a>
+          <a href="CENTRA_IoT.html" class="mn-mob-sub-link">Centra IoT</a>
+          <a href="XENO+.html" class="mn-mob-sub-link">Xeno+ suite</a>
+          <a href="mesimo.html" class="mn-mob-sub-link">Mesimo</a>
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="iot_consulting.html" class="mn-mob-sub-link">IoT Consulting</a>
+          <a href="device_management.html" class="mn-mob-sub-link">Device Management</a>
+          <a href="connectivity_solutions.html" class="mn-mob-sub-link">Connectivity</a>
+          <a href="cloud_software_development.html" class="mn-mob-sub-link">Cloud Software Development</a>
+          <a href="operations_support_maintenance.html" class="mn-mob-sub-link">Operations Support &amp; Maintenance</a>
+          <a href="iot_services.html" class="mn-mob-sub-link">IoT Services</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-it">
+          <div class="mn-mob-sub-head">Services</div>
+          <a href="digital_synergy_solutions_1.html" class="mn-mob-sub-link">Digital Synergy</a>
+          <a href="data_ai.html" class="mn-mob-sub-link">Data &amp; AI</a>
+          <a href="devops.html" class="mn-mob-sub-link">DevOps</a>
+          <a href="cloud.html" class="mn-mob-sub-link">Cloud</a>
+          <a href="it_consulting.html" class="mn-mob-sub-link">IT Consulting</a>
+          <a href="it_outsourcing_services.html" class="mn-mob-sub-link">IT Outsourcing</a>
+          <a href="servicenow.html" class="mn-mob-sub-link">ServiceNow</a>
+          <a href="managed_it_services.html" class="mn-mob-sub-link">Managed IT</a>
+          <a href="zoecon_cloud_cost_optimizer.html" class="mn-mob-sub-link">zoECON™</a>
+          <a href="independent_validation_services.html" class="mn-mob-sub-link">Independent Validation Services</a>
+        </div>
+      </div>
+      <div class="mn-mob-item">
+        <button class="mn-mob-link" data-mob-acc="about">About Us <span class="arrow">›</span></button>
+        <div class="mn-mob-sub" id="mob-about">
+          <a href="about.html" class="mn-mob-sub-link">About the company</a>
+          <a href="leadership.html" class="mn-mob-sub-link">Leadership</a>
+          <a href="clients_partners.html" class="mn-mob-sub-link">Client &amp; Partners</a>
+          <a href="news_events.html" class="mn-mob-sub-link">News &amp; Events</a>
+          <a href="success_stories.html" class="mn-mob-sub-link">Success Stories</a>
+          <a href="case_studies.html" class="mn-mob-sub-link">Case Studies</a>
+        </div>
+      </div>
+      <div class="mn-mob-item"><a href="contact_us.html" class="mn-mob-link">Contact Us</a></div>
+      <div class="mn-mob-lang">
+        <span class="mn-mob-lang-label">Language</span>
+        <div class="mn-mob-lang-opts">
+          <a href="#" class="mn-mob-lang-opt is-active" data-lang="en">English</a>
+          <a href="#" class="mn-mob-lang-opt" data-lang="ja">日本語</a>
+        </div>
+      </div>
+      <a href="#" class="mn-mob-cta">Talk to us</a>
+    </div>
+  </div>
+
+  <div class="nav-spacer"></div>
+
+  <!-- ============================================================
+       1 · STORY HERO
+  ============================================================ -->
+  <section class="st-hero">
+    <div class="st-hero-motif" aria-hidden="true"><svg class="st-sensor-svg" viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg">
+      <!-- sensor watch → movement signal → BLE → cloud with ML recovery summary -->
+      <!-- watch: straps + round face -->
+      <g>
+        <path d="M150 252 l-22 -52 h56 l-22 52" fill="rgba(34,31,31,.7)" stroke="rgba(255,255,255,.3)" stroke-width="1.3"/>
+        <path d="M150 348 l-22 52 h56 l-22 -52" fill="rgba(34,31,31,.7)" stroke="rgba(255,255,255,.3)" stroke-width="1.3"/>
+        <circle cx="156" cy="300" r="52" fill="rgba(34,31,31,.9)" stroke="rgba(0,162,79,.6)" stroke-width="1.6"/>
+        <!-- movement waveform on the face -->
+        <path d="M126 300 l10 0 l5 -14 l7 26 l6 -20 l6 12 l5 -6 l15 2" fill="none" stroke="rgba(0,194,95,.95)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="156" y="330" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,.55)" letter-spacing=".06em">HAND MOVEMENT</text>
+        <text x="156" y="424" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.6)" letter-spacing=".08em">33 × 32 MM PCB · 300mAH</text>
+      </g>
+      <!-- BLE waves from watch -->
+      <path d="M216 282 q10 18 0 36" fill="none" stroke="rgba(0,162,79,.7)" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M230 272 q16 28 0 56" fill="none" stroke="rgba(0,162,79,.5)" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M244 262 q22 38 0 76" fill="none" stroke="rgba(0,162,79,.3)" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- beam to cloud -->
+      <line class="st-beam" x1="252" y1="290" x2="410" y2="120"/>
+      <!-- cloud -->
+      <g>
+        <circle cx="424" cy="100" r="30" fill="rgba(0,162,79,.15)" stroke="rgba(0,162,79,.5)" stroke-width="1.4"/>
+        <text x="424" y="105" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.8)" letter-spacing=".08em">CLOUD</text>
+      </g>
+      <!-- ML recovery summary panel -->
+      <g>
+        <rect x="330" y="210" width="170" height="110" rx="8" fill="rgba(34,31,31,.85)" stroke="rgba(255,255,255,.25)" stroke-width="1.4"/>
+        <text x="415" y="232" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.6)" letter-spacing=".07em">ML — RECOVERY SUMMARY</text>
+        <!-- recovery trend rising -->
+        <path d="M346 300 C 372 298, 396 284, 418 270 S 466 248, 486 244" fill="none" stroke="rgba(0,194,95,.95)" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="346" y1="306" x2="486" y2="306" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+        <circle cx="486" cy="244" r="4" fill="none" stroke="rgba(0,194,95,1)" stroke-width="1.4"/>
+        <text x="415" y="336" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,.45)" letter-spacing=".07em">PATIENT RECOVERY TREND</text>
+      </g>
+      <line class="st-con" x1="424" y1="130" x2="418" y2="210"/>
+    </svg></div>
+    <div class="st-hero-wrap">
+      <div class="st-crumb"><a href="index.html">Home</a><span class="st-crumb-sep">/</span><a href="success_stories.html">Success Stories</a><span class="st-crumb-sep">/</span><span>Sensor Watch for Patient Care</span></div>
+      <div class="st-chips">
+        <span class="st-chip st-chip--acc">IoT Product Engineering</span>
+        <span class="st-chip">Healthcare</span>
+        <span class="st-chip">Australia</span>
+      </div>
+      <h1 class="st-h1">Sensor Watch for Patient Care</h1>
+      <p class="st-lede">An Australian startup running a patient-care research program needed a <strong>BLE sensor watch wearable</strong> that could <strong>capture very specific parameters — including patient hand-movement data</strong> — on a 300mAh Li-Ion battery, in a compact watch form factor. Meritech built the watch, the firmware, and the ML-powered dashboard that turns movement into a recovery story.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2 · META BAND
+  ============================================================ -->
+  <div class="st-meta">
+    <div class="st-meta-wrap">
+      <div class="st-meta-cell reveal"><div class="st-meta-k">Geography</div><div class="st-meta-v">Australia</div></div>
+      <div class="st-meta-cell reveal"><div class="st-meta-k">Domain</div><div class="st-meta-v">IoT &middot; Healthcare</div></div>
+      <div class="st-meta-cell reveal"><div class="st-meta-k">Project Type</div><div class="st-meta-v">IoT Product &amp; Cloud Software Engineering</div></div>
+      <div class="st-meta-cell reveal"><div class="st-meta-k">Form Factor</div><div class="st-meta-v">33mm &times; 32mm PCB &middot; 300mAh Li-Ion</div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       3 · ARTICLE
+  ============================================================ -->
+  <div class="st-article-wrap">
+    <div class="st-article">
+      <aside class="st-toc">
+        <div class="st-toc-label">On this page</div>
+        <a href="#story-objective" class="is-active">Objective</a>
+        <a href="#story-approach">Approach &amp; Solution</a>
+        <a href="#story-value">Business Value</a>
+        <a href="#story-tech">Technologies Used</a>
+      </aside>
+
+      <div class="st-content">
+        <section id="story-objective" class="reveal">
+          <span class="st-kicker">Objective</span>
+          <h2 class="st-h2">Measure recovery from the wrist. Quietly, precisely, all day.</h2>
+          <p class="st-p">The client — an Australian startup — needed a <strong>BLE sensor watch wearable for patient care</strong> as part of a research program. The device had to <strong>capture very specific parameters</strong>, including <strong>patient hand-movement data</strong>, while operating on a <strong>300mAh Li-Ion battery</strong> in a compact watch form factor. A research instrument, but one a patient wears like an ordinary watch — comfortable enough to forget, precise enough to publish.</p>
+        </section>
+
+        <section id="story-approach" class="reveal">
+          <span class="st-kicker">Approach &amp; Solution</span>
+          <h2 class="st-h2">A research instrument disguised as a wristwatch.</h2>
+          <div class="st-steps">
+        <div class="st-step">
+          <span class="st-step-num">01</span>
+          <div>
+            <div class="st-step-title">Hardware on a 33mm × 32mm PCB in watch form</div>
+            <p class="st-step-body">The sensing, BLE radio, and battery management were engineered onto a 33 by 32 millimetre board designed in OrCAD Capture and Routing — a full data-capture device that fits inside a watch head.</p>
+          </div>
+        </div>
+        <div class="st-step">
+          <span class="st-step-num">02</span>
+          <div>
+            <div class="st-step-title">Watch-like enclosure design</div>
+            <p class="st-step-body">The device enclosure was designed as a watch-like casing — because patients in a care program should wear a watch, not a piece of lab equipment strapped to the wrist.</p>
+          </div>
+        </div>
+        <div class="st-step">
+          <span class="st-step-num">03</span>
+          <div>
+            <div class="st-step-title">Embedded software for continuous capture</div>
+            <p class="st-step-body">Firmware in Embedded C on FreeRTOS runs the sensor sampling and BLE connectivity within the power budget of a 300mAh cell — capturing the movement parameters the research protocol specifies, all day.</p>
+          </div>
+        </div>
+        <div class="st-step">
+          <span class="st-step-num">04</span>
+          <div>
+            <div class="st-step-title">Backend cloud dashboard, built to specification</div>
+            <p class="st-step-body">A cloud dashboard application developed per the project's specifications collects every patient's data and runs the analytics — including the ML layer that condenses raw movement into recovery insight.</p>
+          </div>
+        </div>
+          </div>
+        </section>
+
+        <section id="story-value" class="reveal">
+          <span class="st-kicker">Business Value</span>
+          <h2 class="st-h2">From raw wrist movement to a recovery summary.</h2>
+          <div class="st-values">
+        <div class="st-value"><span class="st-tick"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5 5 9l5-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Hand-movement data collected successfully</strong> — the customer gathers patient hand-movement data for patient-care analytics, exactly as the research program required.</span></div>
+        <div class="st-value"><span class="st-tick"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5 5 9l5-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>ML-generated recovery summaries</strong> — the backend dashboard's machine-learning algorithm turns movement streams into a summary of each patient's recovery.</span></div>
+        <div class="st-value"><span class="st-tick"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5 5 9l5-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>All-day wearability</strong> — a compact watch form factor on a 300mAh battery means patients actually wear the device, and the dataset stays continuous.</span></div>
+        <div class="st-value"><span class="st-tick"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5 5 9l5-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Research program enabled end to end</strong> — from custom hardware to cloud analytics, the startup got a complete instrument chain without building an engineering team.</span></div>
+          </div>
+          <div class="st-pull">
+            <div class="st-pull-big"><span class="st-pull-acc">ML</span> insight</div>
+            <p class="st-pull-p">The dashboard's machine-learning algorithm reads weeks of hand-movement data and answers the question that matters: is this patient recovering?</p>
+            <span class="st-pull-note">Backend analytics — patient recovery summaries</span>
+          </div>
+        </section>
+
+        <section id="story-tech" class="reveal">
+          <span class="st-kicker">Technologies Used</span>
+          <h2 class="st-h2">The stack behind it.</h2>
+          <div class="st-tech-row">
+        <span class="wl-chip">OrCAD Capture &amp; Routing</span>
+        <span class="wl-chip">Embedded C</span>
+        <span class="wl-chip">FreeRTOS</span>
+        <span class="wl-chip">Bluetooth Low Energy</span>
+        <span class="wl-chip">Spring Boot</span>
+        <span class="wl-chip">Java</span>
+        <span class="wl-chip">Angular</span>
+        <span class="wl-chip">PostgreSQL</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       4 · PREV / NEXT
+  ============================================================ -->
+  <nav class="st-pn" aria-label="More stories">
+    <div class="st-pn-wrap">
+      <a href="story_pests_sound_classification.html">
+        <div class="st-pn-lab">&larr; Previous story</div>
+        <div class="st-pn-title">Pests Sound Classification Device</div>
+      </a>
+      <a class="st-pn-next" href="story_ble_heating_device.html">
+        <div class="st-pn-lab">Next story &rarr;</div>
+        <div class="st-pn-title">BLE Heating Device</div>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       5 · CTA
+  ============================================================ -->
+  <section class="cta-section" id="section-cta">
+    <div class="cta-wrap">
+      <h2 class="cta-headline reveal">Building a wearable that has to<br>earn its place on the wrist?</h2>
+      <p class="cta-eyebrow reveal reveal-d1 cta-eyebrow-centered">Whether it's patient care, research instruments, or any wearable where comfort, battery life, and data quality all have to win — tell us your setup and we'll respond honestly about how we'd approach it.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-primary-pill">
+          Talk to an engineer
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+        <a href="success_stories.html" class="btn-outline-pill">
+          More success stories
+          <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+            <line x1="0" y1="4" x2="13" y2="4" stroke="#221F1F" stroke-width="1.2"></line>
+            <path d="M10 1L14 4L10 7" stroke="#221F1F" stroke-width="1.2" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       14 · FOOTER
+  ============================================================ -->
+  <footer class="ft-footer">
+    <div class="ft-main">
+      <div class="ft-brand">
+        <a href="index.html" class="ft-logo">
+          <img src="images/Meritech_logo_white.png" alt="Meritech">
+        </a>
+        <p class="ft-desc">Mobile network Test &amp; Measurement, Network Optimization, LPWA IoT, Edge AI, and IT Services — built and supported since 2003. Nine offices across seven countries. Serving mobile operators, RAN vendors, and enterprises worldwide.</p>
+        <a href="contact_us.html" class="ft-cta">
+          Talk to us
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+            <line x1="0" y1="5" x2="15" y2="5" stroke="white" stroke-width="1.4"></line>
+            <path d="M11 1.5L15.5 5L11 8.5" stroke="white" stroke-width="1.4" fill="none"></path>
+          </svg>
+        </a>
+      </div>
+      <nav class="ft-nav" aria-label="Footer navigation">
+        <div class="ft-col">
+          <a href="Wireless.html" class="ft-col-head">Wireless</a>
+          <a href="sigma_la.html" class="ft-link">Sigma-LA</a>
+          <a href="sigma_aq.html" class="ft-link">Sigma-AQ</a>
+          <a href="sigma_aq_boss.html" class="ft-link">Sigma-AQ Boss</a>
+          <a href="sigma_one.html" class="ft-link">Sigma-One</a>
+          <a href="sigma_ml.html" class="ft-link">Sigma-ML</a>
+          <a href="Sigma_PA.html" class="ft-link">Sigma-PA</a>
+          <a href="centra_sd.html" class="ft-link">Centra-SD</a>
+          <a href="sigma_neo.html" class="ft-link">Sigma-Neo</a>
+          <a href="centra_experitest.html" class="ft-link">Centra-Experitest</a>
+          <a href="#" class="ft-link">Sigma-AQ Reporting Server</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IoT</div>
+          <a href="ExploreIoTportfolio.html" class="ft-link">monoZ</a>
+          <a href="CENTRA_IoT.html" class="ft-link">Centra IoT</a>
+          <a href="XENO+.html" class="ft-link">Xeno+</a>
+          <a href="mesimo.html" class="ft-link">Mesimo</a>
+          <a href="iot_consulting.html" class="ft-link">IoT Consulting</a>
+          <a href="device_management.html" class="ft-link">Device Management</a>
+          <a href="connectivity_solutions.html" class="ft-link">Connectivity</a>
+          <a href="iot_services.html" class="ft-link">IoT Services</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">IT &amp; Cloud</div>
+          <a href="data_ai.html" class="ft-link">Data &amp; AI</a>
+          <a href="devops.html" class="ft-link">DevOps</a>
+          <a href="cloud.html" class="ft-link">Cloud</a>
+          <a href="it_consulting.html" class="ft-link">IT Consulting</a>
+          <a href="it_outsourcing_services.html" class="ft-link">IT Outsourcing</a>
+          <a href="servicenow.html" class="ft-link">ServiceNow</a>
+          <a href="zoecon_cloud_cost_optimizer.html" class="ft-link">zoECON™</a>
+          <a href="independent_validation_services.html" class="ft-link">Independent Validation Services</a>
+          <a href="managed_it_services.html" class="ft-link">Managed IT</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-head">Company</div>
+          <a href="about.html" class="ft-link">Who we are</a>
+          <a href="leadership.html" class="ft-link">Leadership</a>
+          <a href="success_stories.html" class="ft-link">Success stories</a>
+          <a href="news_events.html" class="ft-link">News &amp; events</a>
+          <a href="about.html#section-presence" class="ft-link">Global presence</a>
+          <a href="contact_us.html" class="ft-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; Meritech 2026 &middot; All Rights Reserved</span>
+      <a href="privacy_policy.html" class="ft-policy">Privacy Policy</a>
+      <div class="ft-countries">
+        <span>Japan</span><span class="ft-sep">|</span>
+        <span>India</span><span class="ft-sep">|</span>
+        <span>Singapore</span><span class="ft-sep">|</span>
+        <span>Thailand</span><span class="ft-sep">|</span>
+        <span>USA</span><span class="ft-sep">|</span>
+        <span>UK</span><span class="ft-sep">|</span>
+        <span>Germany</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.st-toc a[href^="#story-"]'));
+    var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    var spy = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) links.forEach(function (l) {
+          l.classList.toggle('is-active', l.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    secs.forEach(function (s) { if (s) spy.observe(s); });
+  })();
+  </script>
+
+
+</body>
+</html>

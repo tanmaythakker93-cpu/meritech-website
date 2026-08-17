@@ -11,7 +11,7 @@
   *{ box-sizing: border-box; margin: 0; padding: 0; }
   body{ font-family: 'Noto Sans', sans-serif; color: #3D3A3A; background: #fff; padding: 56px 64px 96px; }
   .doc-head{ border-bottom: 2px solid #221F1F; padding-bottom: 24px; margin-bottom: 48px; }
-  .doc-eyebrow{ font-size: 14px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #00A24F; display: block; margin-bottom: 10px; }
+  .doc-eyebrow{ font-size: 14px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: #00A24F; display: block; margin-bottom: 10px; }
   .doc-title{ font-size: 42px; font-weight: 500; letter-spacing: -.02em; color: #221F1F; }
   .doc-meta{ font-size: 14px; color: #8A8686; margin-top: 8px; }
   h2{ font-size: 26px; font-weight: 600; color: #221F1F; margin: 56px 0 20px; }
@@ -36,7 +36,7 @@
 <header class="doc-head">
   <span class="doc-eyebrow">Meritech Website — Design Reference</span>
   <div class="doc-title">Typography Chart</div>
-  <div class="doc-meta">Source: css/style.css · css/responsivestyle.css &nbsp;·&nbsp; Updated 13 Jul 2026 (after 15→16, 17→18, 12/13→14, 19/21→20 standardization)</div>
+  <div class="doc-meta">Source: css/style.css · css/responsivestyle.css &nbsp;·&nbsp; Updated 13 Jul 2026 (after 15→16, 17→18, 12/13→14, 19/21/22→20 standardization; heading weights normalized to 400 below 80px; eyebrows/kickers to 400)</div>
 </header>
 
 <h2>Typeface</h2>
@@ -50,39 +50,38 @@
 <h2>Type scale — live specimens</h2>
 
 <div class="spec"><div class="spec-size">80px</div><div class="spec-role">Display numerals / big stats</div><div class="spec-sample" style="font-size:80px;font-weight:800;letter-spacing:-.02em;">30M</div></div>
-<div class="spec"><div class="spec-size">60px</div><div class="spec-role">Section heading (large H2)</div><div class="spec-sample" style="font-size:60px;font-weight:500;letter-spacing:-.025em;">Connected, managed, secure.</div></div>
-<div class="spec"><div class="spec-size">52px</div><div class="spec-role">Section heading (H2)</div><div class="spec-sample" style="font-size:52px;font-weight:500;letter-spacing:-.025em;">Our technology ecosystem.</div></div>
-<div class="spec"><div class="spec-size">42px</div><div class="spec-role">H2 at tablet (&le;1199px)</div><div class="spec-sample" style="font-size:42px;font-weight:500;letter-spacing:-.02em;">Our technology ecosystem.</div></div>
-<div class="spec"><div class="spec-size">32px</div><div class="spec-role">H2 at mobile (&le;575px)</div><div class="spec-sample" style="font-size:32px;font-weight:500;letter-spacing:-.02em;">Our technology ecosystem.</div></div>
-<div class="spec"><div class="spec-size">26px</div><div class="spec-role">Card title (H3) / result numbers</div><div class="spec-sample" style="font-size:26px;font-weight:600;">End-to-end IoT engineering</div></div>
-<div class="spec"><div class="spec-size">22px</div><div class="spec-role">Card title (small H3)</div><div class="spec-sample" style="font-size:22px;font-weight:600;">Service &amp; event titles</div></div>
-<div class="spec"><div class="spec-size">20px</div><div class="spec-role">Step titles / FAQ questions</div><div class="spec-sample" style="font-size:20px;font-weight:600;">How does the evaluation work?</div></div>
+<div class="spec"><div class="spec-size">60px</div><div class="spec-role">Section heading (large H2)</div><div class="spec-sample" style="font-size:60px;font-weight:400;letter-spacing:-.025em;">Connected, managed, secure.</div></div>
+<div class="spec"><div class="spec-size">52px</div><div class="spec-role">Section heading (H2)</div><div class="spec-sample" style="font-size:52px;font-weight:400;letter-spacing:-.025em;">Our technology ecosystem.</div></div>
+<div class="spec"><div class="spec-size">42px</div><div class="spec-role">H2 at tablet (&le;1199px)</div><div class="spec-sample" style="font-size:42px;font-weight:400;letter-spacing:-.02em;">Our technology ecosystem.</div></div>
+<div class="spec"><div class="spec-size">32px</div><div class="spec-role">H2 at mobile (&le;575px)</div><div class="spec-sample" style="font-size:32px;font-weight:400;letter-spacing:-.02em;">Our technology ecosystem.</div></div>
+<div class="spec"><div class="spec-size">26px</div><div class="spec-role">Card title (H3) / result numbers</div><div class="spec-sample" style="font-size:26px;font-weight:400;">End-to-end IoT engineering</div></div>
+<div class="spec"><div class="spec-size">20px</div><div class="spec-role">Step titles / FAQ questions</div><div class="spec-sample" style="font-size:20px;font-weight:400;">How does the evaluation work?</div></div>
 <div class="spec"><div class="spec-size">18px</div><div class="spec-role">Lead / intro paragraph</div><div class="spec-sample" style="font-size:18px;font-weight:400;">Meritech designs, builds, and operates connected products.</div></div>
 <div class="spec"><div class="spec-size">16px</div><div class="spec-role">Body text (site default)</div><div class="spec-sample" style="font-size:16px;font-weight:400;">Body copy for descriptions, cards, and paragraphs across every page.</div></div>
-<div class="spec"><div class="spec-size">14px</div><div class="spec-role">Small text / eyebrow / UI</div><div class="spec-sample" style="font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Technologies we work with</div></div>
+<div class="spec"><div class="spec-size">14px</div><div class="spec-role">Small text / eyebrow / UI</div><div class="spec-sample" style="font-size:14px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;">Technologies we work with</div></div>
 
 <h2>Roles — size, weight, and where each is used</h2>
 <table>
   <tr><th style="width:200px">Role</th><th style="width:130px">Desktop</th><th style="width:170px">Tablet / mobile</th><th style="width:110px">Weight</th><th>Sections &amp; example classes</th></tr>
   <tr>
-    <td>Hero headline (H1)</td><td class="num">clamp() ~52–96px</td><td>scales fluidly with viewport</td><td>500</td>
+    <td>Hero headline (H1)</td><td class="num">clamp() ~52–96px</td><td>scales fluidly with viewport</td><td>400 (homepage &amp; About heroes 700 — they exceed 80px)</td>
     <td>Page heroes — homepage <code>.hp-hero-headline</code>, product/page heroes <code>.hero-headline</code>, About <code>.ab-hero-headline</code></td>
   </tr>
   <tr>
-    <td>Section heading (H2)</td><td class="num">52px / 60px</td><td class="num">42px → 32px</td><td>500</td>
+    <td>Section heading (H2)</td><td class="num">52px / 60px</td><td class="num">42px → 32px</td><td>400</td>
     <td>All section headlines site-wide — <code>.cl-*-headline</code>, <code>.cta-headline</code>, <code>.faq-headline</code>, <code>.eco-headline</code>, <code>.ds-ind-headline</code></td>
   </tr>
   <tr>
-    <td>Sub-section heading</td><td class="num">42px / 32px</td><td class="num">32px → 26px</td><td>500–600</td>
+    <td>Sub-section heading</td><td class="num">42px / 32px</td><td class="num">32px → 26px</td><td>400</td>
     <td>Secondary blocks; contact page headline steps down 44 → 36 → 28px at its own breakpoints (<code>.ct-headline</code>)</td>
   </tr>
   <tr>
-    <td>Card title (H3)</td><td class="num">26px</td><td>unchanged</td><td>600–800</td>
+    <td>Card title (H3)</td><td class="num">26px</td><td>unchanged</td><td>400 (stat numbers keep 800)</td>
     <td>Feature &amp; stat cards — <code>.hl-card-title</code>, <code>.tp-card-title</code>, <code>.sv-title</code>, <code>.cs-result-n</code>, <code>.ct-ty-headline</code></td>
   </tr>
   <tr>
-    <td>Card title (small H3)</td><td class="num">20–22px</td><td>unchanged</td><td>600–700</td>
-    <td>Step titles, FAQ questions, event/service titles, slide numbers, story-card titles, question titles — <code>.cl-step-title</code>, <code>.faq-q-text</code>, <code>.ne-event-title</code>, <code>.ss-card-title</code>, <code>.ws-q-title</code>, <code>.hp-slide-num</code>, <code>.ct-step-headline</code> (22px)</td>
+    <td>Card title (small H3)</td><td class="num">20px</td><td>unchanged</td><td>400</td>
+    <td>Step titles, FAQ questions, event/service titles, slide numbers, story-card titles, question titles — <code>.cl-step-title</code>, <code>.faq-q-text</code>, <code>.ne-event-title</code>, <code>.ss-card-title</code>, <code>.ws-q-title</code>, <code>.hp-slide-num</code>, <code>.ct-step-headline</code></td>
   </tr>
   <tr>
     <td>Lead / intro paragraph</td><td class="num">18px</td><td class="num">16px</td><td>400</td>
@@ -97,7 +96,7 @@
     <td>Nav links, footnotes, form labels, story step bodies, case-study rows, badges &amp; fine print (moved up from 12–13px)</td>
   </tr>
   <tr>
-    <td>Eyebrow / kicker</td><td class="num">14px</td><td>unchanged</td><td>700 (a few 400)</td>
+    <td>Eyebrow / kicker</td><td class="num">14px</td><td>unchanged</td><td>400</td>
     <td>Uppercase labels above every section headline — all <code>*-kicker</code> / <code>*-eyebrow</code> classes</td>
   </tr>
   <tr>
@@ -119,8 +118,15 @@
 
 <h2>Scale ladder</h2>
 <p class="note">
-  Every text size on the site now sits on the ladder <strong>14 · 16 · 18 · 20 · 22 · 26 · 32 · 42 · 52 · 60 · 80</strong>,
-  plus <code>clamp()</code> hero sizes and the contact page's 44/36/28px responsive headline steps. There are no off-ladder sizes.
+  The core ladder is <strong>14 · 16 · 18 · 20 · 26 · 32 · 42 · 52 · 60 · 80</strong>, plus <code>clamp()</code> hero sizes.
+  Distribution across both stylesheets: 14px ×326 · 16px ×213 · 18px ×98 · 20px ×68 · 26px ×37 · 32px ×64 · 42px ×37 · 52px ×99 · 60px ×20 · 80px ×2.
+</p>
+<p class="note">
+  Documented exceptions (kept deliberately, everything else is on the ladder):<br>
+  · <strong>22px</strong> — <code>.ab-hero-hq-line</code> (bold tagline on the About hero, weight 700; a branded line, not a heading role)
+  and <code>.pf-headline</code>'s smallest responsive step on Sigma-AQ Boss (52 → 32 → 22)<br>
+  · <strong>44 / 36 / 28px</strong> — the contact page headline's own breakpoint steps (<code>.ct-headline</code>)<br>
+  · <strong>48px and 36 → 28px</strong> — News &amp; Events CTA headline (<code>.ne-cta-headline</code>) and featured-article title (<code>.ne-featured-title</code>)
 </p>
 
 </body>

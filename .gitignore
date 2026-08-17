@@ -6,3 +6,10 @@
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Netlify / functions
+.netlify/
+node_modules/
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json
