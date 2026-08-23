@@ -3,6 +3,7 @@
   var page = window.location.pathname;
   var pinMode = false;
   var markers = [];
+  var pendingMove = null; // pin currently being repositioned, or null
 
   function el(tag, attrs, children) {
     var e = document.createElement(tag);
@@ -86,6 +87,44 @@
   function closeAnyPopup() {
     var existing = document.querySelector(".fw-popup");
     if (existing) existing.remove();
+  }
+
+  function hideMoveBanner() {
+    var existing = document.getElementById("fw-move-banner");
+    if (existing) existing.remove();
+  }
+
+  function startMove(pin) {
+    closeAnyPopup();
+    pendingMove = pin;
+    document.body.classList.add("fw-pin-mode");
+    hideMoveBanner();
+    var banner = el("div", { id: "fw-move-banner" });
+    banner.appendChild(el("span", { text: "Click the correct spot for pin #" + pin.number }));
+    var cancelBtn = el("button", { text: "Cancel" });
+    cancelBtn.addEventListener("click", cancelMove);
+    banner.appendChild(cancelBtn);
+    document.body.appendChild(banner);
+  }
+
+  function cancelMove() {
+    pendingMove = null;
+    if (!pinMode) document.body.classList.remove("fw-pin-mode");
+    hideMoveBanner();
+  }
+
+  async function submitMove(pin, xPercent, yPercent, selector) {
+    cancelMove();
+    try {
+      await fetch(API + "?id=" + pin.number + "&action=move", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ xPercent: xPercent, yPercent: yPercent, selector: selector }),
+      });
+      loadPins();
+    } catch (e) {
+      alert("Could not move pin, please try again.");
+    }
   }
 
   function getStoredName() {
@@ -197,6 +236,11 @@
       loadPins();
     });
 
+    var moveBtn = el("button", { class: "fw-btn-secondary", text: "Move" });
+    moveBtn.addEventListener("click", function () {
+      startMove(pin);
+    });
+
     var deleteBtn = el("button", { class: "fw-btn-secondary", text: "Delete" });
     deleteBtn.addEventListener("click", async function () {
       if (!confirm("Permanently delete this pin? This cannot be undone.")) return;
@@ -215,6 +259,7 @@
     actions.appendChild(githubLink);
     actions.appendChild(editBtn);
     actions.appendChild(doneBtn);
+    actions.appendChild(moveBtn);
     actions.appendChild(deleteBtn);
     popup.appendChild(actions);
 
@@ -280,10 +325,23 @@
   }
 
   function onDocumentClick(ev) {
-    if (!pinMode) return;
-    if (ev.target.closest(".fw-popup") || ev.target.closest("#fw-toggle") || ev.target.closest(".fw-marker")) {
+    if (
+      ev.target.closest(".fw-popup") ||
+      ev.target.closest("#fw-toggle") ||
+      ev.target.closest(".fw-marker") ||
+      ev.target.closest("#fw-move-banner")
+    ) {
       return;
     }
+    if (pendingMove) {
+      var moveContainer = getContainer(ev.target);
+      var moveRect = moveContainer.getBoundingClientRect();
+      var moveXPercent = ((ev.clientX - moveRect.left) / moveRect.width) * 100;
+      var moveYPercent = ((ev.clientY - moveRect.top) / moveRect.height) * 100;
+      submitMove(pendingMove, moveXPercent, moveYPercent, cssPath(moveContainer));
+      return;
+    }
+    if (!pinMode) return;
     var container = getContainer(ev.target);
     var rect = container.getBoundingClientRect();
     var xPercent = ((ev.clientX - rect.left) / rect.width) * 100;
@@ -295,6 +353,7 @@
   function init() {
     var toggle = el("button", { id: "fw-toggle", text: "💬 Feedback" });
     toggle.addEventListener("click", function () {
+      if (pendingMove) cancelMove();
       pinMode = !pinMode;
       toggle.classList.toggle("fw-active", pinMode);
       toggle.textContent = pinMode ? "✕ Cancel pin" : "💬 Feedback";
@@ -303,6 +362,12 @@
     });
     document.body.appendChild(toggle);
     document.addEventListener("click", onDocumentClick);
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape") {
+        if (pendingMove) cancelMove();
+        closeAnyPopup();
+      }
+    });
     loadPins();
     window.addEventListener("resize", loadPins);
   }
