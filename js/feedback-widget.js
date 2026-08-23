@@ -266,11 +266,11 @@
     document.body.appendChild(popup);
   }
 
-  function openNewPinPopup(xPercent, yPercent, selector, clickX, clickY) {
+  function openNewPinPopup(xPercent, yPercent, selector, pagePinX, pagePinY) {
     closeAnyPopup();
     var popup = el("div", {
       class: "fw-popup",
-      style: "left:" + (clickX + 12) + "px; top:" + clickY + "px;",
+      style: "left:" + (pagePinX + 12) + "px; top:" + pagePinY + "px;",
     });
     popup.appendChild(el("button", { class: "fw-close", text: "×" }));
     popup.lastChild.addEventListener("click", closeAnyPopup);
@@ -334,6 +334,7 @@
       return;
     }
     if (pendingMove) {
+      ev.preventDefault();
       var moveContainer = getContainer(ev.target);
       var moveRect = moveContainer.getBoundingClientRect();
       var moveXPercent = ((ev.clientX - moveRect.left) / moveRect.width) * 100;
@@ -342,12 +343,13 @@
       return;
     }
     if (!pinMode) return;
+    ev.preventDefault();
     var container = getContainer(ev.target);
     var rect = container.getBoundingClientRect();
     var xPercent = ((ev.clientX - rect.left) / rect.width) * 100;
     var yPercent = ((ev.clientY - rect.top) / rect.height) * 100;
     var selector = cssPath(container);
-    openNewPinPopup(xPercent, yPercent, selector, ev.clientX, ev.clientY);
+    openNewPinPopup(xPercent, yPercent, selector, ev.pageX, ev.pageY);
   }
 
   function init() {
