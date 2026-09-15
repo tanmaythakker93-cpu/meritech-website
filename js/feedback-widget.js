@@ -33,13 +33,47 @@
     };
   }
 
-  // Pins anchor to the nearest section (not the whole document) so their
-  // percent position is measured against a small, stable box instead of
-  // full-page scrollWidth/scrollHeight — which vary across browsers/OS
-  // display-scale settings and drift more the further down the page you go.
+  // Pins anchor to the smallest sensible element under the click (a
+  // paragraph, list item, heading, image, or class-bearing card), not the
+  // whole page section. A pin's x/yPercent is measured against that small
+  // box, so editing content elsewhere in the same section — a paragraph
+  // above it growing, a sibling card's text wrapping differently — no
+  // longer changes what "65%" points at. Only editing the anchor element
+  // itself can still shift it, and only by a few px, not half a section.
+  var ANCHOR_TAGS = /^(P|LI|H1|H2|H3|H4|H5|H6|IMG|FIGURE|BUTTON|A)$/;
+  function isAnchorable(node) {
+    if (ANCHOR_TAGS.test(node.tagName)) return true;
+    return !!(node.className && typeof node.className === "string" && node.className.trim());
+  }
   function getContainer(target) {
-    var container = target.closest("section, header, footer, main, article");
-    return container || document.body;
+    var sectionBoundary = target.closest("section, header, footer, main, article") || document.body;
+    var node = target;
+    while (node && node !== sectionBoundary && node !== document.body) {
+      if (isAnchorable(node)) return node;
+      node = node.parentElement;
+    }
+    return sectionBoundary;
+  }
+
+  // Builds a selector for `node`, preferring a page-unique class at any
+  // level over positional nth-of-type indexing. nth-of-type breaks silently
+  // when a sibling is inserted or removed before the anchored node (e.g. a
+  // new section added earlier on the page renumbers every section after
+  // it) — a unique class survives that kind of edit untouched.
+  function uniqueClassSelector(node) {
+    if (!node.classList || !node.classList.length) return null;
+    for (var i = 0; i < node.classList.length; i++) {
+      var cls = node.classList[i];
+      if (!cls) continue;
+      try {
+        if (document.querySelectorAll("." + CSS.escape(cls)).length === 1) {
+          return "." + CSS.escape(cls);
+        }
+      } catch (e) {
+        // ignore malformed class names
+      }
+    }
+    return null;
   }
 
   function cssPath(node) {
@@ -47,6 +81,11 @@
     while (node && node.nodeType === 1) {
       if (node.id) {
         parts.unshift("#" + CSS.escape(node.id));
+        return parts.join(" > ");
+      }
+      var unique = uniqueClassSelector(node);
+      if (unique) {
+        parts.unshift(unique);
         return parts.join(" > ");
       }
       if (node === document.body) {
