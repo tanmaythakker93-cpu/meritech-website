@@ -25,89 +25,128 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ── WHAT WE BUILD: tab + scroll spy ── */
-  var buildTabs = document.querySelectorAll('.hp-build-tab');
-  var divSections = document.querySelectorAll('.hp-division');
+  /* ── WHAT WE BUILD: horizontal card carousel ── */
+  var buildTrack = document.querySelector('.hp-build-track');
+  var buildArrows = document.querySelectorAll('.hp-build-arrow');
 
-  var buildImg = document.querySelector('.hp-build-img-box img');
-  var divImages = {
-    'div-01': 'images/home_page_imgs/magnific_macro-closeup-photograph-_MXNtWe1DCm.png',
-    'div-02': 'images/home_page_imgs/wireless services.png',
-    'div-03': 'images/home_page_imgs/IoT Products.png',
-    'div-04': 'images/home_page_imgs/IOT Services.png',
-    'div-05': 'images/home_page_imgs/IT_services.png'
-  };
-  // preload so hard swaps never flash while the file decodes
-  Object.keys(divImages).forEach(function (k) {
-    var img = new Image();
-    img.src = divImages[k];
-  });
+  var buildSection = document.getElementById('hp-build');
 
-  function setBuildImage(divId) {
-    if (!buildImg || !divImages[divId]) return;
-    var next = divImages[divId];
-    if (buildImg.getAttribute('src') === next) return;
-    buildImg.src = next;
-  }
+  if (buildTrack && buildArrows.length) {
+    function maxScroll() { return buildTrack.scrollWidth - buildTrack.clientWidth; }
 
-  // while a click-driven smooth scroll is in flight, the scroll spy must not
-  // swap tabs/images for every division it passes on the way
-  var spyLocked = false;
-  var spyLockTimer = null;
-  function lockSpy() {
-    spyLocked = true;
-    clearTimeout(spyLockTimer);
-    spyLockTimer = setTimeout(function () { spyLocked = false; }, 400);
-  }
-
-  // scroll offset must clear the fixed navbar plus the sticky headline/intro
-  // block, which stays pinned above the divisions while they scroll
-  var rhead = document.querySelector('.hp-build-rhead');
-  function buildOffset() {
-    var pinned = rhead && getComputedStyle(rhead).position === 'sticky' ? rhead.offsetHeight : 0;
-    return 80 + pinned + 16;
-  }
-  // expose the offset so CSS can pin the last division right below the header
-  function setBuildOffsetVar() {
-    document.documentElement.style.setProperty('--build-offset', buildOffset() + 'px');
-  }
-  setBuildOffsetVar();
-  window.addEventListener('resize', setBuildOffsetVar);
-
-  buildTabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      var targetId = tab.dataset.div;
-      var target = document.getElementById(targetId);
-      if (!target) return;
-      var top = target.getBoundingClientRect().top + window.pageYOffset - buildOffset();
-      window.scrollTo({ top: top, behavior: 'smooth' });
-      buildTabs.forEach(function (t) { t.classList.remove('is-active'); });
-      tab.classList.add('is-active');
-      divSections.forEach(function (sec) { sec.classList.toggle('is-current', sec.id === targetId); });
-      lockSpy();
-      setBuildImage(targetId);
-    });
-  });
-
-  function updateBuildTabs() {
-    if (spyLocked) { lockSpy(); return; } // keep lock alive until scrolling settles
-    var offset = buildOffset() + 8;
-    var current = null;
-    divSections.forEach(function (sec) {
-      var rect = sec.getBoundingClientRect();
-      if (rect.top <= offset) current = sec.id;
-    });
-    if (current) {
-      buildTabs.forEach(function (tab) {
-        tab.classList.toggle('is-active', tab.dataset.div === current);
-      });
-      divSections.forEach(function (sec) { sec.classList.toggle('is-current', sec.id === current); });
-      setBuildImage(current);
+    // scroll one card (width + gap) per click
+    function cardStep() {
+      var card = buildTrack.querySelector('.hp-build-card');
+      if (!card) return buildTrack.clientWidth * 0.8;
+      var gap = parseFloat(getComputedStyle(buildTrack).columnGap) || 22;
+      return card.offsetWidth + gap;
     }
+
+    function updateArrows() {
+      var max = maxScroll() - 1;
+      buildArrows.forEach(function (btn) {
+        if (btn.dataset.dir === 'prev') btn.disabled = buildTrack.scrollLeft <= 0;
+        else btn.disabled = buildTrack.scrollLeft >= max;
+      });
+    }
+
+    // ── SCROLL #1: click the arrows ──
+    // a manual click briefly suspends the page-scroll sync so it isn't overridden
+    var autoLocked = false, autoTimer = null;
+    function lockAuto() {
+      autoLocked = true;
+      clearTimeout(autoTimer);
+      autoTimer = setTimeout(function () { autoLocked = false; }, 1000);
+    }
+    buildArrows.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var dir = btn.dataset.dir === 'prev' ? -1 : 1;
+        lockAuto();
+        buildTrack.scrollBy({ left: dir * cardStep(), behavior: 'smooth' });
+      });
+    });
+
+    // ── SCROLL #2: auto — cards move horizontally as the page scrolls vertically
+    // through the section. Page scroll only updates a TARGET; a rAF loop eases the
+    // track toward it, so the motion stays smooth even when scroll events are bursty.
+    function computeTarget() {
+      if (!buildSection) return buildTrack.scrollLeft;
+      var rect = buildSection.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      // progress stays 0 (card 1 fully visible) until the section top reaches the
+      // top of the viewport, then climbs to 1 by the time the section bottom
+      // reaches the viewport bottom — so the whole traversal happens in view
+      var denom = rect.height - vh;
+      var progress = denom > 40 ? (-rect.top) / denom : (-rect.top) / rect.height;
+      progress = Math.max(0, Math.min(1, progress));
+      return progress * maxScroll();
+    }
+
+    var targetLeft = computeTarget();
+    var currentLeft = targetLeft;
+    buildTrack.scrollLeft = currentLeft;
+
+    function tickAnim() {
+      if (autoLocked) {
+        // arrows own the track right now — stay synced so there's no jump on release
+        currentLeft = targetLeft = buildTrack.scrollLeft;
+      } else {
+        currentLeft += (targetLeft - currentLeft) * 0.10; // easing factor → higher = snappier
+        if (Math.abs(targetLeft - currentLeft) < 0.4) currentLeft = targetLeft;
+        buildTrack.scrollLeft = currentLeft;
+      }
+      updateArrows();
+      requestAnimationFrame(tickAnim);
+    }
+
+    window.addEventListener('scroll', function () { targetLeft = computeTarget(); }, { passive: true });
+    window.addEventListener('resize', function () { targetLeft = computeTarget(); updateArrows(); });
+    updateArrows();
+    requestAnimationFrame(tickAnim);
   }
-  window.addEventListener('scroll', updateBuildTabs, { passive: true });
-  if (divSections.length) divSections[0].classList.add('is-current');
-  updateBuildTabs();
+
+  /* ── HERO HEADLINE: typewriter (types the three lines in sequence) ── */
+  var heroHeadline = document.querySelector('.hp-hero-headline');
+  if (heroHeadline && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    // read the authored lines (split on <br>), then rebuild as per-line blocks
+    var heroLines = heroHeadline.innerHTML.split(/<br\s*\/?>/i).map(function (s) {
+      return s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+    }).filter(function (s) { return s.length; });
+
+    heroHeadline.innerHTML = '';
+    // each line is a block that reserves its height up front → no layout shift
+    var heroSpans = heroLines.map(function () {
+      var s = document.createElement('span');
+      s.className = 'hp-type-line';
+      s.style.display = 'block';
+      s.style.minHeight = '1em';
+      s.textContent = '​'; // zero-width space holds the line height
+      heroHeadline.appendChild(s);
+      return s;
+    });
+
+    var heroCaret = document.createElement('span');
+    heroCaret.className = 'hp-type-caret';
+    heroCaret.setAttribute('aria-hidden', 'true');
+    var heroBlink = setInterval(function () {
+      heroCaret.style.visibility = (heroCaret.style.visibility === 'hidden') ? 'visible' : 'hidden';
+    }, 500);
+
+    var hli = 0, hci = 0;
+    function heroTick() {
+      if (hli >= heroLines.length) {
+        setTimeout(function () { clearInterval(heroBlink); heroCaret.remove(); }, 2600);
+        return;
+      }
+      var text = heroLines[hli];
+      hci++;
+      heroSpans[hli].textContent = text.slice(0, hci);
+      heroSpans[hli].appendChild(heroCaret);
+      if (hci >= text.length) { hli++; hci = 0; setTimeout(heroTick, 260); }
+      else { setTimeout(heroTick, 55); }
+    }
+    setTimeout(heroTick, 300);
+  }
 
   /* ── QUOTE LINE ANIMATION ── */
   var quoteIO = new IntersectionObserver(function (entries) {

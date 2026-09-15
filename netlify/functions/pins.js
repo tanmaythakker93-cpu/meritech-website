@@ -151,6 +151,28 @@ async function editPin(id, data) {
   return decodeIssue(updated);
 }
 
+async function movePin(id, data) {
+  const issue = await getIssue(id);
+  const current = decodeIssue(issue);
+  const meta = {
+    page: current.page,
+    xPercent: data.xPercent,
+    yPercent: data.yPercent,
+    selector: data.selector || null,
+    author: current.author,
+  };
+  const res = await fetch(`${GITHUB_API}/repos/${REPO}/issues/${id}`, {
+    method: "PATCH",
+    headers: ghHeaders(),
+    body: JSON.stringify({ body: encodeBody(meta, current.comment) }),
+  });
+  if (!res.ok) {
+    throw new Error(`GitHub move failed: ${res.status} ${await res.text()}`);
+  }
+  const updated = await res.json();
+  return decodeIssue(updated);
+}
+
 async function deletePin(id) {
   const issue = await getIssue(id);
   const query = `mutation($issueId: ID!) { deleteIssue(input: { issueId: $issueId }) { clientMutationId } }`;
@@ -199,6 +221,13 @@ exports.handler = async (event) => {
           return json(400, { error: "comment is required to edit a pin." });
         }
         const pin = await editPin(params.id, data);
+        return json(200, pin);
+      }
+      if (params.id && params.action === "move") {
+        if (data.xPercent == null || data.yPercent == null) {
+          return json(400, { error: "xPercent and yPercent are required to move a pin." });
+        }
+        const pin = await movePin(params.id, data);
         return json(200, pin);
       }
       if (params.id && params.action === "delete") {

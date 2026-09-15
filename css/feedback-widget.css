@@ -16,11 +16,45 @@
   background: #1f2937;
 }
 
+#fw-move-banner {
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1f2937;
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 10px 10px 18px;
+  font: 500 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  cursor: default;
+}
+#fw-move-banner button {
+  font: 600 12px/1 -apple-system, sans-serif;
+  background: #ff5a1f;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
 body.fw-pin-mode {
   cursor: crosshair !important;
 }
 body.fw-pin-mode * {
   cursor: crosshair !important;
+}
+body.fw-pin-mode #fw-move-banner,
+body.fw-pin-mode #fw-move-banner * {
+  cursor: default !important;
+}
+body.fw-pin-mode #fw-move-banner button {
+  cursor: pointer !important;
 }
 
 .fw-marker {

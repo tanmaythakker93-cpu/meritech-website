@@ -249,6 +249,15 @@
   .lgc-compare{ overflow-x: auto; grid-template-columns: 140px minmax(240px, 1fr) minmax(240px, 1fr); }
 }
 
+@media (max-width: 575px) {
+  .lgc-tc-row{ grid-template-columns: 1fr; gap: 8px; margin-bottom: 22px; }
+  .lgc-tc-axis{ grid-template-columns: 1fr; }
+  .lgc-tc-ticks{ grid-column: 1; }
+  .fs-flow{ flex-direction: column; align-items: stretch; }
+  .fs-flow-link{ min-height: 36px; }
+  .fs-flow-link::before{ left: 50%; right: auto; top: 0; bottom: 0; width: 2px; height: auto; background: linear-gradient(180deg, #EEECEC, #00A24F); }
+}
+
 @media (max-width: 1199px) {
   .uc-dark .uc-wrap{ padding-bottom: 90px; }
   .uc-dark-cards{ gap: 36px; }
@@ -604,7 +613,7 @@
   .hp-hero{ padding: 90px 60px 64px; gap: 36px; }
 
 
-  .hp-build-inner{   grid-template-columns: 4fr 6fr; gap: 56px; }
+  .hp-build-card{ flex: 0 0 calc((100% - 2 * 22px) / 2.5); }
   .hp-cap-stats{ grid-template-columns: 1fr 1fr; }
 }
 
@@ -619,9 +628,8 @@
 
   .hp-quote-inner, .hp-prob-inner, .hp-cap-inner, .hp-ins-inner, .hp-global-inner{ padding-left: 24px; padding-right: 24px; }
   .hp-slider{ height: 380px; width: 100%; }
-  .hp-build-inner{ padding: 0 24px; grid-template-columns: 1fr; }
-  .hp-build-left{ position: static; }
-  .hp-build-img-box{ aspect-ratio: 16/9; }
+  .hp-build-inner{ padding: 0 24px; }
+  .hp-build-card{ flex: 0 0 calc((100% - 22px) / 2.2); }
   .hp-ins-top{ grid-template-columns: 1fr; gap: 20px; }
   .hp-ins-cards{ grid-template-columns: 1fr; }
   .hp-global-inner{ grid-template-columns: 1fr; }
@@ -631,6 +639,9 @@
   .hp-cap-stat{ padding: 32px 16px 28px 0; }
   .hp-cap-stat:not(:first-child){ padding-left: 16px; }
   .hp-slide-content{ padding: 32px 28px; }
+  .hp-map-lbl{ font-size: 11px; }
+  .hp-map-lbl em{ font-size: 9px; }
+  .hp-map-dot{ width: 9px; height: 9px; }
 }
 
 @media (max-width: 575px) {
@@ -1432,9 +1443,10 @@
   .mn-lang{ display: none !important; }
 }
 
-/* ---- what we build: no reserved height for last division on mobile ---- */
-@media (max-width: 767px) {
-  .hp-build-right .hp-division:last-child{ position: static; }
+/* ---- what we build: one-and-a-bit cards per view on phones ---- */
+@media (max-width: 575px) {
+  .hp-build-headrow{ flex-wrap: wrap; gap: 24px; }
+  .hp-build-card{ flex: 0 0 calc(100% - 48px); }
 }
 
 /* ---- page: 404 ---- */

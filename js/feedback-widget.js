@@ -3,6 +3,7 @@
   var page = window.location.pathname;
   var pinMode = false;
   var markers = [];
+  var pendingMove = null; // pin currently being repositioned, or null
 
   function el(tag, attrs, children) {
     var e = document.createElement(tag);
@@ -32,9 +33,98 @@
     };
   }
 
+  // Pins anchor to the nearest section (not the whole document) so their
+  // percent position is measured against a small, stable box instead of
+  // full-page scrollWidth/scrollHeight — which vary across browsers/OS
+  // display-scale settings and drift more the further down the page you go.
+  function getContainer(target) {
+    var container = target.closest("section, header, footer, main, article");
+    return container || document.body;
+  }
+
+  function cssPath(node) {
+    var parts = [];
+    while (node && node.nodeType === 1) {
+      if (node.id) {
+        parts.unshift("#" + CSS.escape(node.id));
+        return parts.join(" > ");
+      }
+      if (node === document.body) {
+        parts.unshift("body");
+        return parts.join(" > ");
+      }
+      var parent = node.parentElement;
+      if (!parent) {
+        parts.unshift(node.tagName.toLowerCase());
+        return parts.join(" > ");
+      }
+      var siblings = Array.prototype.filter.call(parent.children, function (c) {
+        return c.tagName === node.tagName;
+      });
+      var tag = node.tagName.toLowerCase();
+      parts.unshift(siblings.length > 1 ? tag + ":nth-of-type(" + (siblings.indexOf(node) + 1) + ")" : tag);
+      node = parent;
+    }
+    return parts.join(" > ");
+  }
+
+  function resolveContainer(pin) {
+    if (!pin.selector) return null;
+    try {
+      return document.querySelector(pin.selector);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function ensurePositioned(container) {
+    if (container === document.body) return;
+    if (window.getComputedStyle(container).position === "static") {
+      container.style.position = "relative";
+    }
+  }
+
   function closeAnyPopup() {
     var existing = document.querySelector(".fw-popup");
     if (existing) existing.remove();
+  }
+
+  function hideMoveBanner() {
+    var existing = document.getElementById("fw-move-banner");
+    if (existing) existing.remove();
+  }
+
+  function startMove(pin) {
+    closeAnyPopup();
+    pendingMove = pin;
+    document.body.classList.add("fw-pin-mode");
+    hideMoveBanner();
+    var banner = el("div", { id: "fw-move-banner" });
+    banner.appendChild(el("span", { text: "Click the correct spot for pin #" + pin.number }));
+    var cancelBtn = el("button", { text: "Cancel" });
+    cancelBtn.addEventListener("click", cancelMove);
+    banner.appendChild(cancelBtn);
+    document.body.appendChild(banner);
+  }
+
+  function cancelMove() {
+    pendingMove = null;
+    if (!pinMode) document.body.classList.remove("fw-pin-mode");
+    hideMoveBanner();
+  }
+
+  async function submitMove(pin, xPercent, yPercent, selector) {
+    cancelMove();
+    try {
+      await fetch(API + "?id=" + pin.number + "&action=move", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ xPercent: xPercent, yPercent: yPercent, selector: selector }),
+      });
+      loadPins();
+    } catch (e) {
+      alert("Could not move pin, please try again.");
+    }
   }
 
   function getStoredName() {
@@ -45,18 +135,29 @@
   }
 
   function renderMarker(pin) {
-    var pos = toPixels(pin.xPercent, pin.yPercent);
     var marker = el("div", {
       class: "fw-marker" + (pin.state === "closed" ? " fw-resolved" : ""),
-      style: "left:" + pos.x + "px; top:" + pos.y + "px;",
     });
+    var container = resolveContainer(pin);
+    if (container) {
+      ensurePositioned(container);
+      marker.style.left = pin.xPercent + "%";
+      marker.style.top = pin.yPercent + "%";
+      container.appendChild(marker);
+    } else {
+      // Legacy pins saved before container-relative anchoring: keep the old
+      // full-document math so they don't jump to a new spot.
+      var pos = toPixels(pin.xPercent, pin.yPercent);
+      marker.style.left = pos.x + "px";
+      marker.style.top = pos.y + "px";
+      document.body.appendChild(marker);
+    }
     var num = el("div", { class: "fw-marker-num", text: String(pin.number) });
     marker.appendChild(num);
     marker.addEventListener("click", function (ev) {
       ev.stopPropagation();
-      openThreadPopup(pin, pos);
+      openThreadPopup(pin, marker);
     });
-    document.body.appendChild(marker);
     markers.push(marker);
   }
 
@@ -79,8 +180,10 @@
     }
   }
 
-  function openThreadPopup(pin, pos) {
+  function openThreadPopup(pin, marker) {
     closeAnyPopup();
+    var rect = marker.getBoundingClientRect();
+    var pos = { x: rect.left + window.scrollX, y: rect.top + window.scrollY };
     var popup = el("div", {
       class: "fw-popup",
       style: "left:" + (pos.x + 16) + "px; top:" + Math.max(pos.y - 20, 10) + "px;",
@@ -133,6 +236,11 @@
       loadPins();
     });
 
+    var moveBtn = el("button", { class: "fw-btn-secondary", text: "Move" });
+    moveBtn.addEventListener("click", function () {
+      startMove(pin);
+    });
+
     var deleteBtn = el("button", { class: "fw-btn-secondary", text: "Delete" });
     deleteBtn.addEventListener("click", async function () {
       if (!confirm("Permanently delete this pin? This cannot be undone.")) return;
@@ -151,17 +259,18 @@
     actions.appendChild(githubLink);
     actions.appendChild(editBtn);
     actions.appendChild(doneBtn);
+    actions.appendChild(moveBtn);
     actions.appendChild(deleteBtn);
     popup.appendChild(actions);
 
     document.body.appendChild(popup);
   }
 
-  function openNewPinPopup(xPercent, yPercent, clickX, clickY) {
+  function openNewPinPopup(xPercent, yPercent, selector, pagePinX, pagePinY) {
     closeAnyPopup();
     var popup = el("div", {
       class: "fw-popup",
-      style: "left:" + (clickX + 12) + "px; top:" + clickY + "px;",
+      style: "left:" + (pagePinX + 12) + "px; top:" + pagePinY + "px;",
     });
     popup.appendChild(el("button", { class: "fw-close", text: "×" }));
     popup.lastChild.addEventListener("click", closeAnyPopup);
@@ -194,6 +303,7 @@
             page: page,
             xPercent: xPercent,
             yPercent: yPercent,
+            selector: selector,
             comment: comment,
             author: author,
           }),
@@ -215,18 +325,37 @@
   }
 
   function onDocumentClick(ev) {
-    if (!pinMode) return;
-    if (ev.target.closest(".fw-popup") || ev.target.closest("#fw-toggle") || ev.target.closest(".fw-marker")) {
+    if (
+      ev.target.closest(".fw-popup") ||
+      ev.target.closest("#fw-toggle") ||
+      ev.target.closest(".fw-marker") ||
+      ev.target.closest("#fw-move-banner")
+    ) {
       return;
     }
-    var xPercent = (ev.pageX / docWidth()) * 100;
-    var yPercent = (ev.pageY / docHeight()) * 100;
-    openNewPinPopup(xPercent, yPercent, ev.clientX, ev.clientY);
+    if (pendingMove) {
+      ev.preventDefault();
+      var moveContainer = getContainer(ev.target);
+      var moveRect = moveContainer.getBoundingClientRect();
+      var moveXPercent = ((ev.clientX - moveRect.left) / moveRect.width) * 100;
+      var moveYPercent = ((ev.clientY - moveRect.top) / moveRect.height) * 100;
+      submitMove(pendingMove, moveXPercent, moveYPercent, cssPath(moveContainer));
+      return;
+    }
+    if (!pinMode) return;
+    ev.preventDefault();
+    var container = getContainer(ev.target);
+    var rect = container.getBoundingClientRect();
+    var xPercent = ((ev.clientX - rect.left) / rect.width) * 100;
+    var yPercent = ((ev.clientY - rect.top) / rect.height) * 100;
+    var selector = cssPath(container);
+    openNewPinPopup(xPercent, yPercent, selector, ev.pageX, ev.pageY);
   }
 
   function init() {
     var toggle = el("button", { id: "fw-toggle", text: "💬 Feedback" });
     toggle.addEventListener("click", function () {
+      if (pendingMove) cancelMove();
       pinMode = !pinMode;
       toggle.classList.toggle("fw-active", pinMode);
       toggle.textContent = pinMode ? "✕ Cancel pin" : "💬 Feedback";
@@ -235,6 +364,12 @@
     });
     document.body.appendChild(toggle);
     document.addEventListener("click", onDocumentClick);
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape") {
+        if (pendingMove) cancelMove();
+        closeAnyPopup();
+      }
+    });
     loadPins();
     window.addEventListener("resize", loadPins);
   }
