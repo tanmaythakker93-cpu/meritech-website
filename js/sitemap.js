@@ -12,7 +12,7 @@
           { name: "Sigma-One", file: "sigma_one.html" },
           { name: "Sigma-PA", file: "Sigma_PA.html" },
           { name: "Centra-SD", file: "centra_sd.html" },
-          { name: "Sigma-Neo", file: "sigma_neo.html" },
+          { name: "Sigma-NEO", file: "sigma_neo.html" },
           { name: "Centra-Experitest", file: "centra_experitest.html" },
           { name: "Sigma-AQ Reporting Server", planned: true }
         ]},
