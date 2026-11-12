@@ -12,8 +12,7 @@
           { name: "Sigma-One", file: "sigma_one.html" },
           { name: "Sigma-PA", file: "Sigma_PA.html" },
           { name: "Centra-SD", file: "centra_sd.html" },
-          { name: "Sigma-NEO", file: "sigma_neo.html" },
-          { name: "Sigma-AQ Reporting Server", planned: true }
+          { name: "Sigma-NEO", file: "sigma_neo.html" }
         ]},
         { label: "Services", items: [
           { name: "Planning &amp; Design", file: "planning_design.html" },
