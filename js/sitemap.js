@@ -67,7 +67,6 @@
           { name: "About the Company", file: "about.html" },
           { name: "Leadership", file: "leadership.html" },
           { name: "Clients &amp; Partners", file: "clients_partners.html" },
-          { name: "News &amp; Events", file: "news_events.html" },
           { name: "Contact Us", file: "contact_us.html" }
         ]},
         { label: "Use Cases", items: [
