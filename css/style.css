@@ -1031,7 +1031,6 @@ a.ft-col-head:hover{ color: rgba(255,255,255,.85); }
 .hp-build-head{ max-width: 760px; }
 .hp-build-eyebrow{ font-size: var(--fs-14); font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: #00A24F; margin-bottom: 16px; }
 .hp-build-headline{ font-size: clamp(29px, 3.6vw, 40px); font-weight: 400; color: #3D3A3A; line-height: 1.08; letter-spacing: -.025em; margin-bottom: 18px; }
-.hp-build-headline::after{ content: '.'; color: #221F1F; }
 .hp-build-intro{ font-size: var(--fs-18); line-height: 1.7; color: #3D3A3A; margin: 0; }
 
 /* nav arrows */
