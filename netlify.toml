@@ -4,3 +4,34 @@
 
 [functions]
   node_bundler = "esbuild"
+
+# Held pages (unapproved, orphaned): files kept on disk, served as 404.
+[[redirects]]
+  from = "/story_*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/success_stories"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/success_stories.html"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/news_events"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/news_events.html"
+  to = "/404.html"
+  status = 404
+  force = true
