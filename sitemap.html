@@ -232,16 +232,16 @@
   <nav class="ss-filter" aria-label="Filter site map">
     <div class="ss-filter-wrap">
       <span class="ss-f-label">Division</span>
-      <button class="ss-pill is-active" data-div="all">All</button>
-      <button class="ss-pill" data-div="wl">Wireless T&amp;M</button>
-      <button class="ss-pill" data-div="iot">IoT &amp; Edge AI</button>
-      <button class="ss-pill" data-div="itc">IT &amp; Cloud</button>
-      <button class="ss-pill" data-div="cor">Corporate</button>
+      <button class="ss-pill is-active" aria-pressed="true" data-div="all">All</button>
+      <button class="ss-pill" aria-pressed="false" data-div="wl">Wireless T&amp;M</button>
+      <button class="ss-pill" aria-pressed="false" data-div="iot">IoT &amp; Edge AI</button>
+      <button class="ss-pill" aria-pressed="false" data-div="itc">IT &amp; Cloud</button>
+      <button class="ss-pill" aria-pressed="false" data-div="cor">Corporate</button>
       <div class="sm-search">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input id="smSearch" type="text" placeholder="Find a page…" autocomplete="off">
       </div>
-      <span class="ss-count" id="smCount"></span>
+      <span class="ss-count" id="smCount" role="status" aria-live="polite" aria-atomic="true"></span>
     </div>
   </nav>
 

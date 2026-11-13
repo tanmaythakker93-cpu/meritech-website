@@ -4,7 +4,7 @@
 .page-leadership{ --blue: #233F84; --green: #00A24F; --ink: #3D3A3A; --mist: #F7F6F5; --rule: #EEECEC; }
 
 /* Hero */
-.page-leadership .wl-hero-wrap{ max-width: 1680px; margin: 0 auto; padding: 0 var(--sp-gutter); }
+.page-leadership .wl-hero-wrap{ max-width: 1680px; margin: 0 auto; padding: var(--sp-section-y) var(--sp-gutter); }
 .page-leadership .wl-hero-eyebrow{ font-size: var(--fs-14); font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: #3D3A3A; margin-bottom: 28px; display: block; }
 .page-leadership .wl-hero-eyebrow .wl-crumb-sep{ color: #EEECEC; margin: 0 8px; }
 .page-leadership .wl-hero-headline{ font-size: clamp(32px, 4.2vw, 36px); font-weight: 400; line-height: 1.1; color: #3D3A3A; letter-spacing: -.025em; margin-bottom: 36px; max-width: 900px; text-wrap: balance; }
@@ -39,13 +39,17 @@
 
 /* Band */
 .page-leadership .ldr-band{ background: var(--mist); }
-.page-leadership .ldr-band .ldr-section{ border-top: none; }
+.page-leadership .ldr-band .ldr-section{ border-top: none; padding-top: clamp(40px, 5vw, 64px); }
 
 /* Unit tag */
 .page-leadership .ldr-unit-tag{ display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); background: rgba(35,63,132,.07); border: 1px solid rgba(35,63,132,.15); border-radius: 3px; padding: 4px 10px; margin-bottom: 44px; }
 .page-leadership .ldr-unit-tag.wireless{ color: #0E5C8A; background: rgba(14,92,138,.07); border-color: rgba(14,92,138,.15); }
 .page-leadership .ldr-unit-tag.iot{ color: #00703B; background: rgba(0,112,59,.07); border-color: rgba(0,112,59,.15); }
 .page-leadership .ldr-unit-tag.it{ color: #5A3D8A; background: rgba(90,61,138,.07); border-color: rgba(90,61,138,.15); }
+
+/* Single leader card: constrained and left-aligned (no photo in markup yet) */
+.page-leadership .ldr-grid > .ldr-card:only-child{ grid-column: 1 / -1; max-width: 640px; border-left: 3px solid var(--blue); }
+.page-leadership .ldr-grid > .ldr-card:only-child .ldr-card-body{ padding: 28px 32px; }
 
 /* Card grid */
 .page-leadership .ldr-grid{ display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; }

@@ -3541,9 +3541,11 @@ body > .skiptranslate{ display: none !important; }
 .ct-btn-back:hover { color: #221F1F; }
 .ct-btn-back svg { width: 13px; height: 7px; }
 
-.ct-btn-next:disabled { opacity: .35; cursor: not-allowed; }
-.ct-btn-next:disabled:hover { background: #221F1F; }
-.ct-btn-next:disabled svg { transform: none; }
+.ct-btn-next:disabled, .ct-btn-next[aria-disabled="true"] { opacity: .35; cursor: not-allowed; }
+.ct-btn-next:disabled:hover, .ct-btn-next[aria-disabled="true"]:hover { background: #221F1F; }
+.ct-btn-next:disabled svg, .ct-btn-next[aria-disabled="true"]:hover svg { transform: none; }
+.ct-btn-back { min-height: 44px; min-width: 44px; }
+.ct-step-headline:focus { outline: none; }
 
 /* Step 1 only button (right-aligned) */
 .ct-step-1-btns {
@@ -3769,3 +3771,94 @@ html.mn-lock, html.mn-lock body{ overflow: hidden; }
   .hp-wave-band{ opacity: 1 !important; animation: none !important; }
   .hp-ticker-track{ transform: none !important; }
 }
+
+/* ============================================================
+   STAGE B: Wireless hub cards, table rows and service cards are real links
+   (stretched link on the title; visual design unchanged)
+   ============================================================ */
+.page-wireless .wl-card-link{ color: inherit; text-decoration: none; }
+.page-wireless .wl-card-link::after{ content: ""; position: absolute; inset: 0; z-index: 1; }
+.page-wireless .wl-card-link:focus-visible{ outline: none; }
+.page-wireless .wl-card-link:focus-visible::after{ outline: 2px solid #007A3D; outline-offset: -2px; }
+.page-wireless .wl-pcard, .page-wireless .wl-svc-card, .page-wireless .wl-table-row{ position: relative; }
+.page-wireless .wl-pcard, .page-wireless .wl-svc-card{ transition: box-shadow .2s, border-color .2s; }
+.page-wireless .wl-pcard:hover{ border-color: #00A24F; box-shadow: 0 6px 24px rgba(34,31,31,.10); }
+.page-wireless .wl-svc-card:hover{ box-shadow: 0 6px 24px rgba(34,31,31,.10); }
+.page-wireless .wl-pcard:hover .wl-card-link, .page-wireless .wl-svc-card:hover .wl-card-link, .page-wireless .wl-table-row:hover .wl-card-link{ color: #007A3D; }
+.page-wireless .wl-table-row{ transition: background-color .15s; }
+.page-wireless .wl-table-row:hover{ background: #F5FCF8; }
+
+/* ============================================================
+   STAGE B: home page
+   ============================================================ */
+/* Capability / Use cases: tighten the two thin bands, hide the empty cards container */
+.hp-ins-cards:not(:has(*)){ display: none; }
+.hp-cap-section{ padding-bottom: clamp(24px, 3vw, 44px); }
+.hp-ins-section{ padding-top: clamp(24px, 3vw, 44px); padding-bottom: clamp(36px, 4vw, 64px); }
+.hp-ins-top:has(+ .hp-ins-cards:not(:has(*))){ margin-bottom: 0; }
+/* the linked "Use cases" block: visible link affordance (arrow always, underline on hover/focus) */
+.hp-ins-link{ color: inherit; text-decoration: none; text-underline-offset: 6px; text-decoration-thickness: 1.5px; }
+.hp-ins-link:hover, .hp-ins-link:focus-visible{ color: #007A3D; text-decoration: underline; }
+.hp-ins-link--arrow::after{ content: "\2192"; content: "\2192" / ""; display: inline-block; margin-left: .35em; transition: transform .2s ease; }
+.hp-ins-link--arrow:hover::after, .hp-ins-link--arrow:focus-visible::after{ transform: translateX(4px); }
+@media (prefers-reduced-motion: reduce){ .hp-ins-link--arrow::after{ transition: none; } }
+/* map label list: only used at narrow widths */
+.hp-map-list{ display: none; }
+@media (max-width: 575px) {
+  .hp-global-map{ overflow: hidden; }
+  .hp-global-map .hp-map-lbl{ display: none; }
+  .hp-map-list{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; list-style: none; margin: 24px 0 0; padding: 0; font-size: var(--fs-14); font-weight: 600; color: #3D3A3A; line-height: 1.3; }
+  .hp-map-list li{ padding-left: 16px; position: relative; }
+  .hp-map-list li::before{ content: ""; position: absolute; left: 0; top: .45em; width: 8px; height: 8px; border-radius: 50%; background: #00A24F; }
+  /* slide 01 text kept clear of the card edge */
+  .hp-slider .hp-slide-content{ padding: 24px 20px; }
+  .hp-slider .hp-slide-title{ font-size: 19px; overflow-wrap: break-word; }
+}
+
+/* ============================================================
+   STAGE B: visual consistency (CSS only, no copy changes)
+   ============================================================ */
+/* One hero H1 size token. Was 32 / 33.76 / 34 / 36 / 40px by accident across page families.
+   Home hero (74px bold) and the About-page statement headline intentionally keep their own scale. */
+:root{ --fs-h1: clamp(28px, 4.2vw, 36px); }
+body[class] .hero-headline, body[class] .wl-hero-headline, body[class] .ws-hero-headline,
+body[class] .nf-headline, body.page-contact .ct-headline{ font-size: var(--fs-h1); }
+body:not([class]) .hero-headline{ font-size: var(--fs-h1); }
+
+/* Full-sentence eyebrow in the CTA bands: sentence case instead of shouting caps (text unchanged) */
+.cta-eyebrow{ text-transform: none; font-size: var(--fs-16); letter-spacing: 0; }
+
+/* Privacy policy: the CTA band showed two identical "Contact us" buttons; keep the primary one */
+.page-privacy .xeno-cta .btn-outline-pill{ display: none; }
+
+/* Orphan grid cells: centre the last row (flex-wrap, column count via --c at the same breakpoints as before) */
+.page-wireless .wl-fam-grid{ --c: 3; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+.page-wireless .wl-fam-grid > .wl-pcard{ flex: 0 0 calc((100% - (var(--c) - 1) * 24px) / var(--c) - .1px); min-width: 0; }
+@media (max-width: 1280px){ .page-wireless .wl-fam-grid{ --c: 2; } }
+@media (max-width: 720px){ .page-wireless .wl-fam-grid{ --c: 1; } }
+
+.page-about .ds-ind-grid, .page-contact .ds-ind-grid{ --c: 4; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.page-about .ds-ind-grid > .ds-ind-chip, .page-contact .ds-ind-grid > .ds-ind-chip{ flex: 0 0 calc((100% - (var(--c) - 1) * 12px) / var(--c) - .1px); min-width: 0; box-sizing: border-box; }
+@media (max-width: 991px){ .page-about .ds-ind-grid, .page-contact .ds-ind-grid{ --c: 2; } }
+@media (max-width: 767px){ .page-about .ds-ind-grid{ --c: 1; } }
+@media (max-width: 575px){ .page-contact .ds-ind-grid{ --c: 1; } }
+
+/* Client logo wall: borders move onto the cells so a centred last row stays framed */
+.page-clients-partners .cp-logo-grid{ --c: 4; display: flex; flex-wrap: wrap; justify-content: center; border: 0; padding: 1px 0 0 1px; }
+.page-clients-partners .cp-logo-cell{ flex: 0 0 calc(100% / var(--c) + .5px); box-sizing: border-box; min-width: 0; border: 1px solid #e9e9ee; margin: -1px 0 0 -1px; }
+@media (min-width: 768px){ .page-clients-partners .cp-logo-grid{ --c: 3; } }
+@media (min-width: 992px){ .page-clients-partners .cp-logo-grid{ --c: 4; } }
+@media (min-width: 1200px){ .page-clients-partners .cp-logo-grid{ --c: 5; } }
+@media (min-width: 1440px){ .page-clients-partners .cp-logo-grid{ --c: 6; } }
+@media (min-width: 1700px){ .page-clients-partners .cp-logo-grid{ --c: 7; } }
+@media (max-width: 575px){ .page-clients-partners .cp-logo-grid{ --c: 2; } }
+
+/* wireless_services technologies: 6 items, 3 x 2 instead of 5 + 1 */
+.page-wireless-svc .ws-gen-grid{ grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 575px){ .page-wireless-svc .ws-gen-grid{ grid-template-columns: 1fr; } }
+
+/* sigma_la ecosystem: 3 cards on a 4-column track -> 3 columns on desktop */
+@media (min-width: 992px){ .rel-grid:has(> .rel-card:nth-child(3):last-child){ grid-template-columns: repeat(3, 1fr); } }
+
+/* about: the single "client-first" card spans the row */
+.page-about .ip-hl-grid > .ip-hcard:only-child{ grid-column: 1 / -1; }

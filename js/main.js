@@ -268,11 +268,30 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.mf-pill').forEach(function (btn) {
     btn.addEventListener('click', function () {
       const key = btn.dataset.mfpill;
-      document.querySelectorAll('.mf-pill').forEach(function (b) { b.classList.remove('active'); });
+      document.querySelectorAll('.mf-pill').forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+        b.setAttribute('tabindex', '-1');
+      });
       document.querySelectorAll('.mf-panel').forEach(function (p) { p.classList.remove('active'); });
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.setAttribute('tabindex', '0');
       const panel = document.getElementById('mf-' + key);
       if (panel) panel.classList.add('active');
+    });
+    // tablist keyboard: Arrow keys / Home / End move between tabs
+    btn.addEventListener('keydown', function (e) {
+      var tabs = Array.prototype.slice.call(btn.parentNode.querySelectorAll('.mf-pill'));
+      var i = tabs.indexOf(btn), j = -1;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') j = (i + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') j = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === 'Home') j = 0;
+      else if (e.key === 'End') j = tabs.length - 1;
+      if (j < 0) return;
+      e.preventDefault();
+      tabs[j].focus();
+      tabs[j].click();
     });
   });
 
@@ -360,6 +379,10 @@ document.addEventListener('DOMContentLoaded', function () {
         this.setAttribute('aria-expanded', 'true');
       }
     });
+    // keyboard: Enter / Space activate the accordion header (div[role=button])
+    q.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); q.click(); }
+    });
   });
 
   /* --------------------------------------------------------
@@ -369,8 +392,15 @@ document.addEventListener('DOMContentLoaded', function () {
     head.addEventListener('click', function () {
       var item = this.closest('.dt-item');
       var isOpen = item.classList.contains('is-open');
-      document.querySelectorAll('.dt-item').forEach(function (i) { i.classList.remove('is-open'); });
-      if (!isOpen) { item.classList.add('is-open'); }
+      document.querySelectorAll('.dt-item').forEach(function (i) {
+        i.classList.remove('is-open');
+        var ih = i.querySelector('.dt-head');
+        if (ih) ih.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('is-open'); this.setAttribute('aria-expanded', 'true'); }
+    });
+    head.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); head.click(); }
     });
   });
 

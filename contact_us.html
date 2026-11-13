@@ -230,7 +230,7 @@
         <div class="ct-card" id="ctCard">
 
           <!-- Progress tracker -->
-          <div class="ct-progress" id="ctProgress" aria-label="Form progress">
+          <div class="ct-progress" id="ctProgress" role="group" aria-label="Form progress">
             <div class="ct-prog-step is-active" data-step="1">
               <div class="ct-prog-dot"><div class="ct-prog-dot-inner"></div></div>
               <span class="ct-prog-label">Topic</span>
@@ -250,10 +250,11 @@
           <!-- Card body: fades on step transition -->
           <div class="ct-card-body" id="ctCardBody">
 
+            <form id="ctForm" novalidate>
             <!-- ── STEP 1: TOPIC ── -->
             <div class="ct-step is-active" id="ctStep1">
 
-              <h2 class="ct-step-headline">What brings you here?</h2>
+              <h2 class="ct-step-headline" id="ctH1" tabindex="-1">What brings you here?</h2>
               <p class="ct-step-sub">Select the area that matches your enquiry so we can route it to the relevant team.</p>
 
               <div class="ct-field" id="fieldTopic">
@@ -267,11 +268,11 @@
                   <option value="IT &amp; Cloud Services">IT &amp; Cloud Services</option>
                   <option value="General Enquiry">General Enquiry</option>
                 </select>
-                <span class="ct-field-error">Please select a topic.</span>
+                <span class="ct-field-error" id="err-topic">Please select a topic.</span>
               </div>
 
               <div class="ct-step-1-btns">
-                <button class="ct-btn-next" id="ctStep1Next" disabled type="button">
+                <button class="ct-btn-next" id="ctStep1Next" aria-disabled="true" type="button">
                   Continue
                   <svg viewBox="0 0 16 8" fill="none" aria-hidden="true"><line x1="0" y1="4" x2="13" y2="4" stroke="white" stroke-width="1.2"/><path d="M10 1L14 4L10 7" stroke="white" stroke-width="1.2" fill="none"/></svg>
                 </button>
@@ -280,7 +281,7 @@
 
             <!-- ── STEP 2: YOUR DETAILS ── -->
             <div class="ct-step" id="ctStep2">
-              <h2 class="ct-step-headline">About you</h2>
+              <h2 class="ct-step-headline" id="ctH2" tabindex="-1">About you</h2>
               <p class="ct-step-sub">Share your contact details so the relevant team can reply.</p>
 
               <div class="ct-topic-chip" id="ctTopicChip" aria-live="polite">
@@ -292,22 +293,22 @@
                 <div class="ct-field" id="fieldFirstName">
                   <label for="firstName">First name <span aria-hidden="true">*</span></label>
                   <input type="text" id="firstName" name="firstName" autocomplete="given-name" required placeholder="Your first name">
-                  <span class="ct-field-error">Please enter your first name.</span>
+                  <span class="ct-field-error" id="err-firstName">Please enter your first name.</span>
                 </div>
                 <div class="ct-field" id="fieldLastName">
                   <label for="lastName">Last name <span aria-hidden="true">*</span></label>
                   <input type="text" id="lastName" name="lastName" autocomplete="family-name" required placeholder="Your last name">
-                  <span class="ct-field-error">Please enter your last name.</span>
+                  <span class="ct-field-error" id="err-lastName">Please enter your last name.</span>
                 </div>
                 <div class="ct-field ct-field-full" id="fieldCompany">
                   <label for="company">Company <span aria-hidden="true">*</span></label>
                   <input type="text" id="company" name="company" autocomplete="organization" required placeholder="Your company name">
-                  <span class="ct-field-error">Please enter your company name.</span>
+                  <span class="ct-field-error" id="err-company">Please enter your company name.</span>
                 </div>
                 <div class="ct-field ct-field-full" id="fieldEmail">
                   <label for="email">Work email <span aria-hidden="true">*</span></label>
                   <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@company.com">
-                  <span class="ct-field-error">Please enter a valid email address.</span>
+                  <span class="ct-field-error" id="err-email">Please enter a valid email address.</span>
                 </div>
                 <div class="ct-field ct-field-full">
                   <label for="phone">Phone <span class="ct-field-opt">(optional)</span></label>
@@ -530,14 +531,14 @@
 
             <!-- ── STEP 3: MESSAGE ── -->
             <div class="ct-step" id="ctStep3">
-              <h2 class="ct-step-headline">Tell us more</h2>
+              <h2 class="ct-step-headline" id="ctH3" tabindex="-1">Tell us more</h2>
               <p class="ct-step-sub">Describe your requirements, locations, devices or systems, and the support you need.</p>
 
               <div class="ct-form-grid">
                 <div class="ct-field ct-field-full" id="fieldMessage">
                   <label for="message">Your message <span aria-hidden="true">*</span></label>
                   <textarea id="message" name="message" required placeholder="For example: We are evaluating drive test tools for a 5G NR project and need analysis and reporting support."></textarea>
-                  <span class="ct-field-error">Please enter a message.</span>
+                  <span class="ct-field-error" id="err-message">Please enter a message.</span>
                 </div>
               </div>
               <p class="ct-message-note">Use the contact form to share your requirements and the best way to reach you.</p>
@@ -553,6 +554,8 @@
                 </button>
               </div>
             </div>
+
+            </form>
 
             <!-- ── THANK YOU ── -->
             <div class="ct-thankyou" id="ctThankyou" role="alert" aria-live="polite">
@@ -758,8 +761,10 @@
                        document.getElementById('ctLine2')];
 
     topicSelect.addEventListener('change', function () {
-      step1Next.disabled = !topicSelect.value;
+      step1Next.setAttribute('aria-disabled', topicSelect.value ? 'false' : 'true');
       document.getElementById('fieldTopic').classList.remove('has-error');
+      topicSelect.removeAttribute('aria-invalid');
+      topicSelect.removeAttribute('aria-describedby');
     });
 
     function setProgress(active) {
@@ -781,12 +786,28 @@
         setProgress(n);
         cardBody.classList.remove('is-fading');
         document.getElementById('ctCard').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        var h = document.getElementById('ctH' + n);
+        if (h) h.focus({ preventScroll: true });
       }, 230);
     }
+
+    // Enter inside a field advances the current step (no native submit; nothing is sent)
+    var ctForm = document.getElementById('ctForm');
+    ctForm.addEventListener('submit', function (e) { e.preventDefault(); });
+    ctForm.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'BUTTON' || e.target.tagName === 'SELECT') return;
+      e.preventDefault();
+      var active = ctForm.querySelector('.ct-step.is-active');
+      var btn = active && active.querySelector('.ct-btn-next, .ct-btn-submit');
+      if (btn) btn.click();
+    });
 
     step1Next.addEventListener('click', function () {
       if (!topicSelect.value) {
         document.getElementById('fieldTopic').classList.add('has-error');
+        topicSelect.setAttribute('aria-invalid', 'true');
+        topicSelect.setAttribute('aria-describedby', 'err-topic');
+        topicSelect.focus();
         return;
       }
       topicChip.textContent = topicSelect.value;
@@ -810,11 +831,19 @@
       ok = chk('fieldLastName',  'lastName',  function (v) { return v.trim().length > 0; }) && ok;
       ok = chk('fieldCompany',   'company',   function (v) { return v.trim().length > 0; }) && ok;
       ok = chk('fieldEmail',     'email',     function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }) && ok;
+      focusFirstInvalid(steps[2]);
       return ok;
     }
 
     function validateStep3() {
-      return chk('fieldMessage', 'message', function (v) { return v.trim().length > 0; });
+      var ok = chk('fieldMessage', 'message', function (v) { return v.trim().length > 0; });
+      focusFirstInvalid(steps[3]);
+      return ok;
+    }
+
+    function focusFirstInvalid(scope) {
+      var bad = scope && scope.querySelector('[aria-invalid="true"]');
+      if (bad) bad.focus();
     }
 
     function chk(wrapId, inputId, test) {
@@ -823,6 +852,8 @@
       if (!wrap || !input) return true;
       var valid = test(input.value);
       wrap.classList.toggle('has-error', !valid);
+      if (valid) { input.removeAttribute('aria-invalid'); input.removeAttribute('aria-describedby'); }
+      else { input.setAttribute('aria-invalid', 'true'); input.setAttribute('aria-describedby', 'err-' + inputId); }
       return valid;
     }
 
@@ -831,6 +862,8 @@
       if (el) el.addEventListener('input', function () {
         var w = el.closest('.ct-field');
         if (w) w.classList.remove('has-error');
+        el.removeAttribute('aria-invalid');
+        el.removeAttribute('aria-describedby');
       });
     });
 

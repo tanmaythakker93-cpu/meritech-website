@@ -521,10 +521,10 @@
         <div>
           <div class="mf-eyebrow reveal">Main features</div>
           <h2 class="mf-headline reveal">Remote control,<br>sized to the campaign.</h2>
-          <div class="mf-pills reveal">
-            <button class="mf-pill active" data-mfpill="fn">Functions</button>
-            <button class="mf-pill" data-mfpill="ft">Features</button>
-            <button class="mf-pill" data-mfpill="adv">Advantages</button>
+          <div class="mf-pills reveal" role="tablist">
+            <button class="mf-pill active" role="tab" id="mf-tab-fn" aria-selected="true" aria-controls="mf-fn" tabindex="0" data-mfpill="fn">Functions</button>
+            <button class="mf-pill" role="tab" id="mf-tab-ft" aria-selected="false" aria-controls="mf-ft" tabindex="-1" data-mfpill="ft">Features</button>
+            <button class="mf-pill" role="tab" id="mf-tab-adv" aria-selected="false" aria-controls="mf-adv" tabindex="-1" data-mfpill="adv">Advantages</button>
           </div>
         </div>
         <div>
@@ -535,7 +535,7 @@
       <div class="mf-lists reveal">
 
         <!-- Functions panel -->
-        <div class="mf-panel active" id="mf-fn">
+        <div class="mf-panel active" id="mf-fn" role="tabpanel" aria-labelledby="mf-tab-fn">
           <ul class="mf-list">
             <li>
               <span class="csd-mf-arrow" aria-hidden="true">
@@ -579,7 +579,7 @@
         </div>
 
         <!-- Features panel -->
-        <div class="mf-panel" id="mf-ft">
+        <div class="mf-panel" id="mf-ft" role="tabpanel" aria-labelledby="mf-tab-ft">
           <ul class="mf-list">
             <li>
               <span class="csd-mf-arrow" aria-hidden="true">
@@ -613,7 +613,7 @@
         </div>
 
         <!-- Advantages panel -->
-        <div class="mf-panel" id="mf-adv">
+        <div class="mf-panel" id="mf-adv" role="tabpanel" aria-labelledby="mf-tab-adv">
           <ul class="mf-list">
             <li>
               <span class="csd-mf-arrow" aria-hidden="true">

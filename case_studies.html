@@ -250,11 +250,11 @@
   <nav class="ss-filter" aria-label="Filter use cases">
     <div class="ss-filter-wrap">
       <span class="ss-f-label">Division</span>
-      <button class="ss-pill is-active" data-div="all">All</button>
-      <button class="ss-pill" data-div="wtm">Wireless T&amp;M</button>
-      <button class="ss-pill" data-div="iot">IoT &amp; Edge AI</button>
-      <button class="ss-pill" data-div="it">IT &amp; Cloud</button>
-      <span class="ss-count" id="csCount"></span>
+      <button class="ss-pill is-active" aria-pressed="true" data-div="all">All</button>
+      <button class="ss-pill" aria-pressed="false" data-div="wtm">Wireless T&amp;M</button>
+      <button class="ss-pill" aria-pressed="false" data-div="iot">IoT &amp; Edge AI</button>
+      <button class="ss-pill" aria-pressed="false" data-div="it">IT &amp; Cloud</button>
+      <span class="ss-count" id="csCount" role="status" aria-live="polite" aria-atomic="true"></span>
     </div>
   </nav>
 
@@ -411,8 +411,9 @@
     }
     document.querySelectorAll('.ss-pill[data-div]').forEach(function (p) {
       p.addEventListener('click', function () {
-        document.querySelectorAll('.ss-pill[data-div]').forEach(function (x) { x.classList.remove('is-active'); });
+        document.querySelectorAll('.ss-pill[data-div]').forEach(function (x) { x.classList.remove('is-active'); x.setAttribute('aria-pressed', 'false'); });
         p.classList.add('is-active');
+        p.setAttribute('aria-pressed', 'true');
         apply(p.dataset.div);
       });
     });
