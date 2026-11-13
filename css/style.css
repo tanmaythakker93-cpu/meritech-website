@@ -4096,3 +4096,27 @@ h2, [class*="-headline"]:not(.hero-headline){ letter-spacing: -.025em; line-heig
 /* per-image crop anchors (keep faces/subject inside the 43:25 box) */
 .ov-img img[src$="network_optimization_imgs/01.png"]{ --ov-pos: 50% 12%; }
 .ov-img img[src$="sigma_aq_boss_imgs/aq-boss-img2.jpg"]{ --ov-pos: 50% 15%; }
+
+/* ============================================================
+   SIGMA-NEO HERO — split hero with laptop image (2026-11-13)
+   NEO now uses the shared .hero / .hero-content / .hero-img markup
+   (same as Sigma-ML etc.). Image: images/sigma_neo_imgs/neo-hero{,-1000}.jpg
+   (clean master: on-screen UI re-rendered with approved strings, OEM logo retouched).
+   The former hero chat mock moved into Functions (#section-outcomes), between the
+   heading row and the stats bar, as .sn-flow (centred, max 880px),
+   restyled quietly (no dots, no tracked caps, sentence case); label stays visible.
+   To undo: delete this block and restore sigma_neo.html hero markup.
+   ============================================================ */
+.page-sigma-neo .sn-hero .hero-img-fill{ background: #8fa9e6; }
+.page-sigma-neo .sn-hero .hero-img-fill img{ object-position: 44% 50%; }
+.page-sigma-neo .sn-hero .sn-hero-note{ margin-top: 30px; margin-bottom: 0; }
+.page-sigma-neo .sn-flow{ max-width: 880px; margin: 0 auto 64px; box-shadow: none; border-color: #EEECEC; }
+.page-sigma-neo .sn-flow .sn-conv-bar{ gap: 12px; flex-wrap: wrap; }
+.page-sigma-neo .sn-flow .sn-conv-title{ margin-left: 0; letter-spacing: 0; text-transform: none; color: #3D3A3A; }
+.page-sigma-neo .sn-flow .sn-conv-src{ color: #6B6868; }
+.page-sigma-neo .sn-flow .sn-conv-src::before{ content: none; }
+.page-sigma-neo .sn-flow .sn-conv-placeholder{ font-style: normal; }
+.page-sigma-neo .sn-flow .sn-conv-ask{ padding: 0; background: none; color: #6B6868; letter-spacing: 0; }
+@media (max-width: 991px){
+  .page-sigma-neo .sn-hero .hero-img-fill img{ object-position: 50% 45%; }
+}
