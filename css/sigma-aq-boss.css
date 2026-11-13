@@ -1,0 +1,119 @@
+/* ============================================================
+   SIGMA-AQ BOSS (sigma_aq_boss.html) — page-only layer
+   Loaded after style.css + responsivestyle.css; every rule is scoped
+   to .page-sigma-aq-boss. Paired with js/sigma-aq-boss.js.
+   5 · Five steps — "Pinned story":
+   - >=992px wide and >=700px tall: the intro rail (label, H2, intro,
+     field photo) pins under the fixed header (80) + subnav (72) while
+     the five steps scroll on the right.
+   - One hairline runs through the numeral column; a green fill grows
+     with scroll and each numeral turns green as it passes ~60% of the
+     viewport (JS). Reduced motion: full line, all numerals green.
+   - Quiet sentence-case labels; compact step-02 connector.
+   - <992px or short viewports: no pinning, photo 16:9 under the intro,
+     vertical list with the same number rail.
+   Copy unchanged. Roll back: remove the <link> + <script> tags.
+   ============================================================ */
+
+.page-sigma-aq-boss #section-fivesteps{
+  --fs-ink: #3D3A3A; --fs-muted: #6B6868; --fs-green: #007A3D;
+  --fs-line: #D3D0D0; --fs-numw: 56px; --fs-pin-top: 180px; /* 80 header + 72 subnav + 28 air */
+}
+
+/* band bottom padding (responsivestyle.css zeroes it below 1400px) */
+.page-sigma-aq-boss #section-fivesteps .fs-wrap{ padding-bottom: var(--sp-section-y); }
+
+/* ---- field photo in the rail ---- */
+.page-sigma-aq-boss #section-fivesteps .fs-rail-media{ margin: 28px 0 0; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 9; background: #E7E5E5; }
+.page-sigma-aq-boss #section-fivesteps .fs-rail-media img{ display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+
+/* ---- the list: one hairline through the numerals + green progress fill ---- */
+.page-sigma-aq-boss #section-fivesteps ol.fs-steps{ list-style: none; margin: 0; padding: 0; position: relative; --fs-p: 0; }
+.page-sigma-aq-boss #section-fivesteps .fs-steps::before,
+.page-sigma-aq-boss #section-fivesteps .fs-steps::after{
+  content: ""; position: absolute; top: 12px; bottom: var(--fs-tail, 12px);
+  left: calc(var(--fs-numw) / 2); width: 1px; margin-left: -.5px; background: var(--fs-line); pointer-events: none;
+}
+.page-sigma-aq-boss #section-fivesteps .fs-steps::after{
+  width: 2px; margin-left: -1px; background: var(--fs-green);
+  transform-origin: 50% 0; transform: scaleY(var(--fs-p));
+}
+.page-sigma-aq-boss #section-fivesteps .fs-step,
+.page-sigma-aq-boss #section-fivesteps .fs-step:last-child{
+  position: relative; grid-template-columns: var(--fs-numw) minmax(0, 1fr); gap: 0 28px; padding: 0 0 52px; border: 0;
+}
+.page-sigma-aq-boss #section-fivesteps .fs-step:last-child{ padding-bottom: 0; }
+.page-sigma-aq-boss #section-fivesteps .fs-step-num{
+  position: relative; z-index: 1; padding: 7px 0 9px; text-align: center; background: #F5F4F4;
+  font-size: var(--fs-32); font-weight: 300; line-height: 1; font-variant-numeric: tabular-nums;
+  color: var(--fs-muted); transition: color .35s ease;
+}
+.page-sigma-aq-boss #section-fivesteps .fs-step.is-on .fs-step-num{ color: var(--fs-green); }
+.page-sigma-aq-boss #section-fivesteps .fs-step-body{ min-width: 0; container-type: inline-size; }
+.page-sigma-aq-boss #section-fivesteps .fs-step-title{ font-size: var(--fs-32); margin: 0 0 12px; color: var(--fs-ink); }
+.page-sigma-aq-boss #section-fivesteps .fs-step-desc{ max-width: 58ch; margin: 0; color: var(--fs-ink); }
+
+/* ---- quiet sentence-case labels instead of tracked-caps chips ---- */
+.page-sigma-aq-boss #section-fivesteps .fs-step-tags{ gap: 6px 0; margin-top: 16px; }
+.page-sigma-aq-boss #section-fivesteps .fs-step-tag{
+  background: none; border-radius: 0; padding: 0 14px; border-left: 1px solid #CBC7C7;
+  font-size: var(--fs-14); font-weight: 500; letter-spacing: 0; text-transform: none; line-height: 1.25; color: var(--fs-muted);
+}
+.page-sigma-aq-boss #section-fivesteps .fs-step-tag:first-child{ padding-left: 0; border-left: 0; }
+
+/* ---- step 02 connector: compact nodes, grey→green hairline, small arrowhead ---- */
+.page-sigma-aq-boss #section-fivesteps .fs-flow{ flex-wrap: nowrap; gap: 12px; margin-top: 20px; max-width: 600px; }
+.page-sigma-aq-boss #section-fivesteps .fs-flow-node{ flex: 0 0 auto; border-color: #E6E4E4; border-radius: 6px; padding: 10px 16px; gap: 2px; min-width: 0; }
+.page-sigma-aq-boss #section-fivesteps .fs-flow-node--accent{ border-color: #00A24F; }
+.page-sigma-aq-boss #section-fivesteps .fs-flow-cap{ font-weight: 400; letter-spacing: 0; text-transform: none; line-height: 1.5; color: var(--fs-muted); }
+.page-sigma-aq-boss #section-fivesteps .fs-flow-node--accent .fs-flow-cap{ color: var(--fs-green); }
+.page-sigma-aq-boss #section-fivesteps .fs-flow-lbl{ font-size: var(--fs-16); font-weight: 500; line-height: 1.5; color: var(--fs-ink); }
+.page-sigma-aq-boss #section-fivesteps .fs-flow-link{ flex: 1 1 auto; min-height: 40px; padding: 0 14px 0 8px; }
+.page-sigma-aq-boss #section-fivesteps .fs-flow-link::before{ left: 0; right: 2px; top: 50%; bottom: auto; width: auto; height: 1px; background: linear-gradient(90deg, #CFCBCB, var(--fs-green)); }
+.page-sigma-aq-boss #section-fivesteps .fs-flow-link::after{ content: ""; position: absolute; right: 2px; left: auto; top: 50%; bottom: auto; width: 7px; height: 7px; border-top: 1px solid var(--fs-green); border-right: 1px solid var(--fs-green); transform: translateY(-50%) rotate(45deg); }
+.page-sigma-aq-boss #section-fivesteps .fs-flow-link span{ font-weight: 500; letter-spacing: 0; text-transform: none; padding: 2px 10px; white-space: nowrap; color: var(--fs-green); background: #F5F4F4; }
+
+/* connector stacks vertically wherever the step column cannot hold it on one line */
+@container (max-width: 579px){
+  .page-sigma-aq-boss #section-fivesteps .fs-flow{ flex-direction: column; align-items: stretch; gap: 0; max-width: 420px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-flow-link{ flex: 0 0 auto; min-height: 52px; justify-content: flex-start; align-items: center; padding: 0 0 0 38px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-flow-link::before{ left: 20px; right: auto; top: 0; bottom: 3px; width: 1px; height: auto; background: linear-gradient(180deg, #CFCBCB, var(--fs-green)); }
+  .page-sigma-aq-boss #section-fivesteps .fs-flow-link::after{ left: 16.5px; right: auto; top: auto; bottom: 3px; transform: rotate(135deg); }
+  .page-sigma-aq-boss #section-fivesteps .fs-flow-link span{ padding: 0; background: transparent; white-space: normal; }
+}
+
+/* ---- desktop: two columns, rail on the left ---- */
+@media (min-width: 992px){
+  .page-sigma-aq-boss #section-fivesteps .fs-wrap{ display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: clamp(48px, 7vw, 120px); align-items: start; }
+  .page-sigma-aq-boss #section-fivesteps .fs-top{ display: block; margin: 0; }
+  .page-sigma-aq-boss #section-fivesteps .fs-headline{ font-size: var(--fs-52); }
+  .page-sigma-aq-boss #section-fivesteps .fs-desc{ margin-top: 20px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-steps{ padding-top: 6px; }
+}
+
+/* ---- pin only when the rail fits under header + subnav ---- */
+@media (min-width: 992px) and (min-height: 700px){
+  .page-sigma-aq-boss #section-fivesteps:not(.fs-nopin) .fs-top{ position: sticky; top: var(--fs-pin-top); }
+  /* photo flexes so the whole rail fits while pinned; JS refines --fs-photo-h from the real text height */
+  .page-sigma-aq-boss #section-fivesteps:not(.fs-nopin) .fs-rail-media{ aspect-ratio: auto; height: var(--fs-photo-h, clamp(150px, calc(100vh - 560px), 300px)); }
+}
+
+/* ---- tablet / mobile: stacked, number rail ---- */
+@media (max-width: 991px){
+  .page-sigma-aq-boss #section-fivesteps{ --fs-numw: 40px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-top{ margin-bottom: 40px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-rail-media{ margin-top: 4px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-step,
+  .page-sigma-aq-boss #section-fivesteps .fs-step:last-child{ gap: 0 16px; padding-bottom: 40px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-step:last-child{ padding-bottom: 0; }
+  .page-sigma-aq-boss #section-fivesteps .fs-step-num{ font-size: var(--fs-26); padding: 4px 0 8px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-step-title{ font-size: var(--fs-26); margin-bottom: 10px; }
+}
+@media (max-width: 575px){
+  .page-sigma-aq-boss #section-fivesteps .fs-step-tags{ flex-direction: column; }
+  .page-sigma-aq-boss #section-fivesteps .fs-step-tag{ padding: 0; border: 0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .page-sigma-aq-boss #section-fivesteps .fs-step-num{ transition: none; }
+}

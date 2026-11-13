@@ -17,6 +17,7 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsivestyle.css">
+  <link rel="stylesheet" href="css/sigma-aq-boss.css">
 </head>
 <body class="page-sigma-aq-boss">
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -330,26 +331,27 @@
         <div>
           <p class="fs-desc reveal">Connect probe coordination with the selected data workflow. Supported measurements are captured on Sigma-AQ probes, uploaded to the configured server, then processed and reported using the agreed services.</p>
         </div>
+        <figure class="fs-rail-media reveal"><img src="images/common_imgs/sigma_aq_overview.jpg" alt="Field measurement with a smartphone" width="1200" height="1200" loading="lazy" decoding="async"></figure>
       </div>
 
-      <div class="fs-steps">
+      <ol class="fs-steps">
 
-        <div class="fs-step reveal">
-          <div class="fs-step-num">01</div>
+        <li class="fs-step reveal">
+          <div class="fs-step-num" aria-hidden="true">01</div>
           <div class="fs-step-body">
-            <div class="fs-step-title">Data collection</div>
+            <h3 class="fs-step-title">Data collection</h3>
             <p class="fs-step-desc">Sigma-AQ probes capture supported network, service and location measurements. Sigma-AQ Boss provides visibility of available probe status and test progress.</p>
             <div class="fs-step-tags">
               <span class="fs-step-tag">Sigma-AQ</span>
               <span class="fs-step-tag">Sigma-AQ Boss</span>
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="fs-step reveal">
-          <div class="fs-step-num">02</div>
+        <li class="fs-step reveal">
+          <div class="fs-step-num" aria-hidden="true">02</div>
           <div class="fs-step-body">
-            <div class="fs-step-title">Log upload</div>
+            <h3 class="fs-step-title">Log upload</h3>
             <p class="fs-step-desc">Transfer probe logs to the configured server through the selected upload workflow.</p>
             <div class="fs-flow reveal">
               <div class="fs-flow-node">
@@ -362,48 +364,45 @@
                 <span class="fs-flow-lbl">Measurement storage</span>
               </div>
             </div>
-            <div class="fs-step-tags">
-              
-            </div>
           </div>
-        </div>
+        </li>
 
-        <div class="fs-step reveal">
-          <div class="fs-step-num">03</div>
+        <li class="fs-step reveal">
+          <div class="fs-step-num" aria-hidden="true">03</div>
           <div class="fs-step-body">
-            <div class="fs-step-title">Consolidation</div>
+            <h3 class="fs-step-title">Consolidation</h3>
             <p class="fs-step-desc">Store uploaded logs in the configured measurement repository for retrieval and analysis. Retention and backup arrangements are defined for the deployment.</p>
             <div class="fs-step-tags">
               <span class="fs-step-tag">Configured measurement repository</span>
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="fs-step reveal">
-          <div class="fs-step-num">04</div>
+        <li class="fs-step reveal">
+          <div class="fs-step-num" aria-hidden="true">04</div>
           <div class="fs-step-body">
-            <div class="fs-step-title">Processing</div>
+            <h3 class="fs-step-title">Processing</h3>
             <p class="fs-step-desc">The configured server workflow calculates agreed KPIs. Compatible logs can be investigated separately in Sigma-PA.</p>
             <div class="fs-step-tags">
               <span class="fs-step-tag">Configured processing service</span>
               <span class="fs-step-tag">Optional Sigma-PA investigation</span>
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="fs-step reveal">
-          <div class="fs-step-num">05</div>
+        <li class="fs-step reveal">
+          <div class="fs-step-num" aria-hidden="true">05</div>
           <div class="fs-step-body">
-            <div class="fs-step-title">Reporting</div>
+            <h3 class="fs-step-title">Reporting</h3>
             <p class="fs-step-desc">Generate reports from the processed data using configured templates and agreed KPI rules.</p>
             <div class="fs-step-tags">
               <span class="fs-step-tag">Configured reporting service</span>
               
             </div>
           </div>
-        </div>
+        </li>
 
-      </div>
+      </ol>
     </div>
   </section>
 
@@ -815,5 +814,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom Scripts -->
   <script src="js/main.js"></script>
+  <script src="js/sigma-aq-boss.js"></script>
 </body>
 </html>
