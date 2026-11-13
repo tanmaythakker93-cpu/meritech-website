@@ -1,0 +1,146 @@
+/* ============================================================
+   WIRELESS PORTFOLIO HUB — v3 visual pass (2026-11-13)
+   Loaded only by Wireless.html, after style.css + responsivestyle.css.
+   Every rule is scoped to body.page-wireless.
+   Adds: split hero with product-family image, photo-led product cards (4+4),
+   horizontal stepper for the toolchain, real Sigma-LA photo in the spotlight,
+   quiet tags (no pills), a single dark band (the "why" section).
+   To undo: remove the <link href="css/wireless.css"> line in Wireless.html
+   and restore Wireless.html from git (HEAD 011b191).
+   ============================================================ */
+
+.page-wireless{
+  --wl-ink: #221F1F;
+  --wl-text: #3D3A3A;
+  --wl-muted: #6B6868;
+  --wl-line: #E6E4E4;
+  --wl-soft: #F5F4F3;
+  --wl-green: #007A3D;
+}
+
+/* ---------- 1 · Hero: split layout like the product pages ---------- */
+.page-wireless .wl-hero.hero{ min-height: 640px; }
+.page-wireless .wl-hero .hero-content{ min-height: 640px; }
+.page-wireless .wl-hero-img .hero-img-fill{ background: #dfe7ef; }
+.page-wireless .wl-hero-img img{ object-fit: cover; object-position: 50% 62%; }
+.page-wireless .wl-hero-headline{ margin-bottom: 28px; }
+.page-wireless .wl-hero-body{ max-width: 600px; line-height: 1.65; margin-bottom: 28px; }
+
+/* quiet tags: one style for hero chips, technology tags, card tags and step tags */
+.page-wireless .wl-hero-chips{ gap: 8px; margin-bottom: 0; max-width: 600px; }
+.page-wireless .wl-hero-chips.hero-btns{ flex-direction: row; align-items: center; } /* tags, not buttons: never stack full-width on phones */
+.page-wireless .wl-chip,
+.page-wireless .wl-tag,
+.page-wireless .wl-flow-tag{
+  font-size: var(--fs-14); font-weight: 400; color: var(--wl-text); letter-spacing: 0; text-transform: none;
+  background: var(--wl-soft); border: 0; border-radius: 4px; padding: 4px 10px; line-height: 1.5; white-space: nowrap;
+}
+
+/* stats band directly under the hero */
+.page-wireless .wl-hero-statband{ padding-top: clamp(40px, 3vw, 56px); padding-bottom: 0; }
+.page-wireless .wl-hero-stats{ padding-top: 0; gap: 0 clamp(24px, 3vw, 48px); }
+.page-wireless .wl-hero-stats > div{ border-top: 1px solid var(--wl-line); padding-top: 20px; }
+.page-wireless .wl-stat-num{ font-size: clamp(20px, 1.5vw, 24px); font-weight: 500; letter-spacing: -.015em; line-height: 1.25; margin-bottom: 8px; color: var(--wl-ink); }
+.page-wireless .wl-stat-label{ font-size: var(--fs-16); color: var(--wl-muted); line-height: 1.5; }
+
+/* ---------- 2 · Technology coverage: open grid, hairlines instead of boxes ---------- */
+.page-wireless .wl-tech-grid{ gap: 0 clamp(24px, 3vw, 48px); }
+.page-wireless .wl-tech-card{ background: transparent; border: 0; border-top: 1px solid var(--wl-line); box-shadow: none; padding: 24px 0 36px; }
+.page-wireless .wl-tech-name{ font-size: var(--fs-20); font-weight: 500; letter-spacing: -.01em; margin-bottom: 10px; color: var(--wl-ink); }
+.page-wireless .wl-tech-desc{ line-height: 1.65; }
+.page-wireless .wl-tech-tags{ gap: 6px; margin-top: 18px; }
+
+/* ---------- 3 · Toolchain: horizontal stepper ---------- */
+.page-wireless .wl-flow-steps{ grid-template-columns: repeat(5, 1fr); gap: 0 clamp(16px, 2vw, 32px); counter-reset: none; }
+.page-wireless .wl-flow-step{ position: relative; background: transparent; padding: 56px 0 0; box-shadow: none; border: 0; }
+.page-wireless .wl-flow-num{
+  position: absolute; top: 0; left: 0; z-index: 1;
+  width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+  background: #fff; border: 1px solid #CFCBCB; color: var(--wl-green);
+  font-size: var(--fs-14); font-weight: 500; margin: 0; letter-spacing: 0;
+}
+/* connecting line: from this step's marker to the next one */
+.page-wireless .wl-flow-step:not(:last-child)::before{
+  content: ""; position: absolute; top: 18px; left: 44px; right: calc(-1 * clamp(16px, 2vw, 32px) + 8px);
+  height: 1px; background: #CFCBCB;
+}
+.page-wireless .wl-flow-title{ font-size: var(--fs-20); font-weight: 500; letter-spacing: -.01em; color: var(--wl-ink); margin-bottom: 10px; }
+.page-wireless .wl-flow-desc{ line-height: 1.65; flex: 0 0 auto; margin-bottom: 0; }
+.page-wireless .wl-flow-tags{ gap: 6px; margin-top: 16px; }
+.page-wireless .wl-flow-section .wl-flow-tag{ background: #fff; }
+
+/* ---------- 4 · Product family: photo cards, 4 + 4 ---------- */
+.page-wireless .wl-fam-grid{ --c: 4; }
+.page-wireless .wl-pcard{ padding: 0; overflow: hidden; border: 1px solid #ECEAEA; box-shadow: none; background: #fff; }
+.page-wireless .wl-pcard-media{ aspect-ratio: 16 / 10; overflow: hidden; background: var(--wl-soft); }
+.page-wireless .wl-pcard-media img{ width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.page-wireless .wl-pcard-body{ padding: 20px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.page-wireless .wl-pcard-cat{ margin-bottom: 8px; }
+.page-wireless .wl-pcard-cat::after{ display: none; }
+.page-wireless .wl-pcard-cat span{ font-weight: 500; }
+.page-wireless .wl-pcard-name{ font-size: var(--fs-20); font-weight: 500; letter-spacing: -.01em; color: var(--wl-ink); margin-bottom: 10px; }
+.page-wireless .wl-pcard-desc{ line-height: 1.65; margin-bottom: 16px; }
+.page-wireless .wl-pcard-list{ gap: 8px; margin-bottom: 20px; }
+.page-wireless .wl-pcard-tags{ gap: 6px; }
+.page-wireless .wl-pcard:hover{ border-color: #CFCBCB; box-shadow: 0 8px 28px rgba(34,31,31,.08); }
+.page-wireless .wl-pcard:hover .wl-pcard-media img{ transform: scale(1.03); }
+
+/* ---------- 5 · Flagship spotlight: real photo instead of the terminal graphic ---------- */
+.page-wireless .wl-spot-layout{ align-items: start; }
+.page-wireless .wl-spot-figure{ margin: 40px 0 0; }
+.page-wireless .wl-spot-media{ aspect-ratio: 16 / 10; overflow: hidden; background: var(--wl-soft); }
+.page-wireless .wl-spot-media img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.page-wireless .wl-spot-cap{ padding-top: 18px; }
+.page-wireless .wl-spot-cap-head{ font-size: var(--fs-14); font-weight: 500; color: var(--wl-muted); margin-bottom: 14px; }
+.page-wireless .wl-spot-stats{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 24px; }
+.page-wireless .wl-spot-stat{ border-top: 1px solid var(--wl-line); padding-top: 14px; }
+.page-wireless .wl-spot-num{ font-size: var(--fs-20); font-weight: 500; letter-spacing: -.01em; color: var(--wl-ink); line-height: 1.25; margin-bottom: 4px; }
+.page-wireless .wl-spot-label{ font-size: var(--fs-14); color: var(--wl-muted); line-height: 1.5; }
+.page-wireless .wl-spot-pill{ display: block; background: none; color: var(--wl-text); padding: 0; border-radius: 0; margin-top: 20px; font-size: var(--fs-14); font-weight: 400; }
+.page-wireless .wl-feat-title{ font-weight: 500; }
+
+/* ---------- 6 · Fleet trio: light cards (the "why" band stays the page's only dark band) ---------- */
+.page-wireless .wl-trio-card,
+.page-wireless .wl-trio-dark{ background: #fff; border: 1px solid #ECEAEA; box-shadow: none; }
+.page-wireless .wl-trio-card .wl-pcard-cat{ margin-bottom: 8px; }
+.page-wireless .wl-trio-card .wl-pcard-cat::after{ display: none; }
+.page-wireless .wl-trio-dark .wl-pcard-cat span{ color: var(--wl-green); }
+.page-wireless .wl-trio-dark .wl-trio-name{ color: var(--wl-ink); }
+.page-wireless .wl-trio-dark .wl-trio-desc{ color: var(--wl-text); }
+.page-wireless .wl-trio-name{ font-weight: 500; color: var(--wl-ink); }
+.page-wireless .wl-trio-strip span{ border: 0; background: none; color: var(--wl-muted); padding: 4px 0; }
+
+/* ---------- 9 · Services: quieter numbering ---------- */
+.page-wireless .wl-svc-num span{ font-weight: 500; }
+.page-wireless .wl-svc-title{ font-weight: 500; color: var(--wl-ink); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1280px){
+  .page-wireless .wl-fam-grid{ --c: 2; }
+  .page-wireless .wl-tech-grid{ grid-template-columns: repeat(2, 1fr); }
+  .page-wireless .wl-trio-grid{ grid-template-columns: repeat(3, 1fr); } /* no 2 + 1 orphan */
+}
+@media (max-width: 900px){
+  .page-wireless .wl-trio-grid{ grid-template-columns: 1fr; }
+}
+/* stepper turns vertical below 1100px: markers on the left, line runs down */
+@media (max-width: 1100px){
+  .page-wireless .wl-flow-steps{ grid-template-columns: 1fr; gap: 0; max-width: 760px; }
+  .page-wireless .wl-flow-step{ padding: 4px 0 32px 60px; }
+  .page-wireless .wl-flow-step:not(:last-child)::before{ top: 44px; bottom: 4px; left: 18px; right: auto; width: 1px; height: auto; }
+}
+@media (max-width: 991px){
+  .page-wireless .wl-hero.hero, .page-wireless .wl-hero .hero-content{ min-height: auto; }
+  .page-wireless .wl-hero-img img{ object-position: 50% 66%; }
+}
+@media (max-width: 720px){
+  .page-wireless .wl-fam-grid{ --c: 1; }
+  .page-wireless .wl-tech-grid{ grid-template-columns: 1fr; }
+  .page-wireless .wl-hero-stats{ grid-template-columns: 1fr; gap: 20px; }
+  .page-wireless .wl-spot-stats{ grid-template-columns: 1fr; gap: 12px; }
+  .page-wireless .wl-chip, .page-wireless .wl-tag, .page-wireless .wl-flow-tag{ white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce){
+  .page-wireless .wl-pcard-media img{ transition: none; }
+  .page-wireless .wl-pcard:hover .wl-pcard-media img{ transform: none; }
+}

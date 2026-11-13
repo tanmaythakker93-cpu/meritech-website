@@ -12,6 +12,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsivestyle.css">
+  <link rel="stylesheet" href="css/wireless.css">
 
 </head>
 <body class="page-wireless">
@@ -218,8 +219,8 @@
   <!-- ============================================================
        1 · HERO
   ============================================================ -->
-  <section class="wl-hero">
-    <div class="wl-hero-wrap">
+  <section class="hero wl-hero">
+    <div class="hero-content wl-hero-content">
       <span class="wl-hero-eyebrow hero-eyebrow">Wireless solutions</span>
       <h1 class="wl-hero-headline hero-headline">Wireless measurement tools and engineering services</h1>
       <p class="wl-hero-body hero-body">Meritech helps wireless teams connect field measurement with analysis, remote operations and reporting. Choose an individual Sigma tool or combine supported measurement devices, central management and engineering services around your testing workflow.</p>
@@ -231,9 +232,16 @@
         <span class="wl-chip">Radio measurements</span>
         <span class="wl-chip">Service testing</span>
         <span class="wl-chip">Protocol analysis</span>
-        
       </div>
+    </div>
+    <div class="hero-img wl-hero-img">
+      <div class="hero-img-fill">
+        <img src="images/wireless_portfolio_imgs/wl-hero-family-1280.jpg" srcset="images/wireless_portfolio_imgs/wl-hero-family-640.jpg 640w, images/wireless_portfolio_imgs/wl-hero-family-1280.jpg 1280w" sizes="(max-width: 991px) 100vw, 50vw" width="1280" height="1138" alt="Wireless Products" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </section>
 
+  <div class="wl-hero-wrap wl-hero-statband">
       <div class="wl-hero-stats reveal">
         <div>
           <div class="wl-stat-num">L1–L3 data collection</div>
@@ -243,14 +251,12 @@
           <div class="wl-stat-num">4 + 2</div>
           <div class="wl-stat-label">UEs and scanners per Sigma-LA laptop</div>
         </div>
-        
         <div>
           <div class="wl-stat-num">International delivery</div>
           <div class="wl-stat-label">Supporting wireless testing programmes across markets</div>
         </div>
       </div>
-    </div>
-  </section>
+  </div>
 
   <!-- ============================================================
        2 · TECHNOLOGY COVERAGE
@@ -366,6 +372,8 @@
       <div class="wl-fam-grid">
 
         <div class="wl-pcard" data-category="drive-walk">
+          <div class="wl-pcard-media"><img src="images/wireless_portfolio_imgs/card-sigma-la-640.jpg" srcset="images/wireless_portfolio_imgs/card-sigma-la-640.jpg 640w, images/wireless_portfolio_imgs/card-sigma-la-960.jpg 960w" sizes="(max-width: 720px) 100vw, (max-width: 1280px) 50vw, 25vw" width="640" height="400" alt="Laptop used for field measurement" loading="lazy" decoding="async"></div>
+          <div class="wl-pcard-body">
           <div class="wl-pcard-cat"><span>Drive Test</span></div>
           <div class="wl-pcard-name"><a class="wl-card-link" href="sigma_la.html">Sigma-LA</a></div>
           <p class="wl-pcard-desc">Windows drive test application that captures, monitors and saves RF log data from several UEs, scan receivers and a GPS, with synchronised live views for field troubleshooting and comparative measurement.</p>
@@ -376,9 +384,12 @@
             <li class="wl-arrow-li"><span class="wl-arr">&#8594;</span>Replay recorded logs with search and speed control</li>
           </ul>
           <div class="wl-pcard-tags"><span class="wl-tag">Multi-device</span><span class="wl-tag">L1&#8211;L3</span><span class="wl-tag">Supported technologies</span><span class="wl-tag">Windows</span></div>
+          </div>
         </div>
 
         <div class="wl-pcard" data-category="drive-walk">
+          <div class="wl-pcard-media"><img src="images/wireless_portfolio_imgs/card-sigma-aq-640.jpg" srcset="images/wireless_portfolio_imgs/card-sigma-aq-640.jpg 640w, images/wireless_portfolio_imgs/card-sigma-aq-960.jpg 960w" sizes="(max-width: 720px) 100vw, (max-width: 1280px) 50vw, 25vw" width="640" height="400" alt="Smartphone testing beside a vehicle" loading="lazy" decoding="async"></div>
+          <div class="wl-pcard-body">
           <div class="wl-pcard-cat"><span>Smartphone Testing</span></div>
           <div class="wl-pcard-name"><a class="wl-card-link" href="sigma_aq.html">Sigma-AQ</a></div>
           <p class="wl-pcard-desc">Smartphone network and service testing for site verification, troubleshooting, optimisation and benchmarking, connected with remote operations and reporting workflows.</p>
@@ -389,9 +400,12 @@
             <li class="wl-arrow-li"><span class="wl-arr">&#8594;</span>Template reporting through the configured server</li>
           </ul>
           <div class="wl-pcard-tags"><span class="wl-tag">Android</span><span class="wl-tag">SSV</span><span class="wl-tag">Benchmarking</span></div>
+          </div>
         </div>
 
         <div class="wl-pcard" data-category="orchestration">
+          <div class="wl-pcard-media"><img src="images/wireless_portfolio_imgs/card-sigma-aq-boss-640.jpg" srcset="images/wireless_portfolio_imgs/card-sigma-aq-boss-640.jpg 640w, images/wireless_portfolio_imgs/card-sigma-aq-boss-950.jpg 950w" sizes="(max-width: 720px) 100vw, (max-width: 1280px) 50vw, 25vw" width="640" height="400" alt="Tablet used to coordinate test probes" loading="lazy" decoding="async"></div>
+          <div class="wl-pcard-body">
           <div class="wl-pcard-cat"><span>Probe Control</span></div>
           <div class="wl-pcard-name"><a class="wl-card-link" href="sigma_aq_boss.html">Sigma-AQ Boss</a></div>
           <p class="wl-pcard-desc">Coordinate and monitor supported Sigma-AQ probes through the selected controller or remote service.</p>
@@ -402,11 +416,14 @@
             
           </ul>
           <div class="wl-pcard-tags"><span class="wl-tag">Probe control</span><span class="wl-tag">Remote</span><span class="wl-tag">Monitoring</span></div>
+          </div>
         </div>
 
         
 
         <div class="wl-pcard" data-category="drive-walk">
+          <div class="wl-pcard-media"><img src="images/wireless_portfolio_imgs/card-sigma-one-640.jpg" srcset="images/wireless_portfolio_imgs/card-sigma-one-640.jpg 640w, images/wireless_portfolio_imgs/card-sigma-one-950.jpg 950w" sizes="(max-width: 720px) 100vw, (max-width: 1280px) 50vw, 25vw" width="640" height="400" alt="Sigma-One capture unit" loading="lazy" decoding="async"></div>
+          <div class="wl-pcard-body">
           <div class="wl-pcard-cat"><span>Modem Diagnostics</span></div>
           <div class="wl-pcard-name"><a class="wl-card-link" href="sigma_one.html">Sigma-One</a></div>
           <p class="wl-pcard-desc">Capture supported modem diagnostic data from commercial handsets, IoT equipment and connected-vehicle units, with monitoring through a configured Centra-SD deployment.</p>
@@ -417,9 +434,12 @@
             <li class="wl-arrow-li"><span class="wl-arr">&#8594;</span>Project-specific SIM switching, power and installation options</li>
           </ul>
           <div class="wl-pcard-tags"><span class="wl-tag">COTS</span><span class="wl-tag">IoT</span><span class="wl-tag">TCU</span></div>
+          </div>
         </div>
 
         <div class="wl-pcard" data-category="drive-walk">
+          <div class="wl-pcard-media"><img src="images/wireless_portfolio_imgs/card-sigma-ml-640.jpg" srcset="images/wireless_portfolio_imgs/card-sigma-ml-640.jpg 640w, images/wireless_portfolio_imgs/card-sigma-ml-960.jpg 960w" sizes="(max-width: 720px) 100vw, (max-width: 1280px) 50vw, 25vw" width="640" height="400" alt="Smartphone used for network measurement" loading="lazy" decoding="async"></div>
+          <div class="wl-pcard-body">
           <div class="wl-pcard-cat"><span>Smartphone Measurement</span></div>
           <div class="wl-pcard-name"><a class="wl-card-link" href="sigma_ml.html">Sigma-ML</a></div>
           <p class="wl-pcard-desc">Smartphone based wireless measurement app, a portable option where a laptop is inconvenient. Collects and displays L1&#8211;L3 radio data alongside automated service tests.</p>
@@ -431,9 +451,12 @@
 <li class="wl-arrow-li"><span class="wl-arr">&#8594;</span>Licensed voice-quality options where available</li>
           </ul>
           <div class="wl-pcard-tags"><span class="wl-tag">Android</span><span class="wl-tag">L1&#8211;L3</span><span class="wl-tag">VoLTE</span></div>
+          </div>
         </div>
 
         <div class="wl-pcard" data-category="analysis-ml">
+          <div class="wl-pcard-media"><img src="images/wireless_portfolio_imgs/card-sigma-pa-640.jpg" srcset="images/wireless_portfolio_imgs/card-sigma-pa-640.jpg 640w, images/wireless_portfolio_imgs/card-sigma-pa-950.jpg 950w" sizes="(max-width: 720px) 100vw, (max-width: 1280px) 50vw, 25vw" width="640" height="400" alt="Desktop measurement-analysis display" loading="lazy" decoding="async"></div>
+          <div class="wl-pcard-body">
           <div class="wl-pcard-cat"><span>Post-Processing</span></div>
           <div class="wl-pcard-name"><a class="wl-card-link" href="Sigma_PA.html">Sigma-PA</a></div>
           <p class="wl-pcard-desc">Windows post-processing and analysis for recorded logs. Replay a failed call, follow it to the signalling message, and turn the campaign into a report.</p>
@@ -444,9 +467,12 @@
             <li class="wl-arrow-li"><span class="wl-arr">&#8594;</span>Excel export and template-based reports</li>
           </ul>
           <div class="wl-pcard-tags"><span class="wl-tag">Signalling</span><span class="wl-tag">KPIs</span><span class="wl-tag">Reports</span></div>
+          </div>
         </div>
 
         <div class="wl-pcard" data-category="ai">
+          <div class="wl-pcard-media"><img src="images/wireless_portfolio_imgs/card-sigma-neo-640.jpg" srcset="images/wireless_portfolio_imgs/card-sigma-neo-640.jpg 640w, images/wireless_portfolio_imgs/card-sigma-neo-960.jpg 960w" sizes="(max-width: 720px) 100vw, (max-width: 1280px) 50vw, 25vw" width="640" height="400" alt="" loading="lazy" decoding="async"></div>
+          <div class="wl-pcard-body">
           <div class="wl-pcard-cat"><span>AI Analysis</span></div>
           <div class="wl-pcard-name"><a class="wl-card-link" href="sigma_neo.html">Sigma-NEO</a></div>
           <p class="wl-pcard-desc">AI-assisted measurement control and analysis with Centra-SD, helping teams identify issues, investigate likely causes and review improvement suggestions.</p>
@@ -457,9 +483,12 @@
             <li class="wl-arrow-li"><span class="wl-arr">&#8594;</span>Reports with maps and time-series graphs</li>
           </ul>
           <div class="wl-pcard-tags"><span class="wl-tag">AI</span><span class="wl-tag">Automation</span><span class="wl-tag">Cause investigation</span></div>
+          </div>
         </div>
 
         <div class="wl-pcard" data-category="orchestration">
+          <div class="wl-pcard-media"><img src="images/wireless_portfolio_imgs/card-centra-sd-640.jpg" srcset="images/wireless_portfolio_imgs/card-centra-sd-640.jpg 640w, images/wireless_portfolio_imgs/card-centra-sd-950.jpg 950w" sizes="(max-width: 720px) 100vw, (max-width: 1280px) 50vw, 25vw" width="640" height="400" alt="Monitor used for a central measurement interface" loading="lazy" decoding="async"></div>
+          <div class="wl-pcard-body">
           <div class="wl-pcard-cat"><span>Central Management</span></div>
           <div class="wl-pcard-name"><a class="wl-card-link" href="centra_sd.html">Centra-SD</a></div>
           <p class="wl-pcard-desc">Browser-based server that consolidates measurements from test devices, schedules tests remotely and shows network performance on an interactive map.</p>
@@ -471,6 +500,7 @@
 <li class="wl-arrow-li"><span class="wl-arr">&#8594;</span>Export supported data for analysis</li>
           </ul>
           <div class="wl-pcard-tags"><span class="wl-tag">Scheduling</span><span class="wl-tag">Monitoring</span><span class="wl-tag">Web</span></div>
+          </div>
         </div>
 
 
@@ -489,31 +519,26 @@
         <div class="reveal">
           <h2 class="wl-headline">Sigma-LA: synchronised drive testing from one laptop.</h2>
 
-          <div class="wl-terminal">
-            <div class="wl-term-head">Sigma-LA :: Live Capture</div>
-            <svg class="wl-term-wave" viewBox="0 0 640 140" fill="none" aria-hidden="true">
-              <g stroke="#1c2f24" stroke-width="1">
-                <line x1="0" y1="35" x2="640" y2="35"/><line x1="0" y1="70" x2="640" y2="70"/><line x1="0" y1="105" x2="640" y2="105"/>
-                <line x1="107" y1="0" x2="107" y2="140"/><line x1="214" y1="0" x2="214" y2="140"/><line x1="320" y1="0" x2="320" y2="140"/><line x1="427" y1="0" x2="427" y2="140"/><line x1="534" y1="0" x2="534" y2="140"/>
-              </g>
-              <path d="M0 90 C 40 88, 60 60, 95 62 S 150 100, 190 96 S 250 40, 300 48 S 360 92, 410 84 S 470 30, 520 42 S 590 80, 640 70" stroke="#00C25F" stroke-width="2" fill="none"/>
-              <path d="M0 104 C 50 100, 80 78, 120 82 S 190 112, 240 106 S 310 70, 360 76 S 430 104, 480 98 S 560 66, 640 78" stroke="#1f7a4d" stroke-width="1.5" fill="none"/>
-            </svg>
-            <div class="wl-term-stats">
-              <div class="wl-term-stat">
-                <div class="wl-term-num">4 + 2</div>
-                <span class="wl-term-label">UEs + scanners</span>
+          <figure class="wl-spot-figure">
+            <div class="wl-spot-media"><img src="images/wireless_portfolio_imgs/spot-sigma-la-1280.jpg" srcset="images/wireless_portfolio_imgs/spot-sigma-la-640.jpg 640w, images/wireless_portfolio_imgs/spot-sigma-la-1280.jpg 1280w" sizes="(max-width: 991px) 100vw, 50vw" width="1280" height="800" alt="Field measurement with a laptop" loading="lazy" decoding="async"></div>
+            <figcaption class="wl-spot-cap">
+              <div class="wl-spot-cap-head">Sigma-LA :: Live Capture</div>
+              <div class="wl-spot-stats">
+                <div class="wl-spot-stat">
+                  <div class="wl-spot-num">4 + 2</div>
+                  <span class="wl-spot-label">UEs + scanners</span>
+                </div>
+                <div class="wl-spot-stat">
+                  <div class="wl-spot-num">L1&#8211;L3</div>
+                  <span class="wl-spot-label">Capture</span>
+                </div>
+                <div class="wl-spot-stat">
+                  <div class="wl-spot-num">Multi-generation</div>
+                  <span class="wl-spot-label">Supported cellular technologies</span>
+                </div>
               </div>
-              <div class="wl-term-stat">
-                <div class="wl-term-num">L1&#8211;L3</div>
-                <span class="wl-term-label">Capture</span>
-              </div>
-              <div class="wl-term-stat">
-                <div class="wl-term-num">Multi-generation</div>
-                <span class="wl-term-label">Supported cellular technologies</span>
-              </div>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
           <span class="wl-spot-pill">5G NR · LTE · Supported legacy networks</span>
         </div>
 
