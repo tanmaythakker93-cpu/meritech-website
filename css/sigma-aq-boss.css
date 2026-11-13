@@ -184,3 +184,38 @@
 @media (prefers-reduced-motion: reduce){
   .page-sigma-aq-boss #section-fivesteps .reveal{ opacity: 1; transform: none; transition: none; }
 }
+
+/* ------------------------------------------------------------
+   Compact flowchart (2026-11-13, user: "feels too large; one frame,
+   easy view"). >=1200px: the whole section (heading, pills, five
+   steps, cards) is sized from the viewport height so it fits one
+   screen below the fixed header + sub-nav (~150px) on typical
+   laptop/desktop heights. To undo: delete this block.
+   ------------------------------------------------------------ */
+@media (min-width: 1200px){
+  .page-sigma-aq-boss #section-fivesteps{
+    --fs-card-h: clamp(88px, 11.5vh, 124px);
+    --fs-link-h: clamp(26px, 3.6vh, 40px);
+  }
+  .page-sigma-aq-boss #section-fivesteps .fs-wrap{
+    padding-top: clamp(28px, 4.8vh, 56px);
+    padding-bottom: clamp(24px, 4vh, 48px);
+  }
+  .page-sigma-aq-boss #section-fivesteps .fs-top{ margin-bottom: clamp(14px, 2.8vh, 32px); }
+  .page-sigma-aq-boss #section-fivesteps .fs-eyebrow{ margin-bottom: 4px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-headline{
+    font-size: clamp(26px, 3.6vh + 6px, 38px); line-height: 1.15;
+  }
+  .page-sigma-aq-boss #section-fivesteps .fs-sub-intro,
+  .page-sigma-aq-boss #section-fivesteps .fs-top p{ font-size: var(--fs-16); line-height: 1.5; }
+  .page-sigma-aq-boss #section-fivesteps .fs-phase{ margin-bottom: clamp(14px, 2.4vh, 26px); padding-top: 7px; padding-bottom: 7px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-arrow--phase{ margin-top: 12px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-step-title{ font-size: clamp(17px, 2.2vh + 3px, 21px); margin-bottom: 6px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-step-desc{
+    font-size: var(--fs-16); line-height: 1.5; margin-bottom: clamp(12px, 2.2vh, 24px);
+  }
+  .page-sigma-aq-boss #section-fivesteps .fs-node{ padding: 10px 12px; gap: 8px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-icon{ width: 34px; height: 34px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-icon--sm{ width: 24px; height: 24px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-node-cap{ font-size: var(--fs-16); line-height: 1.3; }
+}
