@@ -3886,11 +3886,10 @@ body:not([class]) .hero-headline{ font-size: var(--fs-h1); }
    stat band). Copy unchanged — case changes are presentation only.
    ============================================================ */
 
-/* — Section label: colour dot + sentence-case label (replaces tracked caps) — */
+/* — Section label: plain sentence-case text (dot removed 2026-11-13; shared look lives in SECTION LABELS block at end of file) — */
 .hp-build-eyebrow, .hp-cap-eyebrow, .hp-ins-eyebrow, .hp-global-eyebrow{
-  display: block; width: fit-content; padding-left: 18px;
-  font-size: 15px; font-weight: 500; line-height: 1.4; letter-spacing: .005em; text-transform: lowercase; color: #3D3A3A;
-  background: radial-gradient(circle at 4px 50%, #00A24F 0, #00A24F 4px, transparent 4.6px) no-repeat;
+  display: block; width: fit-content;
+  font-size: 15px; font-weight: 500; line-height: 1.4; letter-spacing: 0; text-transform: lowercase; color: #3D3A3A;
 }
 .hp-build-eyebrow::first-letter, .hp-cap-eyebrow::first-letter, .hp-ins-eyebrow::first-letter, .hp-global-eyebrow::first-letter{ text-transform: uppercase; }
 .hp-global-eyebrow{ margin-left: auto; margin-right: auto; }
@@ -3944,7 +3943,7 @@ body:not([class]) .hero-headline{ font-size: var(--fs-h1); }
 }
 .hp-cap-section::after{ content: none; }
 .hp-cap-inner{ position: relative; z-index: 1; display: block; }
-.hp-cap-eyebrow{ margin-bottom: clamp(18px, 1.8vw, 28px); color: #D5DCF0; background-image: radial-gradient(circle at 4px 50%, #2FCB7A 0, #2FCB7A 4px, transparent 4.6px); }
+.hp-cap-eyebrow{ margin-bottom: clamp(18px, 1.8vw, 28px); color: #D5DCF0; }
 .hp-cap-headline{
   max-width: 11ch; margin-bottom: clamp(48px, 6.4vw, 112px);
   font-size: clamp(38px, 4.9vw, 76px); font-weight: 500; line-height: 1.02; letter-spacing: -.034em; color: #fff;
@@ -4018,3 +4017,82 @@ h1 em, h2 em, [class*="-headline"] em{ font-weight: 500; }
 h1, .hero-headline, [class*="hero-headline"]{ letter-spacing: -.03em; }
 h2, [class*="-headline"]:not(.hero-headline){ letter-spacing: -.025em; line-height: 1.12; }
 .hp-slide-title, .rel-name, .srel-card-name, .fs-step-title, .sa-name{ letter-spacing: -.015em; }
+
+/* ============================================================
+   SECTION LABELS — one shared look (2026-11-13)
+   Sentence case, no tracking, weight 500, 15px, muted ink; no dots, pills or rules.
+   Labels whose HTML text is ALL CAPS and carry no acronym/brand (.hp-cap/.hp-ins/.hp-global
+   eyebrows, .uc-eyebrow) are shown via lowercase + ::first-letter; labels with acronyms/brands
+   were corrected in the HTML (case-only). The :not(#_) is deliberate: it out-ranks the older
+   per-page and responsive overrides of these classes so there is a single source of truth.
+   Out of scope: nav/footer column heads, chips/tags/badges, table headers, .cta-eyebrow lead-ins.
+   To undo: delete this block (and restore the two dot rules near .hp-build-eyebrow / .hp-cap-eyebrow).
+   ============================================================ */
+:is(
+.ab-kicker,
+.b2b-eyebrow,
+.cl-compare-kicker,
+.cl-process-kicker,
+.cl-rel-kicker,
+.cl-who-kicker,
+.ct-eyebrow,
+.ds-cases-kicker,
+.ds-ind-kicker,
+.dt-eyebrow,
+.eco-card-eyebrow,
+.eco-kicker,
+.faq-eyebrow,
+.fs-eyebrow,
+.hero-eyebrow,
+.hl-eyebrow,
+.hp-build-eyebrow,
+.hp-cap-eyebrow,
+.hp-global-eyebrow,
+.hp-hero-eyebrow,
+.hp-ins-eyebrow,
+.ip-hl-eyebrow,
+.ldr-section-label,
+.lgc-eyebrow,
+.mf-eyebrow,
+.ov-eyebrow,
+.rl-kicker,
+.sn-kicker,
+.srel-eyebrow,
+.sv-eyebrow,
+.tp-eyebrow,
+.uc-eyebrow,
+.wl-hero-eyebrow,
+.wl-kicker,
+.wl-why-kicker,
+.wm-kicker,
+.ws-hero-eyebrow,
+.ws-kicker,
+.ws-phase-kicker,
+.xf-eyebrow,
+.xs-eyebrow
+):not(#_){
+  font-family: inherit; font-size: 15px; font-weight: 500; line-height: 1.4;
+  letter-spacing: 0; text-transform: none; color: #6B6868;
+  padding-left: 0; background: none;
+}
+:is(.hp-cap-eyebrow, .hp-ins-eyebrow, .hp-global-eyebrow, .uc-eyebrow):not(#_){ text-transform: lowercase; }
+:is(.hp-cap-eyebrow, .hp-ins-eyebrow, .hp-global-eyebrow, .uc-eyebrow):not(#_)::first-letter{ text-transform: uppercase; }
+/* on dark grounds: white at 72% minimum (AA) */
+:is(.cl-process-kicker, .tp-eyebrow, .lgc-eyebrow, .wl-why-kicker, .hp-cap-eyebrow, .ws-hero-eyebrow, .uc-dark .uc-eyebrow):not(#_){ color: rgba(255,255,255,.72); }
+.hp-cap-eyebrow:not(#_){ color: rgba(255,255,255,.8); }
+.eco-eyebrow-sep:not(#_){ letter-spacing: 0; text-transform: none; }
+
+/* ============================================================
+   OVERVIEW IMAGE — one box on every page (2026-11-13)
+   Benchmark = Sigma-LA overview as rendered at 2000px: 723x420 (43:25).
+   Previously the image stretched to the text column, so it was 1:1, 4:3 or 3:2
+   depending on copy length. Now: fixed 43:25 box, object-fit cover (never stretched),
+   text column centred against it. Per-page crops via --ov-pos (object-position).
+   Stacks under 992px (existing breakpoint). To undo: delete this block.
+   ============================================================ */
+.ov-grid:not(#_){ align-items: center; }
+.ov-img:not(#_){ aspect-ratio: 43 / 25; min-height: 0; height: auto; width: 100%; }
+.ov-img:not(#_) img{ width: 100%; height: 100%; object-fit: cover; object-position: var(--ov-pos, 50% 50%); }
+/* per-image crop anchors (keep faces/subject inside the 43:25 box) */
+.ov-img img[src$="network_optimization_imgs/01.png"]{ --ov-pos: 50% 12%; }
+.ov-img img[src$="sigma_aq_boss_imgs/aq-boss-img2.jpg"]{ --ov-pos: 50% 15%; }
