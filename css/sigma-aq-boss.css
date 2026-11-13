@@ -186,36 +186,38 @@
 }
 
 /* ------------------------------------------------------------
-   Compact flowchart (2026-11-13, user: "feels too large; one frame,
-   easy view"). >=1200px: the whole section (heading, pills, five
-   steps, cards) is sized from the viewport height so it fits one
-   screen below the fixed header + sub-nav (~150px) on typical
-   laptop/desktop heights. To undo: delete this block.
+   Balanced flowchart (replaces "Compact flowchart"). >=1200px:
+   spacing scales with viewport height between the compact and the
+   original sizes. Step headers + first card row always sit in the
+   first frame; fits whole at >=~1000px viewport height, otherwise
+   overflows by a short scroll (41px at 2000x955, 85px at 1440x900).
+   To undo: delete this block.
    ------------------------------------------------------------ */
 @media (min-width: 1200px){
   .page-sigma-aq-boss #section-fivesteps{
-    --fs-card-h: clamp(88px, 11.5vh, 124px);
-    --fs-link-h: clamp(26px, 3.6vh, 40px);
+    --fs-card-h: clamp(112px, 13vh, 132px);
+    --fs-link-h: clamp(34px, 4.2vh, 44px);
+    --fs-phase-mb: clamp(26px, 3.4vh, 36px);
   }
-  .page-sigma-aq-boss #section-fivesteps .fs-wrap{
-    padding-top: clamp(28px, 4.8vh, 56px);
-    padding-bottom: clamp(24px, 4vh, 48px);
-  }
-  .page-sigma-aq-boss #section-fivesteps .fs-top{ margin-bottom: clamp(14px, 2.8vh, 32px); }
-  .page-sigma-aq-boss #section-fivesteps .fs-eyebrow{ margin-bottom: 4px; }
-  .page-sigma-aq-boss #section-fivesteps .fs-headline{
-    font-size: clamp(26px, 3.6vh + 6px, 38px); line-height: 1.15;
-  }
-  .page-sigma-aq-boss #section-fivesteps .fs-sub-intro,
-  .page-sigma-aq-boss #section-fivesteps .fs-top p{ font-size: var(--fs-16); line-height: 1.5; }
-  .page-sigma-aq-boss #section-fivesteps .fs-phase{ margin-bottom: clamp(14px, 2.4vh, 26px); padding-top: 7px; padding-bottom: 7px; }
-  .page-sigma-aq-boss #section-fivesteps .fs-arrow--phase{ margin-top: 12px; }
-  .page-sigma-aq-boss #section-fivesteps .fs-step-title{ font-size: clamp(17px, 2.2vh + 3px, 21px); margin-bottom: 6px; }
-  .page-sigma-aq-boss #section-fivesteps .fs-step-desc{
-    font-size: var(--fs-16); line-height: 1.5; margin-bottom: clamp(12px, 2.2vh, 24px);
-  }
-  .page-sigma-aq-boss #section-fivesteps .fs-node{ padding: 10px 12px; gap: 8px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-wrap{ padding-top: clamp(40px, 5.6vh, 64px); padding-bottom: clamp(40px, 5.6vh, 64px); }
+  .page-sigma-aq-boss #section-fivesteps .fs-top{ margin-bottom: clamp(30px, 4.2vh, 46px); }
+  .page-sigma-aq-boss #section-fivesteps .fs-eyebrow{ margin-bottom: 8px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-headline{ font-size: clamp(28px, 3.6vh + 6px, 40px); line-height: 1.15; }
+  .page-sigma-aq-boss #section-fivesteps .fs-top p{ font-size: var(--fs-16); line-height: 1.55; }
+  .page-sigma-aq-boss #section-fivesteps .fs-phase{ margin-bottom: var(--fs-phase-mb); padding-top: 9px; padding-bottom: 9px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-arrow--phase{ align-self: center; margin-top: 0; margin-bottom: var(--fs-phase-mb); }
+  .page-sigma-aq-boss #section-fivesteps .fs-step-num{ margin-bottom: 6px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-step-title{ font-size: clamp(18px, 2.2vh + 3px, 22px); margin-bottom: 8px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-step-desc{ line-height: 1.55; margin-bottom: clamp(24px, 3.2vh, 34px); }
+  .page-sigma-aq-boss #section-fivesteps .fs-node{ padding: 14px 12px; gap: 10px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-icon{ width: 38px; height: 38px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-icon--sm{ width: 26px; height: 26px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-node-cap{ line-height: 1.35; }
+}
+/* 1200-1399px: columns are ~185px and captions wrap to 3 lines - keep them inside the card */
+@media (min-width: 1200px) and (max-width: 1399.98px){
+  .page-sigma-aq-boss #section-fivesteps{ --fs-card-h: 128px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-node{ padding: 12px 10px; gap: 8px; }
   .page-sigma-aq-boss #section-fivesteps .fs-icon{ width: 34px; height: 34px; }
   .page-sigma-aq-boss #section-fivesteps .fs-icon--sm{ width: 24px; height: 24px; }
-  .page-sigma-aq-boss #section-fivesteps .fs-node-cap{ font-size: var(--fs-16); line-height: 1.3; }
 }
