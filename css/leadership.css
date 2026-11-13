@@ -68,7 +68,7 @@
 .page-leadership .ldr-card-name{ font-size: var(--fs-18); font-weight: 500; color: var(--ink); letter-spacing: -.01em; }
 .page-leadership .ldr-linkedin{ display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 28px; height: 28px; color: #0A66C2; opacity: .75; transition: opacity .15s; text-decoration: none; }
 .page-leadership .ldr-linkedin:hover{ opacity: 1; }
-.page-leadership .ldr-card-role{ font-size: 13px; color: var(--green); font-weight: 400; margin-bottom: 16px; }
+.page-leadership .ldr-card-role{ font-size: 13px; color: #007A3D; font-weight: 400; margin-bottom: 16px; }
 .page-leadership .ldr-card-bio{ font-size: var(--fs-14); color: #6B6868; line-height: 1.65; flex: 1; }
 .page-leadership .ldr-card-region{ margin-top: 18px; font-size: 12px; color: #A8A4A2; letter-spacing: .04em; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
 

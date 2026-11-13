@@ -219,9 +219,12 @@
 }
 
 @media (max-width: 767px) {
-  /* mobile footer: only copyright + countries remain visible, centered */
-  .ft-main{ display: none; }
-  .ft-bottom{ border-top: none; padding: 28px 24px; align-items: center; text-align: center; }
+  /* mobile footer: compact brand block + two-column link grid, then copyright + countries */
+  .ft-main{ display: grid; grid-template-columns: 1fr; padding: 40px 24px 28px; gap: 28px; }
+  .ft-logo{ margin-bottom: 20px; }
+  .ft-desc{ margin-bottom: 24px; }
+  .ft-nav{ grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .ft-bottom{ border-top: 1px solid rgba(255,255,255,.1); padding: 28px 24px; align-items: center; text-align: center; }
   .ft-countries{ justify-content: center; }
 }
 
@@ -1495,3 +1498,59 @@
 
 
 }
+
+
+/* ============================================================
+   DESIGN-FIX PASS (stage A) — responsive
+   ============================================================ */
+/* tap targets >= 44px (padding / min-height only) */
+@media (max-width: 991px){
+  .mn-mob-sub-link{ padding: 12px 10px; min-height: 44px; display: flex; align-items: center; }
+  .ft-link{ display: flex; align-items: center; min-height: 44px; margin-bottom: 0; padding: 4px 0; }
+  .ft-col-head, a.ft-col-head{ display: flex; align-items: center; min-height: 44px; margin-bottom: 0; }
+  .ft-policy{ display: inline-flex; align-items: center; min-height: 44px; }
+  .ss-pill, .page-success-stories .ss-pill, .page-sitemap .ss-pill, .eco-tab, .sa-btn{ min-height: 44px; }
+  .ct-btn-next, .ct-btn-submit, .ct-btn-back{ min-height: 44px; }
+  /* iOS zooms inputs under 16px */
+  .ct-field input, .ct-field textarea, .ct-field select{ font-size: 16px; }
+}
+
+/* wireless_services: stacked question cards were ~900px tall at 768-1199 */
+@media (min-width: 768px) and (max-width: 1199px){
+  .page-wireless-svc .ws-q-img{ aspect-ratio: 2 / 1; }
+}
+
+/* sigma_aq_boss Boss comparison: fit 320-575 without clipping, no forced-break orphan */
+@media (max-width: 575px){
+  .lgc-compare{ overflow-x: visible; grid-template-columns: 104px minmax(0, 1fr); }
+  .lgc-compare > *{ min-width: 0; overflow-wrap: break-word; }
+  .lgc-c-stage{ padding-right: 8px; letter-spacing: 0; }
+  .lgc-cth:nth-child(2), .lgc-cth:nth-child(3){ padding-left: 16px; }
+  .lgc-c-old, .lgc-c-new{ padding-left: 16px; }
+  .page-sigma-aq-boss .hero-headline br{ display: none; }
+  .page-sigma-aq-boss .hero-headline br + em::before{ content: " "; }
+}
+h1, .hero-headline{ text-wrap: balance; }
+
+/* tables (moved here so they win over the earlier responsive rules) */
+/* wireless hub portfolio table: keep cells from touching, and fit 992-1399 without clipping */
+.page-wireless .wl-table-head, .page-wireless .wl-table-row{ column-gap: 16px; }
+@media (max-width: 1399px){
+  .page-wireless .wl-table-head, .page-wireless .wl-table-row{ grid-template-columns: .9fr 1.15fr 1.05fr .9fr 1fr 1.3fr; padding: 18px 24px; min-width: 0; }
+}
+@media (max-width: 991px){
+  .page-wireless .wl-table-head, .page-wireless .wl-table-row{ min-width: 820px; }
+}
+
+/* mesimo technology table: the Category / Typical use columns are intentionally empty */
+@media (max-width: 991px){
+  .tt-head-row, .tt-row{ grid-template-columns: 96px 1fr; min-width: 0; }
+  .tt-head-row > :first-child, .tt-head-row > :last-child{ display: none; }
+  .tt-row > :first-child:empty, .tt-row > :last-child:empty{ display: none; }
+  .tt-head-row{ padding: 14px 20px; column-gap: 16px; }
+  .tt-row{ padding: 20px 20px; column-gap: 16px; }
+  .tt-desc{ text-align: left; padding: 0; }
+  .tt-tech{ text-align: left; }
+  .tt-head-row .tt-col-label{ text-align: left; letter-spacing: .06em; }
+}
+

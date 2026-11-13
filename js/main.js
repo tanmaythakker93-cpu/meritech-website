@@ -1,83 +1,175 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   /* --------------------------------------------------------
-     HAMBURGER MENU
+     HAMBURGER / MOBILE DRAWER
+     aria-expanded + aria-controls on the toggle, Escape closes,
+     focus is trapped inside while open, body scroll is locked.
+     The drawer is only ever shown below 992px (or on touch
+     devices, see responsivestyle.css); a resize past 991px on a
+     pointer device closes it.
   -------------------------------------------------------- */
   const toggle = document.getElementById('mnToggle');
   const mobile = document.getElementById('mnMobile');
+  const desktopMQ = window.matchMedia('(min-width: 992px)');
+  const touchMQ = window.matchMedia('(hover: none) and (pointer: coarse)');
+  let drawerTimer = null;
 
-  if (toggle && mobile) {
-    toggle.addEventListener('click', function () {
-      const opening = !toggle.classList.contains('is-open');
-      toggle.classList.toggle('is-open');
-      if (opening) {
-        mobile.style.display = 'block';
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            mobile.classList.add('is-open');
-          });
-        });
-      } else {
-        mobile.classList.remove('is-open');
-        setTimeout(function () { mobile.style.display = 'none'; }, 260);
-      }
-    });
+  function drawerOpen() { return !!(toggle && toggle.classList.contains('is-open')); }
 
-    document.addEventListener('click', function (e) {
-      if (!toggle.contains(e.target) && !mobile.contains(e.target)) {
-        toggle.classList.remove('is-open');
-        mobile.classList.remove('is-open');
-        setTimeout(function () { mobile.style.display = 'none'; }, 260);
-      }
+  function openDrawer() {
+    clearTimeout(drawerTimer);
+    toggle.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    mobile.style.display = 'block';
+    document.documentElement.classList.add('mn-lock');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { mobile.classList.add('is-open'); });
     });
   }
 
+  function closeDrawer(returnFocus) {
+    if (!drawerOpen()) return;
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    mobile.classList.remove('is-open');
+    document.documentElement.classList.remove('mn-lock');
+    clearTimeout(drawerTimer);
+    drawerTimer = setTimeout(function () { mobile.style.display = 'none'; }, 260);
+    if (returnFocus) toggle.focus();
+  }
+
+  if (toggle && mobile) {
+    toggle.addEventListener('click', function () {
+      if (drawerOpen()) closeDrawer(false); else openDrawer();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (drawerOpen() && !toggle.contains(e.target) && !mobile.contains(e.target)) closeDrawer(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!drawerOpen()) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeDrawer(true); return; }
+      if (e.key !== 'Tab') return;
+      /* focus trap: toggle + every visible focusable inside the drawer */
+      const items = [toggle].concat(Array.prototype.filter.call(
+        mobile.querySelectorAll('a[href], button'),
+        function (el) { return el.offsetParent !== null; }
+      ));
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement;
+      if (!toggle.contains(active) && !mobile.contains(active)) {
+        e.preventDefault(); first.focus();
+      } else if (e.shiftKey && active === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault(); first.focus();
+      }
+    });
+
+    function syncDrawerToViewport() {
+      if (desktopMQ.matches && !touchMQ.matches) {
+        if (drawerOpen()) closeDrawer(false);
+        mobile.style.display = 'none';
+        mobile.classList.remove('is-open');
+        document.documentElement.classList.remove('mn-lock');
+      }
+    }
+    if (desktopMQ.addEventListener) desktopMQ.addEventListener('change', syncDrawerToViewport);
+    else if (desktopMQ.addListener) desktopMQ.addListener(syncDrawerToViewport);
+  }
+
   /* --------------------------------------------------------
-     DESKTOP MEGA DROPDOWN — hover intent
-     Opens with a short delay so skimming across the bar doesn't
-     flash menus; switches instantly between adjacent items; a
-     close grace period stops the flicker when the cursor crosses
-     the gap between items or briefly leaves the panel.
+     DESKTOP MEGA DROPDOWN
+     Hover intent (pointer devices): opens with a short delay so
+     skimming across the bar doesn't flash menus; switches
+     instantly between adjacent items; a close grace period stops
+     flicker. Keyboard: focus inside an item opens it (CSS
+     :focus-within) and aria-expanded on the trigger link is kept
+     in sync; Escape closes and returns focus to the trigger.
   -------------------------------------------------------- */
-  if (window.matchMedia('(hover: hover)').matches) {
+  (function () {
     const ddItems = Array.prototype.filter.call(
       document.querySelectorAll('.mn-nav .mn-item'),
       function (item) { return item.querySelector('.mn-dropdown'); }
     );
+    if (!ddItems.length) return;
     let openItem = null;
     let openTimer = null;
     let closeTimer = null;
 
+    function triggerOf(item) { return item.querySelector('.mn-link'); }
+    function setExpanded(item, on) {
+      const t = triggerOf(item);
+      if (t) t.setAttribute('aria-expanded', on ? 'true' : 'false');
+    }
+
     function openDropdown(item) {
-      if (openItem && openItem !== item) openItem.classList.remove('dd-open');
+      if (openItem && openItem !== item) {
+        openItem.classList.remove('dd-open');
+        setExpanded(openItem, false);
+      }
       openItem = item;
       item.classList.add('dd-open');
+      setExpanded(item, true);
     }
 
     function closeDropdown() {
       if (openItem) {
         openItem.classList.remove('dd-open');
+        setExpanded(openItem, false);
         openItem = null;
       }
     }
 
-    ddItems.forEach(function (item) {
-      item.addEventListener('mouseenter', function () {
-        clearTimeout(openTimer);
-        clearTimeout(closeTimer);
-        if (openItem) {
-          openDropdown(item); // a menu is already open — switch instantly
-        } else {
-          openTimer = setTimeout(function () { openDropdown(item); }, 70);
-        }
+    if (window.matchMedia('(hover: hover)').matches) {
+      ddItems.forEach(function (item) {
+        item.addEventListener('mouseenter', function () {
+          clearTimeout(openTimer);
+          clearTimeout(closeTimer);
+          if (openItem) {
+            openDropdown(item); // a menu is already open — switch instantly
+          } else {
+            openTimer = setTimeout(function () { openDropdown(item); }, 70);
+          }
+        });
+        item.addEventListener('mouseleave', function () {
+          clearTimeout(openTimer);
+          clearTimeout(closeTimer);
+          closeTimer = setTimeout(closeDropdown, 180);
+        });
       });
-      item.addEventListener('mouseleave', function () {
-        clearTimeout(openTimer);
-        clearTimeout(closeTimer);
-        closeTimer = setTimeout(closeDropdown, 180);
+    }
+
+    /* keyboard / focus */
+    ddItems.forEach(function (item) {
+      item.addEventListener('focusin', function () {
+        ddItems.forEach(function (other) {
+          if (other !== item) {
+            other.classList.remove('dd-open');
+            setExpanded(other, false);
+          }
+        });
+        if (!item.classList.contains('dd-esc')) setExpanded(item, true);
+      });
+      item.addEventListener('focusout', function (e) {
+        if (item.contains(e.relatedTarget)) return;
+        item.classList.remove('dd-esc');
+        setExpanded(item, item.classList.contains('dd-open'));
+      });
+      item.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        const wasInside = item.contains(document.activeElement);
+        item.classList.remove('dd-open');
+        setExpanded(item, false);
+        openItem = null;
+        /* suppress the :focus-within rule until focus moves on */
+        item.classList.add('dd-esc');
+        if (wasInside) triggerOf(item).focus();
       });
     });
-  }
+  })();
 
   /* --------------------------------------------------------
      MOBILE ACCORDION
@@ -88,10 +180,14 @@ document.addEventListener('DOMContentLoaded', function () {
       const sub = document.getElementById('mob-' + key);
       const isOpen = sub.classList.contains('is-open');
       document.querySelectorAll('.mn-mob-sub').forEach(function (s) { s.classList.remove('is-open'); });
-      document.querySelectorAll('[data-mob-acc]').forEach(function (b) { b.classList.remove('is-open'); });
+      document.querySelectorAll('[data-mob-acc]').forEach(function (b) {
+        b.classList.remove('is-open');
+        b.setAttribute('aria-expanded', 'false');
+      });
       if (!isOpen) {
         sub.classList.add('is-open');
         btn.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
@@ -277,6 +373,32 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!isOpen) { item.classList.add('is-open'); }
     });
   });
+
+  /* --------------------------------------------------------
+     SCROLLABLE TABLES — keyboard access
+     Wrappers that scroll horizontally get tabindex/role/label
+     (invisible attributes) only while they actually overflow.
+  -------------------------------------------------------- */
+  var scrollers = document.querySelectorAll('.tt-box, .rl-table, .wl-table, .cl-table-wrap, .lgc-compare');
+  function syncScrollers() {
+    scrollers.forEach(function (el) {
+      var overflowing = el.scrollWidth > el.clientWidth + 1;
+      if (overflowing) {
+        el.setAttribute('tabindex', '0');
+        el.setAttribute('role', 'region');
+        el.setAttribute('aria-label', 'Scrollable table');
+      } else if (el.getAttribute('aria-label') === 'Scrollable table') {
+        el.removeAttribute('tabindex');
+        el.removeAttribute('role');
+        el.removeAttribute('aria-label');
+      }
+    });
+  }
+  if (scrollers.length) {
+    syncScrollers();
+    window.addEventListener('resize', syncScrollers);
+    window.addEventListener('load', syncScrollers);
+  }
 
   /* --------------------------------------------------------
      COUNTER ANIMATION

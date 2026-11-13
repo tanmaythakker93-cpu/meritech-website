@@ -20,26 +20,28 @@
 
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
 
   <!-- ============================================================
        1 · MAIN NAVIGATION
   ============================================================ -->
-  <nav class="mn-bar">
+  <header class="mn-bar">
     <div class="container-xxl">
 
       <a class="mn-logo" href="index.html">
         <img src="images/Meritech_logo_banner.svg" alt="Meritech">
       </a>
 
-      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu">
+      <button class="mn-toggle" id="mnToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mnMobile">
         <span class="mn-toggle-bar"></span>
         <span class="mn-toggle-bar"></span>
         <span class="mn-toggle-bar"></span>
       </button>
 
-      <nav class="mn-nav">
+      <nav class="mn-nav" aria-label="Primary">
         <div class="mn-item">
-          <a class="mn-link" href="Wireless.html">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <a class="mn-link" href="Wireless.html" aria-haspopup="true" aria-expanded="false">Wireless <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
           <div class="mn-dropdown">
             <div class="dd-grid dd-grid-3">
               <div>
@@ -70,7 +72,7 @@
         </div>
 
         <div class="mn-item">
-          <a class="mn-link" href="ExploreIoTportfolio.html">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <a class="mn-link" href="ExploreIoTportfolio.html" aria-haspopup="true" aria-expanded="false">IoT <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
           <div class="mn-dropdown iot">
             <div class="dd-grid dd-grid-2">
               <div>
@@ -94,7 +96,7 @@
         </div>
 
         <div class="mn-item">
-          <a class="mn-link" href="it_services.html">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <a class="mn-link" href="it_services.html" aria-haspopup="true" aria-expanded="false">IT &amp; Cloud <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
           <div class="mn-dropdown iot">
             <div class="dd-grid dd-grid-2">
               <div>
@@ -119,7 +121,7 @@
         </div>
 
         <div class="mn-item">
-          <a class="mn-link" href="about.html">About Us <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
+          <a class="mn-link" href="about.html" aria-haspopup="true" aria-expanded="false">About Us <svg class="caret" width="12" height="7" viewBox="0 0 15 8" fill="none" aria-hidden="true"><path d="M7.31055 7.3233L13.9636 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/><path d="M7.31303 7.3233L0.669922 0.669922" stroke="currentColor" stroke-width="1.34" stroke-miterlimit="10" stroke-linecap="round"/></svg></a>
           <div class="mn-dropdown about">
             <div class="dd-grid dd-grid-1">
               <div>
@@ -137,15 +139,15 @@
       <a href="contact_us.html" class="btn-talk">Talk to us</a>
       <div class="mn-accent"></div>
     </div>
-  </nav>
+  </header>
 
   <!-- ============================================================
        MOBILE DRAWER
   ============================================================ -->
-  <div class="mn-mobile" id="mnMobile">
+  <div class="mn-mobile" id="mnMobile" role="navigation" aria-label="Mobile">
     <div class="mn-mobile-inner">
       <div class="mn-mob-item">
-        <button class="mn-mob-link" data-mob-acc="wireless">Wireless <span class="arrow">›</span></button>
+        <button class="mn-mob-link" data-mob-acc="wireless" aria-expanded="false" aria-controls="mob-wireless">Wireless <span class="arrow">›</span></button>
         <div class="mn-mob-sub" id="mob-wireless">
           <a href="Wireless.html" class="mn-mob-sub-link">Wireless Overview</a>
           <div class="mn-mob-sub-head">Measurement</div>
@@ -168,7 +170,7 @@
         </div>
       </div>
       <div class="mn-mob-item">
-        <button class="mn-mob-link" data-mob-acc="iot">IoT <span class="arrow">›</span></button>
+        <button class="mn-mob-link" data-mob-acc="iot" aria-expanded="false" aria-controls="mob-iot">IoT <span class="arrow">›</span></button>
         <div class="mn-mob-sub" id="mob-iot">
           <div class="mn-mob-sub-head">Products</div>
           <a href="ExploreIoTportfolio.html" class="mn-mob-sub-link">monoZ</a>
@@ -185,7 +187,7 @@
         </div>
       </div>
       <div class="mn-mob-item">
-        <button class="mn-mob-link" data-mob-acc="it">IT &amp; Cloud <span class="arrow">›</span></button>
+        <button class="mn-mob-link" data-mob-acc="it" aria-expanded="false" aria-controls="mob-it">IT &amp; Cloud <span class="arrow">›</span></button>
         <div class="mn-mob-sub" id="mob-it">
           <div class="mn-mob-sub-head">Services</div>
           <a href="digital_synergy_solutions_1.html" class="mn-mob-sub-link">Digital Synergy</a>
@@ -201,7 +203,7 @@
         </div>
       </div>
       <div class="mn-mob-item">
-        <button class="mn-mob-link" data-mob-acc="about">About Us <span class="arrow">›</span></button>
+        <button class="mn-mob-link" data-mob-acc="about" aria-expanded="false" aria-controls="mob-about">About Us <span class="arrow">›</span></button>
         <div class="mn-mob-sub" id="mob-about">
           <a href="about.html" class="mn-mob-sub-link">About the company</a>
           <a href="leadership.html" class="mn-mob-sub-link">Leadership</a>
@@ -216,6 +218,8 @@
 
   <!-- Nav spacer -->
   <div class="nav-spacer"></div>
+
+  <main id="main" tabindex="-1">
 
   <!-- ============================================================
        2 · HERO BANNER
@@ -412,6 +416,7 @@
     </div>
   </section>
 
+  </main>
   <!-- ============================================================
        9 · FOOTER
   ============================================================ -->
