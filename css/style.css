@@ -62,7 +62,11 @@
    GLOBAL RESET
    ============================================================ */
 *, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
-body{ font-family: 'Noto Sans', sans-serif; color: #3D3A3A; background-image: url('../images/common_imgs/background.png'); background-repeat: repeat; background-size: auto; }
+/* Page grid texture (common_imgs/background.png): ON (original look). Switch: set --page-grid to none to hide it
+   site-wide (kept, not deleted); or add class="show-grid" on <body> to force it on a single page. */
+:root{ --page-grid: url('../images/common_imgs/background.png'); }
+body{ font-family: 'Noto Sans', sans-serif; color: #3D3A3A; background-color: #fff; background-image: var(--page-grid); background-repeat: repeat; background-size: auto; }
+body.show-grid{ background-image: url('../images/common_imgs/background.png'); }
 
 /* ============================================================
    SHARED ANIMATIONS & SCROLL REVEAL
@@ -3904,34 +3908,41 @@ body:not([class]) .hero-headline{ font-size: var(--fs-h1); }
 @media (max-width: 991px){ .hp-build-track{ --hp-track-pad: 24px; } } /* responsivestyle.css pins the inner gutter to 24px here */
 .hp-build-card{ transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease; }
 .hp-build-card:hover{ box-shadow: 0 1px 2px rgba(28,26,26,.06), 0 16px 32px -10px rgba(28,26,26,.20); border-color: #E2DFDF; }
-/* card label: out of the photo, quiet index + clean label above the title */
+/* card label (v2): a quiet caption, not a chip. One muted tone, one weight, no dot —
+   the headline below carries the hierarchy (Stripe/Vercel card pattern). The index
+   reads as a figure number; tabular figures keep 01–05 aligned across the carousel. */
 .hp-bc-label{
-  position: static; display: flex; align-items: center; gap: 7px; margin: 0 0 12px; padding: 0;
-  font-size: 14px; font-weight: 500; line-height: 1.4; letter-spacing: .005em; text-transform: none; color: #3D3A3A;
+  position: static; display: block; margin: 0 0 10px; padding: 0;
+  font-size: 14px; font-weight: 400; line-height: 1.4; letter-spacing: 0; text-transform: none; color: #6B6868;
   background: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-radius: 0;
 }
-.hp-bc-label::before{ content: ""; flex: none; width: 8px; height: 8px; margin-right: 2px; border-radius: 50%; background: #00A24F; }
-.hp-bc-idx{ font-weight: 400; color: #6B6868; font-variant-numeric: tabular-nums; }
-.hp-bc-sep{ font-weight: 400; color: #6B6868; }
-.hp-bc-name{ text-transform: lowercase; }
+.hp-bc-idx{ font-variant-numeric: tabular-nums; }
+.hp-bc-sep{ margin: 0 .1em; }
+.hp-bc-name{ text-transform: lowercase; transition: color .2s ease; }
+.hp-build-card:hover .hp-bc-name, .hp-build-card:focus-within .hp-bc-name{ color: #1C1A1A; }
 .hp-bc-cap{ text-transform: uppercase; }
-.hp-bc-headline{ font-weight: 500; letter-spacing: -.012em; }
+.hp-bc-headline{ font-weight: 500; letter-spacing: -.012em; color: #1C1A1A; }
 .hp-bc-text{ color: #6B6868; }
 .hp-bc-link{ font-weight: 500; }
-@media (prefers-reduced-motion: reduce){ .hp-build-card, .hp-bc-media img{ transition: none; } .hp-build-card:hover{ transform: none; } .hp-build-card:hover .hp-bc-media img{ transform: none; } }
+@media (prefers-reduced-motion: reduce){ .hp-build-card, .hp-bc-media img{ transition: none; } .hp-build-card:hover{ transform: none; } .hp-build-card:hover .hp-bc-media img{ transform: none; } .hp-bc-name{ transition: none; } }
 
-/* — Capability: one dark band, type-led, measurement-dial anchor — */
+/* — Capability (v2): one dark band, type-led. Background = navy mesh gradient with a
+     faint RF-coverage contour field (survey-map index lines, three signal-green
+     measurement sites) that fades out behind the type. Generated procedurally
+     (scratchpad capbg.py), no text in the image. Lines are <=10% alpha, so the
+     type sits on #08122B–#14275C navy (white >=14:1, #C3CCE4 >=10:1). — */
 .hp-cap-section{
   position: relative; overflow: hidden; border: 0; color: #fff;
   padding: clamp(64px, 7.2vw, 128px) 0;
-  background: linear-gradient(120deg, #0B1530 0%, #14275C 58%, #233F84 100%);
+  background-color: #0A1636;
+  background-image: url("../images/home_page_imgs/capability-field-2560.webp");
+  background-image: image-set(url("../images/home_page_imgs/capability-field-1280.webp") 1x, url("../images/home_page_imgs/capability-field-2560.webp") 2x);
+  background-size: cover; background-position: 100% 50%; background-repeat: no-repeat;
 }
-.hp-cap-section::after{
-  content: ""; position: absolute; z-index: 0; pointer-events: none;
-  top: 50%; right: max(-40px, calc((100vw - 1680px) / 2 - 40px));
-  width: min(56vw, 900px); aspect-ratio: 820 / 640; transform: translateY(-50%);
-  background: url("../images/home_page_imgs/capability-anchor.svg") center / contain no-repeat;
+@media (min-width: 1100px){
+  .hp-cap-section{ background-image: url("../images/home_page_imgs/capability-field-2560.webp"); }
 }
+.hp-cap-section::after{ content: none; }
 .hp-cap-inner{ position: relative; z-index: 1; display: block; }
 .hp-cap-eyebrow{ margin-bottom: clamp(18px, 1.8vw, 28px); color: #D5DCF0; background-image: radial-gradient(circle at 4px 50%, #2FCB7A 0, #2FCB7A 4px, transparent 4.6px); }
 .hp-cap-headline{
@@ -3944,10 +3955,9 @@ body:not([class]) .hero-headline{ font-size: var(--fs-h1); }
 .hp-cap-label{ margin-bottom: 8px; font-size: clamp(20px, 1.75vw, 27px); font-weight: 500; line-height: 1.2; letter-spacing: -.018em; color: #fff; }
 .hp-cap-detail{ max-width: 24ch; margin: 0; font-size: 16px; line-height: 1.5; letter-spacing: 0; color: #C3CCE4; }
 @media (max-width: 991px){
-  .hp-cap-section::after{ top: 0; right: -28%; width: min(96vw, 620px); transform: translateY(-18%); opacity: .7; }
+  .hp-cap-section{ background-position: 82% 0; }
 }
 @media (max-width: 479px){
-  .hp-cap-section::after{ right: -46%; width: 118vw; transform: translateY(-22%); opacity: .55; }
   .hp-cap-section .hp-cap-stats{ grid-template-columns: 1fr; row-gap: 24px; }
   .hp-cap-section .hp-cap-stat:not(:first-child){ padding-left: 0; padding-top: 24px; border-left: 0; border-top: 1px solid rgba(255,255,255,.22); }
 }
