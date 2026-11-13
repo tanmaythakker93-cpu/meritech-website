@@ -4003,3 +4003,18 @@ body:not([class]) .hero-headline{ font-size: var(--fs-h1); }
   .hp-ins-card--visual:hover .hp-ins-img img, .hp-ins-card--visual:focus-visible .hp-ins-img img,
   .hp-ins-card--visual:hover .hp-ins-arrow, .hp-ins-card--visual:focus-visible .hp-ins-arrow{ transform: none; }
 }
+
+/* ============================================================
+   TYPE WEIGHT — remove "hairline" display text (2026-11-13)
+   Large headings were weight 400 (thin, grey-looking at 32-40px).
+   One rule: headlines and card/step names at 500, tighter tracking
+   as size grows (Stripe/Linear/Vercel pattern: 500 + -0.02..-0.03em).
+   To undo: delete this block.
+   ============================================================ */
+h1, h2,
+[class*="-headline"], .hero-headline,
+.hp-slide-title, .rel-name, .srel-card-name, .fs-step-title, .sa-name, .ldr-section-head,
+h1 em, h2 em, [class*="-headline"] em{ font-weight: 500; }
+h1, .hero-headline, [class*="hero-headline"]{ letter-spacing: -.03em; }
+h2, [class*="-headline"]:not(.hero-headline){ letter-spacing: -.025em; line-height: 1.12; }
+.hp-slide-title, .rel-name, .srel-card-name, .fs-step-title, .sa-name{ letter-spacing: -.015em; }
