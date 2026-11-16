@@ -1,0 +1,6 @@
+.hero-img-fill img[src*="planning-hero"]{object-position:50% 55%}
+.hero-img-fill img[src*="drive-hero"]{object-position:50% 55%}
+.hero-img-fill img[src*="netopt-hero"]{object-position:50% 50%}
+.ov-img img[src*="planning-overview"],.ov-img img[src*="netopt-overview"]{object-position:50% 50%}
+.hero-img-fill picture{display:block;width:100%;height:100%}
+.hero-img-fill picture img{width:100%;height:100%;object-fit:cover}

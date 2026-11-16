@@ -5,3 +5,8 @@
 .ov-img picture img{ width:100%; height:100%; object-fit:cover; display:block; }
 .page-now .hero-img-fill picture img{ object-position: 78% 50%; }
 .page-it-consulting .ov-img{ overflow:hidden; }
+
+/* IT hub: zoECON spotlight image replaces the grey placeholder box */
+.xf-img-zoecon{ overflow: hidden; }
+.xf-img-zoecon picture{ display: block; width: 100%; height: 100%; }
+.xf-img-zoecon img{ display: block; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; }
