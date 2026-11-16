@@ -80,6 +80,10 @@ body.show-grid{ background-image: url('../images/common_imgs/background.png'); }
 .reveal-d2{ transition-delay:.24s; }
 .reveal-d3{ transition-delay:.36s; }
 .reveal-d4{ transition-delay:.48s; }
+/* calmer reveal, IoT and IT pages only (body.calm-motion): 8px lift, .45s, stagger capped at .24s */
+body.calm-motion .reveal{ transform:translateY(8px); transition:opacity .45s ease, transform .45s ease; }
+body.calm-motion .reveal.visible{ transform:translateY(0); }
+body.calm-motion .reveal-d3, body.calm-motion .reveal-d4{ transition-delay:.24s; }
 
 /* ============================================================
    PRODUCT PAGE HERO ENTRANCE
@@ -90,6 +94,13 @@ body.show-grid{ background-image: url('../images/common_imgs/background.png'); }
 .hero-body{ opacity:0; transform:translateY(14px); animation:fadeUp .65s ease forwards .65s; }
 .hero-btns{ opacity:0; transform:translateY(12px); animation:fadeUp .6s ease forwards .8s; }
 .hero-img-fill{ opacity:0; animation:fadeIn .9s ease forwards .2s; }
+/* hero entrance, IoT and IT pages only: fade only, no movement, delays 0-.2s */
+body.calm-motion .hero-eyebrow{ transform:none; animation:fadeIn .5s ease forwards 0s; }
+body.calm-motion .hero-product{ transform:none; animation:fadeIn .5s ease forwards .05s; }
+body.calm-motion .hero-headline{ transform:none; animation:fadeIn .5s ease forwards .1s; }
+body.calm-motion .hero-body{ transform:none; animation:fadeIn .5s ease forwards .15s; }
+body.calm-motion .hero-btns{ transform:none; animation:fadeIn .5s ease forwards .2s; }
+body.calm-motion .hero-img-fill{ animation:fadeIn .6s ease forwards .1s; }
 
 /* ============================================================
    MAIN NAVBAR
@@ -1007,11 +1018,15 @@ a.ft-col-head:hover{ color: rgba(255,255,255,.85); }
 .hp-slide{ position: relative; overflow: hidden; border-radius: 4px; cursor: pointer; transition: flex .65s cubic-bezier(.4,0,.2,1); flex: 0.45; min-width: 60px; }
 .hp-slide.is-active{ flex: 4.8; }
 .hp-slide-bg{ position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .65s ease; }
-.hp-slide-bg--wireless{ background-image: url('../images/common_imgs/wireless.jpg'); }
-.hp-slide-bg--iot{ background-image: url('../images/common_imgs/iot.jpg'); }
-.hp-slide-bg--it{ background-image: url('../images/common_imgs/itandcloud.jpg'); }
+.hp-slide-bg--wireless{ background-image: url('../images/common_imgs/wireless-mast-v3-2000.jpg'); background-image: image-set(url('../images/common_imgs/wireless-mast-v3-2000.webp') type('image/webp'), url('../images/common_imgs/wireless-mast-v3-2000.jpg') type('image/jpeg')); background-position: 50% 40%; }
+.hp-slide-bg--iot{ background-image: url('../images/common_imgs/iot-train-2000.jpg'); background-image: image-set(url('../images/common_imgs/iot-train-2000.webp') type('image/webp'), url('../images/common_imgs/iot-train-2000.jpg') type('image/jpeg')); background-position: 50% 45%; }
+.hp-slide-bg--it{ background-image: url('../images/common_imgs/it-rack-v3-2000.jpg'); background-image: image-set(url('../images/common_imgs/it-rack-v3-2000.webp') type('image/webp'), url('../images/common_imgs/it-rack-v3-2000.jpg') type('image/jpeg')); background-position: 50% 50%; }
 .hp-slide:hover .hp-slide-bg{ transform: scale(1.04); }
-.hp-slide-overlay{ position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.78) 0%, rgba(0,0,0,.18) 55%, transparent 100%); }
+.hp-slide-overlay{ position: absolute; inset: 0; background: linear-gradient(to top, rgba(17,29,66,.62) 0%, rgba(17,29,66,.24) 35%, transparent 60%); }
+.hp-slide-overlay::after{ content: ''; position: absolute; inset: 0; background: rgba(17,29,66,.30); opacity: 0; transition: opacity .4s ease; }
+.hp-slide:not(.is-active) .hp-slide-overlay::after{ opacity: 1; }
+.hp-slide-title, .hp-slide-num, .hp-slide-tag{ text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 2px 16px rgba(17,29,66,.45); }
+.hp-slide-vnum, .hp-slide-vtag{ text-shadow: 0 1px 3px rgba(0,0,0,.45); }
 .hp-slide-vcap{ position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 16px 0 18px; opacity: 1; transition: opacity .3s ease; }
 .hp-slide.is-active .hp-slide-vcap{ opacity: 0; pointer-events: none; }
 .hp-slide-vcap::after{ content: ''; width: 11px; height: 11px; border-radius: 50%; background: #00C853; flex-shrink: 0; animation: hpDotPulse 1.8s ease-in-out infinite; }
@@ -3767,6 +3782,7 @@ html.mn-lock, html.mn-lock body{ overflow: hidden; }
   html{ scroll-behavior: auto; }
   *, *::before, *::after{ animation-duration: .001ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0s !important; scroll-behavior: auto !important; }
   .reveal, .reveal-d1, .reveal-d2, .reveal-d3, .reveal-d4{ opacity: 1 !important; transform: none !important; }
+  .page-it-services a.eco-card:hover{ transform: none; } /* no card lift under reduced motion */
   .hero-eyebrow, .hero-product, .hero-headline, .hero-body, .hero-btns, .hero-img-fill,
   .hp-hero-eyebrow, .hp-hero-headline, .hp-hero-body, .hp-ticker-pill, .hp-hero-btns{ opacity: 1 !important; transform: none !important; animation: none !important; }
   .hp-ticker-track, .hp-wave-main, .hp-wave-f1, .hp-wave-f2, .hp-type-caret, .hp-slide-vcap::after,
@@ -3899,6 +3915,8 @@ body:not([class]) .hero-headline{ font-size: var(--fs-h1); }
      pull it back with equal negative margins. Horizontally it bleeds to the viewport
      edge, so a half-visible card runs off-screen instead of being cut mid-page. — */
 .hp-build-section{ overflow-x: clip; }
+/* Pinned scroll: JS adds .is-pinned and sets the section height; the content sticks under the header while the cards move sideways, then releases */
+.hp-build-section.is-pinned .hp-build-inner{ position: sticky; top: 80px; }
 .hp-build-track{
   --hp-track-pad: max(var(--sp-gutter), calc((100vw - 1680px) / 2 + var(--sp-gutter)));
   padding: 14px var(--hp-track-pad) 48px; margin: -14px calc(-1 * var(--hp-track-pad)) -48px;
@@ -4094,6 +4112,8 @@ h2, [class*="-headline"]:not(.hero-headline){ letter-spacing: -.025em; line-heig
 .ov-img:not(#_){ aspect-ratio: 43 / 25; min-height: 0; height: auto; width: 100%; }
 .ov-img:not(#_) img{ width: 100%; height: 100%; object-fit: cover; object-position: var(--ov-pos, 50% 50%); }
 /* per-image crop anchors (keep faces/subject inside the 43:25 box) */
+.ov-img img[src$="iot-train-1000.jpg"]{ --ov-pos: 50% 45%; }
+.ov-img img[src$="it-rack-v3-1000.jpg"]{ --ov-pos: 50% 50%; }
 .ov-img img[src$="network_optimization_imgs/01.png"]{ --ov-pos: 50% 12%; }
 .ov-img img[src$="sigma_aq_boss_imgs/aq-boss-img2.jpg"]{ --ov-pos: 50% 15%; }
 
@@ -4120,3 +4140,22 @@ h2, [class*="-headline"]:not(.hero-headline){ letter-spacing: -.025em; line-heig
 @media (max-width: 991px){
   .page-sigma-neo .sn-hero .hero-img-fill img{ object-position: 50% 45%; }
 }
+
+/* ============================================================
+   CHIPS, TAGS AND BADGES — quiet look (2026-11-16)
+   Same rule as SECTION LABELS: no tracked caps, shown in the case the approved copy is written in
+   (acronyms such as LPWA, SDK, ITSM already carry their own capitals in the HTML). Pill borders,
+   fills and colours are untouched, so nothing shifts in layout. hp-slide-tag / hp-slide-vtag are left
+   alone: their HTML is ALL CAPS ("IOT") and needs a case-only fix in the next Teddy batch first.
+   Out of scope: nav/footer column heads, table headers, form labels.
+   To undo: delete this block.
+   ============================================================ */
+:is(.ds-ucard-tag, .dt-head-tag, .dt-tag, .eco-card-badge, .eco-card-tag, .fs-step-tag, .hp-ins-tag,
+.ip-hcard-tag, .ldr-unit-tag, .lgc-tag, .mc-card-badge, .mc-tag, .ne-badge, .pn-badge, .rel-tag,
+.sn-ccard-tag, .sp-card-tag, .srel-card-tag, .ss-empty-tag, .st-chip, .tk-tag, .sm-home-tag):not(#_){
+  text-transform: none; letter-spacing: 0; font-weight: 500;
+}
+
+/* IoT/IT hero SVG motion off (CSS animations only; SMIL <animate> elements cannot be disabled by CSS) */
+.ic-hero-fill svg *, .its-hero-fill svg *, .sn-hero-fill svg *, .zo-hero-fill svg *,
+.iv-hero-fill svg *, .mi-hero-fill svg *, .cl-hero-fill svg *, .dv-hero-fill svg *{ animation: none !important; }

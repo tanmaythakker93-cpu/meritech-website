@@ -1,0 +1,48 @@
+/* IoT pages: photo heroes (local additions; scoped to new class names) */
+.iot-split-hero{ min-height: 560px; }
+.iot-split-hero .hero-content{ width: 52%; min-height: 560px; max-width: 840px; }
+.iot-split-hero .hero-eyebrow + .hero-eyebrow{ margin-top: -8px; }
+.iot-split-hero .iot-hero-img .hero-img-fill{ background: #dfe7ef; }
+.iot-split-hero .iot-hero-img img{ width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; }
+.page-iot-services .hero-img picture, .page-iot-consulting .hero-img picture{ display: block; width: 100%; height: 100%; }
+.page-iot-services .hero-img img, .page-iot-consulting .hero-img img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.iot-photo-band{ width: 100%; height: clamp(260px, 32vw, 480px); overflow: hidden; background: #dfe7ef; }
+.iot-photo-band picture{ display: block; width: 100%; height: 100%; }
+.iot-photo-band img{ width: 100%; height: 100%; object-fit: cover; object-position: 50% 82%; display: block; } /* keep the three sensor units (lower part of the photo) in frame */
+@media (max-width: 991px){
+  .iot-split-hero, .iot-split-hero .hero-content{ min-height: auto; }
+  .iot-split-hero .hero-content{ width: 100%; max-width: none; }
+}
+.iot-split-hero .iot-hero-img picture{ display: block; width: 100%; height: 100%; }
+/* breadcrumb as inline line (same rules as breadcrumbs.css) on pages that do not load it */
+.iot-split-hero nav.hero-eyebrow ol{ list-style: none; margin: 0; padding: 0; }
+.iot-split-hero nav.hero-eyebrow li{ display: inline; }
+.iot-split-hero nav.hero-eyebrow a{ color: inherit; text-decoration: none; }
+.iot-split-hero nav.hero-eyebrow a:hover{ text-decoration: underline; }
+.iot-split-hero nav.hero-eyebrow{ margin-bottom: 10px; }
+
+/* IoT service pages: photo heroes (device mgmt, ops support, cloud sw dev, connectivity) */
+.page-device-management .ic-hero-fill, .page-iot-ops .ic-hero-fill, .page-cloud-software .ic-hero-fill, .page-connectivity .ic-hero-fill{ background: #dfe7ef; display: block; }
+.page-device-management .ic-hero-fill::before, .page-iot-ops .ic-hero-fill::before, .page-cloud-software .ic-hero-fill::before, .page-connectivity .ic-hero-fill::before{ display: none; }
+.page-device-management .hero-img picture, .page-iot-ops .hero-img picture, .page-cloud-software .hero-img picture, .page-connectivity .hero-img picture{ display: block; width: 100%; height: 100%; }
+.page-device-management .hero-img img, .page-iot-ops .hero-img img, .page-cloud-software .hero-img img, .page-connectivity .hero-img img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.page-device-management .hero-img img{ object-position: 60% 50%; }
+.page-iot-ops .hero-img img{ object-position: 62% 50%; }
+.page-cloud-software .hero-img img{ object-position: 55% 50%; }
+.page-connectivity .hero-img img{ object-position: 50% 50%; }
+
+/* Xeno+ modules: card photos */
+#section-modules .mc-card-photo{ margin: 22px 22px 0; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; background: #f3f2f2; }
+#section-modules .mc-card-photo picture{ display: block; width: 100%; height: 100%; }
+#section-modules .mc-card-photo img{ display: block; width: 100%; height: 100%; object-fit: cover; }
+#section-modules .mc-card-photo--nano img{ object-position: 50% 50%; }
+#section-modules .mc-card-photo--som img{ object-position: 50% 50%; }
+@media (max-width: 600px){
+  #section-modules .mc-card-photo{ margin: 18px 18px 0; }
+}
+
+/* Xeno+ modules: grid items default to min-width:auto, so the wide photos (width=2000)
+   inflated the first column and squeezed the second card. Allow cards to shrink to the
+   grid track. grid-template-columns is left alone so responsivestyle.css can still stack it. */
+#section-modules .mc-card{ min-width: 0; }
+#section-modules .mc-card-photo, #section-modules .mc-card-photo picture, #section-modules .mc-card-photo img{ min-width: 0; max-width: 100%; }

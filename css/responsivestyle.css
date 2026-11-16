@@ -642,6 +642,9 @@
   .hp-cap-stat{ padding: 32px 16px 28px 0; }
   .hp-cap-stat:not(:first-child){ padding-left: 16px; }
   .hp-slide-content{ padding: 32px 28px; }
+  .hp-slide-bg--wireless{ background-image: url('../images/common_imgs/wireless-mast-v3-1000.jpg'); background-image: image-set(url('../images/common_imgs/wireless-mast-v3-1000.webp') type('image/webp'), url('../images/common_imgs/wireless-mast-v3-1000.jpg') type('image/jpeg')); }
+  .hp-slide-bg--it{ background-image: url('../images/common_imgs/it-rack-v3-1000.jpg'); background-image: image-set(url('../images/common_imgs/it-rack-v3-1000.webp') type('image/webp'), url('../images/common_imgs/it-rack-v3-1000.jpg') type('image/jpeg')); }
+  .hp-slide-bg--iot{ background-image: url('../images/common_imgs/iot-train-1000.jpg'); background-image: image-set(url('../images/common_imgs/iot-train-1000.webp') type('image/webp'), url('../images/common_imgs/iot-train-1000.jpg') type('image/jpeg')); }
   .hp-map-lbl{ font-size: 11px; }
   .hp-map-lbl em{ font-size: 9px; }
   .hp-map-dot{ width: 9px; height: 9px; }
@@ -651,6 +654,7 @@
   .hp-hero{ padding: 64px 24px 48px; }
   .hp-quote-inner, .hp-prob-inner, .hp-build-inner, .hp-cap-inner, .hp-ins-inner, .hp-global-inner{ padding-left: 24px; padding-right: 24px; }
   .hp-slider{ height: 320px; }
+  .hp-slide-overlay{ background: linear-gradient(to top, rgba(17,29,66,.70) 0%, rgba(17,29,66,.32) 40%, transparent 65%); }
 
   .hp-hero-btns{ flex-direction: column; align-items: stretch; }
   .btn-primary-pill, .btn-outline-pill{ justify-content: center; width: 100%; }
@@ -1554,3 +1558,15 @@ h1, .hero-headline{ text-wrap: balance; }
   .tt-head-row .tt-col-label{ text-align: left; letter-spacing: .06em; }
 }
 
+
+/* ============================================================
+   Round buttons keep their shape on mobile (full-site fix)
+   .sa-btn got min-height:44px from the tap-target rule but kept its 36px width, so it
+   became an oval. Make it a true 44px circle on small screens, and stop other fixed-size
+   round elements from being squeezed when their flex row gets tight.
+   ============================================================ */
+@media (max-width: 991px){
+  .sa-btn{ width: 44px; height: 44px; min-width: 44px; min-height: 44px; flex: 0 0 44px; }
+}
+.sa-btn, .faq-toggle, .ih-step-num, .wl-flow-num, .hp-build-arrow, .ct-ty-check, .ct-social a,
+.page-about .ab-ceo-avatar, .page-leadership .ldr-reel-avatar, .page-leadership .ldr-photo-avatar, .page-leadership .ldr-ceo-avatar{ flex-shrink: 0; }

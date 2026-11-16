@@ -61,16 +61,57 @@ document.addEventListener('DOMContentLoaded', function () {
     buildArrows.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var dir = btn.dataset.dir === 'prev' ? -1 : 1;
+        if (pinned) {
+          // pinned: the page scroll drives the cards, so move the page by one card
+          window.scrollBy({ top: dir * cardStep() * scrollRatio, behavior: 'smooth' });
+          return;
+        }
         lockAuto();
         buildTrack.scrollBy({ left: dir * cardStep(), behavior: 'smooth' });
       });
     });
+
+    // ── PINNED SCROLL: the section sticks under the header while the page scrolls;
+    // the vertical scroll distance is converted into sideways card movement, and the
+    // page carries on to the next section once the last card has been reached.
+    var HEADER_H = 80;                       // fixed .mn-bar height
+    var buildInner = buildSection ? buildSection.querySelector('.hp-build-inner') : null;
+    var pinned = false, pinTop = HEADER_H, pinLen = 0, pinPadTop = 0;
+    var scrollRatio = 1.15;                  // page px per card px: higher = slower, calmer
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function layoutPin() {
+      if (!buildSection || !buildInner || reduceMotion) return;
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      buildSection.classList.remove('is-pinned');
+      buildSection.style.height = '';
+      var cs = getComputedStyle(buildSection);
+      pinPadTop = parseFloat(cs.paddingTop) || 0;
+      var padBottom = parseFloat(cs.paddingBottom) || 0;
+      var innerH = buildInner.offsetHeight;
+      // if the content is taller than the space under the header, pin it higher so the
+      // card bottoms (and links) stay visible
+      pinTop = (innerH > vh - HEADER_H - 16) ? (vh - innerH - 16) : HEADER_H;
+      var span = maxScroll();
+      if (span < 8) return;
+      pinLen = Math.round(span * scrollRatio);
+      buildInner.style.top = pinTop + 'px';
+      buildSection.style.height = (pinPadTop + innerH + pinLen + padBottom) + 'px';
+      buildSection.classList.add('is-pinned');
+      pinned = true;
+    }
 
     // ── SCROLL #2: auto — cards move horizontally as the page scrolls vertically
     // through the section. Page scroll only updates a TARGET; a rAF loop eases the
     // track toward it, so the motion stays smooth even when scroll events are bursty.
     function computeTarget() {
       if (!buildSection) return buildTrack.scrollLeft;
+      if (pinned) {
+        var pr = buildSection.getBoundingClientRect();
+        // 0 when the content first reaches its pinned position, 1 when it is released
+        var p = (pinTop - pinPadTop - pr.top) / Math.max(pinLen, 1);
+        return Math.max(0, Math.min(1, p)) * maxScroll();
+      }
       var rect = buildSection.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
       // progress stays 0 (card 1 fully visible) until the section top reaches the
@@ -82,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return progress * maxScroll();
     }
 
+    layoutPin();
     var targetLeft = computeTarget();
     var currentLeft = targetLeft;
     buildTrack.scrollLeft = currentLeft;
@@ -99,8 +141,9 @@ document.addEventListener('DOMContentLoaded', function () {
       requestAnimationFrame(tickAnim);
     }
 
-    window.addEventListener('scroll', function () { targetLeft = computeTarget(); }, { passive: true });
-    window.addEventListener('resize', function () { targetLeft = computeTarget(); updateArrows(); });
+    window.addEventListener('scroll', function () { if (pinned) targetLeft = computeTarget(); }, { passive: true });
+    window.addEventListener('resize', function () { pinned = false; layoutPin(); targetLeft = pinned ? computeTarget() : buildTrack.scrollLeft; updateArrows(); });
+    window.addEventListener('load', function () { pinned = false; layoutPin(); targetLeft = pinned ? computeTarget() : buildTrack.scrollLeft; });
     updateArrows();
     requestAnimationFrame(tickAnim);
   }

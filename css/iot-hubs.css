@@ -1,0 +1,142 @@
+/* ============================================================
+   IoT HUBS + PRODUCT PAGES (16 Nov 2026)
+   Loaded after style.css, responsivestyle.css, iot-pages.css by:
+   ExploreIoTportfolio, iot_services, XENO+, mesimo, CENTRA_IoT.
+   Every selector uses new ih- classes; nothing here restyles existing blocks.
+   Mirrors the Wireless hub pattern: photo cards, stepper, quiet tags.
+   To undo: remove the <link href="css/iot-hubs.css"> line on those 5 pages.
+   ============================================================ */
+
+:root{
+  --ih-ink: #221F1F;
+  --ih-text: #3D3A3A;
+  --ih-muted: #6B6868;
+  --ih-line: #E6E4E4;
+  --ih-soft: #F5F4F3;
+  --ih-green: #007A3D;
+}
+
+.ih-wrap{ max-width: 1680px; margin: 0 auto; padding: var(--sp-section-y) var(--sp-gutter); }
+.ih-kicker{ font-size: var(--fs-14); font-weight: 400; color: var(--ih-text); margin-bottom: 24px; display: block; text-transform: uppercase; letter-spacing: .12em; }
+.ih-intro{ display: grid; grid-template-columns: 1.2fr 1fr; gap: 0 clamp(32px, 4vw, 43px); margin-bottom: var(--sp-head-gap); align-items: start; }
+.ih-headline{ font-size: clamp(32px, 3vw, 32px); font-weight: 400; color: var(--ih-text); line-height: 1.12; letter-spacing: -.025em; margin: 0; }
+.ih-intro-body{ font-size: var(--fs-18); color: var(--ih-text); line-height: 1.75; margin: 0; }
+
+/* quiet tags */
+.ih-tag{ font-size: var(--fs-14); font-weight: 400; color: var(--ih-text); background: #fff; border-radius: 4px; padding: 4px 10px; line-height: 1.5; white-space: nowrap; }
+
+/* ---------- photo cards ---------- */
+.ih-grid{ display: grid; gap: 24px; }
+.ih-grid-4{ grid-template-columns: repeat(4, 1fr); }
+.ih-card{ position: relative; display: flex; flex-direction: column; background: #fff; border: 1px solid #ECEAEA; overflow: hidden; }
+.ih-card-media{ aspect-ratio: 16 / 10; overflow: hidden; background: var(--ih-soft); }
+.ih-card-media picture{ display: block; width: 100%; height: 100%; }
+.ih-card-media img{ width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.ih-card-body{ padding: 20px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.ih-card-cat{ font-size: var(--fs-14); font-weight: 500; color: var(--ih-green); margin-bottom: 8px; }
+.ih-card-name{ font-size: var(--fs-20); font-weight: 500; letter-spacing: -.01em; color: var(--ih-ink); margin: 0 0 10px; line-height: 1.25; }
+.ih-card-link{ color: inherit; text-decoration: none; }
+.ih-card-link::after{ content: ""; position: absolute; inset: 0; z-index: 1; }
+.ih-card-link:focus-visible{ outline: none; }
+.ih-card-link:focus-visible::after{ outline: 2px solid var(--ih-green); outline-offset: -2px; }
+.ih-card-desc{ font-size: var(--fs-16); color: var(--ih-text); line-height: 1.65; margin: 0 0 18px; }
+.ih-card-go{ margin-top: auto; display: inline-flex; align-items: center; gap: 10px; font-size: var(--fs-16); font-weight: 500; color: var(--ih-ink); }
+.ih-card:hover{ border-color: #CFCBCB; box-shadow: 0 8px 28px rgba(34,31,31,.08); }
+.ih-card:hover .ih-card-media img{ transform: scale(1.03); }
+
+/* ---------- device-to-cloud stepper ---------- */
+.ih-flow{ background: #F5F4F4; }
+.ih-steps{ display: grid; grid-template-columns: repeat(5, 1fr); gap: 0 clamp(16px, 2vw, 32px); }
+.ih-step{ position: relative; padding: 56px 0 0; }
+.ih-step-num{ position: absolute; top: 0; left: 0; z-index: 1; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: #fff; border: 1px solid #CFCBCB; color: var(--ih-green); font-size: var(--fs-14); font-weight: 500; }
+.ih-step:not(:last-child)::before{ content: ""; position: absolute; top: 18px; left: 44px; right: calc(-1 * clamp(16px, 2vw, 32px) + 8px); height: 1px; background: #CFCBCB; }
+.ih-step-title{ font-size: var(--fs-20); font-weight: 500; letter-spacing: -.01em; color: var(--ih-ink); margin: 0 0 10px; }
+.ih-step-desc{ font-size: var(--fs-16); color: var(--ih-text); line-height: 1.65; margin: 0; }
+.ih-step-tags{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+
+/* ---------- services strip ---------- */
+.ih-strip{ background: #fff; border-top: 1px solid var(--ih-line); border-bottom: 1px solid var(--ih-line); }
+.ih-strip-wrap{ padding-top: clamp(40px, 4vw, 64px); padding-bottom: clamp(40px, 4vw, 64px); display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px clamp(32px, 4vw, 64px); align-items: center; }
+.ih-strip-head .ih-kicker{ margin-bottom: 12px; }
+.ih-strip-title{ font-size: clamp(24px, 2vw, 28px); font-weight: 400; letter-spacing: -.02em; line-height: 1.2; margin: 0; }
+.ih-strip-title a{ color: var(--ih-text); text-decoration: none; }
+.ih-strip-title a:hover{ text-decoration: underline; }
+.ih-strip-links{ list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 12px; }
+.ih-strip-links a{ display: inline-block; font-size: var(--fs-16); color: var(--ih-ink); text-decoration: none; padding: 9px 16px; border: 1px solid #D9D6D6; border-radius: 999px; line-height: 1.3; }
+.ih-strip-links a:hover{ border-color: var(--ih-ink); }
+.ih-strip-all a{ background: var(--ih-ink); color: #fff; border-color: var(--ih-ink); }
+
+/* ---------- five service cards (iot_services) ---------- */
+.ih-svc-grid{ display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+.ih-svc-card{ grid-column: span 2; position: relative; display: flex; flex-direction: column; background: #fff; border: 1px solid #ECEAEA; padding: 24px 24px 22px; text-decoration: none; color: inherit; }
+.ih-svc-card:nth-child(n+4){ grid-column: span 3; }
+.ih-svc-num{ font-size: var(--fs-14); font-weight: 500; color: var(--ih-green); margin-bottom: 14px; }
+.ih-svc-title{ font-size: var(--fs-26); font-weight: 400; color: var(--ih-text); line-height: 1.2; margin: 0 0 14px; }
+.ih-svc-desc{ font-size: var(--fs-16); color: var(--ih-text); line-height: 1.65; margin: 0 0 20px; }
+.ih-svc-go{ margin-top: auto; display: inline-flex; align-items: center; gap: 10px; font-size: var(--fs-16); font-weight: 500; color: var(--ih-ink); }
+.ih-svc-card:hover{ border-color: #CFCBCB; box-shadow: 0 8px 28px rgba(34,31,31,.08); }
+.ih-svc-card:focus-visible{ outline: 2px solid var(--ih-green); outline-offset: 2px; }
+
+/* ---------- related block (product pages + services hub) ---------- */
+.ih-rel{ background: #fff; }
+.ih-rel-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.ih-rel-grid.ih-rel-4{ grid-template-columns: repeat(4, 1fr); }
+.ih-rel-card{ display: flex; flex-direction: column; gap: 6px; padding: 22px 22px 20px; border: 1px solid #ECEAEA; background: #fff; text-decoration: none; color: inherit; }
+.ih-rel-card:hover{ border-color: #CFCBCB; box-shadow: 0 8px 28px rgba(34,31,31,.08); }
+.ih-rel-kind{ font-size: var(--fs-14); font-weight: 500; color: var(--ih-green); }
+.ih-rel-name{ font-size: var(--fs-20); font-weight: 500; letter-spacing: -.01em; color: var(--ih-ink); line-height: 1.25; }
+.ih-rel-go{ margin-top: 10px; display: inline-flex; align-items: center; gap: 10px; font-size: var(--fs-16); font-weight: 500; color: var(--ih-ink); }
+.ih-rel-more{ margin-top: 28px; }
+.ih-rel-more a{ font-size: var(--fs-16); font-weight: 500; color: var(--ih-ink); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1280px){
+  .ih-grid-4{ grid-template-columns: repeat(2, 1fr); }
+  .ih-rel-grid.ih-rel-4{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 1100px){
+  .ih-steps{ grid-template-columns: 1fr; gap: 0; max-width: 760px; }
+  .ih-step{ padding: 4px 0 32px 60px; }
+  .ih-step:not(:last-child)::before{ top: 44px; bottom: 4px; left: 18px; right: auto; width: 1px; height: auto; }
+  .ih-strip-wrap{ grid-template-columns: 1fr; }
+  .ih-intro{ grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 991px){
+  .ih-svc-grid{ grid-template-columns: repeat(2, 1fr); }
+  .ih-svc-card, .ih-svc-card:nth-child(n+4){ grid-column: auto; }
+  .ih-svc-card:last-child{ grid-column: 1 / -1; }
+  .ih-rel-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px){
+  .ih-grid-4, .ih-rel-grid, .ih-rel-grid.ih-rel-4{ grid-template-columns: 1fr; }
+  .ih-svc-grid{ grid-template-columns: 1fr; }
+  .ih-svc-card:last-child{ grid-column: auto; }
+  .ih-tag{ white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce){
+  .ih-card-media img{ transition: none; }
+  .ih-card:hover .ih-card-media img{ transform: none; }
+}
+
+/* Xeno+ "where it fits": two cards after one was held */
+.tp-cards.ih-two{ grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 991px){ .tp-cards.ih-two{ grid-template-columns: 1fr; } }
+
+/* ---------- plain-language pass (16 Nov 2026): what it is first, product name second ---------- */
+.ih-card-cat{ font-size: var(--fs-14); }
+.ih-tag{ display: inline-flex; flex-direction: column; gap: 2px; align-items: flex-start; white-space: normal; }
+.ih-tag-what{ color: var(--ih-ink); font-weight: 500; }
+.ih-tag-name{ color: var(--ih-muted); font-size: 13px; }
+.ih-rl .rl-head, .ih-rl .rl-row{ grid-template-columns: 240px 200px 140px 1fr; }
+.ih-rl .rl-what{ font-weight: 700; color: var(--ih-ink); padding-right: 16px; }
+.ih-rl .rl-product{ font-weight: 400; padding-right: 16px; }
+.page-iot-services .cl-rel-cat.ih-prodname, .page-iot-consulting .cl-rel-cat.ih-prodname, .page-connectivity .cl-rel-cat.ih-prodname, .page-device-management .cl-rel-cat.ih-prodname, .page-cloud-software .cl-rel-cat.ih-prodname, .page-iot-ops .cl-rel-cat.ih-prodname, .cl-rel-cat.ih-prodname{ text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--ih-green) }
+
+/* Xeno+ spotlight on IoT hub: centre text column against image column */
+#section-xeno-ai .xf-layout{ align-items: center; }
+#section-xeno-ai .xf-col-text{ display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 28px; }
+#section-xeno-ai .xf-col-text .xf-body,
+#section-xeno-ai .xf-col-text .xf-feat-grid{ margin-bottom: 0; }
+@media (max-width: 991px){
+  #section-xeno-ai .xf-layout{ grid-template-columns: 1fr; align-items: start; }
+}

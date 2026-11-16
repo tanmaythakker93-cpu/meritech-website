@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.subnav-link').forEach(function (l) { l.classList.remove('active'); });
       link.classList.add('active');
 
-      window.scrollTo({ top: top, behavior: 'smooth' });
+      window.scrollTo({ top: top, behavior: (document.body.classList.contains('calm-motion') && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth' });
 
       spyTimer = setTimeout(function () { spyPaused = false; }, 1000);
     });
@@ -345,7 +345,8 @@ document.addEventListener('DOMContentLoaded', function () {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-      } else {
+        if (document.body.classList.contains('calm-motion')) revealIO.unobserve(entry.target); /* IoT/IT pages: one-shot */
+      } else if (!document.body.classList.contains('calm-motion')) {
         entry.target.classList.remove('visible');
       }
     });
@@ -357,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.hl-grid, .uc-cards, .rel-grid').forEach(function (grid) {
     grid.querySelectorAll('.hl-card, .uc-card, .rel-card').forEach(function (card, i) {
       card.classList.add('reveal');
-      card.style.transitionDelay = (i * 0.12) + 's';
+      card.style.transitionDelay = (document.body.classList.contains('calm-motion') ? Math.min(i * 0.12, 0.24) : (i * 0.12)) + 's';
       revealIO.observe(card);
     });
   });

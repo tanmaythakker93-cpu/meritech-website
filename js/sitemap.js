@@ -24,15 +24,16 @@
     },
     {
       key: "iot", tag: "IOT", name: "IoT &amp; Edge AI",
-      hub: { name: "IoT Services", file: "iot_services.html" },
+      hub: { name: "Explore IoT Portfolio", file: "ExploreIoTportfolio.html" },
       groups: [
         { label: "Products", items: [
-          { name: "monoZ / IoT Portfolio", file: "ExploreIoTportfolio.html" },
-          { name: "Centra-IoT", file: "CENTRA_IoT.html" },
+          { name: "monoZ", file: "https://monoz.io/", external: true },
           { name: "Xeno+ Suite", file: "XENO+.html" },
-          { name: "Mesimo", file: "mesimo.html" }
+          { name: "Mesimo", file: "mesimo.html" },
+          { name: "Centra IoT", file: "CENTRA_IoT.html" }
         ]},
         { label: "Services", items: [
+          { name: "IoT Services", file: "iot_services.html" },
           { name: "IoT Consulting", file: "iot_consulting.html" },
           { name: "Device Management", file: "device_management.html" },
           { name: "Connectivity Solutions", file: "connectivity_solutions.html" },
@@ -46,16 +47,17 @@
       hub: { name: "Explore IT &amp; Cloud Portfolio", file: "it_services.html" },
       groups: [
         { label: "Services", items: [
-          { name: "Digital Synergy", file: "digital_synergy_solutions_1.html" },
+          { name: "IT Services", file: "it_services.html" },
+          { name: "Digital Synergy Solutions", file: "digital_synergy_solutions_1.html" },
           { name: "Data &amp; AI", file: "data_ai.html" },
           { name: "DevOps", file: "devops.html" },
           { name: "Cloud", file: "cloud.html" },
-          { name: "IT Consulting", file: "it_consulting.html" },
-          { name: "IT Outsourcing", file: "it_outsourcing_services.html" },
           { name: "ServiceNow", file: "servicenow.html" },
-          { name: "Managed IT", file: "managed_it_services.html" },
-          { name: "zoECON™", file: "zoecon_cloud_cost_optimizer.html" },
-          { name: "Independent Validation Services", file: "independent_validation_services.html" }
+          { name: "zoECON™ Cloud Cost Optimizer", file: "zoecon_cloud_cost_optimizer.html" },
+          { name: "Independent Validation Services", file: "independent_validation_services.html" },
+          { name: "Managed IT Services", file: "managed_it_services.html" },
+          { name: "IT Consulting", file: "it_consulting.html" },
+          { name: "IT Outsourcing Services", file: "it_outsourcing_services.html" }
         ]}
       ]
     },
@@ -94,9 +96,9 @@
     }
     return '<li class="' + extraClass.trim() + '" data-name="' + name + '">' +
       '<span class="sm-dot sm-dot--live"></span>' +
-      '<a href="' + it.file + '">' +
+      '<a href="' + it.file + '"' + (it.external ? ' target="_blank" rel="noopener"' : '') + '>' +
       '<span class="sm-pagename">' + it.name + '</span>' +
-      '<span class="sm-path">/' + it.file + '</span>' +
+      '<span class="sm-path">' + (it.external ? it.file.replace(/^https?:\/\//, '') : '/' + it.file) + '</span>' +
       '</a></li>';
   }
 
