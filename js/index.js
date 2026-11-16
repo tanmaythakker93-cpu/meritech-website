@@ -158,14 +158,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     heroHeadline.innerHTML = '';
     // each line is a block that reserves its height up front → no layout shift
-    var heroSpans = heroLines.map(function () {
+    // Each line holds an invisible copy of its FINAL text (the "ghost"), so the headline already
+    // occupies its full height and width on every screen size; the visible typed text (the "live"
+    // layer) sits on top of it. Nothing below the headline moves while the letters appear.
+    var heroSpans = heroLines.map(function (text) {
       var s = document.createElement('span');
       s.className = 'hp-type-line';
       s.style.display = 'block';
+      s.style.position = 'relative';
       s.style.minHeight = '1em';
-      s.textContent = '​'; // zero-width space holds the line height
+      var ghost = document.createElement('span');
+      ghost.className = 'hp-type-ghost';
+      ghost.setAttribute('aria-hidden', 'true');
+      ghost.style.visibility = 'hidden';
+      ghost.textContent = text;
+      var live = document.createElement('span');
+      live.className = 'hp-type-live';
+      live.style.position = 'absolute';
+      live.style.left = '0';
+      live.style.top = '0';
+      live.style.width = '100%';
+      live.textContent = '​'; // zero-width space
+      s.appendChild(ghost);
+      s.appendChild(live);
       heroHeadline.appendChild(s);
-      return s;
+      return live; // the typing writes into the live layer
     });
 
     var heroCaret = document.createElement('span');
