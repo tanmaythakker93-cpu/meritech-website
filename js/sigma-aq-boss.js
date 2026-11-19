@@ -37,7 +37,7 @@
     var head = window.innerHeight * 0.6;
     var r = list.getBoundingClientRect();
     var tail = parseFloat(list.style.getPropertyValue('--fs-tail')) || 12;
-    var top = r.top + LINE_TOP, len = Math.max(1, (r.bottom - tail) - top);
+    var top = r.top + nums[0].offsetHeight / 2, len = Math.max(1, (r.bottom - tail) - top);
     var p = Math.max(0, Math.min(1, (head - top) / len));
     list.style.setProperty('--fs-p', p.toFixed(3));
     nums.forEach(function (n, i) {

@@ -17,7 +17,7 @@
 
 .page-sigma-aq-boss #section-fivesteps{
   --fs-ink: #3D3A3A; --fs-muted: #6B6868; --fs-green: #007A3D;
-  --fs-line: #D3D0D0; --fs-numw: 56px; --fs-pin-top: 180px; /* 80 header + 72 subnav + 28 air */
+  --fs-line: #D3D0D0; --fs-numw: 56px; --fs-box: 44px; --fs-pin-top: 180px; /* 80 header + 72 subnav + 28 air */
 }
 
 /* band bottom padding (responsivestyle.css zeroes it below 1400px) */
@@ -25,13 +25,13 @@
 
 /* ---- field photo in the rail ---- */
 .page-sigma-aq-boss #section-fivesteps .fs-rail-media{ margin: 28px 0 0; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 9; background: #E7E5E5; }
-.page-sigma-aq-boss #section-fivesteps .fs-rail-media img{ display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+.page-sigma-aq-boss #section-fivesteps .fs-rail-media img{ display: block; width: 100%; height: 100%; object-fit: cover; object-position: 56% 58%; }
 
 /* ---- the list: one hairline through the numerals + green progress fill ---- */
 .page-sigma-aq-boss #section-fivesteps ol.fs-steps{ list-style: none; margin: 0; padding: 0; position: relative; --fs-p: 0; }
 .page-sigma-aq-boss #section-fivesteps .fs-steps::before,
 .page-sigma-aq-boss #section-fivesteps .fs-steps::after{
-  content: ""; position: absolute; top: 12px; bottom: var(--fs-tail, 12px);
+  content: ""; position: absolute; z-index: 0; top: calc(var(--fs-box) / 2); bottom: var(--fs-tail, 12px);
   left: calc(var(--fs-numw) / 2); width: 1px; margin-left: -.5px; background: var(--fs-line); pointer-events: none;
 }
 .page-sigma-aq-boss #section-fivesteps .fs-steps::after{
@@ -40,15 +40,16 @@
 }
 .page-sigma-aq-boss #section-fivesteps .fs-step,
 .page-sigma-aq-boss #section-fivesteps .fs-step:last-child{
-  position: relative; grid-template-columns: var(--fs-numw) minmax(0, 1fr); gap: 0 28px; padding: 0 0 52px; border: 0;
+  position: relative; z-index: 1; grid-template-columns: var(--fs-numw) minmax(0, 1fr); gap: 0 28px; padding: 0 0 52px; border: 0;
 }
 .page-sigma-aq-boss #section-fivesteps .fs-step:last-child{ padding-bottom: 0; }
 .page-sigma-aq-boss #section-fivesteps .fs-step-num{
-  position: relative; z-index: 1; padding: 7px 0 9px; text-align: center; background: #F5F4F4;
-  font-size: var(--fs-32); font-weight: 300; line-height: 1; font-variant-numeric: tabular-nums;
-  color: var(--fs-muted); transition: color .35s ease;
+  position: relative; z-index: 1; box-sizing: border-box; width: var(--fs-box); height: var(--fs-box); margin: 0 auto; padding: 0;
+  display: grid; place-items: center; border: 1px solid var(--fs-line); border-radius: 8px; background: #F5F4F4;
+  font-size: var(--fs-26); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums;
+  color: var(--fs-muted); transition: color .35s ease, background-color .35s ease, border-color .35s ease;
 }
-.page-sigma-aq-boss #section-fivesteps .fs-step.is-on .fs-step-num{ color: var(--fs-green); }
+.page-sigma-aq-boss #section-fivesteps .fs-step.is-on .fs-step-num{ color: #fff; background: var(--fs-green); border-color: var(--fs-green); }
 .page-sigma-aq-boss #section-fivesteps .fs-step-body{ min-width: 0; container-type: inline-size; }
 .page-sigma-aq-boss #section-fivesteps .fs-step-title{ font-size: var(--fs-32); margin: 0 0 12px; color: var(--fs-ink); }
 .page-sigma-aq-boss #section-fivesteps .fs-step-desc{ max-width: 58ch; margin: 0; color: var(--fs-ink); }
@@ -100,13 +101,13 @@
 
 /* ---- tablet / mobile: stacked, number rail ---- */
 @media (max-width: 991px){
-  .page-sigma-aq-boss #section-fivesteps{ --fs-numw: 40px; }
+  .page-sigma-aq-boss #section-fivesteps{ --fs-numw: 40px; --fs-box: 36px; }
   .page-sigma-aq-boss #section-fivesteps .fs-top{ margin-bottom: 40px; }
   .page-sigma-aq-boss #section-fivesteps .fs-rail-media{ margin-top: 4px; }
   .page-sigma-aq-boss #section-fivesteps .fs-step,
   .page-sigma-aq-boss #section-fivesteps .fs-step:last-child{ gap: 0 16px; padding-bottom: 40px; }
   .page-sigma-aq-boss #section-fivesteps .fs-step:last-child{ padding-bottom: 0; }
-  .page-sigma-aq-boss #section-fivesteps .fs-step-num{ font-size: var(--fs-26); padding: 4px 0 8px; }
+  .page-sigma-aq-boss #section-fivesteps .fs-step-num{ font-size: var(--fs-20); }
   .page-sigma-aq-boss #section-fivesteps .fs-step-title{ font-size: var(--fs-26); margin-bottom: 10px; }
 }
 @media (max-width: 575px){

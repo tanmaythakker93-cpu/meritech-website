@@ -101,7 +101,8 @@
 
 @media (max-width: 991px) {
   .hl-inner{ padding: 72px 24px; }
-  .hl-grid{ grid-template-columns: 1fr; }
+  .hl-grid{ grid-template-columns: 1fr 1fr; }
+  .hl-grid.hl-grid--3{ grid-template-columns: 1fr 1fr; }
 
   .hl-card{ padding: 36px 28px; }
 }
@@ -110,6 +111,14 @@
   .hl-inner{ padding: 48px 24px; }
 
   .hl-card{ padding: 28px 20px; }
+
+  /* Highlights: keep two columns on phones (all product pages) */
+  .hl-grid, .hl-grid.hl-grid--3{ grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hl-grid > .hl-card:last-child:nth-child(odd){ grid-column: 1 / -1; }
+  .hl-grid .hl-card{ padding: 18px 14px; }
+  .hl-grid .hl-card-icon{ margin-bottom: 14px; }
+  .hl-grid .hl-card-title{ font-size: 16px; margin-bottom: 8px; }
+  .hl-grid .hl-card-desc{ font-size: 13.5px; line-height: 1.55; }
 }
 
 @media (max-width: 1199px) {
